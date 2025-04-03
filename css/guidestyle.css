@@ -1,0 +1,2349 @@
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Fonts */
+@font-face {
+    font-family: "quicksand";
+    src: url(../fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "zen-maru";
+    src: url(../fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf);
+}
+
+@font-face {
+    font-family: "naunohhloh";
+    src: url(../fonts/Naunohhloh.ttf);
+}
+
+/* Gives smooth scrolling for top button */
+html {
+    scroll-behavior: smooth;
+}
+
+/* COLORS */
+/*        */
+/* https://dequeuniversity.com/color-contrast */
+:root {
+    --brightYellow: #f3db5c;
+    --paleYellow: rgb(251, 247, 217);
+    --wrapperBlue: rgb(191, 223, 223);
+    /* --midBlue: #7c9daa; */
+    --darkBlue: rgb(20, 60, 100);
+    --offWhite: rgb(249, 247, 234);
+    --wrapperRed: #eabc86;
+    --redBrown: #924b14;
+    /* --darkRedBrown: #532B0A; */
+    --darkRedBrown: #461d06;
+
+}
+
+
+
+
+
+/* GENERAL STYLING */
+/*                 */
+.wrapper {
+    margin-top: 0;
+    padding: 5em 1.85em 1.85em 1.85em;
+
+    width: 95vw;
+    /* was at 95% and I changed it for .collapse, lmk if it doesn't work out */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--wrapperBlue);
+}
+
+body {
+    background-image: linear-gradient(var(--paleYellow), #FFF);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+/* Only used on home page title */
+h1 {
+    font-size: 2.75em;
+}
+
+p {
+    font-family: zen-maru;
+    color: var(--darkBlue);
+    font-size: 18px;
+}
+
+#page-header {
+    width: 90%;
+    margin: 0 auto 0.3em auto;
+    padding: 0.075em 0em;
+
+    border-radius: 0.85em 0.85em 0em 0em;
+    background-color: var(--paleYellow);
+    color: var(--darkBlue);
+    box-shadow: 0px 0px 4px -2px var(--darkBlue);
+    /* gives slight contrast */
+
+    font-family: quicksand;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+}
+
+.sub-header {
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    padding: 0.075em 0em;
+
+    border-radius: 0em 0em 0.85em 0.85em;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    text-align: center;
+}
+
+.downwards-sub-header {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    padding: 3px 0px;
+
+    border-radius: 20px 20px 0px 0px;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    text-align: center;
+}
+
+.flex-style {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+
+.flex-style img {
+    width: 100%;
+}
+
+.one-section {
+    flex: 1;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+}
+
+.two-sections {
+    flex: 2;
+    padding: 20px;
+}
+
+.four-sections {
+    flex: 4;
+    padding: 20px;
+}
+
+.two-sections p, .two-sections ul {
+    margin: 0px auto;
+    margin-top: 30px;
+    max-width: 700px;
+    text-align: justify;
+}
+
+#jump-to-top-button {
+    padding: 0.3em 0.9em;
+    border-radius: 1em;
+    background-color: var(--brightYellow);
+    color: var(--darkBlue);
+    /* #af9505; #956a05; */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, .4);
+
+    font-size: 0.9em;
+    font-family: quicksand;
+    font-weight: bold;
+    text-decoration: none;
+
+    display: inline;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 3;
+    transition: 0.5s;
+}
+
+#jump-to-top-button:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0px 0px 10px #fff;
+    background-color: #f3d43a;
+    /* Not the same yellow so it contrasts better */
+    color: #fff;
+}
+
+
+
+
+
+/* TOP NAVIGATION BAR */
+/*                    */
+
+/* IDEA: Have a tiny Okshlihd that slides along the bottom of the nav showing which page you're currently on! */
+
+/* Top Bar/Wrapper */
+.dropdown {
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-around;
+
+    background-color: var(--brightYellow);
+    color: var(--darkBlue);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, .4);
+    z-index: 3;
+
+}
+
+/* Remove Bullet Points */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.85em;
+    /* Cause zen-maru is so big */
+}
+
+/* Big Nav Text */
+nav ul li a {
+    margin: 0em 1em;
+    padding: 0.25em 0.5em;
+    border-radius: 0.75em;
+
+    color: var(--darkBlue);
+
+    text-decoration: none;
+    font-family: zen-maru;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 0.025em;
+}
+
+/* Subpages */
+nav ul li ul {
+    position: absolute;
+    margin-top: 1em;
+    display: none;
+    font-size: 1em;
+}
+
+/* Subpage Text */
+nav ul li ul li a {
+    font-weight: lighter;
+    background-color: transparent;
+    padding: 0em 1em 0.25em 0.5em;
+    display: block;
+    /* Lets you click anywhere on its line */
+}
+
+/* Display Subpages */
+nav ul li:hover ul {
+    display: block;
+    padding: 1.5em 0em 1em 0em;
+    margin: 0.35em auto;
+    /* margin means you have to jump, limit it as much as */
+
+    border-radius: 0em 0em 0.5em 0.5em;
+    background-color: var(--brightYellow);
+    box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, .2);
+}
+
+nav a:hover {
+    background-color: var(--paleYellow);
+    transition: 0.25s;
+}
+
+
+
+
+
+/* FOOTER */
+/*        */
+footer {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    margin-top: 3em;
+    padding: 2em 0em;
+
+    font-family: zen-maru;
+    background-color: var(--brightYellow);
+    color: var(--darkBlue);
+    box-shadow: 0px -3px 5px rgba(0, 0, 0, .2);
+}
+
+footer form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+footer textarea {
+    background-color: var(--offWhite);
+    margin-right: 1em;
+    height: 4em;
+}
+
+/* The submit button */
+footer input {
+    font-family: zen-maru;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--darkBlue);
+    background-color: var(--offWhite);
+    border: 1px solid #777;
+    height: 2em;
+    margin: auto 0;
+}
+
+#instagram {
+    text-decoration: none;
+    color: blue;
+    padding: 0em 0.5em 0.25em 0.25em;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+}
+
+#instagram:hover {
+    border: 1px solid var(--darkBlue);
+    background-color: var(--paleYellow);
+}
+
+
+
+
+
+/* HOME PAGE */
+/*           */
+#home-header {
+    margin: 5em -1.85em 1.85em -1.85em;
+    /* counter wrapper padding*/
+    padding-bottom: 20px;
+
+    /* Big title */
+    font-family: quicksand;
+    text-align: center;
+
+    background-color: rgba(158, 191, 199, 0.85);
+    color: rgb(20, 60, 100);
+    border-top: 4px #7c9daa solid;
+    border-bottom: 4px #7c9daa solid;
+
+}
+
+/* Brief summary under title */
+#home-summary {
+    width: 60%;
+    padding: 1em 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+
+    letter-spacing: .05em;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    background: var(--darkBlue);
+    color: rgb(244, 242, 227);
+    /* not the usual yellow */
+    border-radius: 0.15em 0.15em 2.5em 2.5em;
+}
+
+#see-why {
+    font-family: quicksand;
+    color: var(--brightYellow);
+    padding: 0em 0.15em;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#see-why:hover {
+    font-family: quicksand;
+    color: var(--darkBlue);
+    background-color: var(--brightYellow);
+}
+
+#home-hero {
+    background-image: url(../images/home_main.png);
+    box-shadow: inset 0px -200px 75px -75px rgb(191, 223, 223);
+    /* The fade out at the bottom */
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    aspect-ratio: 1/1;
+    margin-top: 0;
+    padding: 5em 1.85em 1.85em 1.85em;
+
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+
+
+
+/* CAROUSEL */
+/*          */
+.home-carousel {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    display: block;
+}
+
+.home-carousel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+/* followed a tutorial for this section */
+.home-slide {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    inset: 0;
+    /* new */
+    opacity: 0;
+    transition: 100ms opacity ease-in-out;
+    transition-delay: 100ms;
+    /* image only fades out when other fades in (overlap) */
+}
+
+.home-slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+    /* image only fades out when other fades in (overlap) */
+}
+
+.home-slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    /* maintains the aspect ratio */
+    object-position: center;
+    border-radius: 20px;
+    /* border: 3px solid black; */
+    border: 3px solid var(--darkBlue);
+}
+
+.home-carousel button {
+    padding-bottom: 0.25em;
+}
+
+.home-carousel-arrow {
+    position: absolute;
+    border: none;
+    font-size: 4em;
+    z-index: 2;
+
+    background-color: rgb(20, 60, 100, 0.75);
+    color: rgb(244, 242, 227);
+    /* not the usual yellow */
+    cursor: pointer;
+    border-radius: 0.25em;
+    border: 3px solid var(--darkBlue);
+    /* box-shadow: 0px 0px 10px rgba(251, 247, 217, 0.5); */
+
+    top: 35%;
+}
+
+.home-carousel-arrow:hover, .carousel-goto:hover {
+    color: white;
+    /* background-color: rgb(32, 87, 143); */
+    background-color: rgb(42, 107, 161, 0.75);
+}
+
+.carousel-last {
+    padding-right: 0.2em;
+    left: 18%;
+}
+
+.carousel-next {
+    padding-left: 0.2em;
+    right: 18%;
+}
+
+.carousel-goto {
+    position: absolute;
+    bottom: -4em;
+
+    background-color: rgb(20, 60, 100, 0.75);
+    color: rgb(244, 242, 227);
+    /* not the usual yellow */
+    font-family: quicksand;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    border: 3px solid var(--darkBlue);
+    /* box-shadow: 0px 0px 10px rgba(251, 247, 217, 0.5); */
+}
+
+
+
+
+
+.home-gallery-header {
+    margin: 0em -1.85em 1.85em -1.85em;
+    /* counter wrapper padding*/
+    /* Keep playing with the top margin. -26 was good but not in small viewports. */
+    /* small margins hide the title under the nav when jumping */
+
+    /* Big title */
+    font-family: quicksand;
+    text-align: center;
+
+    background-color: rgb(158, 191, 199);
+    color: rgb(20, 60, 100);
+    border-top: 4px #7c9daa dashed;
+    border-bottom: 4px #7c9daa dashed;
+}
+
+
+/* GALLERY */
+/*         */
+
+/* If the screen is less than 740, make two columns? Or borders narrower? */
+
+#gallery {
+
+    /* wctw, gallery set 1 with a subgrid that's split into thirds */
+    /* I have REALIZED the border box setting includes the border in the aspect ratio, so each "perfectly fitting" image is slightly overlapped with the border */
+
+    display: grid;
+    grid-template-columns: repeat(8, 11vw);
+    grid-template-areas:
+        " image1 image1 image2 image2 image3 image3 image4 image4 "
+        " image5 image5 image2 image2 image3 image3 image6 image6 "
+        " image5 image5 image2 image2 image7 image8 image6 image6 "
+        " image9 image10 image2 image2 image11 image8 image12 image12 "
+        " image9 image10 image13 image14 image14 image15 image12 image12 "
+        " image16 image16 image16 image17 image18 image18 image12 image12 "
+        " image16 image16 image16 image19 image18 image18 image20 image20 "
+        " image16 image16 image16 image21 image21 image22 image22 image22 "
+        " image23 image23 image23 image21 image21 image22 image22 image22 "
+        " image23 image23 image23 image24 image25 image25 image26 image27 "
+    ;
+
+    justify-content: center;
+    margin: -1.85em;
+    margin-top: 0em;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(124, 157, 170, 0.8)); */
+    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
+    /* same as people-fade */
+}
+
+/* All the blue borders !!! */
+/* #gallery div {
+    border: 3px solid red;
+    background-color: blue;
+} */
+
+#gallery div {
+background-image: url(https://imgv3.fotor.com/images/share/Free-blue-gradient-pattern-background-from-Fotor.jpg);    
+/* background-color: blue; */
+background-size: contain;
+border: none;
+}
+#gallery img{
+    /* border: 3px #7c9daa solid; */
+    /* border: 3px var(--darkBlue) solid; */
+}
+
+
+/* Horizontal x Vertical */
+/* 2x1 */
+#gallery-image-1 {
+    grid-area: image1;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/1;
+    display: flex;
+    /* Gets the item to the center */
+
+    flex-direction: column;
+    /* Column or row needs to be specified based on individual picture ratio */
+    justify-content: center;
+}
+
+/* 2x4 */
+#gallery-image-2 {
+    grid-area: image2;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 2x2 */
+#gallery-image-3 {
+    grid-area: image3;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x1 */
+#gallery-image-4 {
+    grid-area: image4;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/1;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 2x2 */
+#gallery-image-5 {
+    grid-area: image5;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x2 */
+#gallery-image-6 {
+    grid-area: image6;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 1x1 */
+#gallery-image-7 {
+    grid-area: image7;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x2 */
+#gallery-image-8 {
+    grid-area: image8;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 1x2 */
+#gallery-image-9 {
+    grid-area: image9;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x2 */
+#gallery-image-10 {
+    grid-area: image10;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x1 */
+#gallery-image-11 {
+    grid-area: image11;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x3 */
+#gallery-image-12 {
+    grid-area: image12;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/3;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x1 */
+#gallery-image-13 {
+    grid-area: image13;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x1 */
+#gallery-image-14 {
+    grid-area: image14;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/1;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x1 */
+#gallery-image-15 {
+    grid-area: image15;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 3x3 */
+#gallery-image-16 {
+    grid-area: image16;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 1x1 */
+#gallery-image-17 {
+    grid-area: image17;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x2 */
+#gallery-image-18 {
+    grid-area: image18;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 1x1 */
+#gallery-image-19 {
+    grid-area: image19;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x1 */
+#gallery-image-20 {
+    grid-area: image20;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/1;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 2x2 */
+#gallery-image-21 {
+    grid-area: image21;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+    
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/eina_npc_sideprofile_bust.png);
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Works great w/o the polka dots */
+/* #gallery-image-21 img {
+display: none;
+} */
+
+/* 3x2 */
+#gallery-image-22 {
+    grid-area: image22;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 3/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 3x2 */
+#gallery-image-23 {
+    grid-area: image23;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 3/2;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 1x1 */
+#gallery-image-24 {
+    grid-area: image24;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 2x1 */
+#gallery-image-25 {
+    grid-area: image25;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 2/1;
+    display: flex;
+
+    /* Custom to the image */
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 1x1 */
+#gallery-image-26 {
+    grid-area: image26;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+/* 1x1 */
+#gallery-image-27 {
+    grid-area: image27;
+    border: 3px #7c9daa solid;
+
+    aspect-ratio: 1/1;
+    display: flex;
+}
+
+
+
+
+
+/* PEOPLE PAGE */
+/*             */
+
+/* NOTE: I don't think people-fade is used anymore, replaced by -coll, but it's ok */
+/* NOTE ^ yes it is, head anatomy */
+.people-fade {
+    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
+    padding: 30px 30px 60px 30px;
+    margin: 1em -1.85em -1.85em -1.85em;
+    /* Wrapper counteract (+ bottom) */
+}
+
+.people-fade-coll {
+    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
+    padding: 30px 30px 60px 30px;
+    margin: 0em -1.85em 0em -1.85em;
+    width: 95vw;
+    /* Wrapper counteract (+ bottom) */
+    border-bottom: 1px solid var(--darkBlue);
+}
+
+.people-fade .one-section img, .people-fade-coll .flex-style img {
+    width: 80%;
+}
+
+.people-fade li, .people-fade-coll li, .lang-coll li {
+    font-family: zen-maru;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+}
+
+.people-break {
+    /* border-top: 2px solid var(--darkBlue); */
+    /* border-bottom: 2px solid var(--darkBlue); */
+    margin: 0 -1.48em;
+    padding: 1em;
+    font-weight: 600;
+
+    font-size: 1.25em;
+    font-family: quicksand;
+    color: var(--darkBlue);
+    text-align: center;
+
+    background-color: var(--paleYellow);
+}
+
+.collapse {
+    cursor: pointer;
+    /* background-color: rgb(37, 75, 113); */
+    background-color: #95b6c3;
+    /* color: var(--paleYellow); */
+    color: var(--darkBlue);
+    border: none;
+    /* border-bottom: 3px solid var(--darkBlue); */
+    text-decoration: underline;
+
+    padding: 1em 3em;
+    width: 95vw;
+    margin-left: -1.65em !important;
+    font-weight: 600;
+
+    font-size: 1.1em;
+    font-family: quicksand;
+    text-align: left;
+}
+
+.collapse:hover, .collapse.active:hover {
+    cursor: pointer;
+    /* background-color: rgb(42, 107, 161); */
+    /* same blue as carousel buttons */
+    /* background-color: var(--darkBlue); */
+    background-color: #a9cfd8;
+}
+
+/* does this not affect them all? */
+.collapse.active {
+    background-color: var(--wrapperBlue);
+}
+
+/* https://www.w3schools.com/howto/howto_js_collapsible.asp */
+.collapse:after {
+    content: '\002B';
+    /* Unicode character for "plus" sign (+) */
+    float: right;
+    font-size: 1.25em;
+    margin-left: 5px;
+    color: var(--darkBlue);
+}
+
+.collapse.active:after {
+    content: "\2212";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.collapse-content {
+    display: none;
+}
+
+#expand-all {
+    font-family: zen-maru;
+    font-size: 1em;
+    font-weight: bold;
+
+    margin-bottom: 1em;
+    padding: 0.5em;
+    padding-right: 2em;
+
+    /* background-color: var(--wrapperBlue); */
+    background-color: var(--paleYellow);
+    color: var(--darkBlue);
+    box-shadow: 0px 0px 10px rgb(20, 60, 100, 0.15);
+    /* border: 3px solid #95b6c3; */
+    /* border: none; */
+    border: 1px solid var(--darkBlue);
+    border-radius: 20px 0px 0px 20px;
+    justify-content: center;
+    /* -webkit-mask-image: radial-gradient(circle 10px at 0 100%, transparent 0, transparent 20px, black 21px); */
+
+    display: inline;
+    position: fixed;
+    top: 20%;
+    right: -1em;
+    z-index: 3;
+}
+
+#expand-all:before {
+    content: "Expand";
+}
+
+#expand-all.active:before {
+    content: "Collapse";
+}
+
+/* #expand-all::after {
+  content: "";
+  width: 0;
+  height: 0;
+  right: 0;
+  position: absolute;
+}
+
+#expand-all::after {
+  border-right: 25px solid blue;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 25px solid blue;
+  position: absolute;
+  top: -20px;
+} */
+
+#expand-all:hover {
+    background-color: #a9cfd8;
+    box-shadow: inset 0px 0px 5px rgb(20, 60, 100, 0.25);
+}
+
+#head-anatomy {
+    padding: 0px 40px;
+}
+
+#head-anatomy .one-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+
+
+
+/* LANGUAGE PAGE */
+/*               */
+/* Oh my lord it would be so much easier to just make a red section wrapper with a cancelled out tilt. */
+.transExamp {
+    display: block;
+    height: 80px;
+    margin-bottom: 2em;
+    padding: 0em 1em;
+}
+
+#translator-window {
+    display: block;
+    text-align: center;
+}
+
+#translator-window iframe {
+    overflow: hidden;
+    height: 50vh;
+    width: 67vw;
+    border: 5px rgb(158, 191, 199) solid;
+    border-radius: 20px;
+}
+
+.lang-coll {
+    padding: 30px 30px 60px 30px;
+    margin: 0em -1.85em 0em -1.85em;
+    width: 95vw;
+}
+
+.lang-coll .one-section {
+    padding: 0em 0.5em;
+}
+
+/* Overrides the collapse color to wrapperBlue on active */
+.collapse-lang.active {
+    background-color: #95b6c3;
+}
+
+#red-section {
+    transform: skewY(-5deg);
+    background-color: var(--wrapperRed);
+    padding: 10em 30px 5em 30px;
+    margin: 8em -30px 10em -30px;
+    /* Wrapper counteract (+bottom) */
+}
+
+.red-section-content p {
+    transform: skewY(5deg);
+    color: var(--darkRedBrown);
+    margin: 0px auto;
+
+    padding: 0em 3em 1.5em 3em;
+    text-align: justify;
+    font-size: 16px;
+    /* it looks too big at 18 */
+}
+
+.red-section-content li {
+    transform: skewY(5deg);
+    color: var(--darkRedBrown);
+    margin: 0em 3em 1em 1.75em;
+    text-align: justify;
+    font-family: zen-maru;
+    /* list-style: square; */
+}
+
+.red-section-content ul li ul li {
+    transform: skewY(0deg);
+    padding-top: 0.25em;
+    list-style-type: none;
+    margin: 0;
+}
+
+/* Idauhl Language*/
+/*                */
+.red-section-content img {
+    transform: skewY(5deg);
+    width: 80%;
+}
+
+#structure-header {
+    transform: skewY(5deg);
+    margin: 0em 4em .6em 4em;
+    padding: 3px 8px 8px 8px;
+
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--redBrown);
+    color: var(--paleYellow);
+    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
+    /* slight contrast */
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#structure-divider {
+    transform: skewY(5deg);
+    border-bottom: 5px dashed var(--redBrown);
+    margin: 0em 4em 2em;
+}
+
+#grammar-header {
+    transform: skewY(5deg);
+    margin: 0em auto .6em auto;
+    padding: 3px 8px 8px 8px;
+
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--redBrown);
+    color: var(--paleYellow);
+    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
+    /* slight contrast */
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+
+    max-width: 40vw;
+    /* For Grammar Rules */
+}
+
+.grammar-tilt {
+    transform: skewY(5deg);
+    margin: 0em 4em;
+}
+
+.grammar-tilt #alphabet {
+    transform: skewY(0deg);
+    margin: 0em;
+}
+
+#alphabet {
+    transform: skewY(5deg);
+    margin: 2em 4em;
+    font-family: zen-maru;
+}
+
+#alphabet caption {
+    padding: 0.5em 0.75em;
+    font-weight: bold;
+    color: var(--darkRedBrown);
+}
+
+#alphabet table {
+    width: 100%;
+
+    background-color: var(--paleYellow);
+    /* #feebc9 was a real nice one */
+    color: var(--darkRedBrown);
+    border: 3px solid var(--redBrown);
+    border-collapse: collapse;
+}
+
+#alphabet tr, #alphabet th, #alphabet td {
+    border: 2px solid var(--redBrown);
+    border-collapse: collapse;
+    padding: 0em 4px;
+    text-align: center;
+    padding-bottom: 2px;
+    /* to counter the large symbols */
+}
+
+/* bold letters for 'sound' */
+#alphabet tr :nth-of-type(2) {
+    font-weight: bold;
+}
+
+.alpha-symbol {
+    font-size: 1.5em !important;
+    padding: 0;
+}
+
+#alphabet tr .alpha-symbol {
+    padding-top: 0.25em;
+}
+
+/* negates bolded alphabet column */
+#grammar tr :nth-of-type(2) {
+    font-weight: normal;
+}
+
+.alpha-sound {
+    font-size: 1.25em;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--darkRedBrown);
+}
+
+.alpha-sound:hover {
+    color: var(--redBrown);
+}
+
+#slang {
+    width: 85%;
+    margin: auto;
+    font-family: zen-maru;
+    color: rgb(20, 60, 100);
+
+    display: grid;
+    grid-template-columns: 33% 5% 62%;
+    grid-template-areas: "s a m";
+}
+
+#saying {
+    grid-area: s;
+    text-align: right;
+}
+
+#arrow {
+    grid-area: a;
+    text-align: center;
+}
+
+#meaning {
+    grid-area: m;
+}
+
+#numbers {
+    display: flex;
+    padding: 0em 4em;
+}
+
+#numbers img {
+    width: 80%;
+}
+
+
+
+
+
+/* STORY PAGE */
+/*            */
+.story-chapter-button {
+    padding: 3px 15px;
+
+    border-radius: 20px;
+    /* background-color: rgb(158, 191, 199); */
+    /* background-color: rgba(251, 247, 217, 0.85); */
+    background-color: #b2d2d6;
+    border: 2px rgb(20, 60, 100) solid;
+
+    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
+    box-shadow: 0px 0px 8px -2px #7c9daa;
+    /* Easier to make all chapter dropdown look nice */
+    /* looks like ass though. smh. */
+    /* color: var(--paleYellow); */
+    /* color: var(--darkBlue); */
+    color: rgb(20, 60, 100);
+    /* text-shadow: 0px 0px 7px var(--darkBlue); */
+    /* for more contrast */
+    /* removed for dropdown smh */
+
+    font-family: quicksand;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+
+}
+
+.story-chapter-button:hover {
+    background-color: rgba(20, 60, 100, 0.5);
+    color: rgb(244, 242, 227);
+}
+
+#story-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        "sbar img info info info"
+        "sbar img story story story"
+    ;
+    grid-gap: 1em;
+    justify-content: space-between;
+}
+
+#story-list-bar {
+    grid-area: sbar;
+    padding: 0px 2.75em;
+    /* background-color: rgb(158, 191, 199); */
+    background-color: #b2d2d6;
+    border: 2px rgb(158, 191, 199) solid;
+    /* border: 2px var(--darkBlue) solid; */
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+#story-list-bar ul {
+    padding: 0;
+    list-style-type: none;
+    color: var(--darkBlue);
+    font-family: quicksand;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#story-list-bar ul li {
+    margin: 10px 0px;
+    padding: 0em 0.5em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#story-list-bar ul li:hover {
+    transition: 0.5s;
+    background-color: var(--paleYellow);
+}
+
+#bar-title {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+#story-image {
+    grid-area: img;
+}
+
+/* Rounded corners */
+#story-image img {
+    border: 2px rgb(158, 191, 199) solid;
+    /* border: 2px var(--darkBlue) solid; */
+
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+#story-story {
+    grid-area: story;
+    text-align: justify;
+    padding: 0px 50px;
+    /* overflow: scroll; */
+    /* Do I need this? */
+}
+
+/* Sub-Grid */
+#story-header-wrapper {
+    grid-area: info;
+    display: grid;
+    padding: 0px 30px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        ". . chapters . ."
+        "last title title title next"
+    ;
+    /* the dots mean blank! */
+    justify-content: center;
+}
+
+/* ALL CHAPTER BUTTON AND DROPDOWN */
+/* https://codepen.io/remilaudanski/pen/gbBGyN?editors=1100 */
+#story-chapter-dropdown {
+    grid-area: chapters;
+    text-align: center;
+    position: relative;
+}
+
+#allChapters {
+    position: relative;
+    opacity: 0;
+    height: 0px;
+}
+
+#allChapters:checked+#chapter-slide {
+    /* the dropdown */
+    height: 95px;
+    /* custom to 3 chapters, doesn't work otherwise... */
+    /* might as well set it to fit the story with the most chapters */
+    opacity: 1;
+}
+
+#chapter-slide {
+    clear: both;
+    /* ? */
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    /* hides chapters */
+    text-align: center;
+    transition: height .4s ease;
+    padding: 0;
+    margin: 0;
+    margin-top: -1em;
+    padding-top: 0.5em;
+
+    font-family: quicksand;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+
+    /* background-color: rgb(158, 191, 199);
+    box-shadow: 0px 0px 5px 0px #7c9daa; */
+    /* Easier to make all chapter dropdown look nice */
+    /* text-shadow: 0px 0px 7px var(--darkBlue); */
+    /* border-radius: 0px 0px 10px 10px; */
+
+    background-color: #b2d2d6;
+    border: 2px var(--darkBlue) solid;
+
+    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
+    box-shadow: 0px 5px 5px 0px #7c9daa;
+
+    border-radius: 10px;
+
+    position: absolute;
+    opacity: 0;
+}
+
+#chapter-slide li {
+    /* color: var(--paleYellow); */
+    color: var(--darkBlue);
+    padding: 4px;
+    list-style: none;
+}
+
+#chapter-slide li:hover {
+    background-color: var(--paleYellow);
+    color: #7c9daa;
+    text-shadow: 0px 0px rgba(0, 0, 0, 0);
+}
+
+#story-title {
+    grid-area: title;
+    margin: 0px -30px -20px -30px;
+}
+
+#story-last-chapter {
+    grid-area: last;
+    text-align: right;
+}
+
+#story-next-chapter {
+    grid-area: next;
+    text-align: left;
+}
+
+
+
+
+
+/* PLANET PAGE */
+/*             */
+#large-map {
+    margin: 0em -1.85em;
+    display: flex;
+    background-size: contain;
+    background-image: url(../images/map_named.png);
+    height: 100vh;
+    /* so it touches the sides */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.planet-info {
+    font-family: zen-maru;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+
+    margin: 0em 2em;
+    list-style-type: none;
+}
+
+.planet-info .one-section {
+    margin-top: 0;
+    /* border-left: 1px solid var(--darkBlue); */
+}
+
+/* Might just ad a gap2 */
+.planet-info dt {
+    font-weight: bold;
+    margin-top: 3em;
+}
+
+.planet-info dd {
+    margin-top: 0.5em;
+}
+
+.planet-info img {
+    padding: 5% 0% 0 10%;
+    /* right 20% ? */
+}
+
+/* Also used on the About page! */
+#creature-header {
+    width: 75%;
+    margin: 5em auto .6em auto;
+    padding: 7px;
+
+    border-radius: 25px;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Also used on the About page! */
+.creature-sub-header {
+    width: 50%;
+    margin: 1em auto;
+    padding: 0.075em 0em;
+
+    border-radius: 0.85em 0.85em 0em 0em;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    text-align: center;
+}
+
+.planet-creature-section {
+    background-color: var(--paleYellow);
+    padding: 30px 30px 60px 30px;
+    margin: 2em 2em 5em 2em;
+    /* Wrapper counteract (+ bottom) */
+}
+
+.planet-creature-section img {
+    padding-top: 1em;
+}
+
+.planet-creature-section p {
+    font-weight: bold;
+    margin: 1.5em 0.5em;
+}
+
+.planet-creature-section li {
+    font-family: zen-maru;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+}
+
+.planet-creature-section table {
+    margin: 0;
+    margin-bottom: 1em;
+    color: var(--darkBlue);
+    font-family: zen-maru;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.planet-creature-section td {
+    padding: 0em 0.5em;
+    width: 50%;
+}
+
+.planet-creature-section tr:nth-of-type(even) {
+    background-color: rgba(243, 219, 92, 0.5);
+}
+
+.dist-map {
+    height: 150px;
+    aspect-ratio: 5/2;
+    /* or */
+    /* aspect-ratio: 3/1 */
+    /* Just make sure to make the images this size! */
+    padding: 0;
+    margin: 0px 20px;
+
+    position: relative;
+    border-radius: 100px;
+}
+
+.dist-map img {
+    border-radius: 100px;
+}
+
+.dist-map .one-section {
+    padding: 0;
+}
+
+.dist-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    box-shadow: inset 0px 0px 20px rgba(20, 60, 100, 0.1);
+    /* Inside shadow */
+}
+
+.planet-creature-header-left {
+    width: 90%;
+    margin-left: -2.1em;
+    margin-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 3.25em;
+
+    border-bottom: 5px solid var(--darkBlue);
+    color: var(--darkBlue);
+
+    font-size: 1.5em;
+    font-family: quicksand;
+    text-align: left;
+    word-spacing: 0.25em;
+}
+
+.planet-creature-header-right {
+    margin-right: -2.1em;
+    margin-left: 5em;
+    /* Margin left as opposed to width at 90% */
+    margin-top: 0px;
+    padding-bottom: 3px;
+    padding-right: 3.25em;
+
+    border-bottom: 5px solid var(--darkBlue);
+    color: var(--darkBlue);
+
+    font-size: 1.5em;
+    font-family: quicksand;
+    text-align: right;
+    word-spacing: 0.25em;
+}
+
+
+
+
+
+/* ABOUT PAGE */
+/*            */
+#about-top-section {
+    display: flex;
+    margin-top: 3em;
+}
+
+#about-ramble {
+    flex: 3;
+    float: left;
+    text-align: justify;
+}
+
+#about-ramble p {
+    width: 90%;
+    padding-right: 4em;
+    margin: auto;
+}
+
+#about-og-design {
+    flex: 1;
+    float: right;
+    text-align: center;
+}
+
+#about-og-design img {
+    border: 2px rgb(158, 191, 199) solid;
+    width: 100%;
+}
+
+#more-work img {
+    border: 2px rgb(158, 191, 199) solid;
+}
+
+#todo {
+    margin-top: 5em;
+    padding: 1em 3em;
+
+    background-color: var(--paleYellow);
+    color: var(--darkBlue);
+    font-family: quicksand;
+    line-height: 2em;
+    text-transform: capitalize;
+}
+
+
+
+
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-gallery {
+    position: absolute;
+    margin-top: -6em;
+}
+
+#jump-to-vegetation {
+    position: absolute;
+    margin-top: -4em;
+}
+
+#jump-to-translator {
+    position: absolute;
+    margin-top: -20em;
+    /* top of the page */
+}
+
+#jump-to-lang-structure {
+    position: absolute;
+    margin-top: -9em;
+}
+
+#jump-to-slang {
+    position: absolute;
+    margin-top: -8em;
+}
+
+#jump-to-numbers {
+    position: absolute;
+    margin-top: -8em;
+}
+
+#jump-to-idauhl {
+    position: absolute;
+    margin-top: -10em;
+}
+
+#jump-to-anatomy {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-expression {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-tools {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-law {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-characters {
+    position: absolute;
+    margin-top: -20em;
+    /* top of the page */
+}
+
+#jump-to-stories {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-about {
+    position: absolute;
+    margin-top: -20em;
+    /* top of the page */
+}
+
+#jump-to-name-exp {
+    position: absolute;
+    margin-top: -8em;
+}
+
+#jump-to-more-work {
+    position: absolute;
+    margin-top: -3em;
+}
+
+#jump-to-commissions {
+    position: absolute;
+    margin-top: -3em;
+}
+
+
+
+
+
+/* GENERAL STYLING OPTIONS */
+/*                         */
+.nnhlh {
+    font-family: naunohhloh;
+    font-size: 1.25em;
+    letter-spacing: 0.2em;
+}
+
+.light {
+    font-weight: lighter;
+}
+
+.heavy {
+    font-weight: bold !important;
+}
+
+.tiny {
+    font-size: 0.9em !important;
+}
+
+.indent {
+    margin-left: 2em;
+    line-height: 2em;
+}
+
+.centered {
+    text-align: center !important;
+    /* override */
+}
+
+.left-align {
+    text-align: left !important;
+    /* override */
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.solid-blue-line {
+    /* 1px full screen width */
+    /* top and bottom of People page */
+    width: 95vw;
+    margin: 0 -1.85em;
+    border-top: 1px solid var(--darkBlue);
+    border-bottom: none;
+}
+
+.gap2 {
+    padding: 1px;
+    margin: 1em;
+}
+
+.gap5 {
+    padding: 1px;
+    margin: 2.5em;
+}
+
+.gap8 {
+    padding: 1px;
+    margin: 4em;
+}
+
+.blue_link {
+    text-decoration: none;
+    color: blue;
+}
+
+.blue_link:hover {
+    font-weight: bold;
+}
+
+/* Putting it here as part of a set */
+.glow-on-entry {
+    animation: pageLoadGlowAnimation ease 1.15s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+/* https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/?ref=ml_lbp */
+@keyframes pageLoadGlowAnimation {
+    0% {
+        transform: scale(95%);
+        -webkit-text-stroke: 1px var(--paleYellow);
+        /* text outline */
+    }
+
+    50% {
+        transform: scale(103%);
+        -webkit-text-stroke: 1px var(--paleYellow);
+
+    }
+
+    100% {
+        /* opacity: 1; */
+        /* color: yellow; */
+        text-shadow: none;
+        transform: scale(100%);
+
+    }
+}
+
+
+
+
+
+/* The Nav Checkbox on smaller screens */
+#ham {
+    display: none;
+}
+
+#ham-label {
+    display: none;
+}
+
+
+
+
+
+/* Medium Sized Screens */
+@media(max-width: 1290px) {
+    .nav-details {
+        display: none;
+    }
+
+    #large-map {
+        height: 80vh;
+    }
+
+    /* makes sure it doesn't get too small */
+    .red-section-content p, .red-section-content li {
+        margin: 0em;
+    }
+
+    /* more space for a third row */
+    #story-grid-wrapper {
+        grid-template-rows: 160px 1fr;
+    }
+
+    #story-header-wrapper {
+        /* text-align: center; */
+        /* this is not working, fuck off */
+        padding: 0px;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 10vw);
+        grid-template-areas:
+            ". chapters chapters chapters ."
+            /* not centered but who cares */
+            "last last . next next"
+            "title title title title title"
+        ;
+    }
+
+    #story-title {
+        margin: 0em;
+    }
+
+    .story-chapter-button {
+        margin: 0px 1em;
+        font-size: 0.8em;
+        padding: 0.25em 1em;
+    }
+
+    #allChapters {
+        margin: 0;
+    }
+}
+
+
+
+/* Phone sized */
+@media(max-width: 520px) {
+
+    .text-justify {
+        text-align: left;
+    }
+
+    #home-hero {
+        width: 100%;
+    }
+
+    #home-summary {
+        width: 90%;
+        font-size: 0.9em;
+    }
+
+    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
+        border: 1px solid #7c9daa;
+    }
+
+    .downwards-sub-header {
+        width: 100%;
+    }
+
+    #large-map {
+        height: 30vh !important;
+    }
+
+    #creature-header {
+        width: 100%;
+    }
+
+    .creature-sub-header {
+        width: 80%;
+    }
+
+    .dist-map {
+        height: 100px;
+    }
+
+    .transExamp {
+        height: 200px;
+    }
+
+    #translator-window iframe {
+        width: 85vw;
+    }
+
+    #structure-header, #structure-divider {
+        margin: 0em 0em .6em 0em;
+    }
+
+    #red-section .flex-style {
+        display: block;
+    }
+
+    .red-section-content ul {
+        padding: 0;
+    }
+
+    #slang {
+        width: 100%;
+        gap: 1em;
+        padding-right: 1em;
+        /* good enough */
+    }
+
+    #numbers {
+        padding: 0;
+    }
+
+    /* idauhl and alphabet footer */
+    .flex-style .red-section-content p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #about-top-section {
+        display: inline-block;
+    }
+
+    #about-top-section .flex-style {
+        display: block;
+    }
+
+    #about-ramble {
+        text-align: left;
+        margin-bottom: 4em;
+    }
+
+    #about-ramble img {
+        max-height: 40vh;
+        object-fit: contain;
+    }
+
+    #about-ramble p {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #more-work {
+        display: inline-block;
+    }
+
+    #more-work .one-section {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    #more-work img {
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    #about-og-design {
+        float: none;
+    }
+
+    #about-og-design img {
+        max-height: 60vh;
+        object-fit: contain;
+        border: 2px solid rgba(0, 0, 0, 0);
+
+    }
+
+    footer {
+        padding: 2em 1em;
+    }
+}
+
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+
+    .wrapper {
+        width: 100vw;
+        /* padding: 0.5em; */
+        /* this is being so weird, I get a white gap if it's not left alone */
+    }
+
+    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
+        border: 2px solid #7c9daa;
+    }
+
+    .people-fade .flex-style, .people-fade-coll .flex-style {
+        display: block;
+    }
+
+    .collapse {
+        width: 100vw;
+    }
+
+    .people-fade-coll {
+        width: 100vw;
+    }
+
+    .solid-blue-line {
+        width: 100vw;
+    }
+
+    .planet-creature-section {
+        padding: 0;
+        margin: 0em -1em;
+        margin-bottom: 2em;
+    }
+
+    .planet-creature-header-left {
+        margin-left: -1.05em;
+        font-size: 1.2em;
+    }
+
+    .planet-creature-header-right {
+        margin-right: -1.05em;
+        font-size: 1.2em;
+    }
+
+    .people-fade .one-section img, .people-fade-coll .one-section img {
+        /* width: 50%; */
+        max-height: 40vh;
+        object-fit: contain;
+    }
+
+
+
+
+
+
+    .home-carousel-arrow {
+        top: 15%;
+    }
+
+    .carousel-last {
+        left: 0%;
+    }
+
+    .carousel-next {
+        right: 0%;
+    }
+
+    #large-map {
+        height: 50vh;
+    }
+
+    .planet-creature-section .flex-style {
+        display: block;
+    }
+
+    /* for the images of the creatures */
+    .planet-creature-section .one-section img {
+        display: inline;
+        margin: 0em 1em;
+        height: 100%;
+        align-items: center;
+        width: 40%;
+    }
+
+    .planet-creature-section .one-section {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .planet-creature-section .dist-map {
+        margin: auto;
+    }
+
+    #alphabet {
+        margin: 0em;
+    }
+
+    .flex-style #numbers {
+        display: block;
+    }
+
+    #numbers img {
+        max-height: 80vh;
+        object-fit: contain;
+    }
+
+    #story-grid-wrapper {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 25vh 80px 1fr;
+        grid-template-areas:
+            "img img"
+            "sbar info"
+            "sbar story"
+        ;
+        grid-gap: 2em 1em;
+        justify-content: space-between;
+    }
+
+    #story-image img {
+        height: 20vh;
+        object-fit: contain;
+        border: 2px solid rgba(0, 0, 0, 0);
+        justify-content: center;
+    }
+
+    #story-image {
+        display: flex;
+        margin: auto;
+        gap: 0em 1em;
+    }
+
+    #story-header-wrapper {
+        padding: 0px 30px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1em;
+    }
+
+    #story-list-bar {
+        grid-area: sbar;
+        padding: 0px 0em;
+    }
+
+    nav {
+        position: fixed;
+        left: 0;
+        top: 3em;
+        background-color: var(--brightYellow);
+    }
+
+    nav ul {
+        display: none;
+        padding: 0.5em;
+    }
+
+    nav ul li {
+        margin-bottom: 1em;
+    }
+
+    /* Just for the sections */
+    nav ul li ul li {
+        margin-bottom: 0;
+    }
+
+    #ham-label {
+        display: flex !important;
+        position: absolute;
+        left: 30px;
+        top: -7px;
+
+        cursor: pointer;
+        font-size: 3em;
+        margin: 0;
+    }
+
+    #ham:checked~nav ul {
+        display: block;
+        height: 95vh;
+        overflow: scroll;
+        background-color: var(--brightYellow);
+        box-shadow: 0px 8px 7px rgba(0, 0, 0, .4);
+        background-color: rgba(0, 0, 0, 0);
+        /* so main dropdown names have full hover effect */
+    }
+
+    #ham:checked~nav ul li ul {
+        position: relative;
+        margin: 0;
+        padding-top: 0;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: none;
+
+    }
+
+    /* Permanently Display Subpages */
+    nav ul li:hover ul {
+        overflow: hidden;
+        display: inline;
+        padding: 0em 0em 0.5em 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none;
+    }
+
+    nav a:hover {
+        background-color: var(--paleYellow);
+    }
+
+    .nav-details {
+        display: inline;
+    }
+
+}
