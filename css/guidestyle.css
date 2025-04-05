@@ -221,7 +221,6 @@ p {
     z-index: 3;
     top: 42px;
     transform: translateX(-27.5em);
-    /* 40 is nice for an overlap but doesn't currently work with the hover */
     width: 210px;
     height: 75px;
     background-size: contain;
@@ -831,7 +830,7 @@ border: none;
 
     aspect-ratio: 1/1;
     display: flex;
-    
+
     background-size: contain;
     background-position: center;
     background-image: url(../images/eina_npc_sideprofile_bust.png);
@@ -1806,7 +1805,13 @@ display: none;
 /*                        */
 #jump-to-gallery {
     position: absolute;
-    margin-top: -6em;
+    margin-top: -8em;
+}
+
+#jump-to-map {
+    position: absolute;
+    margin-top: -20em;
+    /* top of the page */
 }
 
 #jump-to-wildlife {
@@ -1816,7 +1821,7 @@ display: none;
 
 #jump-to-vegetation {
     position: absolute;
-    margin-top: -4em;
+    margin-top: -6em;
 }
 
 #jump-to-translator {
@@ -1832,17 +1837,17 @@ display: none;
 
 #jump-to-slang {
     position: absolute;
-    margin-top: -8em;
+    margin-top: -9em;
 }
 
 #jump-to-numbers {
     position: absolute;
-    margin-top: -8em;
+    margin-top: -9em;
 }
 
 #jump-to-idauhl {
     position: absolute;
-    margin-top: -10em;
+    margin-top: -12em;
 }
 
 #jump-to-anatomy {
@@ -1889,12 +1894,12 @@ display: none;
 
 #jump-to-more-work {
     position: absolute;
-    margin-top: -3em;
+    margin-top: -4em;
 }
 
 #jump-to-commissions {
     position: absolute;
-    margin-top: -3em;
+    margin-top: -4em;
 }
 
 
@@ -2024,10 +2029,30 @@ display: none;
 
 
 
-/* Medium Sized Screens */
+/* Slighly-less-than-Large Sized Screens */
 @media(max-width: 1290px) {
     .nav-details {
         display: none;
+    }
+
+    .index .dropdown::after {
+        transform: translateX(-16em);
+    }
+
+    .planet .dropdown::after {
+        transform: translateX(-9em);
+    }
+
+    .language .dropdown::after {
+        transform: translateX(0em);
+    }
+
+    .people .dropdown::after {
+        transform: translateX(8em);
+    }
+
+    .about .dropdown::after {
+        transform: translateX(17em);
     }
 
     #large-map {
@@ -2078,141 +2103,15 @@ display: none;
 }
 
 
-
-/* Phone sized */
-@media(max-width: 520px) {
-
-    .text-justify {
-        text-align: left;
-    }
-
-    #home-hero {
-        width: 100%;
-    }
-
-    #home-summary {
-        width: 90%;
-        font-size: 0.9em;
-    }
-
-    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
-        border: 1px solid #7c9daa;
-    }
-
-    .downwards-sub-header {
-        width: 100%;
-    }
-
-    #large-map {
-        height: 30vh !important;
-    }
-
-    #creature-header {
-        width: 100%;
-    }
-
-    .creature-sub-header {
-        width: 80%;
-    }
-
-    .dist-map {
-        height: 100px;
-    }
-
-    .transExamp {
-        height: 200px;
-    }
-
-    #translator-window iframe {
-        width: 85vw;
-    }
-
-    #structure-header, #structure-divider {
-        margin: 0em 0em .6em 0em;
-    }
-
-    #red-section .flex-style {
-        display: block;
-    }
-
-    .red-section-content ul {
-        padding: 0;
-    }
-
-    #slang {
-        width: 100%;
-        gap: 1em;
-        padding-right: 1em;
-        /* good enough */
-    }
-
-    #numbers {
-        padding: 0;
-    }
-
-    /* idauhl and alphabet footer */
-    .flex-style .red-section-content p {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    #about-top-section {
-        display: inline-block;
-    }
-
-    #about-top-section .flex-style {
-        display: block;
-    }
-
-    #about-ramble {
-        text-align: left;
-        margin-bottom: 4em;
-    }
-
-    #about-ramble img {
-        max-height: 40vh;
-        object-fit: contain;
-    }
-
-    #about-ramble p {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    #more-work {
-        display: inline-block;
-    }
-
-    #more-work .one-section {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    #more-work img {
-        border: 2px solid rgba(0, 0, 0, 0);
-    }
-
-    #about-og-design {
-        float: none;
-    }
-
-    #about-og-design img {
-        max-height: 60vh;
-        object-fit: contain;
-        border: 2px solid rgba(0, 0, 0, 0);
-
-    }
-
-    footer {
-        padding: 2em 1em;
-    }
-}
-
+/* Medium sized */
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
+
+    /* OKSHLIHD ICON */
+    .dropdown::after {
+        background-image: none;
+    }
 
     .wrapper {
         width: 100vw;
@@ -2261,11 +2160,6 @@ display: none;
         max-height: 40vh;
         object-fit: contain;
     }
-
-
-
-
-
 
     .home-carousel-arrow {
         top: 15%;
@@ -2429,4 +2323,135 @@ display: none;
         display: inline;
     }
 
+}
+
+/* Phone sized */
+@media(max-width: 520px) {
+
+    .text-justify {
+        text-align: left;
+    }
+
+    #home-hero {
+        width: 100%;
+    }
+
+    #home-summary {
+        width: 90%;
+        font-size: 0.9em;
+    }
+
+    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
+        border: 1px solid #7c9daa;
+    }
+
+    .downwards-sub-header {
+        width: 100%;
+    }
+
+    #large-map {
+        height: 30vh !important;
+    }
+
+    #creature-header {
+        width: 100%;
+    }
+
+    .creature-sub-header {
+        width: 80%;
+    }
+
+    .dist-map {
+        height: 100px;
+    }
+
+    .transExamp {
+        height: 200px;
+    }
+
+    #translator-window iframe {
+        width: 85vw;
+    }
+
+    #structure-header, #structure-divider {
+        margin: 0em 0em .6em 0em;
+    }
+
+    #red-section .flex-style {
+        display: block;
+    }
+
+    .red-section-content ul {
+        padding: 0;
+    }
+
+    #slang {
+        width: 100%;
+        gap: 1em;
+        padding-right: 1em;
+        /* good enough */
+    }
+
+    #numbers {
+        padding: 0;
+    }
+
+    /* idauhl and alphabet footer */
+    .flex-style .red-section-content p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #about-top-section {
+        display: inline-block;
+    }
+
+    #about-top-section .flex-style {
+        display: block;
+    }
+
+    #about-ramble {
+        text-align: left;
+        margin-bottom: 4em;
+    }
+
+    #about-ramble img {
+        max-height: 40vh;
+        object-fit: contain;
+    }
+
+    #about-ramble p {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #more-work {
+        display: inline-block;
+    }
+
+    #more-work .one-section {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    #more-work img {
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    #about-og-design {
+        float: none;
+    }
+
+    #about-og-design img {
+        max-height: 60vh;
+        object-fit: contain;
+        border: 2px solid rgba(0, 0, 0, 0);
+
+    }
+
+    footer {
+        padding: 2em 1em;
+    }
 }
