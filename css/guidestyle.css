@@ -220,7 +220,7 @@ p {
     position: absolute;
     z-index: 3;
     top: 42px;
-    transform: translateX(-2em);
+    transform: translateX(-27.5em);
     /* 40 is nice for an overlap but doesn't currently work with the hover */
     width: 210px;
     height: 75px;
