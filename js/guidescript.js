@@ -5,12 +5,13 @@ var page = window.location.pathname;
 var dropdown = document.getElementsByClassName("dropdown");
 var drpdwn = dropdown[0];
 var OkIcon = window.getComputedStyle(drpdwn, '::after');
+alert(page);
 switch(page) {
-    case '/index.html': document.body.classList.add('index'); break;
-    case '/planet.html': document.body.classList.add('planet'); break;
-    case '/language.html': document.body.classList.add('language'); break;
-    case '/people.html': document.body.classList.add('people'); break;
-    case '/about.html': document.body.classList.add('about'); break;
+    case '/index.html': document.body.classList.add("index"); break;
+    case '/planet.html': document.body.classList.add("planet"); break;
+    case '/language.html': document.body.classList.add("language"); break;
+    case '/people.html': document.body.classList.add("people"); break;
+    case '/about.html': document.body.classList.add("about"); break;
 }
 
 
