@@ -1,5 +1,20 @@
 
 
+// Okshlihd Icon
+var page = window.location.pathname;
+var dropdown = document.getElementsByClassName("dropdown");
+var drpdwn = dropdown[0];
+var OkIcon = window.getComputedStyle(drpdwn, '::after');
+switch(page) {
+    case '/index.html': document.body.classList.add('index'); break;
+    case '/planet.html': document.body.classList.add('planet'); break;
+    case '/language.html': document.body.classList.add('language'); break;
+    case '/people.html': document.body.classList.add('people'); break;
+    case '/about.html': document.body.classList.add('about'); break;
+}
+
+
+// Footer form validation
 function validateMessage() {
     if (document.forms[0].message.value == "") { // no message entered
         alert("Please write a message before hitting submit.")
@@ -98,3 +113,18 @@ expall.addEventListener("click", function () {
         }
     }
 });
+
+
+// expand and collapse one INSIDE section
+var collI = document.getElementsByClassName("collapse-inside");
+for (i = 0; i < collI.length; i++) {
+    collI[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display == "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
