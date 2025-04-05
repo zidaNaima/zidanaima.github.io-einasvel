@@ -596,16 +596,11 @@ footer input {
 }
 
 /* All the blue borders !!! */
-#gallery div {
-/* background-image: url(https://imgv3.fotor.com/images/share/Free-blue-gradient-pattern-background-from-Fotor.jpg);     */
-/* background-size: contain; */
-/* border: none; */
-}
-#gallery img{
-    /* border: 3px #7c9daa solid; */
-    /* border: 3px var(--darkBlue) solid; */
-}
-
+/* #gallery div {
+background-image: url(https://imgv3.fotor.com/images/share/Free-blue-gradient-pattern-background-from-Fotor.jpg);    
+background-size: contain;
+border: none;
+} */
 
 /* Horizontal x Vertical */
 /* 2x1 */
