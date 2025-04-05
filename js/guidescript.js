@@ -5,13 +5,31 @@ var page = window.location.pathname;
 var dropdown = document.getElementsByClassName("dropdown");
 var drpdwn = dropdown[0];
 var OkIcon = window.getComputedStyle(drpdwn, '::after');
-alert(page);
-switch(page) {
-    case '/index.html': document.body.classList.add("index"); break;
-    case '/planet.html': document.body.classList.add("planet"); break;
-    case '/language.html': document.body.classList.add("language"); break;
-    case '/people.html': document.body.classList.add("people"); break;
-    case '/about.html': document.body.classList.add("about"); break;
+switch (page) {
+    case '/index.html':
+    case '/zidanaima.github.io-einasvel/index.html':
+        document.body.classList.add("index");
+        break;
+
+    case '/planet.html':
+    case '/zidanaima.github.io-einasvel/planet.html':
+        document.body.classList.add("planet");
+        break;
+
+    case '/language.html':
+    case '/zidanaima.github.io-einasvel/language.html':
+        document.body.classList.add("language");
+        break;
+
+    case '/people.html':
+    case '/zidanaima.github.io-einasvel/people.html':
+        document.body.classList.add("people");
+        break;
+
+    case '/about.html':
+    case '/zidanaima.github.io-einasvel/about.html':
+        document.body.classList.add("about");
+        break;
 }
 
 
@@ -107,7 +125,7 @@ expall.addEventListener("click", function () {
         var content = colla[i].nextElementSibling;
         if (expall.classList.contains("active")) { // expand
             colla[i].classList.add("active"); // sets active status for all
-            content.style.display = "block"; 
+            content.style.display = "block";
         } else {
             colla[i].classList.remove("active"); // collapse
             content.style.display = "none";
