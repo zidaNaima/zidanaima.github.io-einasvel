@@ -491,7 +491,7 @@ footer input {
 .home-carousel-arrow {
     position: absolute;
     border: none;
-    font-size: 4em;
+    font-size: 2em;
     z-index: 2;
 
     background-color: rgb(20, 60, 100, 0.75);
@@ -512,12 +512,12 @@ footer input {
 }
 
 .carousel-last {
-    padding-right: 0.2em;
+    padding-right: 0.25em;
     left: 18%;
 }
 
 .carousel-next {
-    padding-left: 0.2em;
+    padding-left: 0.25em;
     right: 18%;
 }
 
@@ -2108,6 +2108,10 @@ display: none;
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
 
+    .smaller-img {
+        padding: 0;
+    }
+
     /* OKSHLIHD ICON */
     .dropdown::after {
         background-image: none;
@@ -2177,6 +2181,11 @@ display: none;
         height: 50vh;
     }
 
+    .planet-info {
+        display: block;
+        margin: 0 1em;
+    }
+
     .planet-creature-section .flex-style {
         display: block;
     }
@@ -2200,6 +2209,20 @@ display: none;
 
     .planet-creature-section .dist-map {
         margin: auto;
+    }
+
+    .lang-coll {
+        width: 100vw;
+    }
+
+    .lang-coll .flex-style{
+        display: block;
+        /* Shouldn't matter because the only other place it's sued doesn't rely on flex */
+    }
+
+    .lang-coll img {
+        /* width: 80%; */
+        padding-bottom: 1em;
     }
 
     #alphabet {
@@ -2341,6 +2364,24 @@ display: none;
         font-size: 0.9em;
     }
 
+    .home-gallery-header h1 {
+        font-size: 2.25em;
+        margin: 0.25em;
+    }
+
+    .home-slide img {
+        width: 15em;
+        height: 15em;
+    }
+
+    .carousel-goto {
+        transform: translateY(7em);
+    }
+
+    .home-carousel-arrow {
+        transform: translateY(2em);
+    }
+
     #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
         border: 1px solid #7c9daa;
     }
@@ -2383,6 +2424,20 @@ display: none;
 
     .red-section-content ul {
         padding: 0;
+    }
+
+    /* alphabet caption */
+    .red-section-content .tiny {
+        margin-top: 1.5em;
+    }
+
+    #grammar-header {
+        max-width: 80vw;
+        margin-top: 2em;
+    }
+
+    .grammar-tilt {
+        margin: 0;
     }
 
     #slang {
