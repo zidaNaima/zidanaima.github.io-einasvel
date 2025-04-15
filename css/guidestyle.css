@@ -326,28 +326,48 @@ footer {
     box-shadow: 0px -3px 5px rgba(0, 0, 0, .2);
 }
 
-footer form {
-    display: flex;
+#form-content {
+    /* grid area is assumed */
+    display: grid;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+
+    grid-template-columns: 20vw, 50vw;
+    grid-template-rows: repeat(2, 60px);
+    gap: 1em;
+
+    grid-template-areas:
+        "mtext ctext"
+        "mbox cbox"
+        ". send"
+    ;
 }
 
 footer textarea {
+    color: var(--darkBlue);
     background-color: var(--offWhite);
-    margin-right: 1em;
     height: 4em;
+
+    font-family: zen-maru;
+    font-size: 0.9em;
 }
 
 /* The submit button */
 footer input {
-    font-family: zen-maru;
-    text-transform: uppercase;
-    font-weight: 600;
     color: var(--darkBlue);
     background-color: var(--offWhite);
     border: 1px solid #777;
     height: 2em;
-    margin: auto 0;
+
+    font-family: zen-maru;
+    font-size: 0.9em;
+}
+
+#send {
+    grid-area: send;
+    width: 40%;
+    background-color: #ccc;
+    text-transform: uppercase;
 }
 
 #instagram {
@@ -547,10 +567,7 @@ footer input {
 .home-gallery-header {
     margin: 0em -1.85em 1.85em -1.85em;
     /* counter wrapper padding*/
-    /* Keep playing with the top margin. -26 was good but not in small viewports. */
-    /* small margins hide the title under the nav when jumping */
 
-    /* Big title */
     font-family: quicksand;
     text-align: center;
 
@@ -564,351 +581,44 @@ footer input {
 /* GALLERY */
 /*         */
 
-/* If the screen is less than 740, make two columns? Or borders narrower? */
-
 #gallery {
-
-    /* wctw, gallery set 1 with a subgrid that's split into thirds */
-    /* I have REALIZED the border box setting includes the border in the aspect ratio, so each "perfectly fitting" image is slightly overlapped with the border */
-
     display: grid;
-    grid-template-columns: repeat(8, 11vw);
+    grid-template-columns: 18% 24% 18% 12% 24%;
+    /* ratio: 3 4 3 2 4 */
     grid-template-areas:
-        " image1 image1 image2 image2 image3 image3 image4 image4 "
-        " image5 image5 image2 image2 image3 image3 image6 image6 "
-        " image5 image5 image2 image2 image7 image8 image6 image6 "
-        " image9 image10 image2 image2 image11 image8 image12 image12 "
-        " image9 image10 image13 image14 image14 image15 image12 image12 "
-        " image16 image16 image16 image17 image18 image18 image12 image12 "
-        " image16 image16 image16 image19 image18 image18 image20 image20 "
-        " image16 image16 image16 image21 image21 image22 image22 image22 "
-        " image23 image23 image23 image21 image21 image22 image22 image22 "
-        " image23 image23 image23 image24 image25 image25 image26 image27 "
+        " colA colB colC colD colE "
     ;
 
     justify-content: center;
-    margin: -1.85em;
-    margin-top: 0em;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(124, 157, 170, 0.8)); */
-    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
-    /* same as people-fade */
+    margin: 0em -1.85em;
+    padding-top: 2em;
 }
 
-/* All the blue borders !!! */
-/* #gallery div {
-background-image: url(https://imgv3.fotor.com/images/share/Free-blue-gradient-pattern-background-from-Fotor.jpg);    
-background-size: contain;
-border: none;
-} */
-
-/* Horizontal x Vertical */
-/* 2x1 */
-#gallery-image-1 {
-    grid-area: image1;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/1;
-    display: flex;
-    /* Gets the item to the center */
-
-    flex-direction: column;
-    /* Column or row needs to be specified based on individual picture ratio */
-    justify-content: center;
+#gal-col-A {
+    grid: colA;
 }
 
-/* 2x4 */
-#gallery-image-2 {
-    grid-area: image2;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: column;
-    justify-content: center;
+#gal-col-B {
+    grid: colB;
 }
 
-/* 2x2 */
-#gallery-image-3 {
-    grid-area: image3;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
+#gal-col-C {
+    grid: colC;
 }
 
-/* 2x1 */
-#gallery-image-4 {
-    grid-area: image4;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/1;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
+#gal-col-D {
+    grid: colD;
 }
 
-/* 2x2 */
-#gallery-image-5 {
-    grid-area: image5;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
+#gal-col-E {
+    grid: colE;
 }
 
-/* 2x2 */
-#gallery-image-6 {
-    grid-area: image6;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 1x1 */
-#gallery-image-7 {
-    grid-area: image7;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x2 */
-#gallery-image-8 {
-    grid-area: image8;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* 1x2 */
-#gallery-image-9 {
-    grid-area: image9;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x2 */
-#gallery-image-10 {
-    grid-area: image10;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x1 */
-#gallery-image-11 {
-    grid-area: image11;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 2x3 */
-#gallery-image-12 {
-    grid-area: image12;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/3;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x1 */
-#gallery-image-13 {
-    grid-area: image13;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 2x1 */
-#gallery-image-14 {
-    grid-area: image14;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/1;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x1 */
-#gallery-image-15 {
-    grid-area: image15;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 3x3 */
-#gallery-image-16 {
-    grid-area: image16;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 1x1 */
-#gallery-image-17 {
-    grid-area: image17;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 2x2 */
-#gallery-image-18 {
-    grid-area: image18;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 1x1 */
-#gallery-image-19 {
-    grid-area: image19;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 2x1 */
-#gallery-image-20 {
-    grid-area: image20;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/1;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* 2x2 */
-#gallery-image-21 {
-    grid-area: image21;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-
-    background-size: contain;
-    background-position: center;
-    background-image: url(../images/eina_npc_sideprofile_bust.png);
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* Works great w/o the polka dots */
-/* #gallery-image-21 img {
-display: none;
-} */
-
-/* 3x2 */
-#gallery-image-22 {
-    grid-area: image22;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 3/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 3x2 */
-#gallery-image-23 {
-    grid-area: image23;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 3/2;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* 1x1 */
-#gallery-image-24 {
-    grid-area: image24;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 2x1 */
-#gallery-image-25 {
-    grid-area: image25;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 2/1;
-    display: flex;
-
-    /* Custom to the image */
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* 1x1 */
-#gallery-image-26 {
-    grid-area: image26;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
-}
-
-/* 1x1 */
-#gallery-image-27 {
-    grid-area: image27;
-    border: 3px #7c9daa solid;
-
-    aspect-ratio: 1/1;
-    display: flex;
+#gallery img {
+    width: 100%;
+    border: 2px solid #7c9daa;
+    margin-top: -0.5em;
+    /* gets rid of gap */
 }
 
 
@@ -1572,15 +1282,53 @@ display: none;
 
 /* PLANET PAGE */
 /*             */
+
+#threeD-map {
+    margin: 2em 1em 5em;
+    /* top sides bottom */
+
+    background-image: url(https://images.unsplash.com/photo-1553375388-5917bf50a7ab?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3RhcnJ5fGVufDB8fDB8fHww);
+    background-size: cover;
+    backdrop-filter: saturate(0);
+    /* not working */
+    border: 3px solid black;
+}
+
+#threeD-map::after {
+    content: "Mk\00B0mih' oh";
+
+    font-family: quicksand;
+    font-weight: bold;
+    font-size: 2em;
+    color: #dddddd;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 0.1em 0.4em;
+}
+
 #large-map {
-    margin: 0em -1.85em;
-    display: flex;
-    background-size: contain;
+    border: 2px solid black;
     background-image: url(../images/map_named.png);
-    height: 100vh;
-    /* so it touches the sides */
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#large-map img {
+    opacity: 0;
+    /* I just want the proportions for large-map */
+}
+
+#map-data-button {
+    display: flex;
+    margin-left: auto;
+    margin-top: 0.5em;
+}
+
+/* Selected Image */
+#map-data-button:checked+#map-no-data {
+    opacity: 1;
 }
 
 .planet-info {
@@ -1596,10 +1344,9 @@ display: none;
 .planet-info .one-section {
     margin-top: 0;
     padding-left: 0;
-    /* border-left: 1px solid var(--darkBlue); */
 }
 
-/* Might just ad a gap2 */
+/* Might just add a gap2 */
 .planet-info dt {
     font-weight: bold;
     margin-top: 2em;
@@ -1611,7 +1358,79 @@ display: none;
 
 .planet-info img {
     padding: 5% 0% 0 10%;
-    /* right 20% ? */
+}
+
+/* https://codepen.io/Lubna/pen/MWapdjE */
+/* Creature collapsable section */
+.creature-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* FIX IF IT'S OVER 2000 SCREEN WIDTH */
+    margin: 0 2em;
+    padding-top: 75vh;
+    position: relative;
+}
+
+/* .creature-gallery div div {
+    position: absolute;
+    width: 100%;
+} */
+
+.creature-gallery-selector {
+    /* position: absolute; */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.creature-gallery-img {
+    position: absolute;
+
+    bottom: 360px;
+    /* 120 for one row */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin: 2em;
+    left: 0;
+
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    pointer-events: none;
+    /* so we don't click on the invisible overlapped ones */
+}
+
+.creature-gallery-thumb {
+    padding-top: 6px;
+    margin: 6px;
+    display: block;
+}
+
+.creature-gallery-thumb img {
+    height: 150px;
+}
+
+.creature-gallery label {
+    font-family: zen-maru;
+    text-align: center;
+
+}
+
+/* thumb image */
+.creature-gallery-selector:checked~.creature-gallery-thumb>img {
+    box-shadow: 0 0 0 3px #0be2f6;
+}
+
+/* thumb text */
+/* also affects img */
+.creature-gallery-selector:checked~.creature-gallery-thumb {
+    color: var(--darkBlue);
+}
+
+/* Selected Image */
+.creature-gallery-selector:checked+.creature-gallery-img {
+    opacity: 1;
+    pointer-events: all;
 }
 
 /* Also used on the About page! */
@@ -1647,8 +1466,9 @@ display: none;
 .planet-creature-section {
     background-color: var(--paleYellow);
     padding: 30px 30px 60px 30px;
-    margin: 2em 2em 5em 2em;
+    margin: 2em 0em 5em 0em;
     /* Wrapper counteract (+ bottom) */
+    /* 2em side padding on creature-gallery */
 }
 
 .planet-creature-section img {
@@ -1784,17 +1604,6 @@ display: none;
 
 #more-work img {
     border: 2px rgb(158, 191, 199) solid;
-}
-
-#todo {
-    margin-top: 5em;
-    padding: 1em 3em;
-
-    background-color: var(--paleYellow);
-    color: var(--darkBlue);
-    font-family: quicksand;
-    line-height: 2em;
-    text-transform: capitalize;
 }
 
 
@@ -2055,8 +1864,17 @@ display: none;
         transform: translateX(17em);
     }
 
-    #large-map {
+    /* #large-map {
         height: 80vh;
+    } */
+
+    /* fit the wildlife gallery */
+    .creature-gallery {
+        padding-top: 80vh;
+    }
+
+    .creature-gallery-thumb img {
+        height: 100px;
     }
 
     /* makes sure it doesn't get too small */
@@ -2102,6 +1920,12 @@ display: none;
     }
 }
 
+/* wildlife thimbnails occupy three rows */
+@media(max-width: 930px) {
+    .creature-gallery-img {
+        bottom: 500px;
+    }
+}
 
 /* Medium sized */
 /* Screens under 840 get a one column set of images */
@@ -2123,8 +1947,23 @@ display: none;
         /* this is being so weird, I get a white gap if it's not left alone */
     }
 
-    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
-        border: 2px solid #7c9daa;
+    #home-hero {
+        width: 100%;
+    }
+
+    #threeD-med-screen .flex-style{
+        display: block;
+        /* width: 60%; */
+    }
+
+    #threeD-map {
+        /* margin-right: 40%; */
+    }
+    
+    #large-map {
+        display: flex;
+        justify-content: end;
+        margin-right: auto;
     }
 
     .people-fade .flex-style, .people-fade-coll .flex-style {
@@ -2177,9 +2016,9 @@ display: none;
         right: 0%;
     }
 
-    #large-map {
+    /* #large-map {
         height: 50vh;
-    }
+    } */
 
     .planet-info {
         display: block;
@@ -2211,11 +2050,24 @@ display: none;
         margin: auto;
     }
 
+    /* fit the wildlife gallery */
+    .creature-gallery {
+        padding-top: 100vh;
+    }
+
+    .creature-gallery-thumb img {
+        height: 80px;
+    }
+
+    .creature-gallery-img {
+        bottom: 550px;
+    }
+
     .lang-coll {
         width: 100vw;
     }
 
-    .lang-coll .flex-style{
+    .lang-coll .flex-style {
         display: block;
         /* Shouldn't matter because the only other place it's sued doesn't rely on flex */
     }
@@ -2355,18 +2207,9 @@ display: none;
         text-align: left;
     }
 
-    #home-hero {
-        width: 100%;
-    }
-
     #home-summary {
         width: 90%;
         font-size: 0.9em;
-    }
-
-    .home-gallery-header h1 {
-        font-size: 2.25em;
-        margin: 0.25em;
     }
 
     .home-slide img {
@@ -2382,17 +2225,35 @@ display: none;
         transform: translateY(2em);
     }
 
-    #gallery-image-1, #gallery-image-2, #gallery-image-3, #gallery-image-4, #gallery-image-5, #gallery-image-6, #gallery-image-7, #gallery-image-8, #gallery-image-9, #gallery-image-10, #gallery-image-11, #gallery-image-12, #gallery-image-13, #gallery-image-14, #gallery-image-15, #gallery-image-16, #gallery-image-17, #gallery-image-18, #gallery-image-19, #gallery-image-20, #gallery-image-21, #gallery-image-22, #gallery-image-23, #gallery-image-24, #gallery-image-25, #gallery-image-26, #gallery-image-27 {
-        border: 1px solid #7c9daa;
+    .home-gallery-header h1 {
+        font-size: 2.25em;
+        margin: 0.25em;
+    }
+
+    #gallery {
+        grid-template-columns: 30% 40% 20%;
+        /* ratio: 3 4 2 */
+        grid-template-areas:
+            " colA colB colC"
+        ;
+    }
+    
+    /* merge D to A, E to B */
+    #gal-col-D {
+        grid: colA;
+    }
+
+    #gal-col-E {
+        grid: colB;
     }
 
     .downwards-sub-header {
         width: 100%;
     }
 
-    #large-map {
+    /* #large-map {
         height: 30vh !important;
-    }
+    } */
 
     #creature-header {
         width: 100%;

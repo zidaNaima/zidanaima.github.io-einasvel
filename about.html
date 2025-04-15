@@ -20,7 +20,7 @@
     <div class="dropdown">
         <input type="checkbox" name="ham" id="ham">
         <label for="ham" id="ham-label">&#9776;</label>
-    
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a>
@@ -67,7 +67,7 @@
                 </li>
             </ul>
         </nav>
-    
+
     </div>
 
 
@@ -270,14 +270,25 @@
 
 
 <footer>
-    <p>
-        Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-            id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-        questions.
-    <form action="" method="post" onsubmit="return validateMessage();">
-        <textarea name="message" cols="40%">NOTE: messages currently do not work. Please contact me on Instagram.</textarea>
-        <input type="submit" value="send">
-    </form>
+    <section>
+        <p>
+            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
+                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
+            questions.
+
+        <form> <!-- onsubmit="return validateMessage();" -->
+            <div id="form-content">
+                <label for="message">Message (required):</label>
+                <textarea name="message" cols="40%"></textarea>
+
+                <label for="contact">Contact Info:</label>
+                <input type="text" name="contact">
+                <input type="submit" value="send" id="send">
+            </div>
+        </form>
+
+    </section>
+
     <br>
     <br>
     All rights reserved. Do not copy without permission.
@@ -293,7 +304,18 @@
 
 </footer>
 
-<!-- JavaScript and jQuery -->
+
+<!-- JavaScript -->
+<!-- loads after html -->
 <script src="js/guidescript.js" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "xfbPdiVD70qK8vTY3",
+        });
+    })();
+</script>
 
 </html>

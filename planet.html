@@ -20,7 +20,7 @@
     <div class="dropdown">
         <input type="checkbox" name="ham" id="ham">
         <label for="ham" id="ham-label">&#9776;</label>
-    
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a>
@@ -67,19 +67,20 @@
                 </li>
             </ul>
         </nav>
-    
+
     </div>
 
 
 
-    
+
     <div class="wrapper">
 
         <h2 id="page-header">Planet</h2>
         <h3 class="sub-header">Plants, animals, and the land.</h3>
 
         <div id="jump-to-map"></div>
-        <div id="large-map"></div>
+
+        <div class="gap5"></div>
 
         <div class="planet-info">
             <p class="heavy">Mk&deg;mih'oh is around 6 billion years old, and fairly new in its evolutionary lifetime,
@@ -94,6 +95,30 @@
                     class="blue-link">here</a>.
             </p>
             <p>Note: 1 au = The distance from the Earth to the Sun.</p>
+        </div>
+
+        <div id="threeD-med-screen">
+            <div class="flex-style">
+                <div class="one-section">
+                    <div id="threeD-map"></div>
+                </div>
+                <div class="one-section">
+                    <div id="large-map">
+                        <img src="images/map_named.png"
+                            alt="A Map of Mikimoh with named continents and visible lines around the tropics.">
+                    </div>
+                    <button id="map-data-button">Show/Hide Data</button>
+
+                    <!-- NOTE: map sides should be tapering inwards, not out... -->
+
+                    <p>
+                        A majority of Dau/hl/saumihk&deg; remains in constant darkness, while the entirety of the
+                        southern mystery continent is always in light, making both continents difficult if not
+                        impossible to inhabit for may species.
+                    </p>
+
+                </div>
+            </div>
         </div>
 
         <!-- Galaxy Data -->
@@ -126,7 +151,8 @@
                     <dd><span class="heavy">Surface Gravity:</span> 0.1848 (compared to Earth)</dd>
                     <dd><span class="heavy">Distance:</span> 2.108au (220 Earth radii)</dd>
                     <dd><span class="heavy">Orbital Period:</span> 55.072 (Earth) days
-                        <!-- (0.0588*sqrt(r<sup>3</sup>/(M+m)) ) --> </dd>
+                        <!-- (0.0588*sqrt(r<sup>3</sup>/(M+m)) ) -->
+                    </dd>
                     <br>
                     <dd><span class="heavy">Silicate Rock:</span> 89&#37;</dd>
                     <dd><span class="heavy">Water/Ice:</span> 2&#37;</dd>
@@ -175,6 +201,7 @@
             <div class="one-section">
                 <dl>
                     <dt>Planet Climate:</dt>
+                    <dd><span class="heavy">Atmosphere:</span> ----</dd>
                     <dd>Equator has rainforests, tropics, savannahs, monsoons, etc.</dd>
                     <dd><span class="heavy">Tropics:</span> 32&deg; N and S of equator</dd>
                     <dd><span class="heavy">Polar:</span> 58&deg; N and S (90-32)</dd>
@@ -186,170 +213,215 @@
         </div>
 
 
+
         <div class="gap8"></div>
         <div id="jump-to-wildlife"></div>
         <div id="creature-header">Wildlife</div>
         <h3 class="creature-sub-header">K&deg;epuhthenoh and Auh/hl/ihth</h3>
-        <div class="flex-style"><div class="one-section"><img class="smaller-img" src="images/evolution_chart.png" alt=""></div></div>
-        <div class="gap5"></div>     
+
+        <!-- evolution chart -->
+        <div class="flex-style">
+            <div class="one-section">
+                <img class="smaller-img" src="images/evolution_chart.png" alt="">
+                <p class="centered">The Phylogenetic Tree of Mk&deg;mih'oh's Creatures</p>
+            </div>
+        </div>
+
+
+        <div class="gap5"></div>
         <!-- NOTE: I need to decide if I want the weights to account for the 85% low gravitational pull. Currently it does not. -->
         <!-- https://worldbuilding.stackexchange.com/questions/156483/what-are-the-benefits-and-disadvantages-if-a-creature-has-multiple-tails-e-g -->
         <!-- ^Benefits/disadvantages of multiple tails -->
 
 
-        <!-- Okshlihd -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
+        <!-- edit thumbs and alts -->
+        <section class="creature-gallery">
 
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-left">Ok&deg;s/hl/ihd </h3>
+            <!-- Okshlihd -->
+            <div>
+                <!-- same name so only one can be checked -->
+                <!-- this one starts checked -->
+                <input type="radio" id="img-1" checked name="cg" class="creature-gallery-selector" />
 
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <!-- saved AI overview -->
-                            <!-- should have long and narrow wings for long distance flying (high aspect ratio) (low wing loading = big wings btw) -->
 
-                            <!-- Look into the wandering albatross! 5 years no land! -->
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-left">Ok&deg;s/hl/ihd </h3>
 
-                            <!-- Arctic Terns: These birds are famous for their epic migrations. They follow nearly identical routes every year, traveling between the Arctic and Antarctic, covering tens of thousands of miles. -->
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>3.5ft body, 8ft wingspan/ 11lbs</td>
-                                <!-- https://www.dimensions.com/element/wandering-albatross-diomedea-exulans -->
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>20 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>The sky and waters</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>Bugs and fish</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>Giraffe-life creature (?)</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/dist_map_okshlihd.png"
-                                alt="A map of the species distribution for Oq's/hl/id">
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <!-- saved AI overview -->
+                                    <!-- should have long and narrow wings for long distance flying (high aspect ratio) (low wing loading = big wings btw) -->
+
+                                    <!-- Look into the wandering albatross! 5 years no land! -->
+
+                                    <!-- Arctic Terns: These birds are famous for their epic migrations. They follow nearly identical routes every year, traveling between the Arctic and Antarctic, covering tens of thousands of miles. -->
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>3.5ft body, 8ft wingspan/ 11lbs</td>
+                                        <!-- https://www.dimensions.com/element/wandering-albatross-diomedea-exulans -->
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>20 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>The sky and waters</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>Bugs and fish</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>Giraffe-life creature (?)</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/dist_map_okshlihd.png"
+                                        alt="A map of the species distribution for Oq's/hl/id">
+                                </div>
+                            </div>
+
+                            <p>
+                                Ok&deg;s/hl/id are used by Enausq'/hl/ to send messages to far off villages. They draw
+                                them
+                                to dry areas using their hands to splash into buckets of water, imitating the sound of
+                                the sea.
+                                They hold fish out for them, and
+                                when they're close enough, slap various paint colors on parts of their body as code for
+                                different things.
+                                <br> <br>
+                                They typically travel in groups of 1000-4000 and move as a sort of hivemind. It is
+                                highly
+                                advised to not attack an Ok&deg;s/hl/ihd. They are blind and weak, but in their large
+                                numbers
+                                their sharp beaks can do mass amounts of damage.
+                            </p>
+                            <ul>
+                                <li>They spend a majority of their lives in the air above water and rarely land. They
+                                    are a
+                                    yellowish-grey in color to camoflauge into the color of the sky when viewed at
+                                    from below by fish.
+                                </li>
+                                <li>Their path through the land never changes, and they rarely move away from the exact
+                                    trail,
+                                    only changing occasionally or with the seasons so prey don't become sparse.</li>
+                                <!-- (this would still make it very hard to hunt) -->
+                                <li>They tuck their necks into their bodies during flight to increase their aerodynamics
+                                    and
+                                    keep their neck muscles from straining.</li>
+                                <li>They don't have eyes, but the black areas on their head work as sensors to determine
+                                    night
+                                    and day by sensing the suns light and heat.</li>
+                                <li>The sacks on their faces work to sense the environment around them using
+                                    echolocation from
+                                    the high pitched chirps they constantly let out. This allows them to stay in the
+                                    same
+                                    ordered group and on the same path.</li>
+                            </ul>
+                        </div>
+                        <div class="one-section">
+                            <img src="images/okshlid_flying.png" alt="A drawing of a flying ok&deg;s/hl/ihd">
+                            <img src="images/okshlid_fullbody.png"
+                                alt="A drawing of an ok&deg;s/hl/ihd, a pterodactyl-like creature with a hump over its face and large bone plates coming from the end of its bat-like wings. It has no legs or eyes.">
+                        </div>
+
+                    </div>
+                </div> <!-- End Creature Section -->
+
+                <label for="img-1" class="creature-gallery-thumb"><img src="images/okshlid_fullbody.png"
+                        alt="" /><br>Ok&deg;s/hl/ihd</label>
+            </div>
+
+            <!-- Water Eater -->
+            <div>
+                <input type="radio" id="img-2" name="cg" class="creature-gallery-selector" />
+
+                <div class="creature-gallery-img planet-creature-section">
+                    <div class="flex-style">
+
+                        <div class="one-section">
+                            <img class="smaller-img" src="images/baby_water_eater.png"
+                                alt="A drawing of a baby water-eater">
+                            <img class="smaller-img" src="images/water_eater_adult.png"
+                                alt="Drawing of a Water-Eater, a yellow hippo-like creature with two additional small arms on the front and a large brightly colored tail.">
+                        </div>
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-right">Smau/hl/ Au/hl/etheoh/hl/ (Water-Eaters)</h3>
+
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>4ft / 120lbs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>45 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>Coastlines and tropical wetlands</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>Microorganisms, algae, plankton, small smails</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>---</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/dist_map_watereater.png"
+                                        alt="A map of the species distribution for Water-Eaters">
+                                </div>
+                            </div>
+
+
+                            <p>
+                                Water-Eaters are known for their style of feeding, which is to filter through water for
+                                bacteria
+                                and microorganisms using the same fibrous mouth as a Baleen
+                                whale.
+                            </p>
+                            <ul>
+                                <li>They use their two front appendages to scrape algae from rocks and stir up still
+                                    water to
+                                    feed
+                                    more effectively. The two tusks work to effectively push away larger objects in the
+                                    water.
+                                </li>
+                                <li>They have brightly colored back ends filled with poison in order to deter predators
+                                    attacking
+                                    while they feed.</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <p>
-                        Ok&deg;s/hl/id are used by Enausq'/hl/ to send messages to far off villages. They draw them
-                        to dry areas using their hands to splash into buckets of water, imitating the sound of the sea.
-                        They hold fish out for them, and
-                        when they're close enough, slap various paint colors on parts of their body as code for
-                        different things.
-                        <br> <br>
-                        They typically travel in groups of 1000-4000 and move as a sort of hivemind. It is highly
-                        advised to not attack an Ok&deg;s/hl/ihd. They are blind and weak, but in their large numbers
-                        their sharp beaks can do mass amounts of damage.
-                    </p>
-                    <ul>
-                        <li>They spend a majority of their lives in the air above water and rarely land. They are a
-                            yellowish-grey in color to camoflauge into the color of the sky when viewed at
-                            from below by fish.
-                        </li>
-                        <li>Their path through the land never changes, and they rarely move away from the exact trail,
-                            only changing occasionally or with the seasons so prey don't become sparse.</li>
-                        <!-- (this would still make it very hard to hunt) -->
-                        <li>They tuck their necks into their bodies during flight to increase their aerodynamics and
-                            keep their neck muscles from straining.</li>
-                        <li>They don't have eyes, but the black areas on their head work as sensors to determine night
-                            and day by sensing the suns light and heat.</li>
-                        <li>The sacks on their faces work to sense the environment around them using echolocation from
-                            the high pitched chirps they constantly let out. This allows them to stay in the same
-                            ordered group and on the same path.</li>
-                    </ul>
-                </div>
-                <div class="one-section">
-                    <img src="images/okshlid_flying.png" alt="A drawing of a flying ok&deg;s/hl/ihd">
-                    <img src="images/okshlid_fullbody.png"
-                        alt="A drawing of an ok&deg;s/hl/ihd, a pterodactyl-like creature with a hump over its face and large bone plates coming from the end of its bat-like wings. It has no legs or eyes.">
-                </div>
+                </div> <!-- End Creature Section -->
 
-            </div>
-        </div> <!-- End Creature Section -->
-
-
-        <!-- Water Eater -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="one-section">
-                    <img class="smaller-img" src="images/baby_water_eater.png" alt="A drawing of a baby water-eater">
-                    <img class="smaller-img" src="images/water_eater_adult.png"
-                        alt="Drawing of a Water-Eater, a yellow hippo-like creature with two additional small arms on the front and a large brightly colored tail.">
-                </div>
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-right">Smau/hl/ Au/hl/etheoh/hl/ (Water-Eaters)</h3>
-
-
-                    <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>4ft / 120lbs</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>45 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>Coastlines and tropical wetlands</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>Microorganisms, algae, plankton, small smails</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>---</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/dist_map_watereater.png"
-                                alt="A map of the species distribution for Water-Eaters">
-                        </div>
-                    </div>
-
-
-                    <p>
-                        Water-Eaters are known for their style of feeding, which is to filter through water for bacteria
-                        and microorganisms using the same fibrous mouth as a Baleen
-                        whale.
-                    </p>
-                    <ul>
-                        <li>They use their two front appendages to scrape algae from rocks and stir up still water to
-                            feed
-                            more effectively. The two tusks work to effectively push away larger objects in the water.
-                        </li>
-                        <li>They have brightly colored back ends filled with poison in order to deter predators
-                            attacking
-                            while they feed.</li>
-                    </ul>
-                </div>
+                <label for="img-2" class="creature-gallery-thumb"><img src="images/water_eater_adult.png"
+                        alt="" /><br>Water Eaters</label>
             </div>
 
-        </div> <!-- End Creature Section -->
+            <!-- Einasvel -->
+            <div>
+                <input type="radio" id="img-3" name="cg" class="creature-gallery-selector" />
 
-                <!-- Einasvel -->
-                <div class="planet-creature-section">
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-        
+
                         <div class="two-sections">
                             <h3 class="planet-creature-header-left">Enausq'/hl/</h3>
-        
+
                             <div class="flex-style">
                                 <!-- Table and Map -->
                                 <table class="one-section">
@@ -375,11 +447,11 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img class="one-section" src="images/dist_map_einasvel.png"
                                         alt="A map of the species distribution for Enausq'/hl/">
                                 </div>
                             </div>
-        
+
                             <p>
 
                             </p>
@@ -388,23 +460,30 @@
                         <div class="one-section">
                             <img src="images/creep.png" alt="TEMPORARY">
                         </div>
-        
+
                     </div>
                 </div> <!-- End Creature Section -->
-        
-        
-                <!-- Oele'in -->
-                <div class="planet-creature-section">
+
+                <label for="img-3" class="creature-gallery-thumb"><img src="images/eina_anatomy.png"
+                        alt="" /><br>Enausq'/hl/</label>
+            </div>
+
+            <!-- Oele'in -->
+            <div>
+                <input type="radio" id="img-4" name="cg" class="creature-gallery-selector" />
+
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-        
+
                         <div class="one-section">
-                            <img class="smaller-img" src="images/fruit_hold_oelein.png" alt="An Oele'in hanging from a branch and inspecting a piece of fruit in its foot's grasp.">
+                            <img class="smaller-img" src="images/fruit_hold_oelein.png"
+                                alt="An Oele'in hanging from a branch and inspecting a piece of fruit in its foot's grasp.">
                         </div>
-        
+
                         <div class="two-sections">
                             <h3 class="planet-creature-header-right">Oele'in</h3>
-        
-        
+
+
                             <div class="flex-style">
                                 <!-- Table and Map -->
                                 <table class="one-section">
@@ -430,356 +509,420 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img class="one-section" src="images/dist_map_oelein.png"
                                         alt="A map of the species distribution for Oele'in">
                                 </div>
                             </div>
-        
-        
+
+
                             <p>
-                                Oele'in are a sub-species of Enausq'/hl/, living on the nearby islands of Au/hl/ihth and possessing a few different traits.
+                                Oele'in are a sub-species of Enausq'/hl/, living on the nearby islands of Au/hl/ihth and
+                                possessing a few different traits.
                             </p>
                             <ul>
                                 <li>They are brown in color and patterned to blend into tree trunks.
                                 </li>
-                                <li>They're smaller than Enausq'/hl/ and dock their upper unuhnih/hl/uh at a young age to make maneuvering through branches easier.</li>
-                                <li>Their lower Unuhnih/hl/uh have very small and almost negligible fat storage sacks due to the abundance of food and restrictions the weight would cause.</li>
+                                <li>They're smaller than Enausq'/hl/ and dock their upper unuhnih/hl/uh at a young age
+                                    to make
+                                    maneuvering through branches easier.</li>
+                                <li>Their lower Unuhnih/hl/uh have very small and almost negligible fat storage sacks
+                                    due to the
+                                    abundance of food and restrictions the weight would cause.</li>
                             </ul>
                         </div>
                     </div>
-        
+
                 </div> <!-- End Creature Section -->
 
-        <!-- Unnamed #1 -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
+                <label for="img-4" class="creature-gallery-thumb"><img src="images/fruit_hold_oelein.png"
+                        alt="" /><br>Oele'in</label>
+            </div>
 
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-left">Unnamed Creature #1</h3>
+            <!-- Unnamed #1 -->
+            <div>
+                <input type="radio" id="img-5" name="cg" class="creature-gallery-selector" />
 
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>10ft, ---</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>---</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/dist_map_unnamed.png"
-                                alt="A map of the species distribution for Unnamed Creature #1">
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-left">Unnamed Creature #1</h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>10ft, ---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>---</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/dist_map_unnamed.png"
+                                        alt="A map of the species distribution for Unnamed Creature #1">
+                                </div>
+
+                                <p>The only known inhabitants of the icy Dau/hl/saumihk&deg; continent. They live on the
+                                    edge of the dark zone, where only most days are full darkness.</p>
+
+                            </div>
                         </div>
 
-                        <p>The only known inhabitants of the icy Dau/hl/saumihk&deg; continent.</p>
-                        <p>Note: due to world changes, the distribution map is incorrect</p>
+                        <div class="one-section">
+                            <img src="images/large_creature.png"
+                                alt="A large bird-like creature similar to a Vorombe Titan with a crest on its head.">
+                        </div>
 
                     </div>
-                </div>
+                </div> <!-- End Creature Section -->
 
-                <div class="one-section">
-                    <img src="images/large_creature.png"
-                        alt="A large bird-like creature similar to a Vorombe Titan with a crest on its head.">
-                </div>
-
+                <label for="img-5" class="creature-gallery-thumb"><img src="images/large_creature.png"
+                        alt="" /><br>Unnamed Creature #1</label>
             </div>
-        </div> <!-- End Creature Section -->
 
+            <!-- Deer -->
+            <div>
+                <input type="radio" id="img-6" name="cg" class="creature-gallery-selector" />
 
-        <!-- Deer -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="one-section">
-                    <img src="images/deer_creature.png" alt="TEMPORARY">
-                </div>
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-right">Ooheihaudeih</h3>
-
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <!-- Bison stats -->
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>8ft w/o horns, 900lbs</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>15-20 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <!-- A majority of Kepuh and Auhlith. Sparse in
+
+                        <div class="one-section">
+                            <img src="images/deer_creature.png" alt="TEMPORARY">
+                        </div>
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-right">Ooheihaudeih</h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <!-- Bison stats -->
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>8ft w/o horns, 900lbs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>15-20 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <!-- A majority of Kepuh and Auhlith. Sparse in
                                     Sohqauthuh -->
-                                <td>In and around denser forested areas.</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>---</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/map_blank_placeholder_colored.png"
-                                alt="A map of the species distribution for ___">
+                                        <td>In and around denser forested areas.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>---</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                        alt="A map of the species distribution for ___">
+                                </div>
+                            </div>
+
+                            <p>Built like a bison and as common as deer, many folklore tales revolve around Ooheihaudeih
+                                due to
+                                their uncomfortably dexterous hands and uncanny resemblance to an Enausq'/hl/ face. In
+                                the dark,
+                                it is an unwelcome
+                                sight.</p>
+                            <ul>
+                                <li>Killing them is slightly looked down on due to the resemblance, but their fur is the
+                                    best
+                                    source of hair extentions.</li>
+                                <li>They are herded by some, but because they are still dangerous, it is not extremely
+                                    common.
+                                </li>
+                                <li>If you do kill one, their horns make wonderful weapons in combat, although horned
+                                    combat is
+                                    difficult to learn, and doing the needed alterations to the horns is not a common
+                                    skill.
+                                </li>
+                                <br>
+                                <li>The front of their faces are covered in a hard plate, where their noses lies
+                                    attached at the
+                                    bottom. They can drink water through their nose, but can't move this plate, so they
+                                    have a
+                                    long tongue to pick up food.</li>
+                                <li>They have four eyes, two to the sides and two at the front</li>
+                            </ul>
+
                         </div>
+
                     </div>
+                </div> <!-- End Creature Section -->
 
-                    <p>Built like a bison and as common as deer, many folklore tales revolve around Ooheihaudeih due to
-                        their uncomfortably dexterous hands and uncanny resemblance to an Enausq'/hl/ face. In the dark,
-                        it is an unwelcome
-                        sight.</p>
-                    <ul>
-                        <li>Killing them is slightly looked down on due to the resemblance, but their fur is the best
-                            source of hair extentions.</li>
-                        <li>They are herded by some, but because they are still dangerous, it is not extremely common.
-                        </li>
-                        <li>If you do kill one, their horns make wonderful weapons in combat, although horned combat is
-                            difficult to learn, and doing the needed alterations to the horns is not a common skill.
-                        </li>
-                        <br>
-                        <li>The front of their faces are covered in a hard plate, where their noses lies attached at the
-                            bottom. They can drink water through their nose, but can't move this plate, so they have a
-                            long tongue to pick up food.</li>
-                        <li>They have four eyes, two to the sides and two at the front</li>
-                    </ul>
 
-                </div>
-
+                <label for="img-6" class="creature-gallery-thumb"><img src="images/deer_creature.png"
+                        alt="" /><br>Ooheihaudeih</label>
             </div>
-        </div> <!-- End Creature Section -->
 
+            <!-- Fish -->
+            <div>
+                <input type="radio" id="img-7" name="cg" class="creature-gallery-selector" />
 
-        <!-- Fish -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-left">Generic Fish #1</h3>
-
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <!-- Atlantic Salmon Stats -->
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>2.5ft long, 12lbs</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>7 years---</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>Unnamed Cave Creature (water to cave?)</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/map_named.png"
-                                alt="A map of the species distribution for ____">
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-left">Generic Fish #1</h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <!-- Atlantic Salmon Stats -->
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>2.5ft long, 12lbs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>7 years---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>Unnamed Cave Creature (water to cave?)</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                        alt="A map of the species distribution for ____">
+                                </div>
+                            </div>
+
+                            <p>Yum! A common staple dish for those near the shores of K&deg;epuhthenoh.</p>
+                            <ul>
+                                <li>Tastes like chicken...</li>
+                            </ul>
+
                         </div>
+
+                        <div class="one-section">
+                            <img src="images/fish.png" alt="TEMPORARY">
+                        </div>
+
                     </div>
+                </div> <!-- End Creature Section -->
 
-                    <p>Yum! A common staple dish in K&deg;epuhthenoh.</p>
-                    <ul>
-                        <li>Tastes like chicken...</li>
-                    </ul>
-
-                </div>
-
-                <div class="one-section">
-                    <img src="images/fish.png" alt="TEMPORARY">
-                </div>
-
+                <label for="img-7" class="creature-gallery-thumb"><img src="images/fish.png" alt="" /><br>Generic Fish
+                    #1</label>
             </div>
-        </div> <!-- End Creature Section -->
 
+            <!-- Cave Thing -->
+            <div>
+                <input type="radio" id="img-8" name="cg" class="creature-gallery-selector" />
 
-        <!-- Cave Thing -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="one-section">
-                    <img src="images/creature_2.png" alt="TEMPORARY">
-                </div>
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-right">Sauk&deg;s</h3>
-
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>8in, 6lbs</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>20 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>Deep Caves and Mountain sides</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>Dark Green and Red Glow Moss</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>Generic Fish #1 (water to land to cave)</td>
-                                <!-- ? -->
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/map_blank_placeholder_colored.png"
-                                alt="A map of the species distribution for Sauk&deg;s">
+
+                        <div class="one-section">
+                            <img src="images/creature_2.png" alt="TEMPORARY">
                         </div>
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-right">Sauk&deg;s</h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>8in, 6lbs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>20 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>Deep Caves and Mountain sides</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>Dark Green and Red Glow Moss</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>Generic Fish #1 (water to land to cave)</td>
+                                        <!-- ? -->
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                        alt="A map of the species distribution for Sauk&deg;s">
+                                </div>
+                            </div>
+
+                            <p>Sauk&deg;s are a diverse species of creature. The kind in the photo to the left are the
+                                cave
+                                variant, who enjoy digging shiny gems out of cave walls</p>
+                            <p>Other variants are green in color and spend their time in marshy environments digging
+                                through mud
+                                and eating bugs.</p>
+
+                        </div>
+
                     </div>
+                </div> <!-- End Creature Section -->
 
-                    <p>Sauk&deg;s are a diverse species of creature. The kind in the photo to the left are the cave
-                        variant, who enjoy digging shiny gems out of cave walls</p>
-                    <p>Other variants are green in color and spend their time in marshy environments digging through mud
-                        and eating bugs.</p>
-
-                </div>
-
+                <label for="img-8" class="creature-gallery-thumb"><img src="images/creature_2.png"
+                        alt="" /><br>Sauk&deg;s</label>
             </div>
-        </div> <!-- End Creature Section -->
 
+            <!-- Stump Guy -->
+            <div>
+                <input type="radio" id="img-9" name="cg" class="creature-gallery-selector" />
 
-        <!-- Stump Guy -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-left">Unnamed Creature #2 (AKA "Stump Guy")</h3>
-
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>5in to 1.5ft, ---</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>5 to 10 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>---</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/map_blank_placeholder_colored.png"
-                                alt="A map of the species distribution for ____">
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-left">Unnamed Creature #2 (AKA "Stump Guy")</h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>5in to 1.5ft, ---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>5 to 10 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>---</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/dist_map_stump.png"
+                                        alt="A map of the species distribution for ____">
+                                </div>
+                            </div>
+
+                            <p>They blend in with plants that resemble tree burls growing out of the groud. They lift up
+                                and
+                                snatch prey like a trapdoor spider.</p>
+                            <ul>
+                                <li>Common creatures, and easy to find if you know that sliding your finger under the
+                                    bottom
+                                    tickles
+                                    them.</li>
+                                <li>A staple dish fot Enausq/hl/, their insides are goopy and fat, similar to that of a
+                                    cockroach. Their shells make for wonderful bowls afterwards as well.</li>
+                            </ul>
+
                         </div>
+
+                        <div class="one-section">
+                            <img src="images/stump_creature.png" alt="TEMPORARY">
+                        </div>
+
                     </div>
+                </div> <!-- End Creature Section -->
 
-                    <p>They blend in with plants that resemble tree burls growing out of the groud. They lift up and
-                        snatch prey like a trapdoor spider.</p>
-                    <ul>
-                        <li>Common creatures, and easy to find if you know that sliding your finger under the bottom
-                            tickles
-                            them.</li>
-                        <li>A staple dish fot Enausq/hl/, their insides are goopy and fat, similar to that of a
-                            cockroach. Their shells make for wonderful bowls afterwards as well.</li>
-                    </ul>
 
-                </div>
-
-                <div class="one-section">
-                    <img src="images/stump_creature.png" alt="TEMPORARY">
-                </div>
-
+                <label for="img-9" class="creature-gallery-thumb"><img src="images/stump_creature.png"
+                        alt="" /><br>Unnamed Creature #2</label>
             </div>
-        </div> <!-- End Creature Section -->
 
+            <!-- Giraffe -->
+            <div>
+                <input type="radio" id="img-10" name="cg" class="creature-gallery-selector" />
 
-        <!-- Cave Thing -->
-        <div class="planet-creature-section">
-            <div class="flex-style">
-
-                <div class="one-section">
-                    <img class="smaller-img" src="images/giraffe_like_creature.png" alt="TEMPORARY">
-                </div>
-
-                <div class="two-sections">
-                    <h3 class="planet-creature-header-right">Unnamed Creature #3 (AKA Giraffe-like creature)</h3>
-
+                <div class="creature-gallery-img planet-creature-section">
                     <div class="flex-style">
-                        <!-- Table and Map -->
-                        <table class="one-section">
-                            <tr>
-                                <td>Size and Weight: </td>
-                                <td>50 ft, ---</td>
-                            </tr>
-                            <tr>
-                                <td>Lifespan: </td>
-                                <td>80 years</td>
-                            </tr>
-                            <tr>
-                                <td>Habitat: </td>
-                                <td>Large open plains</td>
-                            </tr>
-                            <tr>
-                                <td>Diet: </td>
-                                <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Distant Ancestors: </td>
-                                <td>Unlisted duck-like creature</td>
-                            </tr>
-                        </table>
-                        <div class="dist-map">
-                            <img class="one-section" src="images/map_blank_placeholder_colored.png"
-                                alt="A map of the species distribution for ____ ">
+
+                        <div class="one-section">
+                            <img class="smaller-img" src="images/giraffe_like_creature.png" alt="TEMPORARY">
                         </div>
+
+                        <div class="two-sections">
+                            <h3 class="planet-creature-header-right">Unnamed Creature #3 (AKA Giraffe-like creature)
+                            </h3>
+
+                            <div class="flex-style">
+                                <!-- Table and Map -->
+                                <table class="one-section">
+                                    <tr>
+                                        <td>Size and Weight: </td>
+                                        <td>50 ft, ---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lifespan: </td>
+                                        <td>80 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat: </td>
+                                        <td>Large open plains</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet: </td>
+                                        <td>---</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distant Ancestors: </td>
+                                        <td>Unlisted duck-like creature</td>
+                                    </tr>
+                                </table>
+                                <div class="dist-map">
+                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                        alt="A map of the species distribution for ____ ">
+                                </div>
+                            </div>
+
+                            <p></p>
+                            <!-- !!! Maybe if the black and white was swapped it would both keep them cooler and alive longer cause they block out light for little ones -->
+
+                        </div>
+
                     </div>
+                </div> <!-- End Creature Section -->
 
-                    <p></p>
-
-                </div>
-
+                <label for="img-10" class="creature-gallery-thumb"><img src="images/giraffe_like_creature.png"
+                        alt="" /><br>Unnamed Creature #3</label>
             </div>
-        </div> <!-- End Creature Section -->
+
+        </section>
 
 
 
@@ -841,14 +984,25 @@
 
 
 <footer>
-    <p>
-        Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-            id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-        questions.
-    <form action="" method="post" onsubmit="return validateMessage();">
-        <textarea name="message" cols="40%">NOTE: messages currently do not work. Please contact me on Instagram.</textarea>
-        <input type="submit" value="send">
-    </form>
+    <section>
+        <p>
+            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
+                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
+            questions.
+
+        <form> <!-- onsubmit="return validateMessage();" -->
+            <div id="form-content">
+                <label for="message">Message (required):</label>
+                <textarea name="message" cols="40%"></textarea>
+
+                <label for="contact">Contact Info:</label>
+                <input type="text" name="contact">
+                <input type="submit" value="send" id="send">
+            </div>
+        </form>
+
+    </section>
+
     <br>
     <br>
     All rights reserved. Do not copy without permission.
@@ -864,7 +1018,20 @@
 
 </footer>
 
-<!-- JavaScript and jQuery -->
+
+<!-- JavaScript -->
+<!-- loads after html -->
 <script src="js/guidescript.js" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "xfbPdiVD70qK8vTY3",
+        });
+    })();
+</script>
+
+<script type="module" src="js/threeD.js"></script>
 
 </html>

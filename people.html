@@ -122,7 +122,7 @@
                     <div class="one-section">
                         <p>Mouth
                             <br>
-                            Their tongues are much narrower than human tongues, and therefore their languages are
+                            (Note: this has ben retconned.) Their tongues are much narrower than human tongues, and therefore their languages are
                             formed
                             less on sounds that require tongue.
                             <!-- No it's not lmfao? -->
@@ -134,7 +134,9 @@
                             Like parrots, they are able to move their top-beaks individually from the rest of their
                             skull.
                             This allows for strong clicks without moving their eyes.
+                            <!-- Mmm, does it? -->
                         </p>
+                        <p>They have 12 neck vertebrae. More than a human (7) but less than an owl (14)</p>
                     </div>
                     <div class="one-section">
                         <p>Muscle
@@ -154,9 +156,6 @@
                     </div>
                 </div>
 
-                <p class="centered">NOTE: Drawings are old and have incorrect eye color, beak structure, and lip
-                    shape. The
-                    hair spikes are not a natural part of the body.</p>
             </div> <!-- End Section Fade -->
 
             <div class="gap5"></div>
@@ -494,7 +493,7 @@
         <div id="jump-to-tools"></div>
         <h3 class="people-break">Technology</h3>
 
-        <p><b>The Age of Technology: (WIP Section)</b> Enausq'/hl/ are one of few advances species on the planet. They
+        <p><b>The Age of Technology:</b> Enausq'/hl/ are one of few advances species on the planet. They
             are still in the stone age, with writing systems just recently starting to form. Due to their slow
             advancements and disinterest, within the short lifetime of the planet, they are unlikely to make it to the
             iron age and beyond.</p>
@@ -567,7 +566,7 @@
 
 
         <!-- Currency -->
-        <button type="button" class="collapse">Currency and Item Exchange (WIP Section)</button>
+        <button type="button" class="collapse">Currency and Item Exchange</button>
         <div class="collapse-content">
             <div class="people-fade-coll">
                 <div class="flex-style">
@@ -582,7 +581,7 @@
                     </div>
 
                     <div class="one-section">
-                        <img src="images/placeholder_image.png" alt="TEMPORARY">
+                        <img src="images/fight_blank.png" alt="Two Einasvel fighting over a piece of fish. The one in front is in a threatening attack position.">
                     </div>
 
                 </div>
@@ -689,15 +688,25 @@
 
 
 <footer>
-    <p>
-        Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-            id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-        questions.
-    <form action="" method="post" onsubmit="return validateMessage();">
-        <textarea name="message"
-            cols="40%">NOTE: messages currently do not work. Please contact me on Instagram.</textarea>
-        <input type="submit" value="send">
-    </form>
+    <section>
+        <p>
+            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
+                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
+            questions.
+
+        <form> <!-- onsubmit="return validateMessage();" -->
+            <div id="form-content">
+                <label for="message">Message (required):</label>
+                <textarea name="message" cols="40%"></textarea>
+
+                <label for="contact">Contact Info:</label>
+                <input type="text" name="contact">
+                <input type="submit" value="send" id="send">
+            </div>
+        </form>
+
+    </section>
+
     <br>
     <br>
     All rights reserved. Do not copy without permission.
@@ -713,7 +722,18 @@
 
 </footer>
 
-<!-- JavaScript and jQuery -->
+
+<!-- JavaScript -->
+<!-- loads after html -->
 <script src="js/guidescript.js" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "xfbPdiVD70qK8vTY3",
+        });
+    })();
+</script>
 
 </html>
