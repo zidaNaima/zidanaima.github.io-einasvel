@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to the Planet</title>
+    <link rel="stylesheet" href="css/guidestyle.css">
+    <link rel="stylesheet" href="css/storystyle.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon_32x32.png">
+</head>
+
+<div id="jump-to-top"></div> <!-- Where we go when we jump -->
+<a id="jump-to-top-button" href="#jump-to-top">Jump to Top</a> <!-- Button always on screen -->
+
+
+
+
+<body>
+
+    <div class="dropdown">
+        <input type="checkbox" name="ham" id="ham">
+        <label for="ham" id="ham-label">&#9776;</label>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>
+                    <ul>
+                        <li><a href="index.html#jump-to-gallery">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="planet.html">The Planet<span class="nav-details"> | Mk&deg;mih'oh</span></a>
+                    <ul>
+                        <li><a href="planet.html#jump-to-map">Map</a></li>
+                        <li><a href="planet.html#jump-to-wildlife">Environment: Wildlife</a></li>
+                        <li><a href="planet.html#jump-to-vegetation">Environment: Vegetation</a></li>
+                    </ul>
+                </li>
+                <li><a href="language.html">The Language<span class="nav-details"> | Naunoh/hl/oh</span></a>
+                    <ul>
+                        <li><a href="language.html#jump-to-translator">Translator</a></li>
+                        <li><a href="language.html#jump-to-lang-structure">Language Structure</a></li>
+                        <li><a href="language.html#jump-to-slang">Slang</a></li>
+                        <li><a href="language.html#jump-to-numbers">Numbers</a></li>
+                        <li><a href="language.html#jump-to-idauhl">Oele'in Language: Idau/hl/</a></li>
+                    </ul>
+                </li>
+                <li><a href="people.html">The People<span class="nav-details"> | Enausq'/hl/</span></a>
+                    <ul>
+                        <li><a href="people.html#jump-to-anatomy">Anatomy
+                        <li><a href="people.html#jump-to-expression">Culture: Self-Expression</a></li>
+                        <li><a href="people.html#jump-to-tools">Technology</a></li>
+                        <li><a href="people.html#jump-to-law">Culture: Societal Structure</a></li>
+                    </ul>
+                </li>
+                <li id="current_okshlid"><a href="story.html">The Story<span class="nav-details"> |
+                            E/hl/aunoh</span></a>
+                    <ul>
+                        <li><a href="story.html#jump-to-characters">Characters</a></li>
+                        <li><a href="story.html#jump-to-stories">Stories</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">The Creator<span class="nav-details"> | Me!</span></a>
+                    <ul>
+                        <li><a href="about.html#jump-to-about">About</a></li>
+                        <li><a href="about.html#jump-to-more-work">More work</a></li>
+                        <li><a href="about.html#jump-to-commissions">Commissions</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="settings"></div>
+        <div id="settings-window">
+            <div id="settings-content">
+                <d id="settings-exit">X</d>
+
+                <h3>Themes</h3>
+                <ul>
+                    <li id="theme-default"><input type="radio" name="themes" />Default</li>
+                    <li id="theme-contrast"><input type="radio" name="themes" />High Contrast</li>
+                    <li id="theme-sunset"><input type="radio" name="themes" />Cream</li>
+                    <li id="theme-plain"><input type="radio" name="themes" />Plain</li>
+                    <li id="theme-colorless"><input type="radio" name="themes" />Colorless</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="wrapper">
+
+<!-- --------construction start-------------------------------------------------------------------------------------------------------- -->
+
+        <h2 id="page-header">Story</h2>
+        <h3 class="sub-header">Story</h3>
+
+                <p> PAGE UNDER CONSTRUCTION </p>
+                <p>page fails under non full-screen sizes</p>
+
+
+        <div class="gap5"></div>
+        <!-- creates a gap of 5em -->
+        <div id="jump-to-characters"></div>
+
+
+        <div id="jump-to-stories"></div>
+        <div id="story-grid-wrapper"> <!-- Wrapper for the entire story section -->
+
+            <div id="story-header-wrapper"> <!-- Sub grid for the title and chapter buttons -->
+                <div id="story-chapter-dropdown">
+                    <label for="allChapters">
+                        <span class="story-chapter-button">
+                            All&nbsp;Chapters&nbsp;&#129035;
+                            <!-- Nbsp so they all stay on one line at all time -->
+                        </span>
+                    </label>
+                    <input type="checkbox" id="allChapters">
+                    <ul id="chapter-slide">
+                        <li>Chapter 1</li>
+                        <li>Chapter 2</li>
+                        <li>Chapter 3</li>
+                    </ul>
+                </div>
+
+                <div id="story-last-chapter">
+                    <div class="story-chapter-button">&#129032;&nbsp;Last&nbsp;Chapter</div>
+                </div>
+
+                <div id="story-title">
+                    <h3 class="downwards-sub-header">Story Title</h3>
+                </div>
+
+                <div id="story-next-chapter">
+                    <div class="story-chapter-button">Next&nbsp;Chapter&nbsp;&#129034;</div>
+                </div>
+
+            </div> <!-- End sub grid -->
+
+            <!-- Names of the different stories -->
+            <div id="story-list-bar">
+                <ul>
+                    <span id="bar-title">Stories :</span>
+                    <li>Main Story</li>
+                    <li>Stargazing</li>
+                    <li>Finger Biter</li>
+                </ul>
+            </div>
+
+            <!-- Pictures to display at the side of the story -->
+            <div id="story-image">
+                <img src="images/ehl_old_smile.png"
+                    alt="An older design of a young Oele'in (Ehlaunoh) smiling contently at something offscreen."
+                    width="100%">
+                <img src="images/fruit_hold_oelein.png"
+                    alt="An Oele'in hanging from a branch and inspecting a piece of fruit in its foot's grasp. ">
+                <img src="images/treetops.jpg"
+                    alt="A young Oele'in (Ehlaunoh) string up into the treetops. The sky cannot be seen due to crown shyness.">
+            </div>
+
+            <!-- Actual story text -->
+            <div id="story-story">
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae labore excepturi explicabo. Aliquam
+                    nobis
+                    consequuntur, est aperiam facere molestiae ullam eaque libero eos in autem totam voluptas atque
+                    delectus
+                    iusto facilis officiis sapiente quaerat fugit culpa voluptates nemo! Vel numquam, aliquid in debitis
+                    inventore voluptas, velit et eaque cupiditate consequatur atque consequuntur expedita. Sint nostrum
+                    error
+                    quasi sequi nisi dolor minus nesciunt reprehenderit quaerat? Esse laboriosam hic ullam optio,
+                    debitis
+                    provident aliquid quas magni cum exercitationem saepe placeat laborum quae suscipit dolorum, quasi
+                    minima et
+                    voluptatibus dolorem. Itaque reprehenderit facere quod dolore cupiditate, officiis rem at provident
+                    quis
+                    impedit repudiandae unde vel illo nostrum enim sequi? Laborum quas explicabo praesentium porro
+                    dolore
+                    magnam
+                    vitae odio dolor minus, veniam obcaecati nam voluptate ipsum tempore reprehenderit atque maxime, eum
+                    nostrum
+                    libero. Quidem aut accusantium eaque magnam possimus delectus a. Vero deserunt consequatur esse
+                    voluptate
+                    unde ratione rem magnam et minima explicabo voluptatem exercitationem nemo facilis quia quaerat
+                    neque,
+                    consectetur distinctio, beatae quas, earum tempore ea doloremque sapiente. In ex obcaecati voluptas
+                    ipsum,
+                    dolor quod reiciendis praesentium soluta ducimus nostrum sed temporibus libero dicta, itaque aperiam
+                    eos
+                    saepe autem, nulla perferendis hic. Ipsa libero, possimus maiores minima eius sequi nisi commodi
+                    neque
+                    eveniet.
+                </p>
+            </div>
+        </div>
+
+<!-- --------construction end---------------------------------------------------------------------------------------------------------- -->
+
+    </div> <!-- End Wrapper -->
+</body>
+
+
+<footer>
+    <p>
+        Interactive guide of the fictional Enausq'/hl/ (Einasvel) species and Mk'mih'oh (Mikimoh) planet.
+        <br>
+        <br>
+        <i>All rights reserved. Do not copy or distribute without permission.</i>
+    </p>
+
+    <p>
+        Send a message or contact me on Instagram at<a href="https://www.instagram.com/chrysaora03__/"
+            id="instagram">@chrysaora03__</a>for any quoestions, comments, or feedback.
+        <br>
+        <br>
+        <i>
+        Last updated:
+        <script>
+            var date = document.lastModified;
+            document.write(date);
+        </script>
+        </i>
+    </p>
+
+    <form>
+        <div id="form-content">
+            <label for="message">Message*:</label>
+            <textarea name="message" cols="40%"></textarea>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" name="contact">
+
+            <input type="submit" value="send" id="send">
+        </div>
+    </form>
+</footer>
+
+
+<!-- JavaScript -->
+<!-- loads after html -->
+<script src="js/guidescript.js" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "xfbPdiVD70qK8vTY3",
+        });
+    })();
+</script>
+
+<script type="module" src="js/threeD.js"></script>
+
+</html>
