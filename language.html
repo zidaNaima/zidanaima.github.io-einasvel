@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide to the Language</title>
     <link rel="stylesheet" href="css/guidestyle.css">
+    <link rel="stylesheet" href="css/languagestyle.css">
     <link rel="icon" type="image/x-icon" href="images/favicon_32x32.png">
 </head>
 
@@ -35,7 +36,8 @@
                         <li><a href="planet.html#jump-to-vegetation">Environment: Vegetation</a></li>
                     </ul>
                 </li>
-                <li><a href="language.html">The Language<span class="nav-details"> | Naunoh/hl/oh</span></a>
+                <li id="current_okshlid"><a href="language.html">The Language<span class="nav-details"> |
+                            Naunoh/hl/oh</span></a>
                     <ul>
                         <li><a href="language.html#jump-to-translator">Translator</a></li>
                         <li><a href="language.html#jump-to-lang-structure">Language Structure</a></li>
@@ -52,12 +54,12 @@
                         <li><a href="people.html#jump-to-law">Culture: Societal Structure</a></li>
                     </ul>
                 </li>
-                <!-- <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
+                <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
                     <ul>
                         <li><a href="story.html#jump-to-characters">Characters</a></li>
                         <li><a href="story.html#jump-to-stories">Stories</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li><a href="about.html">The Creator<span class="nav-details"> | Me!</span></a>
                     <ul>
                         <li><a href="about.html#jump-to-about">About</a></li>
@@ -68,6 +70,21 @@
             </ul>
         </nav>
 
+        <div id="settings"></div>
+        <div id="settings-window">
+            <div id="settings-content">
+                <d id="settings-exit">X</d>
+
+                <h3>Themes</h3>
+                <ul>
+                    <li id="theme-default"><input type="radio" name="themes" />Default</li>
+                    <li id="theme-contrast"><input type="radio" name="themes" />High Contrast</li>
+                    <li id="theme-sunset"><input type="radio" name="themes" />Cream</li>
+                    <li id="theme-plain"><input type="radio" name="themes" />Plain</li>
+                    <li id="theme-colorless"><input type="radio" name="themes" />Colorless</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
@@ -147,11 +164,12 @@
 
 
         <div id="red-section">
-            <div id="jump-to-lang-structure"></div>
+            <div class="red-section-content">
 
-            <div class="flex-style">
-                <div class="one-section">
-                    <div class="red-section-content">
+                <div id="jump-to-lang-structure"></div>
+
+                <div class="flex-style">
+                    <div class="one-section">
                         <div id="structure-header">Language Structure</div>
                         <div id="structure-divider"></div> <!-- Solid line -->
 
@@ -161,7 +179,8 @@
                                 This is an SOV language, meaning the word-order is
                                 Subject-Object-Verb, like in Japanese and Hindi. Like Spanish, adjectives come after
                                 nouns.
-                                <span class="light">"The brown cat ate a mouse" <span class="nnhlh">&rarr;</span> "The
+                                <span class="light">"The brown cat ate a mouse" <span class="nnhlh">&rarr;</span>
+                                    "The
                                     cat brown a mouse ate"</span>
                             </li>
                             <li>
@@ -170,23 +189,27 @@
                             <li>
                                 Past and present tense are communicated at the start of a
                                 sentence.
-                                <span class="light">"I will eat an apple" <span class="nnhlh">&rarr;</span> "Future I am
+                                <span class="light">"I will eat an apple" <span class="nnhlh">&rarr;</span> "Future
+                                    I am
                                     apple eat(ing)"</span>
                             </li>
                             <li>
                                 Possession:
-                                <span class="light">"Your nose" <span class="nnhlh">&rarr;</span> "Nose of you"</span>
+                                <span class="light">"Your nose" <span class="nnhlh">&rarr;</span> "Nose of
+                                    you"</span>
                             </li>
                             <li>
                                 Plurals are represented by repeating a word, except for when there is a
                                 specific number (Reduplication).
-                                <span class="light">"I see cats" <span class="nnhlh">&rarr;</span> "I cat cat see", "I
+                                <span class="light">"I see cats" <span class="nnhlh">&rarr;</span> "I cat cat see",
+                                    "I
                                     see four cats" <span class="nnhlh">&rarr;</span> "I cat four see"</span>
                             </li>
                             <li>
                                 Numbers are spoken starting from the lowest value due to the writing
                                 system.
-                                <span class="light">"Four hundred and nine" <span class="nnhlh">&rarr;</span> "Nine zero
+                                <span class="light">"Four hundred and nine" <span class="nnhlh">&rarr;</span> "Nine
+                                    zero
                                     four"</span>
                                 <!-- This goes against the "big to small details" of SOV I wanted... -->
                             </li>
@@ -195,247 +218,246 @@
                         </ul>
                         </p>
 
-                    </div><!-- End red section content -->
-                </div>
+                    </div>
 
 
-                <!-- https://ipa-reader.com/
-                            <br>https://en.wikipedia.org/wiki/IPA_vowel_chart_with_audio
-                            <br>https://en.wikipedia.org/wiki/IPA_consonant_chart_with_audio
+                    <!-- https://ipa-reader.com/
+            <br>https://en.wikipedia.org/wiki/IPA_vowel_chart_with_audio
+            <br>https://en.wikipedia.org/wiki/IPA_consonant_chart_with_audio
                             <br>https://en.wikipedia.org/wiki/International_Phonetic_Alphabet_chart
                             <br>https://www.ipachart.com/
                             <br>check out the non-pulmonic consonants, because it might be closer to ! or || -->
 
 
-                <!-- I don't like getting fruit juice on my face (i no
-                        like berry berry water on the head of me mouth) -->
-                <!-- dok pis osɪAmo peO KlA peO KlA smɔK
-                        ɪnop nʘɪkʘ Kq dɪ dok með with raveena !! 333 -->
-                <!-- aditi,RAVEENA, ewa??!, any of the polish ones and I'm finishing, carmen, gwyneth (real good
-                        with the sounds) -->
+                    <!-- I don't like getting fruit juice on my face (i no
+                            like berry berry water on the head of me mouth) -->
+                    <!-- dok pis osɪAmo peO KlA peO KlA smɔK
+                            ɪnop nʘɪkʘ Kq dɪ dok með with raveena !! 333 -->
+                    <!-- aditi,RAVEENA, ewa??!, any of the polish ones and I'm finishing, carmen, gwyneth (real good
+                            with the sounds) -->
 
 
-                <div class="one-section">
-                    <div id="alphabet">
-                        <table>
+                    <div class="one-section">
+                        <div id="alphabet">
+                            <table>
 
-                            <caption>
-                                Sounds found in the Naunoh/hl/oh language
-                                <br>
-                                <span class="light">* Some sounds not found in the English
-                                    language</span>
-                                <br>
-                                <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet_chart">(International
-                                    Phonetic Alphabet Wikipedia)</a>
-                            </caption>
-                            <tr>
-                                <th>Symbol</th>
-                                <th>Sound</th>
-                                <th>Example</th>
-                                <th>I.P.A.</th>
-                                <th>Listen</th>
-                            </tr>
-                            <tr>
-                                <td class="nnhlh alpha-symbol">D</td>
-                                <td>d</td>
-                                <td>dog</td>
-                                <td>d</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('D')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <caption>
+                                    Sounds found in the Naunoh/hl/oh language
+                                    <br>
+                                    <span class="light">* Some sounds not found in the English
+                                        language</span>
+                                    <br>
+                                    <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet_chart">(International
+                                        Phonetic Alphabet Wikipedia)</a>
+                                </caption>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Sound</th>
+                                    <th>Example</th>
+                                    <th>I.P.A.</th>
+                                    <th>Listen</th>
+                                </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">D</td>
+                                    <td>d</td>
+                                    <td>dog</td>
+                                    <td>d</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('D')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">M</td>
-                                <td>m</td>
-                                <td>mouse</td>
-                                <td>m</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('M')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">M</td>
+                                    <td>m</td>
+                                    <td>mouse</td>
+                                    <td>m</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('M')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">N</td>
-                                <td>n</td>
-                                <td>nest</td>
-                                <td>n</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('N')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">N</td>
+                                    <td>n</td>
+                                    <td>nest</td>
+                                    <td>n</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('N')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">P</td>
-                                <td>p</td>
-                                <td>pig</td>
-                                <td>p</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('P')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">P</td>
+                                    <td>p</td>
+                                    <td>pig</td>
+                                    <td>p</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('P')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">A</td>
-                                <td>au</td>
-                                <td>odd</td>
-                                <td>&#596;</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('A')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">A</td>
+                                    <td>au</td>
+                                    <td>odd</td>
+                                    <td>&#596;</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('A')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">W</td>
-                                <td>ooh</td>
-                                <td>food</td>
-                                <td>u</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('W')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">W</td>
+                                    <td>ooh</td>
+                                    <td>food</td>
+                                    <td>u</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('W')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">O</td>
-                                <td>oh</td>
-                                <td>toad</td>
-                                <td>o / o&#650;</td>
-                                <!-- o / o: / ö̞ / o̝: / oʊ -->
-                                <!-- Tese are all technically correct -->
-                                <!-- Need to find the unicode! -->
-                                <!-- o̝ː corresponds to oʊ in other dialects -->
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('O')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">O</td>
+                                    <td>oh</td>
+                                    <td>toad</td>
+                                    <td>o / o&#650;</td>
+                                    <!-- o / o: / ö̞ / o̝: / oʊ -->
+                                    <!-- Tese are all technically correct -->
+                                    <!-- Need to find the unicode! -->
+                                    <!-- o̝ː corresponds to oʊ in other dialects -->
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('O')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">E</td>
-                                <td>e</td>
-                                <td>see</td>
-                                <td>i</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('E')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">E</td>
+                                    <td>e</td>
+                                    <td>see</td>
+                                    <td>i</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('E')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">I</td>
-                                <td>ih</td>
-                                <td>grin</td>
-                                <td class="alpha-sound">&#618;</td>
-                                <!-- Sound class only cause this guy's a bit tiny -->
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('I')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">I</td>
+                                    <td>ih</td>
+                                    <td>grin</td>
+                                    <td class="alpha-sound">&#618;</td>
+                                    <!-- Sound class only cause this guy's a bit tiny -->
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('I')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">Y</td>
-                                <td>ey (e + ih)</td>
-                                <td>day</td>
-                                <td>e</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('Y')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">Y</td>
+                                    <td>ey (e + ih)</td>
+                                    <td>day</td>
+                                    <td>e</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('Y')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">H</td>
-                                <td>/hl/</td>
-                                <td>*</td>
-                                <td>&#620;</td>
-                                <td>
-                                    <button type="button" class="alpha-sound" onclick="alphaSound('H')">&#128362;
-                                    </button>
-                                    <sup>1</sup>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">H</td>
+                                    <td>/hl/</td>
+                                    <td>*</td>
+                                    <td>&#620;</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound" onclick="alphaSound('H')">&#9205;
+                                        </button>
+                                        <sup>1</sup>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">G</td>
-                                <td>n&deg;</td>
-                                <td>*</td>
-                                <td>n&#664;</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('G')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">G</td>
+                                    <td>n&deg;</td>
+                                    <td>*</td>
+                                    <td>n&#664;</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('G')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">K</td>
-                                <td>k&deg;</td>
-                                <td>*</td>
-                                <td>k&#664</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('K')">&#128362;</button>
-                                    <sup>2</sup>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">K</td>
+                                    <td>k&deg;</td>
+                                    <td>*</td>
+                                    <td>k&#664</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('K')">&#9205;</button>
+                                        <sup>2</sup>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">Q</td>
-                                <td>q'</td>
-                                <td>*</td>
-                                <td>q'</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('Q')">&#128362;</button>
-                                    <sup>3</sup>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">Q</td>
+                                    <td>q'</td>
+                                    <td>*</td>
+                                    <td>q'</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('Q')">&#9205;</button>
+                                        <sup>3</sup>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">S</td>
-                                <td>s</td>
-                                <td>snail</td>
-                                <td>s</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('S')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">S</td>
+                                    <td>s</td>
+                                    <td>snail</td>
+                                    <td>s</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('S')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">T</td>
-                                <td>th</td>
-                                <td>then</td>
-                                <td>&#240;</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('T')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">T</td>
+                                    <td>th</td>
+                                    <td>then</td>
+                                    <td>&#240;</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('T')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td class="nnhlh alpha-symbol">U</td>
-                                <td>uh</td>
-                                <td>mud</td>
-                                <td>&#652;</td>
-                                <td>
-                                    <button type="button" class="alpha-sound"
-                                        onclick="alphaSound('U')">&#128362;</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="nnhlh alpha-symbol">U</td>
+                                    <td>uh</td>
+                                    <td>mud</td>
+                                    <td>&#652;</td>
+                                    <td>
+                                        <button type="button" class="alpha-sound"
+                                            onclick="alphaSound('U')">&#9205;</button>
+                                    </td>
+                                </tr>
 
-                        </table>
-                    </div>
+                            </table>
+                        </div>
 
-                    <div class="red-section-content">
                         <p class="centered tiny">
-                            <sup>1</sup> I am unsure if this is the correct pronunciation of &#620;, but regardless, it
+                            <sup>1</sup> I am unsure if this is the correct pronunciation of &#620;, but regardless,
+                            it
                             is the correct pronunciation of /hl/
                             <br>
                             <sup>2</sup> The k&deg; sound is pronounced with a cheek click, snapping the tongue away
@@ -445,130 +467,128 @@
                             Unfortunately I do not have a beak so it is pronounced as the uvular ejective stop as
                             sounded above.
                         </p>
+
                     </div>
-
-                </div>
-            </div> <!-- End Flex Style -->
+                </div> <!-- End Flex Style -->
 
 
 
-            <div class="red-section-content">
                 <div id="grammar-header">Grammar Rules</div>
-            </div>
+                <div class="flex-style grammar-tilt">
 
-            <div class="flex-style grammar-tilt">
+                    <!-- Conjugation -->
+                    <div class="one-section">
+                        <div id="alphabet">
+                            <div id="grammar">
+                                <table>
 
-                <!-- Conjugation -->
-                <div class="one-section">
-                    <div id="alphabet">
-                        <div id="grammar">
-                            <table>
+                                    <tr>
+                                        <th colspan="3">CONJUGATION</th>
+                                    </tr>
+                                    <tr class="heavy">
+                                        <td>Conjugator</td>
+                                        <td class="heavy">Use</td>
+                                        <!-- second column not bold except for this one -->
+                                        <td>Example</td>
+                                    </tr>
 
-                                <tr>
-                                    <th colspan="3">CONJUGATION</th>
-                                </tr>
-                                <tr class="heavy">
-                                    <td>Conjugator</td>
-                                    <td class="heavy">Use</td>
-                                    <!-- second column not bold except for this one -->
-                                    <td>Example</td>
-                                </tr>
+                                    <tr>
+                                        <td>-oh/hl/</td>
+                                        <td>One who does</td>
+                                        <td>Ohmihd (hunt) , Ohmihdoh/hl/ (hunter)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-en</td>
+                                        <td>A thing that does</td>
+                                        <td>K&deg;oohuh (to see) , K&deg;oohuhen (eyes)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-ooh (uncommon) (I think?)</td>
+                                        <td>A minor form of an emotion word</td>
+                                        <td>Sihduhk&deg;ihmuh (hate) , Sihduhk&deg;ihmuh (dislike)</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">I believe also "recent" time words start with /hl/ih and
+                                            "further
+                                            back" time words start with oh ? I fear I did a terrible job at writing down
+                                            what words were why.</td>
+                                    </tr>
 
-                                <tr>
-                                    <td>-oh/hl/</td>
-                                    <td>One who does</td>
-                                    <td>Ohmihd (hunt) , Ohmihdoh/hl/ (hunter)</td>
-                                </tr>
-                                <tr>
-                                    <td>-en</td>
-                                    <td>A thing that does</td>
-                                    <td>K&deg;oohuh (to see) , K&deg;oohuhen (eyes)</td>
-                                </tr>
-                                <tr>
-                                    <td>-ooh (uncommon) (I think?)</td>
-                                    <td>A minor form of an emotion word</td>
-                                    <td>Sihduhk&deg;ihmuh (hate) , Sihduhk&deg;ihmuh (dislike)</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">I believe also "recent" time words start with /hl/ih and "further
-                                        back" time words start with oh ? I fear I did a terrible job at writing down
-                                        what words were why.</td>
-                                </tr>
-
-                            </table>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </div> <!-- End One Section -->
+                    </div> <!-- End One Section -->
 
 
-                <!-- Smashing word together idk what it's called -->
-                <div class="one-section">
-                    <div id="alphabet">
-                        <div id="grammar">
-                            <table>
+                    <!-- Smashing word together idk what it's called -->
+                    <div class="one-section">
+                        <div id="alphabet">
+                            <div id="grammar">
+                                <table>
 
-                                <tr>
-                                    <!--  -->
-                                    <th colspan="2">COMPOUND WORDS</th>
-                                </tr>
-                                <tr class="heavy">
-                                    <td>Word</td>
-                                    <td class="heavy">Combination</td>
-                                    <!-- second column not bold except for this one -->
-                                </tr>
+                                    <tr>
+                                        <!--  -->
+                                        <th colspan="2">COMPOUND WORDS</th>
+                                    </tr>
+                                    <tr class="heavy">
+                                        <td>Word</td>
+                                        <td class="heavy">Combination</td>
+                                        <!-- second column not bold except for this one -->
+                                    </tr>
 
-                                <tr>
-                                    <td>You're Welcome, No Problem, Nice to Meet You</td>
-                                    <td>Rough combination of "Have happy, give happy"</td>
-                                </tr>
-                                <tr>
-                                    <td>Summer</td>
-                                    <td>Time + Hot + Where</td>
-                                </tr>
-                                <tr>
-                                    <td>Fall</td>
-                                    <td>Time + Good-bye + Where</td>
-                                </tr>
-                                <tr>
-                                    <td>Winter</td>
-                                    <td>Time + Cold + A lot + Where</td>
-                                </tr>
-                                <tr>
-                                    <td>Spring</td>
-                                    <td>Time + Life + Where</td>
-                                </tr>
+                                    <tr>
+                                        <td>You're Welcome, No Problem, Nice to Meet You</td>
+                                        <td>Rough combination of "Have happy, give happy"</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Summer</td>
+                                        <td>Time + Hot + Where</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fall</td>
+                                        <td>Time + Good-bye + Where</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Winter</td>
+                                        <td>Time + Cold + A lot + Where</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spring</td>
+                                        <td>Time + Life + Where</td>
+                                    </tr>
 
-                            </table>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </div> <!-- End One Section -->
+                    </div> <!-- End One Section -->
 
 
-            </div> <!-- End Flex Style -->
+                </div> <!-- End Flex Style -->
 
 
-            <!-- 
-1. **Declension**: This is similar to conjugation but applies to nouns, pronouns, and adjectives. It involves changing word forms based on case, number, or gender. For example, in Latin, "puella" (girl) changes to "puellae" in the genitive case.
+                <!-- 
+                    1. **Declension**: This is similar to conjugation but applies to nouns, pronouns, and adjectives. It involves changing word forms based on case, number, or gender. For example, in Latin, "puella" (girl) changes to "puellae" in the genitive case.
+                    
+                    2. **Syntax**: These are the rules governing sentence structure. For instance, in English, the subject typically comes before the verb ("I eat"), while in Japanese, the verb often comes at the end ("Watashi wa tabemasu").
+                    
+                    3. **Inflection**: This involves modifying a word to convey tense, mood, number, gender, aspect, or case. For example, "run" becomes "running" to show continuous aspect.
+                    
+                    4. **Word Order Rules**: Different languages follow specific orders for subject (S), object (O), and verb (V). English is SVO ("I like cats"), while Turkish is SOV ("I cats like").
+                    
+                    5. **Gender Systems**: Many languages, like Spanish or German, assign grammatical gender to nouns, which can influence articles, adjectives, and pronouns. For instance, "el gato" (the cat) is masculine in Spanish, while "la gata" is feminine.
+                    
+                    6. **Agglutination**: In languages like Finnish or Turkish, words are formed by adding multiple affixes to a root word, each affix having a specific meaning. For example, in Turkish, "evlerinizde" means "in your houses" ("ev" = house, "ler" = plural, "iniz" = your, "de" = in).
+                    
+                    7. **Reduplication**: Some languages, like Indonesian, use repetition of a word (or part of it) to convey different meanings. For instance, "buku" means "book," while "buku-buku" means "books."
+                    
+                    8. **Phonotactics**: This governs which sounds can appear together in a language. For instance, in English, "ng" can’t start a word, but it’s fine at the end (as in "sing").
+                    
+                    9. **Compounding**: Some languages combine words to create new ones. For example, in German, "Handschuh" (hand + shoe) means "glove."
+                    
+                    10. **Tone and Pitch Accent**: In tonal languages like Mandarin, the pitch of a word can change its meaning. For example, "ma" can mean "mother," "horse," "hemp," or "scold," depending on tone.
+                    -->
 
-2. **Syntax**: These are the rules governing sentence structure. For instance, in English, the subject typically comes before the verb ("I eat"), while in Japanese, the verb often comes at the end ("Watashi wa tabemasu").
-
-3. **Inflection**: This involves modifying a word to convey tense, mood, number, gender, aspect, or case. For example, "run" becomes "running" to show continuous aspect.
-
-4. **Word Order Rules**: Different languages follow specific orders for subject (S), object (O), and verb (V). English is SVO ("I like cats"), while Turkish is SOV ("I cats like").
-
-5. **Gender Systems**: Many languages, like Spanish or German, assign grammatical gender to nouns, which can influence articles, adjectives, and pronouns. For instance, "el gato" (the cat) is masculine in Spanish, while "la gata" is feminine.
-
-6. **Agglutination**: In languages like Finnish or Turkish, words are formed by adding multiple affixes to a root word, each affix having a specific meaning. For example, in Turkish, "evlerinizde" means "in your houses" ("ev" = house, "ler" = plural, "iniz" = your, "de" = in).
-
-7. **Reduplication**: Some languages, like Indonesian, use repetition of a word (or part of it) to convey different meanings. For instance, "buku" means "book," while "buku-buku" means "books."
-
-8. **Phonotactics**: This governs which sounds can appear together in a language. For instance, in English, "ng" can’t start a word, but it’s fine at the end (as in "sing").
-
-9. **Compounding**: Some languages combine words to create new ones. For example, in German, "Handschuh" (hand + shoe) means "glove."
-
-10. **Tone and Pitch Accent**: In tonal languages like Mandarin, the pitch of a word can change its meaning. For example, "ma" can mean "mother," "horse," "hemp," or "scold," depending on tone.
--->
-
+            </div> <!-- End Red Section Content -->
         </div> <!-- End Red Section -->
 
 
@@ -612,6 +632,11 @@
 
         <div class="gap8"></div>
 
+        <!-- SECTION UNDER CONSTRUCTION -->
+        <div id="jump-to-slang"></div>
+        <h2 class="downwards-sub-header">Nonverbal Communication</h2>
+        <p>WIP section</p>
+
         <!-- Numbers -->
         <div id="jump-to-numbers"></div>
         <h2 class="downwards-sub-header">Numbers</h2>
@@ -646,23 +671,21 @@
 
 
         <div id="red-section">
-            <div id="jump-to-idauhl"></div>
-            <!-- !! why is this font size smaller? -->
+            <div class="red-section-content">
 
-            <div class="flex-style">
+                <div id="jump-to-idauhl"></div>
 
-                <div class="one-section">
-                    <div class="red-section-content">
+                <div class="flex-style">
+
+                    <div class="one-section">
                         <img src="images/idauhl_alphabet.png"
                             alt="The alphabet for a grid-like language that uses dashes and lines, and a demonstration of how the language looks when carved into a tree.">
                     </div>
-                </div>
 
-                <div class="two-sections">
-                    <div id="structure-header">Idau/hl/</div>
-                    <div id="structure-divider"></div> <!-- Solid line -->
+                    <div class="two-sections">
+                        <div id="structure-header">Idau/hl/</div>
+                        <div id="structure-divider"></div> <!-- Solid line -->
 
-                    <div class="red-section-content">
                         <p>
                             The Oele'in language, Idau/hl/ is both written and spoken, but much less casual. Due to the
                             environment they live in, conversations take place over long distances and time periods.
@@ -696,10 +719,10 @@
                             space is used efficiently, and words often span over multiple vertical planes.
                         </p>
                     </div>
-                </div>
 
-            </div>
-        </div>
+                </div>
+            </div> <!-- End Red Section Content -->
+        </div> <!-- End Red Section -->
 
     </div> <!-- End Wrapper -->
 
@@ -707,38 +730,38 @@
 
 
 <footer>
-    <section>
-        <p>
-            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-            questions.
-
-        <form> <!-- onsubmit="return validateMessage();" -->
-            <div id="form-content">
-                <label for="message">Message (required):</label>
-                <textarea name="message" cols="40%"></textarea>
-
-                <label for="contact">Contact Info:</label>
-                <input type="text" name="contact">
-                <input type="submit" value="send" id="send">
-            </div>
-        </form>
-
-    </section>
-
-    <br>
-    <br>
-    All rights reserved. Do not copy without permission.
-    <br>
-
-    Last updated:
-    <script>
-        var date = document.lastModified;
-        document.write(date);
-    </script>
-
+    <p>
+        Interactive guide of the fictional Enausq'/hl/ (Einasvel) species and Mk'mih'oh (Mikimoh) planet.
+        <br>
+        <br>
+        <i>All rights reserved. Do not copy or distribute without permission.</i>
     </p>
 
+    <p>
+        Send a message or contact me on Instagram at<a href="https://www.instagram.com/chrysaora03__/"
+            id="instagram">@chrysaora03__</a>for any quoestions, comments, or feedback.
+        <br>
+        <br>
+        <i>
+        Last updated:
+        <script>
+            var date = document.lastModified;
+            document.write(date);
+        </script>
+        </i>
+    </p>
+
+    <form>
+        <div id="form-content">
+            <label for="message">Message*:</label>
+            <textarea name="message" cols="40%"></textarea>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" name="contact">
+
+            <input type="submit" value="send" id="send">
+        </div>
+    </form>
 </footer>
 
 
