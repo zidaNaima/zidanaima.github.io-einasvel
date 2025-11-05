@@ -125,17 +125,14 @@
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
-    .people-fade-coll .flex-style {
+    .people-fade-coll {
         display: block;
     }
 
-    .people-fade-coll {
-        width: 100vw;
-    }
-
-    .people-fade-coll .one-section img {
-        /* width: 50%; */
+    .people-fade-coll img, .flex-style section img {
+        display: flex;
+        margin: auto;
+        width: 80%;
         max-height: 40vh;
-        object-fit: contain;
     }
 }

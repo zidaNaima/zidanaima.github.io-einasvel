@@ -898,10 +898,6 @@ footer input {
         }
     }
 
-    .collapse-inside {
-        margin-left: 0;
-    }
-
     footer p, form {
         padding: 0 10px;
         width: 30vw;
@@ -1022,6 +1018,10 @@ footer input {
 
     #home-hero {
         width: 100%;
+    }
+
+    .flex-style {
+        display: block;
     }
 
     .collapse {
