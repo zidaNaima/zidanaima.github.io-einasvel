@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide to the Planet</title>
     <link rel="stylesheet" href="css/guidestyle.css">
+    <link rel="stylesheet" href="css/planetstyle.css">
     <link rel="icon" type="image/x-icon" href="images/favicon_32x32.png">
 </head>
 
@@ -28,7 +29,8 @@
                         <li><a href="index.html#jump-to-gallery">Gallery</a></li>
                     </ul>
                 </li>
-                <li><a href="planet.html">The Planet<span class="nav-details"> | Mk&deg;mih'oh</span></a>
+                <li id="current_okshlid"><a href="planet.html">The Planet<span class="nav-details"> |
+                            Mk&deg;mih'oh</span></a>
                     <ul>
                         <li><a href="planet.html#jump-to-map">Map</a></li>
                         <li><a href="planet.html#jump-to-wildlife">Environment: Wildlife</a></li>
@@ -52,12 +54,12 @@
                         <li><a href="people.html#jump-to-law">Culture: Societal Structure</a></li>
                     </ul>
                 </li>
-                <!-- <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
+                <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
                     <ul>
                         <li><a href="story.html#jump-to-characters">Characters</a></li>
                         <li><a href="story.html#jump-to-stories">Stories</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li><a href="about.html">The Creator<span class="nav-details"> | Me!</span></a>
                     <ul>
                         <li><a href="about.html#jump-to-about">About</a></li>
@@ -68,6 +70,21 @@
             </ul>
         </nav>
 
+        <div id="settings"></div>
+        <div id="settings-window">
+            <div id="settings-content">
+                <d id="settings-exit">X</d>
+
+                <h3>Themes</h3>
+                <ul>
+                    <li id="theme-default"><input type="radio" name="themes" />Default</li>
+                    <li id="theme-contrast"><input type="radio" name="themes" />High Contrast</li>
+                    <li id="theme-sunset"><input type="radio" name="themes" />Cream</li>
+                    <li id="theme-plain"><input type="radio" name="themes" />Plain</li>
+                    <li id="theme-colorless"><input type="radio" name="themes" />Colorless</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
@@ -80,173 +97,182 @@
 
         <div id="jump-to-map"></div>
 
-        <div class="gap5"></div>
-
-        <div class="planet-info">
-            <p class="heavy">Mk&deg;mih'oh is around 6 billion years old, and fairly new in its evolutionary lifetime,
-                only seein gits first life forms 3 billion years ago. The majority of the
-                world-building and story plot is done on K&deg;epuhthenoh and the upper part of Au/hl/ihth.</p>
-            <!-- I made those numbers up, but it seems fine -->
-            <p>
-                Information created using Biblaridon and Artifexian's planet evolution video series on YouTube found <a
-                    href="https://www.youtube.com/watch?v=egzZv8tqT_k&list=PL6xPxnYMQpquNuaEffJzjGjMsr6VktCYl"
-                    class="blue-link">here</a> and <a
-                    href="https://www.youtube.com/watch?v=x55nxxaWXAM&list=PLduA6tsl3gyiEXi1-593FiAPnjhrBcPES&index=4"
-                    class="blue-link">here</a>.
-            </p>
-            <p>Note: 1 au = The distance from the Earth to the Sun.</p>
-        </div>
-
         <div id="threeD-med-screen">
             <div class="flex-style">
+
                 <div class="one-section">
                     <div id="threeD-map"></div>
                 </div>
+
                 <div class="one-section">
-                    <div id="large-map">
-                        <img src="images/map_named.png"
-                            alt="A Map of Mikimoh with named continents and visible lines around the tropics.">
+                    <p class="text-justify heavy">Mk&deg;mih'oh is around 6 billion years old, and fairly new in its
+                        evolutionary
+                        lifetime,
+                        only seeing its first life forms 3 billion years ago. The majority of the
+                        world-building and story plot is done on K&deg;epuhthenoh and the upper part of Au/hl/ihth.</p>
+                    <!-- I made those numbers up, but it seems fine -->
+                    <p class="text-justify">
+                        Information created using assistance from Biblaridon and Artifexian's planet evolution video
+                        series on
+                        YouTube, found <a
+                            href="https://www.youtube.com/watch?v=egzZv8tqT_k&list=PL6xPxnYMQpquNuaEffJzjGjMsr6VktCYl"
+                            class="blue-link">here</a> and <a
+                            href="https://www.youtube.com/watch?v=x55nxxaWXAM&list=PLduA6tsl3gyiEXi1-593FiAPnjhrBcPES&index=4"
+                            class="blue-link">here</a>.
+                    </p>
+
+                    <div id="large-map"><a href="images/map_named.png">
+                            <img src="images/attack_pose_eina.jpg"
+                                alt="A Map of Mikimoh with named continents and visible lines around the tropics.">
+                        </a>
                     </div>
+                    <div class="centered"><i>Click on the image to open it in full screen mode</i></div>
                     <button id="map-data-button">Show/Hide Data</button>
 
                     <!-- NOTE: map sides should be tapering inwards, not out... -->
 
-                    <p>
+                    <p class="text-justify">
                         A majority of Dau/hl/saumihk&deg; remains in constant darkness, while the entirety of the
-                        southern mystery continent is always in light, making both continents difficult if not
-                        impossible to inhabit for may species.
+                        southern mystery continent is always in light, making both continents difficult &mdash; if not
+                        impossible &mdash; to inhabit for many species.
                     </p>
 
                 </div>
             </div>
         </div>
 
-        <!-- Galaxy Data -->
-        <div class="flex-style planet-info">
+        <div class="gap5"></div>
 
-            <div class="one-section">
-                <dl>
-                    <dt>Star Data (compared to The Sun) :</dt>
-                    <dd><span class="heavy">Mass:</span> 1.2</dd>
-                    <dd><span class="heavy">Luminosity:</span> 2.07 (m<sup>4</sup>)</dd>
-                    <dd><span class="heavy">Diameter:</span> 1.14 (m<sup>0.74</sup>)</dd>
-                    <dd><span class="heavy">Surface Temp.:</span> 1.1 (m<sup>0.505</sup>)</dd>
-                    <dd><span class="heavy">Lifespan:</span> 0.63 (m<sup>-2.5</sup>)</dd>
-                    <!-- <dd><span class="heavy">Limits:</span> 0.12au &rarr; 48au (solar system) (I don't remember what this
-                        means...)</dd> -->
-                    <dd><span class="heavy">Solar System Limits:</span> 0.12au &rarr; 48au</dd>
-                    <dd><span class="heavy">Habitable Zone:</span> 1.372au &rarr; 1.97au (Mk&deg;mih'oh at 1.43au)</dd>
-                    <dd><span class="heavy">Frostline:</span> 6.98au</dd>
-                    <dd>Smaller stars live longer but have worse planetary environments.</dd>
-                </dl>
+        <!-- Galaxy and Planet Data -->
+        <p>Note: 1 au = The distance from the Earth to the Sun.</p>
+        <!-- <div id="planetnotebookheightTEMP"> -->
+        <div class="planet-notebook">
+
+            <div class="planet-notebook-header">
+                <h1>Star Data</h1>
             </div>
+            <div class="planet-notebook-tab" id="star-tab">Star</div>
+            <section>
+                *compared to The Sun<br>
+                <b>Mass:</b> 1.2<br>
+                <b>Luminosity:</b> 2.07 (m<div class="sup">4</div>)<br>
+                <b>Diameter:</b> 1.14 (m<div class="sup">0.74</div>)<br>
+                <b>Surface Temp.:</b> 1.1 (m<div class="sup">0.505</div>)<br>
+                <b>Lifespan:</b> 0.63 (m<div class="sup">-2.5</div>)<br>
+                <b>Limits:</b> 0.12au &rarr; 48au<br>
+                <b>Solar System Limits:</b> 0.12au &rarr; 48au<br>
+                <b>Habitable Zone:</b> 1.372au &rarr; 1.97au (Mk&deg;mih'oh at 1.43au)
+                <br>
+                <b>Frostline:</b> 6.98au<br>
+                Smaller stars live longer but have worse planetary environments.<br>
+            </section>
 
-            <div class="one-section">
-                <dl>
-                    <dt>Mk&deg;mih'oh's Moon:</dt>
-                    <dd>(Habitable planets <i>must</i> have a major moon)</dd>
-                    <dd><span class="heavy">Density:</span> 3.6194 g/cm<sup>3</sup> (0.66 compared to Earth)</dd>
-                    <dd><span class="heavy">Radius:</span> 0.28 (compared to Earth)</dd>
-                    <dd><span class="heavy">Mass:</span> 0.01448 (compared to Earth)</dd>
-                    <dd><span class="heavy">Surface Gravity:</span> 0.1848 (compared to Earth)</dd>
-                    <dd><span class="heavy">Distance:</span> 2.108au (220 Earth radii)</dd>
-                    <dd><span class="heavy">Orbital Period:</span> 55.072 (Earth) days
-                        <!-- (0.0588*sqrt(r<sup>3</sup>/(M+m)) ) -->
-                    </dd>
-                    <br>
-                    <dd><span class="heavy">Silicate Rock:</span> 89&#37;</dd>
-                    <dd><span class="heavy">Water/Ice:</span> 2&#37;</dd>
-                    <dd><span class="heavy">Iron:</span> 9&#37;</dd>
-                    <dd>Note: This moon has its own moon, but I don't want to do the math for that. It is 69 Earth radii
-                        out.</dd>
-                </dl>
+            <div class="planet-notebook-header">
+                <h1>Mk&deg;mih'oh's Moon</h1>
             </div>
+            <div class="planet-notebook-tab" id="moon-tab">Moon</div>
+            <section>
+                <b>Density:</b> 3.6194 g/cm<div class="sup">3</div> (0.66 compared to Earth)<br>
+                <b>Radius:</b> 0.28 (compared to Earth)<br>
+                <b>Mass:</b> 0.01448 (compared to Earth)<br>
+                <b>Surface Gravity:</b> 0.1848 (compared to Earth)<br>
+                <b>Distance:</b> 2.108au (220 Earth radii)<br>
+                <b>Orbital Period:</b> 55.072 (Earth) days
+                <!-- (0.0588*sqrt(r<div class="sup">3</div>/(M+m)) ) -->
+                <b>Silicate Rock:</b> 89&#37;<br>
+                <b>Water/Ice:</b> 2&#37;<br>
+                <b>Iron:</b> 9&#37;<br>
+                Note: Habitable planets <i>must</i> have a major moon. This moon has its own moon 69 Earth
+                radii
+                out that I don't want to do the math for.<br>
+            </section>
 
-        </div>
-
-        <!-- Planet Data-->
-        <div class="flex-style planet-info">
-
-            <div class="one-section">
-                <dl>
-                    <dt>Lunar Calendar (Earth time in parentheses):</dt>
-                    <dd><span class="heavy">Year:</span> 1008 days, 18 months (1007.705
-                        days<!-- = sqrt(a<sup>3</sup>/m) -->, 18.29795 months)</dd>
-                    <dd><span class="heavy">Month:</span> 56 days (55.072 days)</dd>
-                    <dd><span class="heavy">Day:</span> 28 hours (23.602 hours)</dd>
-                    <dd><span class="heavy">Hour:</span> 10 minutes (50.576 minutes)</dd>
-                    <dd>Meaning each minute on Mk&deg'mih'oh is equivalent to 5.0576 minutes on Earth.</dd>
-                    <dd>Each month is the same length as one lunar cycle.</dd>
-                    <dd>(Tentatively) There are 4 months of Spring, 7 of Summer, 4 of fall, and 3 of Winter.</dd>
-                </dl>
+            <div class="planet-notebook-header">
+                <h1>Lunar Calendar</h1>
             </div>
+            <div class="planet-notebook-tab" id="cale-tab">Calendar</div>
+            <section>
+                *Earth time in parentheses<br>
+                <b>Year:</b> 1008 days, 18 months (1007.705
+                days<!-- = sqrt(a<div class="sup">3</div>/m) -->, 18.29795 months)<br>
+                <b>Month:</b> 56 days (55.072 days)<br>
+                <b>Day:</b> 28 hours (23.602 hours)<br>
+                <b>Hour:</b> 10 minutes (50.576 minutes)<br>
+                Meaning each minute on Mk&deg'mih'oh is equivalent to 5.0576 minutes on Earth.<br>
+                Each month is the same length as one lunar cycle.<br>
+                (Tentatively) There are 4 months of Spring, 7 of Summer, 4 of fall, and 3 of Winter.<br>
+            </section>
 
-            <div class="one-section">
-                <dl>
-                    <dt>Planet Data (compared to Earth) :</dt>
-                    <dd><span class="heavy">Mass:</span> 0.36</dd>
-                    <dd><span class="heavy">Radius:</span> 0.65</dd>
-                    <dd><span class="heavy">Gravity:</span> 0.85</dd>
-                    <dd><span class="heavy">Density:</span> 1.55 (large iron core)</dd>
-                    <dd><span class="heavy">Velocity:</span> 0.744 = 22 km/s</dd>
-                    <dd><span class="heavy">Orbital Eccentricity:</span> 0.1</dd>
-                    <dd><span class="heavy">Semi Major Axis:</span> AVG 1.43au, MIN 1.372au, MAX 1.428au</dd>
-                    <dd><span class="heavy">Axial Tilt:</span> 32&deg; spinning ccw</dd>
-                    <dd><span class="heavy">Rings:</span> none</dd>
-                    <dd>Note: Orbital eccentricity is how much an orbit deviates from a perfect circle, measured between
-                        0 and 1.</dd>
-                </dl>
+            <div class="planet-notebook-header">
+                <h1>Planet Data</h1>
             </div>
+            <div class="planet-notebook-tab" id="plan-tab">Planet</div>
+            <section>
+                *compared to Earth<br>
+                <b>Mass:</b> 0.36<br>
+                <b>Radius:</b> 0.65<br>
+                <b>Gravity:</b> 0.85<br>
+                <b>Density:</b> 1.55 (large iron core)<br>
+                <b>Velocity:</b> 0.744 = 22 km/s<br>
+                <b>Orbital Eccentricity:</b> 0.1<br>
+                <b>Semi Major Axis:</b> AVG 1.43au, MIN 1.372au, MAX 1.428au<br>
+                <b>Axial Tilt:</b> 32&deg; spinning ccw<br>
+                <b>Rings:</b> none<br>
+                Note: Orbital eccentricity is how much an orbit deviates from a perfect circle, measured
+                between
+                0 and 1.<br>
+            </section>
 
-            <div class="one-section">
-                <dl>
-                    <dt>Planet Climate:</dt>
-                    <dd><span class="heavy">Atmosphere:</span> ----</dd>
-                    <dd>Equator has rainforests, tropics, savannahs, monsoons, etc.</dd>
-                    <dd><span class="heavy">Tropics:</span> 32&deg; N and S of equator</dd>
-                    <dd><span class="heavy">Polar:</span> 58&deg; N and S (90-32)</dd>
-                    <dd>Tilts greater than or equal to 54&deg; switch tropics with poles (what?)</dd>
-                </dl>
+            <div class="planet-notebook-header">
+                <h1>Planet Climate</h1>
+            </div>
+            <div class="planet-notebook-tab" id="clim-tab">Climate</div>
+            <section>
+                <b>Atmosphere:</b> ----<br>
+                Equator has rainforests, tropics, savannahs, monsoons, etc.<br>
+                <b>Tropics:</b> 32&deg; N and S of equator<br>
+                <b>Polar:</b> 58&deg; N and S (90-32)<br>
+                Note: Tilts greater than or equal to 54&deg; switch tropics with poles<br>
+                <br>
                 <img src="images/rotational_axis.png" alt="Diagram of the Planet's rotational axis and climate zones.">
-            </div>
+            </section>
 
         </div>
+        <!-- </div> -->
 
+        <div>&nbsp;</div>
+        <!-- stops the margins (top of wildlife and bottom of notebook) from overlapping on phone screens -->
 
-
-        <div class="gap8"></div>
         <div id="jump-to-wildlife"></div>
-        <div id="creature-header">Wildlife</div>
-        <h3 class="creature-sub-header">K&deg;epuhthenoh and Auh/hl/ihth</h3>
+        <div class="section-header">Wildlife</div>
+        <h3 class="section-sub-header">K&deg;epuhthenoh and Auh/hl/ihth</h3>
 
         <!-- evolution chart -->
-        <div class="flex-style">
-            <div class="one-section">
-                <img class="smaller-img" src="images/evolution_chart.png" alt="">
-                <p class="centered">The Phylogenetic Tree of Mk&deg;mih'oh's Creatures</p>
-            </div>
+        <div id="cladogram">
+            <img src="images/evolution_chart.png" alt="">
+            <p class="centered">Cladogram of Mk&deg;mih'oh's Creatures</p>
         </div>
+        <!-- Phylogenetic Tree uses time as a factor for determining distances between species. Cladograms use set distances. -->
 
 
-        <div class="gap5"></div>
         <!-- NOTE: I need to decide if I want the weights to account for the 85% low gravitational pull. Currently it does not. -->
         <!-- https://worldbuilding.stackexchange.com/questions/156483/what-are-the-benefits-and-disadvantages-if-a-creature-has-multiple-tails-e-g -->
         <!-- ^Benefits/disadvantages of multiple tails -->
 
-
-        <!-- edit thumbs and alts -->
+        <!-- FIX: edit thumbs and alts -->
         <section class="creature-gallery">
 
             <!-- Okshlihd -->
             <div>
                 <!-- same name so only one can be checked -->
+                <!-- different id's -->
                 <!-- this one starts checked -->
-                <input type="radio" id="img-1" checked name="cg" class="creature-gallery-selector" />
+                <input checked type="radio" id="img-1" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-left">Ok&deg;s/hl/ihd </h3>
 
                             <div class="flex-style">
@@ -281,9 +307,15 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_okshlihd.png"
+                                    <img src="images/dist_map_okshlihd.png"
                                         alt="A map of the species distribution for Oq's/hl/id">
                                 </div>
+                            </div>
+
+                            <div class="float-right">
+                                <img src="images/okshlid_flying.png" alt="A drawing of a flying ok&deg;s/hl/ihd">
+                                <img src="images/okshlid_fullbody.png"
+                                    alt="A drawing of an ok&deg;s/hl/ihd, a pterodactyl-like creature with a hump over its face and large bone plates coming from the end of its bat-like wings. It has no legs or eyes.">
                             </div>
 
                             <p>
@@ -323,12 +355,8 @@
                                     same
                                     ordered group and on the same path.</li>
                             </ul>
-                        </div>
-                        <div class="one-section">
-                            <img src="images/okshlid_flying.png" alt="A drawing of a flying ok&deg;s/hl/ihd">
-                            <img src="images/okshlid_fullbody.png"
-                                alt="A drawing of an ok&deg;s/hl/ihd, a pterodactyl-like creature with a hump over its face and large bone plates coming from the end of its bat-like wings. It has no legs or eyes.">
-                        </div>
+
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -341,17 +369,11 @@
             <div>
                 <input type="radio" id="img-2" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="one-section">
-                            <img class="smaller-img" src="images/baby_water_eater.png"
-                                alt="A drawing of a baby water-eater">
-                            <img class="smaller-img" src="images/water_eater_adult.png"
-                                alt="Drawing of a Water-Eater, a yellow hippo-like creature with two additional small arms on the front and a large brightly colored tail.">
-                        </div>
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-right">Smau/hl/ Au/hl/etheoh/hl/ (Water-Eaters)</h3>
 
 
@@ -380,11 +402,16 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_watereater.png"
+                                    <img src="images/dist_map_watereater.png"
                                         alt="A map of the species distribution for Water-Eaters">
                                 </div>
                             </div>
 
+                            <div class="float-left">
+                                <img src="images/baby_water_eater.png" alt="A drawing of a baby water-eater">
+                                <img src="images/water_eater_adult.png"
+                                    alt="Drawing of a Water-Eater, a yellow hippo-like creature with two additional small arms on the front and a large brightly colored tail.">
+                            </div>
 
                             <p>
                                 Water-Eaters are known for their style of feeding, which is to filter through water for
@@ -403,7 +430,7 @@
                                     attacking
                                     while they feed.</li>
                             </ul>
-                        </div>
+                        </section>
                     </div>
 
                 </div> <!-- End Creature Section -->
@@ -416,10 +443,10 @@
             <div>
                 <input type="radio" id="img-3" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-left">Enausq'/hl/</h3>
 
                             <div class="flex-style">
@@ -447,19 +474,20 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_einasvel.png"
+                                    <img src="images/dist_map_einasvel.png"
                                         alt="A map of the species distribution for Enausq'/hl/">
                                 </div>
+                            </div>
+
+                            <div class="float-right">
+                                <img src="images/creep.png" alt="TEMPORARY">
                             </div>
 
                             <p>
 
                             </p>
 
-                        </div>
-                        <div class="one-section">
-                            <img src="images/creep.png" alt="TEMPORARY">
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -472,15 +500,10 @@
             <div>
                 <input type="radio" id="img-4" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="one-section">
-                            <img class="smaller-img" src="images/fruit_hold_oelein.png"
-                                alt="An Oele'in hanging from a branch and inspecting a piece of fruit in its foot's grasp.">
-                        </div>
-
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-right">Oele'in</h3>
 
 
@@ -509,11 +532,15 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_oelein.png"
+                                    <img src="images/dist_map_oelein.png"
                                         alt="A map of the species distribution for Oele'in">
                                 </div>
                             </div>
 
+                            <div class="float-left">
+                                <img src="images/fruit_hold_oelein.png"
+                                    alt="An Oele'in hanging from a branch and inspecting a piece of fruit in its foot's grasp.">
+                            </div>
 
                             <p>
                                 Oele'in are a sub-species of Enausq'/hl/, living on the nearby islands of Au/hl/ihth and
@@ -529,7 +556,7 @@
                                     due to the
                                     abundance of food and restrictions the weight would cause.</li>
                             </ul>
-                        </div>
+                        </section>
                     </div>
 
                 </div> <!-- End Creature Section -->
@@ -542,10 +569,10 @@
             <div>
                 <input type="radio" id="img-5" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-left">Unnamed Creature #1</h3>
 
                             <div class="flex-style">
@@ -573,20 +600,20 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_unnamed.png"
+                                    <img src="images/dist_map_unnamed.png"
                                         alt="A map of the species distribution for Unnamed Creature #1">
                                 </div>
-
-                                <p>The only known inhabitants of the icy Dau/hl/saumihk&deg; continent. They live on the
-                                    edge of the dark zone, where only most days are full darkness.</p>
-
                             </div>
-                        </div>
 
-                        <div class="one-section">
-                            <img src="images/large_creature.png"
-                                alt="A large bird-like creature similar to a Vorombe Titan with a crest on its head.">
-                        </div>
+                            <div class="float-right">
+                                <img src="images/large_creature.png"
+                                    alt="A large bird-like creature similar to a Vorombe Titan with a crest on its head.">
+                            </div>
+
+                            <p>The only known inhabitants of the icy Dau/hl/saumihk&deg; continent. They live on the
+                                edge of the dark zone, where only most days are full darkness.</p>
+
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -599,14 +626,10 @@
             <div>
                 <input type="radio" id="img-6" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="one-section">
-                            <img src="images/deer_creature.png" alt="TEMPORARY">
-                        </div>
-
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-right">Ooheihaudeih</h3>
 
                             <div class="flex-style">
@@ -637,9 +660,13 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img src="images/map_blank_placeholder.png"
                                         alt="A map of the species distribution for ___">
                                 </div>
+                            </div>
+
+                            <div class="float-left">
+                                <img src="images/deer_creature.png" alt="TEMPORARY">
                             </div>
 
                             <p>Built like a bison and as common as deer, many folklore tales revolve around Ooheihaudeih
@@ -669,7 +696,7 @@
                                 <li>They have four eyes, two to the sides and two at the front</li>
                             </ul>
 
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -683,10 +710,10 @@
             <div>
                 <input type="radio" id="img-7" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-left">Generic Fish #1</h3>
 
                             <div class="flex-style">
@@ -715,9 +742,13 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img src="images/map_blank_placeholder.png"
                                         alt="A map of the species distribution for ____">
                                 </div>
+                            </div>
+
+                            <div class="float-right">
+                                <img src="images/fish.png" alt="TEMPORARY">
                             </div>
 
                             <p>Yum! A common staple dish for those near the shores of K&deg;epuhthenoh.</p>
@@ -725,11 +756,7 @@
                                 <li>Tastes like chicken...</li>
                             </ul>
 
-                        </div>
-
-                        <div class="one-section">
-                            <img src="images/fish.png" alt="TEMPORARY">
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -742,14 +769,10 @@
             <div>
                 <input type="radio" id="img-8" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="one-section">
-                            <img src="images/creature_2.png" alt="TEMPORARY">
-                        </div>
-
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-right">Sauk&deg;s</h3>
 
                             <div class="flex-style">
@@ -778,9 +801,13 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img src="images/map_blank_placeholder.png"
                                         alt="A map of the species distribution for Sauk&deg;s">
                                 </div>
+                            </div>
+
+                            <div class="float-left">
+                                <img src="images/creature_2.png" alt="TEMPORARY">
                             </div>
 
                             <p>Sauk&deg;s are a diverse species of creature. The kind in the photo to the left are the
@@ -790,7 +817,7 @@
                                 through mud
                                 and eating bugs.</p>
 
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -803,10 +830,10 @@
             <div>
                 <input type="radio" id="img-9" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-left">Unnamed Creature #2 (AKA "Stump Guy")</h3>
 
                             <div class="flex-style">
@@ -834,9 +861,13 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/dist_map_stump.png"
+                                    <img src="images/dist_map_stump.png"
                                         alt="A map of the species distribution for ____">
                                 </div>
+                            </div>
+
+                            <div class="float-right">
+                                <img src="images/stump_creature.png" alt="TEMPORARY">
                             </div>
 
                             <p>They blend in with plants that resemble tree burls growing out of the groud. They lift up
@@ -851,11 +882,7 @@
                                     cockroach. Their shells make for wonderful bowls afterwards as well.</li>
                             </ul>
 
-                        </div>
-
-                        <div class="one-section">
-                            <img src="images/stump_creature.png" alt="TEMPORARY">
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -869,14 +896,10 @@
             <div>
                 <input type="radio" id="img-10" name="cg" class="creature-gallery-selector" />
 
-                <div class="creature-gallery-img planet-creature-section">
+                <div class="planet-creature-section">
                     <div class="flex-style">
 
-                        <div class="one-section">
-                            <img class="smaller-img" src="images/giraffe_like_creature.png" alt="TEMPORARY">
-                        </div>
-
-                        <div class="two-sections">
+                        <section>
                             <h3 class="planet-creature-header-right">Unnamed Creature #3 (AKA Giraffe-like creature)
                             </h3>
 
@@ -905,15 +928,19 @@
                                     </tr>
                                 </table>
                                 <div class="dist-map">
-                                    <img class="one-section" src="images/map_blank_placeholder.png"
+                                    <img src="images/map_blank_placeholder.png"
                                         alt="A map of the species distribution for ____ ">
                                 </div>
+                            </div>
+
+                            <div class="float-left">
+                                <img src="images/giraffe_like_creature.png" alt="TEMPORARY">
                             </div>
 
                             <p></p>
                             <!-- !!! Maybe if the black and white was swapped it would both keep them cooler and alive longer cause they block out light for little ones -->
 
-                        </div>
+                        </section>
 
                     </div>
                 </div> <!-- End Creature Section -->
@@ -928,12 +955,15 @@
 
 
         <div id="jump-to-vegetation"></div>
-        <div id="creature-header">Vegetation</div>
-        <h3 class="creature-sub-header">K&deg;epuhthenoh</h3>
+        <div class="section-header">Vegetation</div>
+        <h3 class="section-sub-header">K&deg;epuhthenoh</h3>
         <!-- This section still uses the "creature" named tags -->
 
 
-        <div class="planet-creature-section">
+        <input checked type="radio" id="veg-1" name="vg" class="creature-gallery-selector" />
+
+        <div class="planet-creature-section veg">
+            <!-- FIX; veg os temp -->
             <div class="flex-style">
 
                 <div class="one-section">
@@ -941,37 +971,36 @@
                         alt="An Einasvel crouched in front of a Paupau tree that has large multi colored balls of moss hanging from the branches.">
                 </div>
 
-                <div class="two-sections">
+                <section class="two-sections">
                     <h3 class="planet-creature-header-right">Glow Moss</h3>
+
                     <p>
                         Glow Moss is a thin and brittle plant that grows on rocks and trees, most often on the dark side
                         of mountains and at the entrance of caves. It glows faintly when crushed, and is often collected
-                        by Einasvel and hung on the branches of their homes to be used to find the way at night.
+                        by Einasvel and hung on the branches of their homes to be used to find the way at night. When
+                        the sun sets, they go around and crush all of the bundles.
                     </p>
                     <p>
-                        When the sun sets, they go around and crush all of the bundles.
-                    </p>
-                    <p>
-                        The color is based on the nutrient levels and content of where it grew, and ranges wildly. Some
+                        The color is based on the nutrients and their levels where it grew, and ranges wildly. Some
                         examples are (from most to least common):
                     </p>
                     <ul>
-                        <li><span class="heavy">Dusty blue</span> grows in dry locations with lots of direct sunlight.
+                        <li><b>Dusty blue</b> grows in dry locations with lots of direct sunlight.
                         </li>
-                        <li><span class="heavy">Lilac</span> in locations with more indirect than direct light. It grows
+                        <li><b>Lilac</b> in locations with more indirect than direct light. It grows
                             the longest out of any other variation at around two feet.</li>
-                        <li><span class="heavy">Green</span></li>
-                        <li><span class="heavy">Yellow</span></li>
-                        <li><span class="heavy">Pale red-orange</span></li>
-                        <li><span class="heavy">Dark green. Glows the dimmest. Commonly used to create
-                                hairstyles.</span> in places with low direct light and heavy water.</li>
-                        <li><span class="heavy">Deep red</span> grows in wetter areas with low indirect light, such as
+                        <li><b>Green</b></li>
+                        <li><b>Yellow</b></li>
+                        <li><b>Pale red-orange</b></li>
+                        <li><b>Dark green. Glows the dimmest. Commonly used to create
+                                hairstyles.</b> in places with low direct light and heavy water.</li>
+                        <li><b>Deep red</b> grows in wetter areas with low indirect light, such as
                             the sides of large rock formations and caves. It's a common meal for creatures in the area
                             who don't have much else to eat, so it grows short and dark to blend into the environment.
                             It is hard to remove and is much softer than other variants.</li>
                         <!-- more water, less water, more direct light, less direct light, more indirect light, less indirect light, in places it's eaten more frequently would it be more likely to blend into the walls of the environment, and it would grow shorter too. Sounds like a deep red thing. -->
                     </ul>
-                </div>
+                </section>
             </div>
 
         </div> <!-- End Plant Section -->
@@ -984,38 +1013,38 @@
 
 
 <footer>
-    <section>
-        <p>
-            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-            questions.
-
-        <form> <!-- onsubmit="return validateMessage();" -->
-            <div id="form-content">
-                <label for="message">Message (required):</label>
-                <textarea name="message" cols="40%"></textarea>
-
-                <label for="contact">Contact Info:</label>
-                <input type="text" name="contact">
-                <input type="submit" value="send" id="send">
-            </div>
-        </form>
-
-    </section>
-
-    <br>
-    <br>
-    All rights reserved. Do not copy without permission.
-    <br>
-
-    Last updated:
-    <script>
-        var date = document.lastModified;
-        document.write(date);
-    </script>
-
+    <p>
+        Interactive guide of the fictional Enausq'/hl/ (Einasvel) species and Mk'mih'oh (Mikimoh) planet.
+        <br>
+        <br>
+        <i>All rights reserved. Do not copy or distribute without permission.</i>
     </p>
 
+    <p>
+        Send a message or contact me on Instagram at<a href="https://www.instagram.com/chrysaora03__/"
+            id="instagram">@chrysaora03__</a>for any quoestions, comments, or feedback.
+        <br>
+        <br>
+        <i>
+            Last updated:
+            <script>
+                var date = document.lastModified;
+                document.write(date);
+            </script>
+        </i>
+    </p>
+
+    <form>
+        <div id="form-content">
+            <label for="message">Message*:</label>
+            <textarea name="message" cols="40%"></textarea>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" name="contact">
+
+            <input type="submit" value="send" id="send">
+        </div>
+    </form>
 </footer>
 
 
