@@ -16,7 +16,7 @@
 
 
 
-<body id="flex-style">
+<body>
 
     <div class="dropdown">
         <input type="checkbox" name="ham" id="ham">
@@ -109,10 +109,11 @@
 
             <button type="button" class="collapse">Head Anatomy</button>
             <div class="collapse-content">
-                <div class="people-fade-coll flex-direction-column">
+                <div class="people-fade-coll">
                     <!-- stacked sections -->
 
                     <!-- two sections so images stay on the same level regardless of description size -->
+                    <!-- no longer needed. -->
                     <div class="flex-style" id="head-anatomy">
                         <div class="one-section">
                             <img src="images/head_anatomy_1.png"
@@ -175,7 +176,8 @@
 
                 <div class="people-fade-coll people-fade-extention">
 
-                    <img src="images/head_backwards.png" alt="An Einasvel with its head turned backwards">
+                    <img class="ppl-section-images" src="images/head_backwards.png"
+                        alt="An Einasvel with its head turned backwards">
 
                     <p>
                         In order to turn 180&deg;, their vertebrae are like owls, with
@@ -203,12 +205,12 @@
             <!-- Body Anatomy -->
             <button type="button" class="collapse">Body Anatomy</button>
             <div class="collapse-content">
-                <div class="people-fade-coll flex-direction-column">
-                    <!-- stacked sections -->
+                <div class="people-fade-coll">
 
                     <div class="flex-style" id="head-anatomy">
 
                         <!-- two sections so images stay on the same level regardless of description size -->
+                        <!-- no longer used. -->
                         <div class="one-section">
                             <img src="images/fight_inspo.png"
                                 alt="Two Einasvel fighting over a piece of fish. The one in front is in a threatening attack position. Arrows point to different parts of their body explaining animals that share a similar anatomy. A map of the world is behind them.">
@@ -245,7 +247,7 @@
             <div class="collapse-content">
                 <div class="people-fade-coll">
 
-                    <img src="images/placeholder_image.png" alt="">
+                    <img class="ppl-section-images" src="images/placeholder_image.png" alt="">
 
                     <section>
 
@@ -344,7 +346,7 @@
                     </section>
 
                     <section class="one-section">
-                        <img src="images/placeholder_image.png" alt="">
+                        <img class="ppl-section-images" src="images/placeholder_image.png" alt="">
                         <p class="centered">General Notes:</p>
                         <p class="text-justify">
                             Fertilization can be internal (humans) or external (typically in aquatic environments).
@@ -374,7 +376,7 @@
             <div class="collapse-content">
                 <div class="people-fade-coll">
 
-                    <img src="images/ehlaunoh_angry.png"
+                    <img class="ppl-section-images" src="images/ehlaunoh_angry.png"
                         alt="Bust shot drawing of an angry Oele'in (Ehlaunoh) snarling up at the camera with her hand behind her ear mockingly.">
 
                     <p>
@@ -437,7 +439,7 @@
                         partner has no use for the long hair on their shoulders.
                     </p>
 
-                    <img src="images/favicon.png"
+                    <img class="ppl-section-images" src="images/favicon.png"
                         alt="A brightly colored side profile headshot of an Einasvel with a complex hairstyle in a neutral state. ">
 
                 </div>
@@ -448,7 +450,8 @@
             <div class="collapse-content">
                 <div class="people-fade-coll">
 
-                    <img src="images/mauk_child_hanging.png" alt="A baby Einasvel hanging off of its parent's back">
+                    <img class="ppl-section-images" src="images/mauk_child_hanging.png"
+                        alt="A baby Einasvel hanging off of its parent's back">
 
                     <p>
                         Because Enausq'/hl/ are not at the top of the food chain, much of the things they
@@ -539,7 +542,8 @@
                         dull over time, they switched to jagged stones and sticks.
                     </p>
 
-                    <img src="images/mauk_profile.png" alt="The front and side profile of an Einasvel named Maukkohd.">
+                    <img class="ppl-section-images" src="images/mauk_profile.png"
+                        alt="The front and side profile of an Einasvel named Maukkohd.">
 
                 </div>
             </div> <!-- End Fade -->
@@ -554,13 +558,15 @@
             <div class="collapse-content">
                 <div class="people-fade-coll">
 
-                    <img src="images/home_main.png"
+                    <img class="ppl-section-images" src="images/home_main.png"
                         alt="A group of Einasvel staring at the camera while pausing during different activities. They are in a field of inhabited Paupau trees on a bright day.">
 
                     <p>
                         <span class="heavy">Einasvel name examples:</span> Meihs, K&deg;endih, Noohq'aud,
                         Thohse'ih,
                         Maukkohd, Pepih/hl/, Thoohe, Ek&deg;uhq'aune
+                        <br> <br>
+                        <span class="heavy">Oele' in name examples:</span> E/hl/aunoh
                         <br> <br>
                         When talking to a stranger, you refer to them as Einasvel, or "a person". In rare
                         cases,
@@ -572,7 +578,6 @@
                         (singular) ).
                         <!-- Not sure what to use as a derogatory, k'k' works? Maybe also N"ohp? It? -->
                         <br> <br>
-                        <!-- Oele'in name examples: E/hl/aunoh -->
                         Unuhnih/hl/uh hold a largely significant role, making appearances in the way numbers
                         are
                         written as well.
@@ -596,7 +601,7 @@
                         another may have no interest in Glow Moss and request shelter for a night instead.
                     </p>
 
-                    <img src="images/fight_blank.png"
+                    <img class="ppl-section-images" src="images/fight_blank.png"
                         alt="Two Einasvel fighting over a piece of fish. The one in front is in a threatening attack position.">
 
                 </div>
@@ -660,14 +665,12 @@
                     </p>
 
                     <!-- styles image column -->
-                    <div class="flex-style">
-                        <section>
-                            <img src="images/eina_angryface.png"
-                                alt="Headshot drawing of an Einasvel glaring offscreen.">
-                            <img src="images/attack_pose_eina.jpg"
-                                alt="Sketch of an Einasvel on all fours in a defensive attack pose.">
-                        </section>
-                    </div>
+                    <section>
+                        <img class="ppl-section-images" src="images/eina_angryface.png"
+                            alt="Headshot drawing of an Einasvel glaring offscreen.">
+                        <img class="ppl-section-images" src="images/attack_pose_eina.jpg"
+                            alt="Sketch of an Einasvel on all fours in a defensive attack pose.">
+                    </section>
 
                 </div>
             </div> <!-- End Fade -->
@@ -677,7 +680,7 @@
             <div class="collapse-content">
                 <div class="people-fade-coll">
 
-                    <img src="images/placeholder_image.png" alt="TEMPORARY">
+                    <img class="ppl-section-images" src="images/placeholder_image.png" alt="TEMPORARY">
 
                     <p>
                         When an Einasvel die, their body is taken far outside of the living territory and
