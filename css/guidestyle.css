@@ -570,7 +570,9 @@ footer input {
 /*                                           */
 .collapse {
     cursor: pointer;
-    background-color: #95b6c3;
+    /* background-color: #95b6c3; */
+    /* old (so pretty) */
+    background-color: rgba(var(--darkBlueT), 0.3);
     color: var(--darkBlue);
     border: none;
     text-decoration: underline;
@@ -615,6 +617,8 @@ footer input {
 .collapse:hover, .collapse.active:hover {
     cursor: pointer;
     background-color: #a9cfd8;
+    /* old (so pretty) */
+    background-color: rgba(var(--headerBlueT), 0.75);
 }
 
 .collapse-inside.active {

@@ -5,7 +5,8 @@
 
     font-family: nunito;
     color: var(--darkBlue);
-    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
+    /* background-image: linear-gradient(rgb(191, 223, 223), #95b6c3); */
+    background-image: linear-gradient(var(--wrapperBlue), rgba(var(--darkBlueT), 0.25));
     padding: 30px 30px 60px 30px;
     border-bottom: 1px solid var(--darkBlue);
 
