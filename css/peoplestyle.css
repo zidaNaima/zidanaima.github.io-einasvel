@@ -1,0 +1,106 @@
+/* PEOPLE PAGE */
+/*             */
+
+/* TO FIX: add this blue to all blue on blue text segments */
+/* Seeing if I like this darker blue */
+.people-fade-coll p, .people-fade-coll ul li {
+    color: rgb(10, 45, 75);
+}
+
+.people-fade-coll {
+    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
+    padding: 30px 30px 60px 30px;
+    margin: 0em -1.85em 0em -1.85em;
+    /* Wrapper counteract (+ bottom) */
+    width: 95vw;
+    border-bottom: 1px solid var(--darkBlue);
+}
+
+/* For the dropdowns with two fade sections (ex. Head Anantomy) */
+.people-fade-extention {
+    margin-top: -6em;
+    /* -6em overlaps the dark blue border with this one */
+    border-top: 1px solid var(--wrapperBlue);
+}
+
+.people-fade .one-section img, .people-fade-coll .flex-style img {
+    width: 80%;
+}
+
+/* same as .lang-coll li */
+.people-fade li, .people-fade-coll li {
+    font-family: nunito;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+}
+
+.people-break {
+    /* border-top: 2px solid var(--darkBlue); */
+    /* border-bottom: 2px solid var(--darkBlue); */
+    margin: 0 -1.48em;
+    padding: 1em;
+    font-weight: 600;
+
+    font-size: 1.25em;
+    font-family: quicksand;
+    color: var(--darkBlue);
+    text-align: center;
+
+    background-color: var(--paleYellow);
+}
+
+#head-anatomy {
+    padding: 0px 40px;
+}
+
+#head-anatomy .one-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+    margin-top: 0px;
+    border-left: 1px solid var(--darkBlue);
+}
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-anatomy {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-expression {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-tools {
+    position: absolute;
+    margin-top: -5em;
+}
+
+#jump-to-law {
+    position: absolute;
+    margin-top: -5em;
+}
+
+
+
+/* Medium sized */
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+    .people-fade .flex-style, .people-fade-coll .flex-style {
+        display: block;
+    }
+
+    .people-fade-coll {
+        width: 100vw;
+    }
+
+    .people-fade .one-section img, .people-fade-coll .one-section img {
+        /* width: 50%; */
+        max-height: 40vh;
+        object-fit: contain;
+    }
+}
