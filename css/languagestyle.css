@@ -21,26 +21,25 @@
 }
 
 .lang-coll {
-    padding: 30px 30px 60px 30px;
-    margin: 0em -1.85em 0em -1.85em;
-    width: 95vw;
-}
+    border-top: 1px solid var(--darkBlue);
+    width: 100%;
 
-.lang-coll .one-section {
-    padding: 0em 0.5em;
-}
+    padding: 1em;
 
-/* same as .people-fade li and .people-fade-coll li */
-.lang-coll li {
-    font-family: nunito;
-    color: var(--darkBlue);
-    text-align: left;
-    font-size: 18px;
-}
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-/* Overrides the collapse color to wrapperBlue on active */
-.collapse-lang.active {
-    background-color: #95b6c3;
+    li {
+        font-family: nunito;
+        color: var(--darkBlue);
+        text-align: left;
+    }
+
+    img {
+        width: 25%;
+    }
 }
 
 #red-section {
@@ -278,14 +277,12 @@
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
-    .lang-coll {
-        width: 100vw;
+    
+.lang-coll {
+    img {
+        width: 50%;
     }
-
-    .lang-coll .flex-style {
-        display: block;
-        /* Shouldn't matter because the only other place it's used doesn't rely on flex */
-    }
+}
 
     .lang-coll img {
         /* width: 80%; */
@@ -341,7 +338,7 @@
     .grammar-tilt {
         margin: 0;
     }
-    
+
     #slang {
         width: 100%;
         gap: 1em;
