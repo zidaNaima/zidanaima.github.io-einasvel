@@ -570,9 +570,9 @@ footer input {
     border: none;
     text-decoration: underline;
 
-    padding: 1em 3em;
+    padding: 1em 50px;
+    /* collapse people-fade-coll + one-section padding L/R */
     width: 95vw;
-    margin-left: -1.65em !important;
     font-weight: 600;
 
     font-size: 1.1em;
@@ -771,9 +771,9 @@ footer input {
 .solid-blue-line {
     /* Used at top and bottom of People page */
     width: 95vw;
-    margin: 0 -1.85em;
     border-top: 1px solid var(--darkBlue);
     border-bottom: none;
+    margin: 0;
 }
 
 .gap2 {

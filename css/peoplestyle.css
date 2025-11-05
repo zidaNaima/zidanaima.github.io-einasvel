@@ -4,13 +4,13 @@
 /* TO FIX: add this blue to all blue on blue text segments */
 /* Seeing if I like this darker blue */
 .people-fade-coll p, .people-fade-coll ul li {
-    color: rgb(10, 45, 75);
+    /* color: rgb(10, 45, 75); */
 }
 
 .people-fade-coll {
     background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
     padding: 30px 30px 60px 30px;
-    margin: 0em -1.85em 0em -1.85em;
+    /* margin: 0em -1.85em 0em -1.85em; */
     /* Wrapper counteract (+ bottom) */
     width: 95vw;
     border-bottom: 1px solid var(--darkBlue);
@@ -35,11 +35,9 @@
     font-size: 18px;
 }
 
-.people-break {
-    /* border-top: 2px solid var(--darkBlue); */
-    /* border-bottom: 2px solid var(--darkBlue); */
-    margin: 0 -1.48em;
-    padding: 1em;
+.people-section-title {
+    margin: 0;
+    padding: 1em 0em;
     font-weight: 600;
 
     font-size: 1.25em;
