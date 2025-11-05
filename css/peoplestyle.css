@@ -8,31 +8,52 @@
 }
 
 .people-fade-coll {
+    display: flex;
+
     background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
     padding: 30px 30px 60px 30px;
-    /* margin: 0em -1.85em 0em -1.85em; */
-    /* Wrapper counteract (+ bottom) */
-    width: 95vw;
     border-bottom: 1px solid var(--darkBlue);
+
+    gap: 0 2em;
+
+    img {
+        width: 20%;
+        height: auto;
+        align-self: center;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    /* same as .lang-coll li */
+    li {
+        font-family: nunito;
+        color: var(--darkBlue);
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .one-section, .two-sections {
+        padding: 0;
+    }
+
+    .one-section img {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .flex-style p {
+        padding: 0 30px;
+        margin: 0;
+    }
 }
 
 /* For the dropdowns with two fade sections (ex. Head Anantomy) */
 .people-fade-extention {
-    margin-top: -6em;
-    /* -6em overlaps the dark blue border with this one */
-    border-top: 1px solid var(--wrapperBlue);
-}
-
-.people-fade .one-section img, .people-fade-coll .flex-style img {
-    width: 80%;
-}
-
-/* same as .lang-coll li */
-.people-fade li, .people-fade-coll li {
-    font-family: nunito;
-    color: var(--darkBlue);
-    text-align: left;
-    font-size: 18px;
+    margin-top: -2px;
+    /* -2px overlaps the dark blue border with this one */
+    border-top: 3px solid var(--wrapperBlue);
 }
 
 .people-section-title {
@@ -46,6 +67,22 @@
     text-align: center;
 
     background-color: var(--paleYellow);
+}
+
+.people-section-title+p {
+    margin: 1em 50px;
+}
+
+/* Societal punishments image column */
+.flex-style section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+
+    img {
+        width: 100%;
+    }
 }
 
 #head-anatomy {
@@ -88,7 +125,7 @@
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
-    .people-fade .flex-style, .people-fade-coll .flex-style {
+    .people-fade-coll .flex-style {
         display: block;
     }
 
@@ -96,7 +133,7 @@
         width: 100vw;
     }
 
-    .people-fade .one-section img, .people-fade-coll .one-section img {
+    .people-fade-coll .one-section img {
         /* width: 50%; */
         max-height: 40vh;
         object-fit: contain;
