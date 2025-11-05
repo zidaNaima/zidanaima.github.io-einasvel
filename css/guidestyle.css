@@ -37,7 +37,11 @@ html {
     --brightYellow: #f3db5c;
     --paleYellow: rgb(251, 247, 217);
     --wrapperBlue: rgb(191, 223, 223);
-    --darkBlue: rgb(20, 60, 100);
+    /* --darkBlue: rgb(20, 60, 100); */
+    /* original */
+    --darkBlue: rgb(10, 45, 75);
+    /* darker blue originally from people text contrast */
+    /* FIX: JS and settings do not have this update */
     --offWhite: rgb(249, 247, 234);
     --wrapperRed: #eabc86;
     --redBrown: #924b14;
@@ -179,12 +183,16 @@ p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+
     /* text-align: center; */
     /* why here? */
+    img {
+        width: 100%;
+    }
 }
 
-.flex-style img {
-    width: 100%;
+.flex-direction-column {
+    flex-direction: column !important;
 }
 
 /* 1/1 split */
@@ -207,12 +215,13 @@ p {
     padding: 0 20px;
 }
 
-.two-sections p, .two-sections ul {
+/* FIX: this shouldn't be in two sections for veg and people sexual stuff */
+/* .two-sections p, .two-sections ul { 
     margin: 0px auto;
     margin-top: 30px;
     max-width: 700px;
     text-align: justify;
-}
+} */
 
 #jump-to-top-button {
     padding: 0.3em 0.9em;
@@ -587,19 +596,33 @@ footer input {
     border: none;
     text-decoration: underline;
 
-    margin-left: 3em;
-    font-weight: 600;
-    max-width: 700px;
     display: block;
+    padding: 0;
 
-    font-size: 1em;
     font-family: quicksand;
+    font-weight: bold;
+    font-size: 1em;
     text-align: left;
+}
+
+.collapse-inside+.collapse-content {
+    border-left: 2px solid var(--darkBlue);
+    border-radius: 0 20px;
+
+    padding-left: 1em;
+    margin-top: -15px;
+    padding-top: 5px;
+    padding-bottom: 1em;
+    margin-left: -1px;
 }
 
 .collapse:hover, .collapse.active:hover {
     cursor: pointer;
     background-color: #a9cfd8;
+}
+
+.collapse-inside.active {
+    text-decoration: none;
 }
 
 .collapse-inside:hover, .collapse-inside.active:hover {
@@ -644,14 +667,8 @@ footer input {
     transform: translateX(0.25em);
 }
 
-.collapse-content, .collapse-content-inside {
+.collapse-content {
     display: none;
-}
-
-/* Currently used in one place */
-/* If necessary, replace with a top margin 0 class */
-.collapse-content-inside p {
-    margin-top: 0;
 }
 
 #expand-all {
@@ -946,23 +963,23 @@ footer input {
         background-color: var(--paleYellow);
     }
 
-#settings-content {
-    padding: 0;
-    width: 90%;
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    ul {
-        font-size: 1.25em;
-        padding-left: 1em;
-    }
-
-    ul li {
+    #settings-content {
+        padding: 0;
         width: 90%;
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        ul {
+            font-size: 1.25em;
+            padding-left: 1em;
+        }
+
+        ul li {
+            width: 90%;
+        }
     }
-}
 
     #ham-label {
         display: flex !important;
