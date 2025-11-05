@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide to the People</title>
     <link rel="stylesheet" href="css/guidestyle.css">
+    <link rel="stylesheet" href="css/peoplestyle.css">
     <link rel="icon" type="image/x-icon" href="images/favicon_32x32.png">
 </head>
 
@@ -44,7 +45,8 @@
                         <li><a href="language.html#jump-to-idauhl">Oele'in Language: Idau/hl/</a></li>
                     </ul>
                 </li>
-                <li><a href="people.html">The People<span class="nav-details"> | Enausq'/hl/</span></a>
+                <li id="current_okshlid"><a href="people.html">The People<span class="nav-details"> |
+                            Enausq'/hl/</span></a>
                     <ul>
                         <li><a href="people.html#jump-to-anatomy">Anatomy
                         <li><a href="people.html#jump-to-expression">Culture: Self-Expression</a></li>
@@ -52,12 +54,12 @@
                         <li><a href="people.html#jump-to-law">Culture: Societal Structure</a></li>
                     </ul>
                 </li>
-                <!-- <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
+                <li><a href="story.html">The Story<span class="nav-details"> | E/hl/aunoh</span></a>
                     <ul>
                         <li><a href="story.html#jump-to-characters">Characters</a></li>
                         <li><a href="story.html#jump-to-stories">Stories</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li><a href="about.html">The Creator<span class="nav-details"> | Me!</span></a>
                     <ul>
                         <li><a href="about.html#jump-to-about">About</a></li>
@@ -68,6 +70,21 @@
             </ul>
         </nav>
 
+        <div id="settings"></div>
+        <div id="settings-window">
+            <div id="settings-content">
+                <d id="settings-exit">X</d>
+
+                <h3>Themes</h3>
+                <ul>
+                    <li id="theme-default"><input type="radio" name="themes" />Default</li>
+                    <li id="theme-contrast"><input type="radio" name="themes" />High Contrast</li>
+                    <li id="theme-sunset"><input type="radio" name="themes" />Cream</li>
+                    <li id="theme-plain"><input type="radio" name="themes" />Plain</li>
+                    <li id="theme-colorless"><input type="radio" name="themes" />Colorless</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
@@ -91,8 +108,7 @@
 
         <button type="button" class="collapse">Head Anatomy</button>
         <div class="collapse-content">
-            <!-- <div class="people-fade-coll"> -->
-            <div class="people-fade">
+            <div class="people-fade-coll">
 
                 <!-- two sections so images stay on the same level regardless of description size -->
                 <div class="flex-style" id="head-anatomy">
@@ -112,7 +128,7 @@
 
                 <div class="flex-style" id="head-anatomy">
                     <div class="one-section">
-                        <p>Brain
+                        <p><b>Brain</b>
                             <br>
                             Their eyes are the same as those of a jumping spider. They are able to zoom in on
                             objects far
@@ -120,16 +136,17 @@
                         </p>
                     </div>
                     <div class="one-section">
-                        <p>Mouth
+                        <p><b>Mouth</b>
                             <br>
-                            (Note: this has ben retconned.) Their tongues are much narrower than human tongues, and therefore their languages are
+                            (Note: this has ben retconned.) Their tongues are much narrower than human tongues, and
+                            therefore their languages are
                             formed
                             less on sounds that require tongue.
                             <!-- No it's not lmfao? -->
                         </p>
                     </div>
                     <div class="one-section">
-                        <p>Skull
+                        <p><b>Skull</b>
                             <br>
                             Like parrots, they are able to move their top-beaks individually from the rest of their
                             skull.
@@ -139,7 +156,7 @@
                         <p>They have 12 neck vertebrae. More than a human (7) but less than an owl (14)</p>
                     </div>
                     <div class="one-section">
-                        <p>Muscle
+                        <p><b>Muscle</b>
                             <br>
                             Their necks are able to turn a full 180&deg; in order to see behind them. They have
                             minor
@@ -147,7 +164,7 @@
                         </p>
                     </div>
                     <div class="one-section">
-                        <p>Skin
+                        <p><b>Skin</b>
                             <br>
                             Their fur is coarse and thick, and is blue in color to ward off predators and keep them
                             safe
@@ -159,7 +176,7 @@
             </div> <!-- End Section Fade -->
 
             <div class="gap5"></div>
-            <div class="people-fade">
+            <div class="people-fade-coll people-fade-extention">
                 <div class="flex-style">
 
                     <div class="one-section">
@@ -446,7 +463,7 @@
         </div> <!-- End Fade -->
 
         <!-- Attraction -->
-        <button type="button" class="collapse">Attraction</button>
+        <button type="button" class="collapse">Attraction (and Courting WIP)</button>
         <div class="collapse-content">
             <div class="people-fade-coll">
                 <div class="flex-style">
@@ -482,6 +499,16 @@
                             symmetry
                             (in
                             hair, clothing, and ear holes) and large, color matched hair.
+                        </p>
+
+                        <p>
+                            The process of courting involves a dance, where Enausq/hl/ 'A' will approach Enausq/hl/ 'B'
+                            and perform a series of facial expressions that range across all emotions and feelings. It
+                            is done as a way of saying "I want to be with you, so you will eventually be seeing all of
+                            these expressions from me." A wider range of looks is valued more, and the accuracy and
+                            effort put into expressions is considered by B as well, as it shows honestly and self
+                            awareness. If B finds the expressions attractive, they will reciprocate by showing their own
+                            expressions back.
                         </p>
                     </div>
                 </div>
@@ -581,7 +608,8 @@
                     </div>
 
                     <div class="one-section">
-                        <img src="images/fight_blank.png" alt="Two Einasvel fighting over a piece of fish. The one in front is in a threatening attack position.">
+                        <img src="images/fight_blank.png"
+                            alt="Two Einasvel fighting over a piece of fish. The one in front is in a threatening attack position.">
                     </div>
 
                 </div>
@@ -688,38 +716,38 @@
 
 
 <footer>
-    <section>
-        <p>
-            Send a message below or contact me at <a href="https://www.instagram.com/chrysaora03__/"
-                id="instagram">@chrysaora03_ _</a> on instagram for any comments, feedback, or
-            questions.
-
-        <form> <!-- onsubmit="return validateMessage();" -->
-            <div id="form-content">
-                <label for="message">Message (required):</label>
-                <textarea name="message" cols="40%"></textarea>
-
-                <label for="contact">Contact Info:</label>
-                <input type="text" name="contact">
-                <input type="submit" value="send" id="send">
-            </div>
-        </form>
-
-    </section>
-
-    <br>
-    <br>
-    All rights reserved. Do not copy without permission.
-    <br>
-
-    Last updated:
-    <script>
-        var date = document.lastModified;
-        document.write(date);
-    </script>
-
+    <p>
+        Interactive guide of the fictional Enausq'/hl/ (Einasvel) species and Mk'mih'oh (Mikimoh) planet.
+        <br>
+        <br>
+        <i>All rights reserved. Do not copy or distribute without permission.</i>
     </p>
 
+    <p>
+        Send a message or contact me on Instagram at<a href="https://www.instagram.com/chrysaora03__/"
+            id="instagram">@chrysaora03__</a>for any quoestions, comments, or feedback.
+        <br>
+        <br>
+        <i>
+        Last updated:
+        <script>
+            var date = document.lastModified;
+            document.write(date);
+        </script>
+        </i>
+    </p>
+
+    <form>
+        <div id="form-content">
+            <label for="message">Message*:</label>
+            <textarea name="message" cols="40%"></textarea>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" name="contact">
+
+            <input type="submit" value="send" id="send">
+        </div>
+    </form>
 </footer>
 
 
