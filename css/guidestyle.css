@@ -191,10 +191,6 @@ p {
     }
 }
 
-.flex-direction-column {
-    flex-direction: column !important;
-}
-
 /* 1/1 split */
 .one-section {
     flex: 1;
