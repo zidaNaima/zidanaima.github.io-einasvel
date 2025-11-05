@@ -1,0 +1,558 @@
+/* PLANET PAGE */
+/*             */
+
+#threeD-map {
+    /* margin: 2em 1em 5em; */
+    /* top sides bottom */
+
+    background-image: url(https://images.unsplash.com/photo-1553375388-5917bf50a7ab?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3RhcnJ5fGVufDB8fDB8fHww);
+    background-size: cover;
+    backdrop-filter: saturate(0);
+    /* not working */
+    border: 3px solid black;
+}
+
+#threeD-map::after {
+    content: "Mk\00B0mih' oh";
+
+    font-family: quicksand;
+    font-weight: bold;
+    font-size: 2em;
+    color: #dddddd;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 0.1em 0.4em;
+}
+
+#large-map {
+    border: 2px solid black;
+    background-image: url(../images/map_named.png);
+    background-size: cover;
+}
+
+#large-map img {
+    opacity: 0;
+    /* I just want the proportions for large-map */
+}
+
+#map-data-button {
+    display: flex;
+    margin-left: auto;
+    margin-top: 0.5em;
+}
+
+.planet-notebook {
+    font-family: nunito;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+    background-color: var(--offWhite);
+}
+
+.planet-notebook {
+    width: 80%;
+    height: 500px;
+    position: relative;
+    padding-top: 150px;
+    /* sets text under the top of the page header area */
+    padding-left: 160px;
+    /* sets text right of the red line */
+    padding-right: 30px;
+    /* overflow:hidden; */
+
+    background: linear-gradient(to bottom, var(--offWhite) 29px, #00b0d7 1px);
+    background-size: 100% 30px;
+    /* notebook lines */
+    columns: 2;
+    column-gap: 1em;
+    column-fill: auto;
+    /* columns! (FIX: can I make this more responsive?) */
+
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2), 0px 0px 6px rgba(0, 0, 0, .2);
+    /* shadow around top and bottom (heavier on bottom) */
+
+    /* red line */
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 140px;
+        height: 100%;
+        width: 1px;
+        background: var(--redBrown);
+    }
+
+    /* top of the page header area */
+    .planet-notebook-header {
+        height: 100px;
+        width: 100%;
+        background: var(--offWhite);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* section header */
+        h1 {
+            display: none;
+            position: absolute;
+            font-size: 2em;
+            top: 40px;
+            left: 160px;
+            z-index: 2;
+        }
+    }
+
+    /* text data */
+    section {
+        display: none;
+        line-height: 30px;
+    }
+
+    section img {
+        display: block;
+        width: 100%;
+        max-height: 300px;
+        max-width: 550px;
+        /* guesstimate of aspect ratio */
+    }
+}
+
+/* FIX: tip, don't take brian, phil or seemong */
+.planet-notebook-tab {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: -120px;
+    font-size: 1.5em;
+    padding: 0.25em;
+    text-align: center;
+    color: var(--darkBlue);
+    border-radius: 0 20px 20px 0;
+    z-index: 1;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2), inset 4px 0px 4px -3px rgba(0, 0, 0, .2);
+    /* shadow around bottom only, additional inset shadow replicating page's */
+    /* border: 2px solid rgba(0, 0, 0, .2); */
+    /* can't decide if I like this */
+}
+
+.planet-notebook-tab:hover {
+    cursor: pointer;
+}
+
+.active-notebook-tab {
+    width: 140px;
+    right: -140px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+#star-tab {
+    background-color: rgb(243, 210, 91);
+    top: 100px;
+}
+
+#moon-tab {
+    background-color: rgb(221, 147, 221);
+    top: 160px;
+}
+
+#cale-tab {
+    background-color: rgb(103, 208, 127);
+    top: 220px;
+}
+
+#plan-tab {
+    background-color: rgb(99, 189, 246);
+    top: 280px;
+}
+
+#clim-tab {
+    background-color: rgb(234, 142, 158);
+    top: 340px;
+}
+
+
+
+
+#cladogram {
+    width: 100%;
+    text-align: center;
+
+    img {
+        width: 80%;
+    }
+}
+
+/* https://codepen.io/Lubna/pen/MWapdjE */
+/* Creature collapsable section */
+.creature-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0em;
+    padding-top: 60vh;
+    /* height of creature display */
+    margin-top: 2em;
+    position: relative;
+}
+
+/* checkbox */
+.creature-gallery-selector {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.creature-gallery-thumb {
+    margin: 6px;
+    display: block;
+
+    img {
+        height: 150px;
+    }
+}
+
+.creature-gallery label {
+    font-family: nunito;
+    color: var(--darkBlue);
+    text-align: center;
+}
+
+/* selected thumb image */
+.creature-gallery-selector:checked~.creature-gallery-thumb>img {
+    border: 1px solid var(--darkBlue);
+    box-shadow: 0 0 4px 3px var(--paleYellow);
+}
+
+/* selected creature's section */
+.creature-gallery-selector:checked+.planet-creature-section {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.veg {
+    position: relative !important;
+    height: 100% !important;
+    overflow-y: hidden !important;
+
+    .two-sections {
+        padding: 0;
+    }
+}
+
+.planet-creature-section {
+    font-family: nunito;
+    text-align: justify;
+    color: var(--darkBlue);
+    background-color: var(--paleYellow);
+
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    /* height of creature display */
+    padding: 2em 2em 3em 2em;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    pointer-events: none;
+    /* so we don't click on the invisible overlapped ones */
+
+    img {
+        padding: 1em 1em 0 1em;
+    }
+
+    p {
+        font-weight: bold;
+        margin: 30px 0 0 0;
+    }
+
+    ul {
+        margin: 30px 0 0 0;
+        padding-left: 20px;
+        /* half of default */
+    }
+
+    li {
+        font-size: 1em;
+        padding-bottom: 0.5em;
+    }
+
+    table {
+        text-align: left;
+        border-collapse: collapse;
+        /* max-width: max-content; */
+    }
+
+    td {
+        vertical-align: top;
+        padding: 0em 0.5em;
+    }
+
+    tr:nth-of-type(even) {
+        background-color: rgba(243, 219, 92, 0.5);
+        /* FIX: doesn't go well with theme changes */
+    }
+
+    .float-left, .float-right {
+        width: 30%;
+        margin-top: 30px;
+        /* matches p tag */
+
+        bottom: 0;
+    }
+}
+
+.dist-map {
+    flex: 1;
+    margin-left: 60px;
+    position: relative;
+    max-width: 600px;
+
+    img {
+        border-radius: 10em;
+        padding: 0;
+        aspect-ratio: 5/2;
+        /* or */
+        /* aspect-ratio: 3/1 */
+        /* Just make sure to make the images this size! */
+    }
+}
+
+.dist-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    aspect-ratio: 5/2;
+    border-radius: 10em;
+    box-shadow: inset 0px 0px 20px rgba(20, 60, 100, 0.1);
+    /* Inside shadow */
+    /* no need to be theme dependant */
+}
+
+.planet-creature-header-left {
+    width: 90%;
+    margin-left: -2.1em;
+    margin-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 3.25em;
+
+    border-bottom: 5px solid var(--darkBlue);
+    color: var(--darkBlue);
+
+    font-size: 1.5em;
+    font-family: quicksand;
+    text-align: left;
+    word-spacing: 0.25em;
+}
+
+.planet-creature-header-right {
+    margin-right: -2.1em;
+    margin-left: 5em;
+    /* Margin left as opposed to width at 90% */
+    margin-top: 0px;
+    padding-bottom: 3px;
+    padding-right: 3.25em;
+
+    border-bottom: 5px solid var(--darkBlue);
+    color: var(--darkBlue);
+
+    font-size: 1.5em;
+    font-family: quicksand;
+    text-align: right;
+    word-spacing: 0.25em;
+}
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-map {
+    position: absolute;
+    top: 0;
+    /* top of the page */
+}
+
+#jump-to-vegetation {
+    position: absolute;
+    margin-top: -6em;
+}
+
+
+
+
+/* Medium sized */
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+    #threeD-med-screen .flex-style {
+        display: block;
+    }
+
+    .planet-notebook {
+        width: 100%;
+        height: 450px;
+        padding-left: 30px;
+        padding-top: 140px;
+        background: linear-gradient(to bottom, var(--offWhite) 19px, #00b0d7 1px);
+        background-size: 100% 20px;
+        margin-bottom: 40px;
+        /* tab height */
+
+        /* red line */
+        &:before {
+            left: 20px;
+        }
+
+        /* top of the page header area */
+        .planet-notebook-header {
+            height: 100px;
+            width: 100%;
+            background: var(--offWhite);
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /* section header */
+            h1 {
+                left: 30px;
+            }
+        }
+
+        section {
+            line-height: 20px;
+            font-size: 0.8em;
+        }
+    }
+
+    .planet-notebook-tab {
+        width: 90px;
+        height: 40px;
+        font-size: 1em;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .active-notebook-tab {
+        height: 50px;
+        padding-top: 10px;
+        padding-left: 0.25em;
+        width: 90px;
+        /* doesn't change */
+    }
+
+    #star-tab {
+        left: 3%;
+        top: 100%;
+    }
+
+    #moon-tab {
+        left: 21%;
+        top: 100%;
+    }
+
+    #cale-tab {
+        left: 39%;
+        top: 100%;
+    }
+
+    #plan-tab {
+        left: 57%;
+        top: 100%;
+    }
+
+    #clim-tab {
+        left: 75%;
+        top: 100%;
+    }
+
+    .creature-gallery-thumb {
+        img {
+            height: 100px;
+        }
+    }
+
+    .creature-gallery label {
+        font-size: 0.75em;
+    }
+
+    .creature-gallery {
+        justify-content: space-between;
+    }
+
+    .planet-creature-section {
+        .flex-style {
+            display: block;
+        }
+
+        .float-left, .float-right {
+            float: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+
+            img {
+                width: 50%;
+            }
+        }
+    }
+
+    .dist-map {
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* Phone sized */
+@media(max-width: 520px) {
+    .planet-notebook {
+        column-fill: balance;
+        margin-bottom: 90px;
+        /* tab height */
+    }
+
+    .planet-notebook-tab {
+        writing-mode: vertical-lr;
+        width: 50px;
+        height: 90px;
+        line-height: 50px;
+    }
+
+    .active-notebook-tab {
+        width: 50px;
+        /* doesn't change */
+        height: 110px;
+        padding-top: 20px;
+    }
+
+    .creature-gallery-thumb {
+        img {
+            height: 60px;
+        }
+    }
+
+    .creature-gallery {
+        justify-content: center;
+        margin: 0 -1.85em;
+    }
+
+    .creature-gallery label {
+        font-size: 0.6em;
+    }
+
+    .planet-creature-section {
+        p, ul, table {
+            font-size: 0.8em;
+        }
+    }
+
+}
