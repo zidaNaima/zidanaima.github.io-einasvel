@@ -11,9 +11,11 @@
     src: url(../fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
 }
 
+/* Formerly Zen-Maru-Gothic */
 @font-face {
-    font-family: "zen-maru";
-    src: url(../fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf);
+    font-family: "nunito";
+    src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
+    font-weight: 300;
 }
 
 @font-face {
@@ -26,6 +28,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
 /* COLORS */
 /*        */
 /* https://dequeuniversity.com/color-contrast */
@@ -33,14 +37,15 @@ html {
     --brightYellow: #f3db5c;
     --paleYellow: rgb(251, 247, 217);
     --wrapperBlue: rgb(191, 223, 223);
-    /* --midBlue: #7c9daa; */
     --darkBlue: rgb(20, 60, 100);
     --offWhite: rgb(249, 247, 234);
     --wrapperRed: #eabc86;
     --redBrown: #924b14;
-    /* --darkRedBrown: #532B0A; */
     --darkRedBrown: #461d06;
 
+    --borderBlue: #7c9daa;
+    --darkBlueT: 20, 60, 100;
+    --headerBlueT: 158, 191, 199;
 }
 
 
@@ -50,18 +55,15 @@ html {
 /* GENERAL STYLING */
 /*                 */
 .wrapper {
-    margin-top: 0;
     padding: 5em 1.85em 1.85em 1.85em;
-
     width: 95vw;
-    /* was at 95% and I changed it for .collapse, lmk if it doesn't work out */
     margin-left: auto;
     margin-right: auto;
     background-color: var(--wrapperBlue);
 }
 
 body {
-    background-image: linear-gradient(var(--paleYellow), #FFF);
+    background-image: linear-gradient(var(--paleYellow), rgb(255, 255, 255));
     background-repeat: no-repeat;
     margin: 0;
 }
@@ -72,23 +74,42 @@ h1 {
 }
 
 p {
-    font-family: zen-maru;
+    font-family: nunito;
     color: var(--darkBlue);
-    font-size: 18px;
+    font-size: 1em;
+}
+
+/* SCROLLBAR STYLING */
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: var(--paleYellow);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-left: 1px solid rgba(0, 0, 0, .2);
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #aeaeae;
 }
 
 #page-header {
     width: 90%;
     margin: 0 auto 0.3em auto;
     margin-top: 70px;
-    /* Top added for Okshlihd icon */
+    /* Top added to avoid okshlihd icon */
     padding: 0.075em 0em;
 
     border-radius: 0.85em 0.85em 0em 0em;
     background-color: var(--paleYellow);
     color: var(--darkBlue);
     box-shadow: 0px 0px 4px -2px var(--darkBlue);
-    /* gives slight contrast */
+    /* Slight contrast */
 
     font-family: quicksand;
     font-size: 2em;
@@ -99,7 +120,7 @@ p {
 .sub-header {
     width: 75%;
     margin: 0 auto;
-    margin-bottom: 0.5em;
+    margin-bottom: 3em;
     padding: 0.075em 0em;
 
     border-radius: 0em 0em 0.85em 0.85em;
@@ -125,32 +146,65 @@ p {
     text-align: center;
 }
 
+/* round sub header */
+.section-header {
+    width: 75%;
+    margin: 5em auto 0.3em auto;
+    padding: 7px;
+
+    border-radius: 25px;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-sub-header {
+    width: 50%;
+    margin: 0 auto 3em auto;
+    padding: 0.075em 0em;
+
+    border-radius: 0.85em 0.85em 0em 0em;
+    background-color: var(--darkBlue);
+    color: var(--paleYellow);
+
+    font-family: quicksand;
+    text-align: center;
+}
+
 .flex-style {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    text-align: center;
+    /* text-align: center; */
+    /* why here? */
 }
 
 .flex-style img {
     width: 100%;
 }
 
+/* 1/1 split */
 .one-section {
     flex: 1;
     flex-direction: column;
     margin: auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
+/* 1/2 split */
 .two-sections {
     flex: 2;
-    padding: 20px;
+    padding: 0 20px;
 }
 
+/* 1/4 split */
 .four-sections {
     flex: 4;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .two-sections p, .two-sections ul {
@@ -165,7 +219,6 @@ p {
     border-radius: 1em;
     background-color: var(--brightYellow);
     color: var(--darkBlue);
-    /* #af9505; #956a05; */
     box-shadow: 0px 0px 7px rgba(0, 0, 0, .4);
 
     font-size: 0.9em;
@@ -185,7 +238,7 @@ p {
     transform: translateY(-0.25em);
     box-shadow: 0px 0px 10px #fff;
     background-color: #f3d43a;
-    /* Not the same yellow so it contrasts better */
+    /* Not the same yellow for better contrast */
     color: #fff;
 }
 
@@ -196,56 +249,32 @@ p {
 /* TOP NAVIGATION BAR */
 /*                    */
 
+/* OKSHLIHD ICON */
+/* id goes on the li of the current page in the nav */
+#current_okshlid {
+    background-image: url(../images/okshlid_icon.png);
+    height: 109.5px;
+    /* Counters background-size */
+    padding: 0px 41px;
+    margin: 0px -41px;
+    /* Background overflow trick, just enough width */
+    background-size: 175px;
+    /* Width. height auto calculated to keep aspect ratio. */
+    background-position: bottom;
+    /* border: 1px solid black; */
+    background-repeat: no-repeat;
+}
 
 /* Top Bar/Wrapper */
 .dropdown {
     position: fixed;
     width: 100%;
     height: 55px;
-    display: flex;
-    justify-content: space-around;
 
     background-color: var(--brightYellow);
     color: var(--darkBlue);
     box-shadow: 0px 0px 7px rgba(0, 0, 0, .4);
-    z-index: 3;
-
-}
-
-/* OKSHLIHD ICON */
-.dropdown::after {
-    content: "";
-    background-image: url(../images/okshlid_icon.png);
-    /* border: 1px solid black; */
-    position: absolute;
-    z-index: 3;
-    top: 42px;
-    transform: translateX(-27.5em);
-    width: 210px;
-    height: 75px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.index .dropdown::after {
-    transform: translateX(-27.5em);
-}
-
-.planet .dropdown::after {
-    transform: translateX(-18em);
-}
-
-.language .dropdown::after {
-    transform: translateX(-2em);
-}
-
-.people .dropdown::after {
-    transform: translateX(14em);
-}
-
-.about .dropdown::after {
-    transform: translateX(27em);
+    z-index: 4;
 }
 
 /* Remove Bullet Points */
@@ -254,20 +283,19 @@ nav ul {
     display: flex;
     flex-direction: row;
     font-size: 0.85em;
-    /* Cause zen-maru is so big */
-    z-index: 4;
+    /* Cause nunito is so big */
+
+    justify-content: center;
+    padding: 0;
 }
 
 /* Big Nav Text */
 nav ul li a {
-    margin: 0em 1em;
-    padding: 0.25em 0.5em;
-    border-radius: 0.75em;
-
+    padding: 20px 1.5em 18px;
     color: var(--darkBlue);
 
     text-decoration: none;
-    font-family: zen-maru;
+    font-family: nunito;
     font-weight: bold;
     font-size: 1.2em;
     letter-spacing: 0.025em;
@@ -275,8 +303,10 @@ nav ul li a {
 
 /* Subpages */
 nav ul li ul {
-    position: absolute;
-    margin-top: 1em;
+    margin-top: -20px;
+    padding-top: 45px;
+    /* hides the okshlid icon */
+    padding-bottom: 5px;
     display: none;
     font-size: 1em;
 }
@@ -285,7 +315,8 @@ nav ul li ul {
 nav ul li ul li a {
     font-weight: lighter;
     background-color: transparent;
-    padding: 0em 1em 0.25em 0.5em;
+    padding: 0.25em 1em;
+    margin: 0;
     display: block;
     /* Lets you click anywhere on its line */
 }
@@ -293,9 +324,6 @@ nav ul li ul li a {
 /* Display Subpages */
 nav ul li:hover ul {
     display: block;
-    padding: 1.5em 0em 1em 0em;
-    margin: 0.35em auto;
-    /* margin means you have to jump, limit it as much as */
 
     border-radius: 0em 0em 0.5em 0.5em;
     background-color: var(--brightYellow);
@@ -307,34 +335,178 @@ nav a:hover {
     transition: 0.25s;
 }
 
+#settings {
+    background-image: url(../images/settings.png);
+    height: 35px;
+    aspect-ratio: 1;
+    background-size: contain;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin: 10px;
+    z-index: 5;
+}
 
+#settings:hover {
+    animation: settings-spin 1s 1 ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes settings-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#settings-window {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 5;
+    /* nothing underneath will be clickable */
+}
+
+#settings-content {
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    border: 2px solid #777;
+    box-shadow: 0px 0px 4vw 5vw rgba(0, 0, 0, .2);
+
+    padding: 0.5em 1em 0.5em 3em;
+    height: 60%;
+    min-height: min-content;
+    width: 60%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: quicksand;
+
+    h3 {
+        font-size: 2em;
+    }
+
+    ul {
+        list-style-type: none;
+        font-size: 1.5em;
+    }
+
+    ul li {
+        margin: 0.5em;
+        width: 60%;
+        font-weight: bold;
+    }
+}
+
+#settings-exit {
+    display: block;
+    color: var(--redBrown);
+    padding-right: 10px;
+
+    font-weight: bold;
+    font-size: 40px;
+    text-align: right;
+
+    cursor: pointer;
+}
+
+/* all colors hard coded */
+/* wrapperBlue, darkBlue, brightYellow, paleYellow, redBrown */
+/* 0-60, 60-70, 70-80, 80-90, 90-100 */
+#theme-default {
+    background-image: linear-gradient(to right,
+            rgb(191, 223, 223) 0%, rgb(191, 223, 223) 60%,
+            rgb(20, 60, 100) 60%, rgb(20, 60, 100) 70%,
+            #f3db5c 70%, #f3db5c 80%,
+            rgb(251, 247, 217) 80%, rgb(251, 247, 217) 90%,
+            #924b14 90%, #924b14 100%);
+}
+
+#theme-contrast {
+    background-image: linear-gradient(to right,
+            rgb(214, 244, 252) 0%, rgb(214, 244, 252) 60%,
+            rgb(9, 39, 65) 60%, rgb(9, 39, 65) 70%,
+            rgb(247, 227, 132) 70%, rgb(247, 227, 132) 80%,
+            rgb(249, 247, 234) 80%, rgb(249, 247, 234) 90%,
+            rgb(146, 75, 20) 90%, rgb(146, 75, 20) 100%);
+}
+
+/* wrapperBlue, darkBlue, brightYellow, paleYellow, redBrown */
+
+#theme-sunset {
+    background-image: linear-gradient(to right,
+            rgb(240, 234, 183) 0%, rgb(240, 234, 183) 60%,
+            rgb(107, 59, 14) 60%, rgb(107, 59, 14) 70%,
+            rgb(251, 247, 217) 70%, rgb(251, 247, 217) 80%,
+            rgb(209, 157, 214) 80%, rgb(209, 157, 214) 90%,
+            /* wrapperRed */
+            rgb(41, 23, 88) 90%, rgb(41, 23, 88) 100%);
+}
+
+#theme-plain {
+    background-image: linear-gradient(to right,
+            rgb(236, 236, 236) 0%, rgb(236, 236, 236) 60%,
+            rgb(44, 44, 44) 60%, rgb(44, 44, 44) 70%,
+            rgb(235, 213, 93) 70%, rgb(235, 213, 93) 80%,
+            rgb(255, 255, 255) 80%, rgb(255, 255, 255) 90%,
+            rgb(241, 240, 226) 90%, rgb(241, 240, 226) 100%);
+    /* offWhite */
+}
+
+#theme-colorless {
+    background-image: linear-gradient(to right,
+            rgb(191, 191, 191) 0%, rgb(191, 191, 191) 60%,
+            rgb(36, 36, 36) 60%, rgb(36, 36, 36) 70%,
+            rgb(243, 243, 243) 70%, rgb(243, 243, 243) 80%,
+            rgb(251, 251, 251) 80%, rgb(251, 251, 251) 90%,
+            rgb(146, 146, 146) 90%, rgb(146, 146, 146) 100%);
+}
 
 
 
 /* FOOTER */
 /*        */
 footer {
-    width: 100%;
-    text-align: center;
-    font-style: italic;
-    margin-top: 3em;
-    padding: 2em 0em;
+    display: flex;
+    flex-direction: row;
+    margin: 3em 0 0 0;
+    padding: 2em 0;
+    justify-content: center;
 
-    font-family: zen-maru;
+    font-family: nunito;
     background-color: var(--brightYellow);
     color: var(--darkBlue);
     box-shadow: 0px -3px 5px rgba(0, 0, 0, .2);
 }
 
-#form-content {
-    /* grid area is assumed */
-    display: grid;
-    justify-content: center;
-    align-items: center;
+footer p {
+    border-right: 1px solid var(--darkBlue);
+    width: 20vw;
+    font-size: 14px;
+    margin: 0;
+    padding: 0em 2em;
+    line-height: 150%;
+}
 
-    grid-template-columns: 20vw, 50vw;
-    grid-template-rows: repeat(2, 60px);
-    gap: 1em;
+#form-content {
+    width: 30vw;
+    font-size: 14px;
+
+    display: grid;
+    /* Grid area is assumed */
+    text-align: right;
+
+    grid-template-rows: repeat(2, auto);
+    gap: 10px 1em;
 
     grid-template-areas:
         "mtext ctext"
@@ -347,9 +519,10 @@ footer textarea {
     color: var(--darkBlue);
     background-color: var(--offWhite);
     height: 4em;
-
-    font-family: zen-maru;
+    font-family: nunito;
     font-size: 0.9em;
+
+    resize: none;
 }
 
 /* The submit button */
@@ -359,7 +532,7 @@ footer input {
     border: 1px solid #777;
     height: 2em;
 
-    font-family: zen-maru;
+    font-family: nunito;
     font-size: 0.9em;
 }
 
@@ -374,6 +547,7 @@ footer input {
     text-decoration: none;
     color: blue;
     padding: 0em 0.5em 0.25em 0.25em;
+    margin: 0 0.5em;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 20px;
 }
@@ -387,291 +561,8 @@ footer input {
 
 
 
-/* HOME PAGE */
-/*           */
-#home-header {
-    margin: 5em -1.85em 1.85em -1.85em;
-    /* counter wrapper padding*/
-    padding-bottom: 20px;
-
-    /* Big title */
-    font-family: quicksand;
-    text-align: center;
-
-    background-color: rgba(158, 191, 199, 0.85);
-    color: rgb(20, 60, 100);
-    border-top: 4px #7c9daa solid;
-    border-bottom: 4px #7c9daa solid;
-
-}
-
-/* Brief summary under title */
-#home-summary {
-    width: 60%;
-    padding: 1em 1.5em;
-    margin-left: auto;
-    margin-right: auto;
-
-    letter-spacing: .05em;
-    font-size: 1.1em;
-    line-height: 1.3em;
-    background: var(--darkBlue);
-    color: rgb(244, 242, 227);
-    /* not the usual yellow */
-    border-radius: 0.15em 0.15em 2.5em 2.5em;
-}
-
-#see-why {
-    font-family: quicksand;
-    color: var(--brightYellow);
-    padding: 0em 0.15em;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-#see-why:hover {
-    font-family: quicksand;
-    color: var(--darkBlue);
-    background-color: var(--brightYellow);
-}
-
-#home-hero {
-    background-image: url(../images/home_main.png);
-    box-shadow: inset 0px -200px 75px -75px rgb(191, 223, 223);
-    /* The fade out at the bottom */
-
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    aspect-ratio: 1/1;
-    margin-top: 0;
-    padding: 5em 1.85em 1.85em 1.85em;
-
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-
-
-
-
-/* CAROUSEL */
-/*          */
-.home-carousel {
-    position: relative;
-    width: 100%;
-    height: 30vw;
-    display: block;
-}
-
-.home-carousel ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-/* followed a tutorial for this section */
-.home-slide {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    inset: 0;
-    /* new */
-    opacity: 0;
-    transition: 100ms opacity ease-in-out;
-    transition-delay: 100ms;
-    /* image only fades out when other fades in (overlap) */
-}
-
-.home-slide[data-active] {
-    opacity: 1;
-    z-index: 1;
-    transition-delay: 0ms;
-    /* image only fades out when other fades in (overlap) */
-}
-
-.home-slide img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    /* maintains the aspect ratio */
-    object-position: center;
-    border-radius: 20px;
-    /* border: 3px solid black; */
-    border: 3px solid var(--darkBlue);
-}
-
-.home-carousel button {
-    padding-bottom: 0.25em;
-}
-
-.home-carousel-arrow {
-    position: absolute;
-    border: none;
-    font-size: 2em;
-    z-index: 2;
-
-    background-color: rgb(20, 60, 100, 0.75);
-    color: rgb(244, 242, 227);
-    /* not the usual yellow */
-    cursor: pointer;
-    border-radius: 0.25em;
-    border: 3px solid var(--darkBlue);
-    /* box-shadow: 0px 0px 10px rgba(251, 247, 217, 0.5); */
-
-    top: 35%;
-}
-
-.home-carousel-arrow:hover, .carousel-goto:hover {
-    color: white;
-    /* background-color: rgb(32, 87, 143); */
-    background-color: rgb(42, 107, 161, 0.75);
-}
-
-.carousel-last {
-    padding-right: 0.25em;
-    left: 18%;
-}
-
-.carousel-next {
-    padding-left: 0.25em;
-    right: 18%;
-}
-
-.carousel-goto {
-    position: absolute;
-    bottom: -4em;
-
-    background-color: rgb(20, 60, 100, 0.75);
-    color: rgb(244, 242, 227);
-    /* not the usual yellow */
-    font-family: quicksand;
-    font-size: 1em;
-    font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5em 1em;
-    border-radius: 1em;
-    border: 3px solid var(--darkBlue);
-    /* box-shadow: 0px 0px 10px rgba(251, 247, 217, 0.5); */
-}
-
-
-
-
-
-.home-gallery-header {
-    margin: 0em -1.85em 1.85em -1.85em;
-    /* counter wrapper padding*/
-
-    font-family: quicksand;
-    text-align: center;
-
-    background-color: rgb(158, 191, 199);
-    color: rgb(20, 60, 100);
-    border-top: 4px #7c9daa dashed;
-    border-bottom: 4px #7c9daa dashed;
-}
-
-
-/* GALLERY */
-/*         */
-
-#gallery {
-    display: grid;
-    grid-template-columns: 18% 24% 18% 12% 24%;
-    /* ratio: 3 4 3 2 4 */
-    grid-template-areas:
-        " colA colB colC colD colE "
-    ;
-
-    justify-content: center;
-    margin: 0em -1.85em;
-    padding-top: 2em;
-}
-
-#gal-col-A {
-    grid: colA;
-}
-
-#gal-col-B {
-    grid: colB;
-}
-
-#gal-col-C {
-    grid: colC;
-}
-
-#gal-col-D {
-    grid: colD;
-}
-
-#gal-col-E {
-    grid: colE;
-}
-
-#gallery img {
-    width: 100%;
-    border: 2px solid #7c9daa;
-    margin-top: -0.5em;
-    /* gets rid of gap */
-}
-
-
-
-
-
-/* PEOPLE PAGE */
-/*             */
-
-/* NOTE: I don't think people-fade is used anymore, replaced by -coll, but it's ok */
-/* NOTE ^ yes it is, head anatomy */
-.people-fade {
-    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
-    padding: 30px 30px 60px 30px;
-    margin: 1em -1.85em -1.85em -1.85em;
-    /* Wrapper counteract (+ bottom) */
-}
-
-.people-fade-coll {
-    background-image: linear-gradient(rgb(191, 223, 223), #95b6c3);
-    padding: 30px 30px 60px 30px;
-    margin: 0em -1.85em 0em -1.85em;
-    width: 95vw;
-    /* Wrapper counteract (+ bottom) */
-    border-bottom: 1px solid var(--darkBlue);
-}
-
-.people-fade .one-section img, .people-fade-coll .flex-style img {
-    width: 80%;
-}
-
-.people-fade li, .people-fade-coll li, .lang-coll li {
-    font-family: zen-maru;
-    color: var(--darkBlue);
-    text-align: left;
-    font-size: 18px;
-}
-
-.people-break {
-    /* border-top: 2px solid var(--darkBlue); */
-    /* border-bottom: 2px solid var(--darkBlue); */
-    margin: 0 -1.48em;
-    padding: 1em;
-    font-weight: 600;
-
-    font-size: 1.25em;
-    font-family: quicksand;
-    color: var(--darkBlue);
-    text-align: center;
-
-    background-color: var(--paleYellow);
-}
-
+/* COLLAPSING SECTIONS (People and Language) */
+/*                                           */
 .collapse {
     cursor: pointer;
     background-color: #95b6c3;
@@ -701,9 +592,6 @@ footer input {
     max-width: 700px;
     display: block;
 
-    /* display: flex;
-    justify-content: start; */
-
     font-size: 1em;
     font-family: quicksand;
     text-align: left;
@@ -725,7 +613,7 @@ footer input {
 /* https://www.w3schools.com/howto/howto_js_collapsible.asp */
 .collapse::after {
     content: '\002B';
-    /* Unicode character for "plus" sign (+) */
+    /* Unicode character for "+" */
     float: right;
     font-size: 1.25em;
     margin-left: 5px;
@@ -734,11 +622,12 @@ footer input {
 
 .collapse.active::after {
     content: "\2212";
-    /* Unicode character for "minus" sign (-) */
+    /* Unicode character for "-" */
 }
 
 .collapse-inside::after {
     content: '\2304';
+    /* "^" */
     float: right;
     color: var(--darkBlue);
 
@@ -751,7 +640,7 @@ footer input {
 
 .collapse-inside.active::after {
     content: "\2303";
-
+    /* "v" */
     transform: translateX(0.25em);
 }
 
@@ -766,7 +655,7 @@ footer input {
 }
 
 #expand-all {
-    font-family: zen-maru;
+    font-family: nunito;
     font-size: 1em;
     font-weight: bold;
 
@@ -774,12 +663,9 @@ footer input {
     padding: 0.5em;
     padding-right: 2em;
 
-    /* background-color: var(--wrapperBlue); */
     background-color: var(--paleYellow);
     color: var(--darkBlue);
     box-shadow: 0px 0px 10px rgb(20, 60, 100, 0.15);
-    /* border: 3px solid #95b6c3; */
-    /* border: none; */
     border: 1px solid var(--darkBlue);
     border-radius: 20px 0px 0px 20px;
     justify-content: center;
@@ -790,6 +676,7 @@ footer input {
     top: 20%;
     right: -1em;
     z-index: 3;
+    /* .dropdown z-index is 4 */
 }
 
 #expand-all::before {
@@ -800,915 +687,9 @@ footer input {
     content: "Collapse";
 }
 
-/* #expand-all::after {
-  content: "";
-  width: 0;
-  height: 0;
-  right: 0;
-  position: absolute;
-}
-
-#expand-all::after {
-  border-right: 25px solid blue;
-  border-top: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-bottom: 25px solid blue;
-  position: absolute;
-  top: -20px;
-} */
-
 #expand-all:hover {
     background-color: #a9cfd8;
     box-shadow: inset 0px 0px 5px rgb(20, 60, 100, 0.25);
-}
-
-#head-anatomy {
-    padding: 0px 40px;
-}
-
-#head-anatomy .one-section {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-
-
-
-
-/* LANGUAGE PAGE */
-/*               */
-/* Oh my lord it would be so much easier to just make a red section wrapper with a cancelled out tilt. */
-.transExamp {
-    display: block;
-    height: 80px;
-    margin-bottom: 2em;
-    padding: 0em 1em;
-}
-
-#translator-window {
-    display: block;
-    text-align: center;
-}
-
-#translator-window iframe {
-    overflow: hidden;
-    height: 50vh;
-    width: 67vw;
-    border: 5px rgb(158, 191, 199) solid;
-    border-radius: 20px;
-}
-
-.lang-coll {
-    padding: 30px 30px 60px 30px;
-    margin: 0em -1.85em 0em -1.85em;
-    width: 95vw;
-}
-
-.lang-coll .one-section {
-    padding: 0em 0.5em;
-}
-
-/* Overrides the collapse color to wrapperBlue on active */
-.collapse-lang.active {
-    background-color: #95b6c3;
-}
-
-#red-section {
-    transform: skewY(-5deg);
-    background-color: var(--wrapperRed);
-    padding: 10em 30px 5em 30px;
-    margin: 8em -30px 10em -30px;
-    /* Wrapper counteract (+bottom) */
-}
-
-.red-section-content p {
-    transform: skewY(5deg);
-    color: var(--darkRedBrown);
-    margin: 0px auto;
-
-    padding: 0em 3em 1.5em 3em;
-    text-align: justify;
-
-    font-size: 18px;
-}
-
-.red-section-content li {
-    transform: skewY(5deg);
-    color: var(--darkRedBrown);
-    margin: 0em 3em 1em 1.75em;
-    text-align: justify;
-    font-family: zen-maru;
-    /* font-size: 18px; */
-}
-
-.red-section-content ul li ul li {
-    transform: skewY(0deg);
-    padding-top: 0.25em;
-    list-style-type: none;
-    margin: 0;
-}
-
-/* Idauhl Language*/
-/*                */
-.red-section-content img {
-    transform: skewY(5deg);
-    width: 80%;
-}
-
-#structure-header {
-    transform: skewY(5deg);
-    margin: 0em 4em .6em 4em;
-    padding: 3px 8px 8px 8px;
-
-    border-radius: 25px 25px 0px 0px;
-    background-color: var(--redBrown);
-    color: var(--paleYellow);
-    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
-    /* slight contrast */
-
-    font-family: quicksand;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-#structure-divider {
-    transform: skewY(5deg);
-    border-bottom: 5px dashed var(--redBrown);
-    margin: 0em 4em 2em;
-}
-
-#grammar-header {
-    transform: skewY(5deg);
-    margin: 0em auto .6em auto;
-    padding: 3px 8px 8px 8px;
-
-    border-radius: 25px 25px 0px 0px;
-    background-color: var(--redBrown);
-    color: var(--paleYellow);
-    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
-    /* slight contrast */
-
-    font-family: quicksand;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-
-    max-width: 40vw;
-    /* For Grammar Rules */
-}
-
-.grammar-tilt {
-    transform: skewY(5deg);
-    margin: 0em 4em;
-}
-
-.grammar-tilt #alphabet {
-    transform: skewY(0deg);
-    margin: 0em;
-}
-
-#alphabet {
-    transform: skewY(5deg);
-    margin: 2em 4em;
-    font-family: zen-maru;
-}
-
-#alphabet caption {
-    padding: 0.5em 0.75em;
-    font-weight: bold;
-    color: var(--darkRedBrown);
-}
-
-#alphabet table {
-    width: 100%;
-
-    background-color: var(--paleYellow);
-    /* #feebc9 was a real nice one */
-    color: var(--darkRedBrown);
-    border: 3px solid var(--redBrown);
-    border-collapse: collapse;
-}
-
-#alphabet tr, #alphabet th, #alphabet td {
-    border: 2px solid var(--redBrown);
-    border-collapse: collapse;
-    padding: 0em 4px;
-    text-align: center;
-    padding-bottom: 2px;
-    /* to counter the large symbols */
-}
-
-/* bold letters for 'sound' */
-#alphabet tr :nth-of-type(2) {
-    font-weight: bold;
-}
-
-.alpha-symbol {
-    font-size: 1.5em !important;
-    padding: 0;
-}
-
-#alphabet tr .alpha-symbol {
-    padding-top: 0.25em;
-}
-
-/* negates bolded alphabet column */
-#grammar tr :nth-of-type(2) {
-    font-weight: normal;
-}
-
-.alpha-sound {
-    font-size: 1.25em;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--darkRedBrown);
-}
-
-.alpha-sound:hover {
-    color: var(--redBrown);
-}
-
-#slang {
-    width: 85%;
-    margin: auto;
-    font-family: zen-maru;
-    color: rgb(20, 60, 100);
-
-    display: grid;
-    grid-template-columns: 33% 5% 62%;
-    grid-template-areas: "s a m";
-}
-
-#saying {
-    grid-area: s;
-    text-align: right;
-}
-
-#arrow {
-    grid-area: a;
-    text-align: center;
-}
-
-#meaning {
-    grid-area: m;
-}
-
-#numbers {
-    display: flex;
-    padding: 0em 4em;
-}
-
-#numbers img {
-    width: 80%;
-}
-
-
-
-
-
-/* STORY PAGE */
-/*            */
-.story-chapter-button {
-    padding: 3px 15px;
-
-    border-radius: 20px;
-    /* background-color: rgb(158, 191, 199); */
-    /* background-color: rgba(251, 247, 217, 0.85); */
-    background-color: #b2d2d6;
-    border: 2px rgb(20, 60, 100) solid;
-
-    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
-    box-shadow: 0px 0px 8px -2px #7c9daa;
-    /* Easier to make all chapter dropdown look nice */
-    /* looks like ass though. smh. */
-    /* color: var(--paleYellow); */
-    /* color: var(--darkBlue); */
-    color: rgb(20, 60, 100);
-    /* text-shadow: 0px 0px 7px var(--darkBlue); */
-    /* for more contrast */
-    /* removed for dropdown smh */
-
-    font-family: quicksand;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-size: 14px;
-
-}
-
-.story-chapter-button:hover {
-    background-color: rgba(20, 60, 100, 0.5);
-    color: rgb(244, 242, 227);
-}
-
-#story-grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 80px 1fr;
-    grid-template-areas:
-        "sbar img info info info"
-        "sbar img story story story"
-    ;
-    grid-gap: 1em;
-    justify-content: space-between;
-}
-
-#story-list-bar {
-    grid-area: sbar;
-    padding: 0px 2.75em;
-    /* background-color: rgb(158, 191, 199); */
-    background-color: #b2d2d6;
-    border: 2px rgb(158, 191, 199) solid;
-    /* border: 2px var(--darkBlue) solid; */
-    border-radius: 10px;
-    font-size: 0.9em;
-}
-
-#story-list-bar ul {
-    padding: 0;
-    list-style-type: none;
-    color: var(--darkBlue);
-    font-family: quicksand;
-    font-size: 1.25em;
-    text-align: center;
-}
-
-#story-list-bar ul li {
-    margin: 10px 0px;
-    padding: 0em 0.5em;
-    border-radius: 15px;
-    text-align: center;
-}
-
-#story-list-bar ul li:hover {
-    transition: 0.5s;
-    background-color: var(--paleYellow);
-}
-
-#bar-title {
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.2em;
-}
-
-#story-image {
-    grid-area: img;
-}
-
-/* Rounded corners */
-#story-image img {
-    border: 2px rgb(158, 191, 199) solid;
-    /* border: 2px var(--darkBlue) solid; */
-
-    border-radius: 10px;
-    width: 100%;
-    margin-bottom: 10%;
-}
-
-#story-story {
-    grid-area: story;
-    text-align: justify;
-    padding: 0px 50px;
-    /* overflow: scroll; */
-    /* Do I need this? */
-}
-
-/* Sub-Grid */
-#story-header-wrapper {
-    grid-area: info;
-    display: grid;
-    padding: 0px 30px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        ". . chapters . ."
-        "last title title title next"
-    ;
-    /* the dots mean blank! */
-    justify-content: center;
-}
-
-/* ALL CHAPTER BUTTON AND DROPDOWN */
-/* https://codepen.io/remilaudanski/pen/gbBGyN?editors=1100 */
-#story-chapter-dropdown {
-    grid-area: chapters;
-    text-align: center;
-    position: relative;
-}
-
-#allChapters {
-    position: relative;
-    opacity: 0;
-    height: 0px;
-}
-
-#allChapters:checked+#chapter-slide {
-    /* the dropdown */
-    height: 95px;
-    /* custom to 3 chapters, doesn't work otherwise... */
-    /* might as well set it to fit the story with the most chapters */
-    opacity: 1;
-}
-
-#chapter-slide {
-    clear: both;
-    /* ? */
-    width: 100%;
-    height: 0px;
-    overflow: hidden;
-    /* hides chapters */
-    text-align: center;
-    transition: height .4s ease;
-    padding: 0;
-    margin: 0;
-    margin-top: -1em;
-    padding-top: 0.5em;
-
-    font-family: quicksand;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    font-size: 14px;
-
-    /* background-color: rgb(158, 191, 199);
-    box-shadow: 0px 0px 5px 0px #7c9daa; */
-    /* Easier to make all chapter dropdown look nice */
-    /* text-shadow: 0px 0px 7px var(--darkBlue); */
-    /* border-radius: 0px 0px 10px 10px; */
-
-    background-color: #b2d2d6;
-    border: 2px var(--darkBlue) solid;
-
-    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
-    box-shadow: 0px 5px 5px 0px #7c9daa;
-
-    border-radius: 10px;
-
-    position: absolute;
-    opacity: 0;
-}
-
-#chapter-slide li {
-    /* color: var(--paleYellow); */
-    color: var(--darkBlue);
-    padding: 4px;
-    list-style: none;
-}
-
-#chapter-slide li:hover {
-    background-color: var(--paleYellow);
-    color: #7c9daa;
-    text-shadow: 0px 0px rgba(0, 0, 0, 0);
-}
-
-#story-title {
-    grid-area: title;
-    margin: 0px -30px -20px -30px;
-}
-
-#story-last-chapter {
-    grid-area: last;
-    text-align: right;
-}
-
-#story-next-chapter {
-    grid-area: next;
-    text-align: left;
-}
-
-
-
-
-
-/* PLANET PAGE */
-/*             */
-
-#threeD-map {
-    margin: 2em 1em 5em;
-    /* top sides bottom */
-
-    background-image: url(https://images.unsplash.com/photo-1553375388-5917bf50a7ab?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3RhcnJ5fGVufDB8fDB8fHww);
-    background-size: cover;
-    backdrop-filter: saturate(0);
-    /* not working */
-    border: 3px solid black;
-}
-
-#threeD-map::after {
-    content: "Mk\00B0mih' oh";
-
-    font-family: quicksand;
-    font-weight: bold;
-    font-size: 2em;
-    color: #dddddd;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    padding: 0.1em 0.4em;
-}
-
-#large-map {
-    border: 2px solid black;
-    background-image: url(../images/map_named.png);
-    background-size: cover;
-}
-
-#large-map img {
-    opacity: 0;
-    /* I just want the proportions for large-map */
-}
-
-#map-data-button {
-    display: flex;
-    margin-left: auto;
-    margin-top: 0.5em;
-}
-
-/* Selected Image */
-#map-data-button:checked+#map-no-data {
-    opacity: 1;
-}
-
-.planet-info {
-    font-family: zen-maru;
-    color: var(--darkBlue);
-    text-align: left;
-    font-size: 18px;
-
-    margin: 0em 2em;
-    list-style-type: none;
-}
-
-.planet-info .one-section {
-    margin-top: 0;
-    padding-left: 0;
-}
-
-/* Might just add a gap2 */
-.planet-info dt {
-    font-weight: bold;
-    margin-top: 2em;
-}
-
-.planet-info dd {
-    margin-top: 0.5em;
-}
-
-.planet-info img {
-    padding: 5% 0% 0 10%;
-}
-
-/* https://codepen.io/Lubna/pen/MWapdjE */
-/* Creature collapsable section */
-.creature-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* FIX IF IT'S OVER 2000 SCREEN WIDTH */
-    margin: 0 2em;
-    padding-top: 75vh;
-    position: relative;
-}
-
-/* .creature-gallery div div {
-    position: absolute;
-    width: 100%;
-} */
-
-.creature-gallery-selector {
-    /* position: absolute; */
-    opacity: 0;
-    visibility: hidden;
-}
-
-.creature-gallery-img {
-    position: absolute;
-
-    bottom: 360px;
-    /* 120 for one row */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    margin: 2em;
-    left: 0;
-
-    height: 75vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    pointer-events: none;
-    /* so we don't click on the invisible overlapped ones */
-}
-
-.creature-gallery-thumb {
-    padding-top: 6px;
-    margin: 6px;
-    display: block;
-}
-
-.creature-gallery-thumb img {
-    height: 150px;
-}
-
-.creature-gallery label {
-    font-family: zen-maru;
-    text-align: center;
-
-}
-
-/* thumb image */
-.creature-gallery-selector:checked~.creature-gallery-thumb>img {
-    box-shadow: 0 0 0 3px #0be2f6;
-}
-
-/* thumb text */
-/* also affects img */
-.creature-gallery-selector:checked~.creature-gallery-thumb {
-    color: var(--darkBlue);
-}
-
-/* Selected Image */
-.creature-gallery-selector:checked+.creature-gallery-img {
-    opacity: 1;
-    pointer-events: all;
-}
-
-/* Also used on the About page! */
-#creature-header {
-    width: 75%;
-    margin: 5em auto .6em auto;
-    padding: 7px;
-
-    border-radius: 25px;
-    background-color: var(--darkBlue);
-    color: var(--paleYellow);
-
-    font-family: quicksand;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Also used on the About page! */
-.creature-sub-header {
-    width: 50%;
-    margin: 1em auto;
-    padding: 0.075em 0em;
-
-    border-radius: 0.85em 0.85em 0em 0em;
-    background-color: var(--darkBlue);
-    color: var(--paleYellow);
-
-    font-family: quicksand;
-    text-align: center;
-}
-
-.planet-creature-section {
-    background-color: var(--paleYellow);
-    padding: 30px 30px 60px 30px;
-    margin: 2em 0em 5em 0em;
-    /* Wrapper counteract (+ bottom) */
-    /* 2em side padding on creature-gallery */
-}
-
-.planet-creature-section img {
-    padding-top: 1em;
-}
-
-.planet-creature-section p {
-    font-weight: bold;
-    margin: 1.5em 0.5em;
-}
-
-.planet-creature-section li {
-    font-family: zen-maru;
-    color: var(--darkBlue);
-    text-align: left;
-    font-size: 18px;
-}
-
-.planet-creature-section table {
-    margin: 0;
-    margin-bottom: 1em;
-    color: var(--darkBlue);
-    font-family: zen-maru;
-    text-align: left;
-    border-collapse: collapse;
-}
-
-.planet-creature-section td {
-    padding: 0em 0.5em;
-    width: 50%;
-}
-
-.planet-creature-section tr:nth-of-type(even) {
-    background-color: rgba(243, 219, 92, 0.5);
-}
-
-.dist-map {
-    height: 150px;
-    aspect-ratio: 5/2;
-    /* or */
-    /* aspect-ratio: 3/1 */
-    /* Just make sure to make the images this size! */
-    padding: 0;
-    margin: 0px 20px;
-
-    position: relative;
-    border-radius: 100px;
-}
-
-.dist-map img {
-    border-radius: 100px;
-}
-
-.dist-map .one-section {
-    padding: 0;
-}
-
-.dist-map::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 100px;
-    box-shadow: inset 0px 0px 20px rgba(20, 60, 100, 0.1);
-    /* Inside shadow */
-}
-
-.planet-creature-header-left {
-    width: 90%;
-    margin-left: -2.1em;
-    margin-top: 0px;
-    padding-bottom: 3px;
-    padding-left: 3.25em;
-
-    border-bottom: 5px solid var(--darkBlue);
-    color: var(--darkBlue);
-
-    font-size: 1.5em;
-    font-family: quicksand;
-    text-align: left;
-    word-spacing: 0.25em;
-}
-
-.planet-creature-header-right {
-    margin-right: -2.1em;
-    margin-left: 5em;
-    /* Margin left as opposed to width at 90% */
-    margin-top: 0px;
-    padding-bottom: 3px;
-    padding-right: 3.25em;
-
-    border-bottom: 5px solid var(--darkBlue);
-    color: var(--darkBlue);
-
-    font-size: 1.5em;
-    font-family: quicksand;
-    text-align: right;
-    word-spacing: 0.25em;
-}
-
-
-
-
-
-/* ABOUT PAGE */
-/*            */
-#about-top-section {
-    display: flex;
-    margin-top: 3em;
-}
-
-#about-ramble {
-    flex: 3;
-    float: left;
-    text-align: justify;
-}
-
-#about-ramble p {
-    width: 90%;
-    padding-right: 4em;
-    margin: auto;
-}
-
-#about-og-design {
-    flex: 1;
-    float: right;
-    text-align: center;
-}
-
-#about-og-design img {
-    border: 2px rgb(158, 191, 199) solid;
-    width: 100%;
-}
-
-#more-work img {
-    border: 2px rgb(158, 191, 199) solid;
-}
-
-
-
-
-
-/* JUMP TO POSITION FIXES */
-/*                        */
-#jump-to-gallery {
-    position: absolute;
-    margin-top: -8em;
-}
-
-#jump-to-map {
-    position: absolute;
-    margin-top: -20em;
-    /* top of the page */
-}
-
-#jump-to-wildlife {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-vegetation {
-    position: absolute;
-    margin-top: -6em;
-}
-
-#jump-to-translator {
-    position: absolute;
-    margin-top: -20em;
-    /* top of the page */
-}
-
-#jump-to-lang-structure {
-    position: absolute;
-    margin-top: -9em;
-}
-
-#jump-to-slang {
-    position: absolute;
-    margin-top: -9em;
-}
-
-#jump-to-numbers {
-    position: absolute;
-    margin-top: -9em;
-}
-
-#jump-to-idauhl {
-    position: absolute;
-    margin-top: -12em;
-}
-
-#jump-to-anatomy {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-expression {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-tools {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-law {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-characters {
-    position: absolute;
-    margin-top: -20em;
-    /* top of the page */
-}
-
-#jump-to-stories {
-    position: absolute;
-    margin-top: -5em;
-}
-
-#jump-to-about {
-    position: absolute;
-    margin-top: -20em;
-    /* top of the page */
-}
-
-#jump-to-name-exp {
-    position: absolute;
-    margin-top: -8em;
-}
-
-#jump-to-more-work {
-    position: absolute;
-    margin-top: -4em;
-}
-
-#jump-to-commissions {
-    position: absolute;
-    margin-top: -4em;
 }
 
 
@@ -1717,6 +698,11 @@ footer input {
 
 /* GENERAL STYLING OPTIONS */
 /*                         */
+.no-wrapper {
+    margin: auto -1.85em !important;
+    /* negative padding not supported */
+}
+
 .nnhlh {
     font-family: naunohhloh;
     font-size: 1.25em;
@@ -1731,6 +717,15 @@ footer input {
     font-weight: bold !important;
 }
 
+.sup {
+    display: inline;
+    position: relative;
+    vertical-align: top;
+    top: -2px;
+    padding-left: 2px;
+    font-size: 0.75em;
+}
+
 .tiny {
     font-size: 0.9em !important;
 }
@@ -1740,14 +735,28 @@ footer input {
     line-height: 2em;
 }
 
+.float-left {
+    float: left;
+    padding-right: 1em;
+}
+
+.float-right {
+    float: right;
+    padding-left: 1em;
+}
+
+.clear-float {
+    clear: both;
+}
+
 .centered {
     text-align: center !important;
-    /* override */
+    /* Override */
 }
 
 .left-align {
     text-align: left !important;
-    /* override */
+    /* Override */
 }
 
 .text-justify {
@@ -1758,9 +767,9 @@ footer input {
     padding: 0 15%;
 }
 
+/* 1px full screen width */
 .solid-blue-line {
-    /* 1px full screen width */
-    /* top and bottom of People page */
+    /* Used at top and bottom of People page */
     width: 95vw;
     margin: 0 -1.85em;
     border-top: 1px solid var(--darkBlue);
@@ -1791,7 +800,7 @@ footer input {
     font-weight: bold;
 }
 
-/* Putting it here as part of a set */
+/* Part of a set */
 .glow-on-entry {
     animation: pageLoadGlowAnimation ease 1.15s;
     animation-delay: 0.25s;
@@ -1825,7 +834,7 @@ footer input {
 
 
 
-/* The Nav Checkbox on smaller screens */
+/* Nav Checkbox on smaller screens */
 #ham {
     display: none;
 }
@@ -1844,86 +853,45 @@ footer input {
         display: none;
     }
 
-    .index .dropdown::after {
-        transform: translateX(-16em);
+    /* good enough */
+    nav a {
+        position: relative;
+        z-index: 4;
     }
 
-    .planet .dropdown::after {
-        transform: translateX(-9em);
+    nav ul li:hover ul {
+        box-shadow: none;
     }
 
-    .language .dropdown::after {
-        transform: translateX(0em);
+    nav ul li ul {
+        position: absolute;
+        z-index: 1;
     }
 
-    .people .dropdown::after {
-        transform: translateX(8em);
-    }
+    #settings-content {
+        padding-left: 0;
 
-    .about .dropdown::after {
-        transform: translateX(17em);
-    }
+        h3 {
+            padding-left: 1em;
+        }
 
-    /* #large-map {
-        height: 80vh;
-    } */
-
-    /* fit the wildlife gallery */
-    .creature-gallery {
-        padding-top: 80vh;
-    }
-
-    .creature-gallery-thumb img {
-        height: 100px;
-    }
-
-    /* makes sure it doesn't get too small */
-    .red-section-content p, .red-section-content li {
-        margin: 0em;
+        ul li {
+            margin: 0.5em;
+            width: 95%;
+        }
     }
 
     .collapse-inside {
         margin-left: 0;
     }
 
-    /* more space for a third row */
-    #story-grid-wrapper {
-        grid-template-rows: 160px 1fr;
+    footer p, form {
+        padding: 0 10px;
+        width: 30vw;
     }
 
-    #story-header-wrapper {
-        /* text-align: center; */
-        /* this is not working, fuck off */
-        padding: 0px;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(5, 10vw);
-        grid-template-areas:
-            ". chapters chapters chapters ."
-            /* not centered but who cares */
-            "last last . next next"
-            "title title title title title"
-        ;
-    }
-
-    #story-title {
-        margin: 0em;
-    }
-
-    .story-chapter-button {
-        margin: 0px 1em;
-        font-size: 0.8em;
-        padding: 0.25em 1em;
-    }
-
-    #allChapters {
-        margin: 0;
-    }
-}
-
-/* wildlife thimbnails occupy three rows */
-@media(max-width: 930px) {
-    .creature-gallery-img {
-        bottom: 500px;
+    #form-content {
+        max-width: 35vw;
     }
 }
 
@@ -1931,200 +899,15 @@ footer input {
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
-
     .smaller-img {
         padding: 0;
     }
 
     /* OKSHLIHD ICON */
-    .dropdown::after {
+    #current_okshlid {
         background-image: none;
-    }
-
-    .wrapper {
-        width: 100vw;
-        /* padding: 0.5em; */
-        /* this is being so weird, I get a white gap if it's not left alone */
-    }
-
-    #home-hero {
-        width: 100%;
-    }
-
-    #threeD-med-screen .flex-style{
-        display: block;
-        /* width: 60%; */
-    }
-
-    #threeD-map {
-        /* margin-right: 40%; */
-    }
-    
-    #large-map {
-        display: flex;
-        justify-content: end;
-        margin-right: auto;
-    }
-
-    .people-fade .flex-style, .people-fade-coll .flex-style {
-        display: block;
-    }
-
-    .collapse {
-        width: 100vw;
-    }
-
-    .people-fade-coll {
-        width: 100vw;
-    }
-
-    .solid-blue-line {
-        width: 100vw;
-    }
-
-    .planet-creature-section {
-        padding: 0;
-        margin: 0em -1em;
-        margin-bottom: 2em;
-    }
-
-    .planet-creature-header-left {
-        margin-left: -1.05em;
-        font-size: 1.2em;
-    }
-
-    .planet-creature-header-right {
-        margin-right: -1.05em;
-        font-size: 1.2em;
-    }
-
-    .people-fade .one-section img, .people-fade-coll .one-section img {
-        /* width: 50%; */
-        max-height: 40vh;
-        object-fit: contain;
-    }
-
-    .home-carousel-arrow {
-        top: 15%;
-    }
-
-    .carousel-last {
-        left: 0%;
-    }
-
-    .carousel-next {
-        right: 0%;
-    }
-
-    /* #large-map {
-        height: 50vh;
-    } */
-
-    .planet-info {
-        display: block;
-        margin: 0 1em;
-    }
-
-    .planet-creature-section .flex-style {
-        display: block;
-    }
-
-    /* for the images of the creatures */
-    .planet-creature-section .one-section img {
-        display: inline;
-        margin: 0em 1em;
-        height: 100%;
-        align-items: center;
-        width: 40%;
-    }
-
-    .planet-creature-section .one-section {
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .planet-creature-section .dist-map {
-        margin: auto;
-    }
-
-    /* fit the wildlife gallery */
-    .creature-gallery {
-        padding-top: 100vh;
-    }
-
-    .creature-gallery-thumb img {
-        height: 80px;
-    }
-
-    .creature-gallery-img {
-        bottom: 550px;
-    }
-
-    .lang-coll {
-        width: 100vw;
-    }
-
-    .lang-coll .flex-style {
-        display: block;
-        /* Shouldn't matter because the only other place it's sued doesn't rely on flex */
-    }
-
-    .lang-coll img {
-        /* width: 80%; */
-        padding-bottom: 1em;
-    }
-
-    #alphabet {
-        margin: 0em;
-    }
-
-    .flex-style #numbers {
-        display: block;
-    }
-
-    #numbers img {
-        max-height: 80vh;
-        object-fit: contain;
-    }
-
-    #story-grid-wrapper {
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 25vh 80px 1fr;
-        grid-template-areas:
-            "img img"
-            "sbar info"
-            "sbar story"
-        ;
-        grid-gap: 2em 1em;
-        justify-content: space-between;
-    }
-
-    #story-image img {
-        height: 20vh;
-        object-fit: contain;
-        border: 2px solid rgba(0, 0, 0, 0);
-        justify-content: center;
-    }
-
-    #story-image {
-        display: flex;
-        margin: auto;
-        gap: 0em 1em;
-    }
-
-    #story-header-wrapper {
-        padding: 0px 30px;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1em;
-    }
-
-    #story-list-bar {
-        grid-area: sbar;
-        padding: 0px 0em;
+        height: auto;
+        margin-bottom: 1em;
     }
 
     nav {
@@ -2136,17 +919,50 @@ footer input {
 
     nav ul {
         display: none;
-        padding: 0.5em;
+        padding-top: 1em;
     }
 
     nav ul li {
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
 
     /* Just for the sections */
     nav ul li ul li {
         margin-bottom: 0;
     }
+
+    /* highlight */
+    nav ul li a {
+        padding: 0 1.5em;
+        display: block;
+    }
+
+    /* highlight */
+    nav ul li ul li a {
+        padding: 0.1em 1.5em;
+    }
+
+    nav a:hover {
+        background-color: var(--paleYellow);
+    }
+
+#settings-content {
+    padding: 0;
+    width: 90%;
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    ul {
+        font-size: 1.25em;
+        padding-left: 1em;
+    }
+
+    ul li {
+        width: 90%;
+    }
+}
 
     #ham-label {
         display: flex !important;
@@ -2161,12 +977,10 @@ footer input {
 
     #ham:checked~nav ul {
         display: block;
-        height: 95vh;
+        height: 100vh;
         overflow: scroll;
         background-color: var(--brightYellow);
         box-shadow: 0px 8px 7px rgba(0, 0, 0, .4);
-        background-color: rgba(0, 0, 0, 0);
-        /* so main dropdown names have full hover effect */
     }
 
     #ham:checked~nav ul li ul {
@@ -2179,23 +993,60 @@ footer input {
 
     }
 
-    /* Permanently Display Subpages */
-    nav ul li:hover ul {
-        overflow: hidden;
-        display: inline;
-        padding: 0em 0em 0.5em 0.5em;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: rgba(0, 0, 0, 0);
-        box-shadow: none;
-    }
-
-    nav a:hover {
-        background-color: var(--paleYellow);
-    }
-
     .nav-details {
         display: inline;
+    }
+
+    .wrapper {
+        width: 100vw;
+        /* padding: 0.5em; */
+        /* This is being so weird, I get a white gap if it's not left alone */
+    }
+
+    #home-hero {
+        width: 100%;
+    }
+
+    .collapse {
+        width: 100vw;
+    }
+
+    .solid-blue-line {
+        width: 100vw;
+    }
+
+    .home-carousel-arrow {
+        top: 15%;
+    }
+
+    .carousel-last {
+        left: 0%;
+    }
+
+    .carousel-next {
+        right: 0%;
+    }
+
+    footer {
+        display: block;
+        justify-content: center;
+    }
+
+    footer p, form {
+        width: 100%;
+        padding: 1em;
+    }
+
+    footer p {
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        border-right: none;
+    }
+
+    #form-content {
+        grid-template-columns: 10vw 50vw;
+        width: 70vw;
+        max-width: 100vw;
+        margin: auto;
     }
 
 }
@@ -2203,171 +1054,23 @@ footer input {
 /* Phone sized */
 @media(max-width: 520px) {
 
+    .one-section {
+        padding: 0;
+    }
+
     .text-justify {
         text-align: left;
-    }
-
-    #home-summary {
-        width: 90%;
-        font-size: 0.9em;
-    }
-
-    .home-slide img {
-        width: 15em;
-        height: 15em;
-    }
-
-    .carousel-goto {
-        transform: translateY(7em);
-    }
-
-    .home-carousel-arrow {
-        transform: translateY(2em);
-    }
-
-    .home-gallery-header h1 {
-        font-size: 2.25em;
-        margin: 0.25em;
-    }
-
-    #gallery {
-        grid-template-columns: 30% 40% 20%;
-        /* ratio: 3 4 2 */
-        grid-template-areas:
-            " colA colB colC"
-        ;
-    }
-    
-    /* merge D to A, E to B */
-    #gal-col-D {
-        grid: colA;
-    }
-
-    #gal-col-E {
-        grid: colB;
     }
 
     .downwards-sub-header {
         width: 100%;
     }
 
-    /* #large-map {
-        height: 30vh !important;
-    } */
-
-    #creature-header {
-        width: 100%;
-    }
-
-    .creature-sub-header {
-        width: 80%;
-    }
-
-    .dist-map {
-        height: 100px;
-    }
-
-    .transExamp {
-        height: 200px;
-    }
-
-    #translator-window iframe {
-        width: 85vw;
-    }
-
-    #structure-header, #structure-divider {
-        margin: 0em 0em .6em 0em;
-    }
-
-    #red-section .flex-style {
-        display: block;
-    }
-
-    .red-section-content ul {
-        padding: 0;
-    }
-
-    /* alphabet caption */
-    .red-section-content .tiny {
-        margin-top: 1.5em;
-    }
-
-    #grammar-header {
-        max-width: 80vw;
-        margin-top: 2em;
-    }
-
-    .grammar-tilt {
-        margin: 0;
-    }
-
-    #slang {
-        width: 100%;
-        gap: 1em;
-        padding-right: 1em;
-        /* good enough */
-    }
-
-    #numbers {
-        padding: 0;
-    }
-
-    /* idauhl and alphabet footer */
-    .flex-style .red-section-content p {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    #about-top-section {
-        display: inline-block;
-    }
-
-    #about-top-section .flex-style {
-        display: block;
-    }
-
-    #about-ramble {
-        text-align: left;
-        margin-bottom: 4em;
-    }
-
-    #about-ramble img {
-        max-height: 40vh;
-        object-fit: contain;
-    }
-
-    #about-ramble p {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    #more-work {
-        display: inline-block;
-    }
-
-    #more-work .one-section {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    #more-work img {
-        border: 2px solid rgba(0, 0, 0, 0);
-    }
-
-    #about-og-design {
-        float: none;
-    }
-
-    #about-og-design img {
-        max-height: 60vh;
-        object-fit: contain;
-        border: 2px solid rgba(0, 0, 0, 0);
-
-    }
-
     footer {
         padding: 2em 1em;
+    }
+
+    #form-content {
+        grid-template-columns: auto;
     }
 }
