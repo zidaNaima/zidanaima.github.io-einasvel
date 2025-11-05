@@ -1,12 +1,5 @@
 /* PEOPLE PAGE */
 /*             */
-
-/* TO FIX: add this blue to all blue on blue text segments */
-/* Seeing if I like this darker blue */
-.people-fade-coll p, .people-fade-coll ul li {
-    /* color: rgb(10, 45, 75); */
-}
-
 .people-fade-coll {
     display: flex;
 
@@ -40,7 +33,6 @@
 
     .one-section img {
         width: 100%;
-        padding: 30px;
     }
 
     .flex-style p {
@@ -86,15 +78,12 @@
 }
 
 #head-anatomy {
-    padding: 0px 40px;
-}
-
-#head-anatomy .one-section {
-    padding-top: 0;
-    padding-bottom: 0;
     text-align: left;
-    margin-top: 0px;
-    border-left: 1px solid var(--darkBlue);
+
+    .one-section {
+        margin-top: 0px;
+        border-left: 1px solid var(--darkBlue);
+    }
 }
 
 /* JUMP TO POSITION FIXES */
