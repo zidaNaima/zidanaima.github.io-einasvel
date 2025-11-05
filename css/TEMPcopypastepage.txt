@@ -57,7 +57,45 @@ CREAM-ISH
     --darkRedBrown: #291758;
 
 
+            /* images and image sections */
+        .ppl-section-images {
+            float: left;
+            margin: 1em;
+            margin-left: 0;
+        }
 
+        /* the image on the top of the fake float element */
+        .ppl-section-images {
+            /* position: relative; */
+            top: 0;
+            right: 0;
+            height: 150px;
+        }
+
+        p+.ppl-section-images {
+            float: none;
+
+            margin-right: 0;
+            display: flex;
+            justify-self: right;
+        }
+
+        /* fake float element */
+        p::before {
+            content: "";
+            float: right;
+            background-color: green;
+            height: 150px;
+            /* height of the image */
+            aspect-ratio: 1;
+            /* ratio of the image*/
+        }
+
+        /* no fake float for originally left aligned images */
+        .ppl-section-images~p::before {
+            height: 0px;
+            /* height of the image */
+        }
 
 
 
