@@ -26,7 +26,7 @@ camera.position.set(1, 1, 18); // so we don't default to the origin
 let object, controls;
 
 const loader = new GLTFLoader();
-// load in model
+// LOAD IN MODEL
 loader.load('models/planet/mikimoh.glb',
     function (gltf) {
         object = gltf.scene;
@@ -48,13 +48,14 @@ loader.load('models/planet/mikimoh.glb',
     }
 );
 
+// PLANET SIZE 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize((window.innerWidth / winDiv), (window.innerHeight / 1.25));
 renderer.setPixelRatio(window.devicePixelRatio);
 
 document.getElementById("threeD-map").appendChild(renderer.domElement);
 
-
+// LIGHTING
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // color and intensity
 topLight.position.set(500, 500, 500); // top left-"ish"
 topLight.castShadow = true;
@@ -75,10 +76,16 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+// SCREEN RESIZE
 window.addEventListener("resize", function () {
     camera.aspect = (window.innerWidth / winDiv) / (window.innerHeight / 1.25); // window?
     camera.updateProjectionMatrix();
     renderer.setSize((window.innerWidth / winDiv), (window.innerHeight / 1.25))
+
+    // reload once
+    const setwindow = document.getElementById("settings-window");
+    setwindow.style.display = "none";
+    window.location.reload(true);
 });
 
 // start the animation
