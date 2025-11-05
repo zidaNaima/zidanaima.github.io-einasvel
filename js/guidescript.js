@@ -4,33 +4,127 @@
 var page = window.location.pathname;
 var dropdown = document.getElementsByClassName("dropdown");
 var drpdwn = dropdown[0];
-// var OkIcon = window.getComputedStyle(drpdwn, '::after');
-switch (page) {
-    case '/index.html':
-    case '/zidanaima.github.io-einasvel/index.html':
-        document.body.classList.add("index");
-        break;
 
-    case '/planet.html':
-    case '/zidanaima.github.io-einasvel/planet.html':
-        document.body.classList.add("planet");
-        break;
 
-    case '/language.html':
-    case '/zidanaima.github.io-einasvel/language.html':
-        document.body.classList.add("language");
-        break;
+// Settings pop-up
+const gear = document.getElementById("settings");
+gear.addEventListener("click", () => {
+    const setwindow = document.getElementById("settings-window");
+    setwindow.style.display = "block";
+});
 
-    case '/people.html':
-    case '/zidanaima.github.io-einasvel/people.html':
-        document.body.classList.add("people");
-        break;
+// Settings close
+const settx = document.getElementById("settings-exit");
+settx.addEventListener("click", () => {
+    const setwindow = document.getElementById("settings-window");
+    setwindow.style.display = "none";
+    window.location.reload(true);
+});
 
-    case '/about.html':
-    case '/zidanaima.github.io-einasvel/about.html':
-        document.body.classList.add("about");
-        break;
-}
+// Settings themes
+const themedefault = document.getElementById("theme-default");
+themedefault.addEventListener("click", () => {
+    const root = document.documentElement;
+    localStorage.setItem("theme", "default");
+    root.style.setProperty('--brightYellow', 'rgb(243, 219, 92)');
+    root.style.setProperty('--paleYellow', 'rgb(251, 247, 217)');
+    root.style.setProperty('--wrapperBlue', 'rgb(191, 223, 223)');
+    root.style.setProperty('--darkBlue', 'rgb(20, 60, 100)');
+    root.style.setProperty('--offWhite', 'rgb(249, 247, 234)');
+    root.style.setProperty('--wrapperRed', 'rgb(234, 188, 134)');
+    root.style.setProperty('--redBrown', 'rgb(146, 75, 20)');
+    root.style.setProperty('--darkRedBrown', 'rgb(70, 29, 6)');
+
+    root.style.setProperty('--borderBlue', 'rgb(124, 157, 170)');
+    root.style.setProperty('--darkBlueT', '20, 60, 100');
+    root.style.setProperty('--headerBlueT', '158, 191, 199');
+});
+const themecontrast = document.getElementById("theme-contrast");
+themecontrast.addEventListener("click", () => {
+    const root = document.documentElement;
+    localStorage.setItem("theme", "contrast");
+    root.style.setProperty('--brightYellow', 'rgb(247, 227, 132)');
+    root.style.setProperty('--paleYellow', 'rgb(249, 247, 234)');
+    root.style.setProperty('--wrapperBlue', 'rgb(214, 244, 252)');
+    root.style.setProperty('--darkBlue', 'rgb(9, 39, 65)');
+    root.style.setProperty('--offWhite', 'rgb(255, 255, 255)');
+    root.style.setProperty('--wrapperRed', 'rgb(234, 188, 134)');
+    root.style.setProperty('--redBrown', 'rgb(146, 75, 20)');
+    root.style.setProperty('--darkRedBrown', 'rgb(70, 29, 6)');
+
+    root.style.setProperty('--borderBlue', 'rgb(124, 157, 170)');
+    root.style.setProperty('--darkBlueT', '9, 39, 65');
+    root.style.setProperty('--headerBlueT', '191, 223, 223');
+});
+const themesunset = document.getElementById("theme-sunset");
+themesunset.addEventListener("click", () => {
+    const root = document.documentElement;
+    localStorage.setItem("theme", "sunset");
+    root.style.setProperty('--brightYellow', 'rgb(251, 247, 217)');
+    root.style.setProperty('--paleYellow', 'rgb(251, 247, 217)');
+    root.style.setProperty('--wrapperBlue', 'rgb(240, 234, 183)');
+    root.style.setProperty('--darkBlue', 'rgb(107, 59, 14)');
+    root.style.setProperty('--offWhite', 'rgb(249, 247, 234)');
+    root.style.setProperty('--wrapperRed', 'rgb(209, 157, 214)');
+    root.style.setProperty('--redBrown', 'rgb(41, 23, 88)');
+    root.style.setProperty('--darkRedBrown', 'rgb(41, 23, 88)');
+
+    root.style.setProperty('--borderBlue', 'rgb(107, 51, 14)');
+    root.style.setProperty('--darkBlueT', '107, 51, 14');
+    root.style.setProperty('--headerBlueT', '195, 160, 90');
+});
+const themeplain = document.getElementById("theme-plain");
+themeplain.addEventListener("click", () => {
+    const root = document.documentElement;
+    localStorage.setItem("theme", "plain");
+    root.style.setProperty('--brightYellow', 'rgb(235, 213, 93)');
+    root.style.setProperty('--paleYellow', 'rgb(255, 255, 255)');
+    root.style.setProperty('--wrapperBlue', 'rgb(236, 236, 236)');
+    root.style.setProperty('--darkBlue', 'rgb(44, 44, 44)');
+    root.style.setProperty('--offWhite', 'rgb(241, 240, 226)');
+    root.style.setProperty('--wrapperRed', 'rgb(234, 234, 234)');
+    root.style.setProperty('--redBrown', 'rgb(44, 44, 44)');
+    root.style.setProperty('--darkRedBrown', 'rgb(44, 44, 44)');
+
+    root.style.setProperty('--borderBlue', 'rgb(44, 44, 44)');
+    root.style.setProperty('--darkBlueT', '44, 44, 44');
+    root.style.setProperty('--headerBlueT', '210, 210, 200');
+});
+const themecolorless = document.getElementById("theme-colorless");
+themecolorless.addEventListener("click", () => {
+    const root = document.documentElement;
+    localStorage.setItem("theme", "colorless");
+    root.style.setProperty('--brightYellow', 'rgb(243, 243, 243)');
+    root.style.setProperty('--paleYellow', 'rgb(251, 251, 251)');
+    root.style.setProperty('--wrapperBlue', 'rgb(191, 191, 191)');
+    root.style.setProperty('--darkBlue', 'rgb(36, 36, 36)');
+    root.style.setProperty('--offWhite', 'rgb(249, 249, 249)');
+    root.style.setProperty('--wrapperRed', 'rgb(234, 234, 234)');
+    root.style.setProperty('--redBrown', 'rgb(146, 146, 146)');
+    root.style.setProperty('--darkRedBrown', 'rgb(70, 70, 70)');
+
+    root.style.setProperty('--borderBlue', 'rgb(107, 107, 107)');
+    root.style.setProperty('--darkBlueT', '107, 107, 107');
+    root.style.setProperty('--headerBlueT', '170, 170, 170');
+});
+
+// keep theme preferences between page switches
+// only initiates on page load
+window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") != null) {
+        switch (localStorage.getItem("theme")) {
+            case "default": themedefault.dispatchEvent(new Event('click')); break;
+            case "contrast": themecontrast.dispatchEvent(new Event('click')); break;
+            case "sunset": themesunset.dispatchEvent(new Event('click')); break;
+            case "plain": themeplain.dispatchEvent(new Event('click')); break;
+            case "colorless": themecolorless.dispatchEvent(new Event('click')); break;
+        }
+
+        document.body.style.backgroundImage = 'linear-gradient(var(--paleYellow), #FFF)';
+    }
+});
+
+
 
 
 
@@ -108,6 +202,7 @@ if (page == "/index.html" || page == "/zidanaima.github.io-einasvel/index.html")
 
 // --------------------------------- LANGUAGE
 
+// To Fix: language functions also on people page. fix formatting!
 if (page == "/language.html" || page == "/zidanaima.github.io-einasvel/language.html") {
 
     // 17 sounds
@@ -158,14 +253,58 @@ if (page == "/planet.html" || page == "/zidanaima.github.io-einasvel/planet.html
     // Large-map Data
     var mapBttn = document.getElementById("map-data-button");
     mapBttn.addEventListener("click", () => {
-        var map = document.getElementById("large-map");
+        const map = document.getElementById("large-map");
 
         if (map.style.backgroundImage.includes("map_named.png") || map.style.backgroundImage == "") { // background img starts unset
-            map.style.backgroundImage = "url(../images/map_named_not-named.png)";
+            // fix: changed ../images to images 9/24/25
+            // src is relative to the html file
+            map.style.backgroundImage = "url('images/map_named_not-named.png')";
+            map.firstChild.href = "images/map_named_not-named.png";
+
         } else {
-            map.style.backgroundImage = "url(../images/map_named.png)";
+            map.style.backgroundImage = "url('images/map_named.png')";
+            map.firstChild.href = "images/map_named_not-named.png";
         }
     });
+
+
+    // Notebook Tabs
+    var tab = document.getElementsByClassName("planet-notebook-tab");
+    var tb;
+
+    // Star tab starts open
+    var startab = document.getElementById("star-tab");
+    startab.classList.toggle("active-notebook-tab");
+    startab.previousElementSibling.firstElementChild.style.display = "block";
+    startab.nextElementSibling.style.display = "block";
+
+    for (tb = 0; tb < tab.length; tb++) {
+        tab[tb].addEventListener("click", function () {
+            var notetopic = this.previousElementSibling.firstElementChild; // planet-notebook-header h1
+            var notes = this.nextElementSibling; // section
+
+            if (notes.style.display == "block") {
+                notetopic.style.display = "none";
+                notes.style.display = "none";
+                this.classList.toggle("active-notebook-tab");
+            } else {
+
+                const notnotes = Array.from(tab).filter(tab => tab !== this);
+                notnotes.forEach(notnotes => {
+                    var nottopic = notnotes.previousElementSibling.firstElementChild; // header
+                    var nots = notnotes.nextElementSibling; // section
+
+                    notnotes.classList.remove("active-notebook-tab");
+                    nottopic.style.display = "none";
+                    nots.style.display = "none";
+                });
+
+                notetopic.style.display = "block";
+                notes.style.display = "block";
+                this.classList.toggle("active-notebook-tab");
+            }
+        });
+    }
 
 }
 
@@ -173,12 +312,12 @@ if (page == "/planet.html" || page == "/zidanaima.github.io-einasvel/planet.html
 
 // --------------------------------- PEOPLE
 
-if (page == "/people.html" || page == "/zidanaima.github.io-einasvel/people.html") {
+// TO FIX: expand sections not only used in people page. fix!!
+if (page == "/people.html" || page == "/zidanaima.github.io-einasvel/people.html" || page == "/language.html" || page == "/zidanaima.github.io-einasvel/language.html") {
 
     // expand and collapse one section
     // https://www.w3schools.com/howto/howto_js_collapsible.asp
     var coll = document.getElementsByClassName("collapse");
-    // var i;
 
     for (let i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
