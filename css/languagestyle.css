@@ -1,0 +1,361 @@
+/* LANGUAGE PAGE */
+/*               */
+.transExamp {
+    display: block;
+    height: 80px;
+    margin-bottom: 2em;
+    padding: 0em 1em;
+}
+
+#translator-window {
+    display: block;
+    text-align: center;
+}
+
+#translator-window iframe {
+    overflow: hidden;
+    height: 50vh;
+    width: 67vw;
+    border: 5px rgb(158, 191, 199) solid;
+    border-radius: 20px;
+}
+
+.lang-coll {
+    padding: 30px 30px 60px 30px;
+    margin: 0em -1.85em 0em -1.85em;
+    width: 95vw;
+}
+
+.lang-coll .one-section {
+    padding: 0em 0.5em;
+}
+
+/* same as .people-fade li and .people-fade-coll li */
+.lang-coll li {
+    font-family: nunito;
+    color: var(--darkBlue);
+    text-align: left;
+    font-size: 18px;
+}
+
+/* Overrides the collapse color to wrapperBlue on active */
+.collapse-lang.active {
+    background-color: #95b6c3;
+}
+
+#red-section {
+    transform: skewY(-5deg);
+    background-color: var(--wrapperRed);
+    padding: 10em 30px 5em 30px;
+    margin: 8em -30px 10em -30px;
+    /* Wrapper counteract (+bottom) */
+}
+
+.red-section-content {
+    transform: skewY(5deg);
+    /* tilt canceler */
+}
+
+.red-section-content p {
+    color: var(--darkRedBrown);
+    margin: 0px auto;
+
+    padding: 0em 3em 1.5em 3em;
+    text-align: justify;
+
+    font-size: 18px;
+}
+
+.red-section-content li {
+    color: var(--darkRedBrown);
+    margin: 0em 3em 1em 1.75em;
+    text-align: justify;
+    font-family: nunito;
+    /* font-size: 18px; */
+}
+
+.red-section-content ul li ul li {
+    transform: skewY(0deg);
+    padding-top: 0.25em;
+    list-style-type: none;
+    margin: 0;
+}
+
+/* Idauhl Language*/
+/*                */
+.red-section-content img {
+    width: 80%;
+}
+
+#structure-header {
+    margin: 0em 4em .6em 4em;
+    padding: 3px 8px 8px 8px;
+
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--redBrown);
+    color: var(--paleYellow);
+    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
+    /* slight contrast */
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#structure-divider {
+    border-bottom: 5px dashed var(--redBrown);
+    margin: 0em 4em 2em;
+}
+
+#grammar-header {
+    margin: 0em auto .6em auto;
+    padding: 3px 8px 8px 8px;
+
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--redBrown);
+    color: var(--paleYellow);
+    box-shadow: 0px 0px 4px -2px var(--darkRedBrown);
+    /* slight contrast */
+
+    font-family: quicksand;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+
+    max-width: 40vw;
+    /* For Grammar Rules */
+}
+
+/* TO FIX: I don't think grammar-tilt is an appropriate name */
+.grammar-tilt {
+    margin: 0em 4em;
+}
+
+.grammar-tilt #alphabet {
+    margin: 0em;
+}
+
+#alphabet {
+    margin: 2em 4em;
+    font-family: nunito;
+}
+
+#alphabet caption {
+    padding: 0.5em 0.75em;
+    font-weight: bold;
+    color: var(--darkRedBrown);
+}
+
+#alphabet table {
+    width: 100%;
+
+    background-color: var(--paleYellow);
+    /* #feebc9 was a real nice one */
+    color: var(--darkRedBrown);
+    border: 3px solid var(--redBrown);
+    border-collapse: collapse;
+}
+
+#alphabet tr, #alphabet th, #alphabet td {
+    border: 2px solid var(--redBrown);
+    border-collapse: collapse;
+    padding: 0em 4px;
+    text-align: center;
+    padding-bottom: 2px;
+    /* to counter the large symbols */
+}
+
+/* bold letters for 'sound' */
+#alphabet tr :nth-of-type(2) {
+    font-weight: bold;
+}
+
+/* left text align for play buttons */
+#alphabet tr :nth-of-type(5) {
+    text-align: left;
+}
+
+.alpha-symbol {
+    font-size: 1.5em !important;
+    padding: 0;
+}
+
+#alphabet tr .alpha-symbol {
+    padding-top: 0.25em;
+}
+
+/* negates bolded alphabet column */
+#grammar tr :nth-of-type(2) {
+    font-weight: normal;
+}
+
+.alpha-sound {
+    font-size: 1.25em;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--darkRedBrown);
+}
+
+.alpha-sound:hover {
+    color: var(--redBrown);
+}
+
+#slang {
+    width: 85%;
+    margin: auto;
+    font-family: nunito;
+    color: rgb(20, 60, 100);
+
+    display: grid;
+    grid-template-columns: 33% 5% 62%;
+    grid-template-areas: "s a m";
+}
+
+#saying {
+    grid-area: s;
+    text-align: right;
+}
+
+#arrow {
+    grid-area: a;
+    text-align: center;
+}
+
+#meaning {
+    grid-area: m;
+}
+
+#numbers {
+    display: flex;
+    padding: 0em 4em;
+}
+
+#numbers img {
+    width: 80%;
+}
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-translator {
+    position: absolute;
+    top: 0;
+    /* top of the page */
+}
+
+#jump-to-lang-structure {
+    position: absolute;
+    margin-top: -9em;
+}
+
+#jump-to-slang {
+    position: absolute;
+    margin-top: -9em;
+}
+
+#jump-to-numbers {
+    position: absolute;
+    margin-top: -9em;
+}
+
+#jump-to-idauhl {
+    position: absolute;
+    margin-top: -12em;
+}
+
+
+
+/* Slighly-less-than-Large Sized Screens */
+@media(max-width: 1290px) {
+
+    /* Makes sure it doesn't get too small */
+    .red-section-content p, .red-section-content li {
+        margin: 0em;
+    }
+}
+
+/* Medium sized */
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+    .lang-coll {
+        width: 100vw;
+    }
+
+    .lang-coll .flex-style {
+        display: block;
+        /* Shouldn't matter because the only other place it's used doesn't rely on flex */
+    }
+
+    .lang-coll img {
+        /* width: 80%; */
+        padding-bottom: 1em;
+    }
+
+    #alphabet {
+        margin: 0em;
+    }
+
+    .flex-style #numbers {
+        display: block;
+    }
+
+    #numbers img {
+        max-height: 80vh;
+        object-fit: contain;
+    }
+}
+
+/* Phone sized */
+@media(max-width: 520px) {
+    .transExamp {
+        height: 200px;
+    }
+
+    #translator-window iframe {
+        width: 85vw;
+    }
+
+    #structure-header, #structure-divider {
+        margin: 0em 0em .6em 0em;
+    }
+
+    #red-section .flex-style {
+        display: block;
+    }
+
+    .red-section-content ul {
+        padding: 0;
+    }
+
+    /* alphabet caption */
+    .red-section-content .tiny {
+        margin-top: 1.5em;
+    }
+
+    #grammar-header {
+        max-width: 80vw;
+        margin-top: 2em;
+    }
+
+    .grammar-tilt {
+        margin: 0;
+    }
+    
+    #slang {
+        width: 100%;
+        gap: 1em;
+        padding-right: 1em;
+        /* good enough */
+    }
+
+    #numbers {
+        padding: 0;
+    }
+
+    /* idauhl and alphabet footer */
+    .flex-style .red-section-content p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
