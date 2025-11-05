@@ -1,0 +1,288 @@
+/* HOME PAGE */
+/*           */
+#home-header {
+    /* Big title */
+    font-family: quicksand;
+    text-align: center;
+    padding-bottom: 1em;
+
+    background-color: rgba(var(--headerBlueT), 0.85);
+    color: var(--darkBlue);
+    border-top: 4px var(--borderBlue) solid;
+    border-bottom: 4px var(--borderBlue) solid;
+}
+
+/* Brief summary under title */
+#home-summary {
+    width: 60%;
+    padding: 1em 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+
+    letter-spacing: .05em;
+    line-height: 1.3em;
+    background: var(--darkBlue);
+    color: var(--offWhite);
+    border-radius: 0.15em 0.15em 2.5em 2.5em;
+}
+
+#see-why {
+    font-family: quicksand;
+    color: var(--brightYellow);
+    padding: 0em 0.25em;
+    margin: 0 -0.15em;
+    /* bring surrounding text closer */
+    border-radius: 0.6em;
+    text-decoration: none;
+}
+
+#see-why:hover {
+    color: var(--darkBlue);
+    background-color: var(--brightYellow);
+}
+
+#home-hero {
+    background-image: url(../images/home_main.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0px -200px 75px -75px var(--wrapperBlue);
+    /* The fade out at the bottom */
+
+    aspect-ratio: 1/1;
+    margin-top: -5em !important;
+    margin-bottom: 7em !important;
+    /* override no-wrapper class */
+    padding-top: 10em;
+}
+
+
+
+
+
+/* CAROUSEL */
+/*          */
+/* whole section */
+.carousel-section {
+    margin-top: 2em;
+}
+
+/* Note: big screens are based off vh, smaller on vw */
+.home-carousel {
+    position: relative;
+    height: inherit;
+    /* matches height of the full section */
+
+    display: grid;
+    grid-template-columns: auto 6vh 60vh 6vh auto;
+    grid-template-rows: 60vh 6vh;
+    /* holds space for goto button later */
+    grid-template-areas:
+        ". left image right ."
+    ;
+}
+
+.home-carousel ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* individual slides */
+.home-slide {
+    display: grid;
+    grid-template-rows: 60vh 6vh;
+    grid-template-areas:
+        "image"
+        "goto";
+    grid-area: image;
+
+    position: absolute;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* square */
+    margin: auto;
+    border-radius: 2em;
+
+    inset: 0;
+    /* new (??) */
+    opacity: 0;
+    transition: 100ms opacity ease-in-out;
+    transition-delay: 100ms;
+    /* image only fades out when other fades in (overlap) */
+}
+
+/* active slide */
+.home-slide[data-active] {
+    opacity: 1;
+    transition-delay: 0ms;
+    /* image only fades out when other fades in (overlap) */
+}
+
+.home-slide img {
+    border-radius: 2em;
+    border: 3px solid var(--darkBlue);
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+/* ONLY shared stylers */
+.home-carousel-arrow, .carousel-goto {
+    font-family: quicksand;
+    background-color: rgba(var(--darkBlueT), 0.8);
+    color: var(--offWhite);
+    border: 3px solid var(--darkBlue);
+    cursor: pointer;
+}
+
+/* next and previous arrows */
+.home-carousel-arrow {
+    /* position: absolute; */
+    font-size: 3vh;
+    align-self: center;
+    height: 50%;
+}
+
+/* ONLY shared stylers */
+.home-carousel-arrow:hover, .carousel-goto:hover {
+    color: white;
+    background-color: var(--darkBlue);
+    border: 3px solid var(--darkBlue);
+    /* background-color: rgb(42, 107, 161, 0.75); */
+}
+
+.carousel-last, .carousel-last:hover {
+    grid-area: left;
+    right: 0;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+}
+
+.carousel-next, .carousel-next:hover {
+    grid-area: right;
+    left: 0;
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+}
+
+.carousel-goto, .carousel-goto:hover {
+    grid-area: goto;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2vh;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 6vh;
+    /* vertical center */
+
+    border-top: none;
+    border-radius: 0 0 40px 40px;
+    z-index: 2;
+}
+
+
+
+
+
+.home-gallery-header {
+    font-family: quicksand;
+    text-align: center;
+
+    background-color: rgba(var(--headerBlueT), 1);
+    color: var(--darkBlue);
+    border-top: 4px var(--borderBlue) dashed;
+    border-bottom: 4px var(--borderBlue) dashed;
+}
+
+
+/* GALLERY */
+/*         */
+/* "masonry style" */
+#gallery {
+    display: grid;
+    grid-template-columns: 18% 24% 18% 12% 24%;
+    /* ratio: 3 4 3 2 4 */
+
+    justify-content: center;
+    padding-top: 2em;
+}
+
+#gallery img {
+    width: 100%;
+    border: 2px solid var(--borderBlue);
+    margin-top: -0.5em;
+    /* gets rid of gap */
+}
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-gallery {
+    position: absolute;
+    margin-top: -8em;
+}
+
+
+/* Medium sized */
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+    #home-hero {
+        width: 100vw;
+    }
+
+    #home-summary {
+        width: 100%;
+        border-radius: 0 0 0 0;
+    }
+
+    /* Note: big screens are based off vh, smaller on vw */
+    .home-carousel {
+        grid-template-columns: auto 10vw 60vw 10vw auto;
+        grid-template-rows: 60vw 10vw;
+    }
+
+    .home-slide {
+        grid-template-rows: 60vw 10vw;
+    }
+
+    .home-carousel-arrow {
+        font-size: 4vw;
+    }
+
+    .carousel-goto {
+        width: 60%;
+        line-height: 10vw;
+        font-size: 4vw;
+    }
+}
+
+
+/* Phone sized */
+@media(max-width: 520px) {
+    #home-summary {
+        font-size: 0.9em;
+    }
+
+    /* Note: big screens are based off vh, smaller on vw */
+    .home-carousel {
+        grid-template-columns: 2vw 10vw 76vw 10vw 2vw;
+        grid-template-rows: 76vw 10vw;
+    }
+
+    .home-slide {
+        grid-template-rows: 76vw 10vw;
+    }
+
+    .home-gallery-header h1 {
+        font-size: 2.25em;
+        margin: 0.25em;
+    }
+
+    #gallery {
+        grid-template-columns: repeat(5, 20%);
+    }
+}
