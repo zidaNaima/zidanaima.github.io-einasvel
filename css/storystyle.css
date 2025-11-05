@@ -1,0 +1,302 @@
+/* STORY PAGE */
+/*            */
+.story-chapter-button {
+    padding: 3px 15px;
+
+    border-radius: 20px;
+    /* background-color: rgb(158, 191, 199); */
+    /* background-color: rgba(251, 247, 217, 0.85); */
+    background-color: #b2d2d6;
+    border: 2px rgb(20, 60, 100) solid;
+
+    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
+    box-shadow: 0px 0px 8px -2px #7c9daa;
+    /* Easier to make all chapter dropdown look nice */
+    /* looks like ass though. smh. */
+    /* color: var(--paleYellow); */
+    /* color: var(--darkBlue); */
+    color: rgb(20, 60, 100);
+    /* text-shadow: 0px 0px 7px var(--darkBlue); */
+    /* for more contrast */
+    /* removed for dropdown smh */
+
+    font-family: quicksand;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+
+}
+
+.story-chapter-button:hover {
+    background-color: rgba(20, 60, 100, 0.5);
+    color: rgb(244, 242, 227);
+}
+
+#story-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+        "sbar img info info info"
+        "sbar img story story story"
+    ;
+    grid-gap: 1em;
+    justify-content: space-between;
+}
+
+#story-list-bar {
+    grid-area: sbar;
+    padding: 0px 2.75em;
+    /* background-color: rgb(158, 191, 199); */
+    background-color: #b2d2d6;
+    border: 2px rgb(158, 191, 199) solid;
+    /* border: 2px var(--darkBlue) solid; */
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+#story-list-bar ul {
+    padding: 0;
+    list-style-type: none;
+    color: var(--darkBlue);
+    font-family: quicksand;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#story-list-bar ul li {
+    margin: 10px 0px;
+    padding: 0em 0.5em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#story-list-bar ul li:hover {
+    transition: 0.5s;
+    background-color: var(--paleYellow);
+}
+
+#bar-title {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+#story-image {
+    grid-area: img;
+}
+
+/* Rounded corners */
+#story-image img {
+    border: 2px rgb(158, 191, 199) solid;
+    /* border: 2px var(--darkBlue) solid; */
+
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+#story-story {
+    grid-area: story;
+    text-align: justify;
+    padding: 0px 50px;
+    /* overflow: scroll; */
+    /* Do I need this? */
+}
+
+/* Sub-Grid */
+#story-header-wrapper {
+    grid-area: info;
+    display: grid;
+    padding: 0px 30px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        ". . chapters . ."
+        "last title title title next"
+    ;
+    /* the dots mean blank! */
+    justify-content: center;
+}
+
+/* ALL CHAPTER BUTTON AND DROPDOWN */
+/* https://codepen.io/remilaudanski/pen/gbBGyN?editors=1100 */
+#story-chapter-dropdown {
+    grid-area: chapters;
+    text-align: center;
+    position: relative;
+}
+
+#allChapters {
+    position: relative;
+    opacity: 0;
+    height: 0px;
+}
+
+#allChapters:checked+#chapter-slide {
+    /* the dropdown */
+    height: 95px;
+    /* custom to 3 chapters, doesn't work otherwise... */
+    /* might as well set it to fit the story with the most chapters */
+    opacity: 1;
+}
+
+#chapter-slide {
+    clear: both;
+    /* ? */
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    /* hides chapters */
+    text-align: center;
+    transition: height .4s ease;
+    padding: 0;
+    margin: 0;
+    margin-top: -1em;
+    padding-top: 0.5em;
+
+    font-family: quicksand;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+
+    /* background-color: rgb(158, 191, 199);
+    box-shadow: 0px 0px 5px 0px #7c9daa; */
+    /* Easier to make all chapter dropdown look nice */
+    /* text-shadow: 0px 0px 7px var(--darkBlue); */
+    /* border-radius: 0px 0px 10px 10px; */
+
+    background-color: #b2d2d6;
+    border: 2px var(--darkBlue) solid;
+
+    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
+    box-shadow: 0px 5px 5px 0px #7c9daa;
+
+    border-radius: 10px;
+
+    position: absolute;
+    opacity: 0;
+}
+
+#chapter-slide li {
+    /* color: var(--paleYellow); */
+    color: var(--darkBlue);
+    padding: 4px;
+    list-style: none;
+}
+
+#chapter-slide li:hover {
+    background-color: var(--paleYellow);
+    color: #7c9daa;
+    text-shadow: 0px 0px rgba(0, 0, 0, 0);
+}
+
+#story-title {
+    grid-area: title;
+    margin: 0px -30px -20px -30px;
+}
+
+#story-last-chapter {
+    grid-area: last;
+    text-align: right;
+}
+
+#story-next-chapter {
+    grid-area: next;
+    text-align: left;
+}
+
+/* JUMP TO POSITION FIXES */
+/*                        */
+#jump-to-characters {
+    position: absolute;
+    top: 0;
+    /* top of the page */
+}
+
+#jump-to-stories {
+    position: absolute;
+    margin-top: -5em;
+}
+
+
+
+/* Slighly-less-than-Large Sized Screens */
+@media(max-width: 1290px) {
+
+    /* More space for a third row */
+    #story-grid-wrapper {
+        grid-template-rows: 160px 1fr;
+    }
+
+    #story-header-wrapper {
+        /* text-align: center; */
+        /* Not working. */
+        padding: 0px;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 10vw);
+        grid-template-areas:
+            ". chapters chapters chapters ."
+            /* not centered but who cares */
+            "last last . next next"
+            "title title title title title"
+        ;
+    }
+
+    #story-title {
+        margin: 0em;
+    }
+
+    .story-chapter-button {
+        margin: 0px 1em;
+        font-size: 0.8em;
+        padding: 0.25em 1em;
+    }
+
+    #allChapters {
+        margin: 0;
+    }
+}
+
+/* Medium sized */
+/* Screens under 840 get a one column set of images */
+/* Something weird happens to the alphabet between 840 and 800... not sure why */
+@media(max-width: 840px) {
+    #story-grid-wrapper {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 25vh 80px 1fr;
+        grid-template-areas:
+            "img img"
+            "sbar info"
+            "sbar story"
+        ;
+        grid-gap: 2em 1em;
+        justify-content: space-between;
+    }
+
+    #story-image img {
+        height: 20vh;
+        object-fit: contain;
+        border: 2px solid rgba(0, 0, 0, 0);
+        justify-content: center;
+    }
+
+    #story-image {
+        display: flex;
+        margin: auto;
+        gap: 0em 1em;
+    }
+
+    #story-header-wrapper {
+        padding: 0px 30px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1em;
+    }
+
+    #story-list-bar {
+        grid-area: sbar;
+        padding: 0px 0em;
+    }
+}
