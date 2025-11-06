@@ -26,21 +26,20 @@
     }
 
     ul li {
-        margin: 10px 0px;
-        padding: 0em 0.5em;
-        border-radius: 10px;
+        padding: 0.5em;
     }
 
     ul li:hover {
         transition: 0.5s;
         background-color: var(--paleYellow);
     }
-}
-
-#bar-title {
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.2em;
+    
+    #bar-title {
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
 }
 
 #story-image {
@@ -91,7 +90,7 @@
 .story-chapter-button {
     padding: 3px 15px;
     color: var(--darkBlue);
-    background-color: rgb(178, 210, 214);
+    background-color: rgba(var(--headerBlueT), 1);
     border: 2px var(--darkBlue) solid;
     border-radius: 20px;
     box-shadow: 0px 0px 8px -2px var(--borderBlue);
@@ -137,7 +136,7 @@
     letter-spacing: 0.1em;
     /* font-size: 14px; */
 
-    background-color: #b2d2d6;
+    background-color: rgba(var(--headerBlueT), 1);
     box-shadow: 0px 5px 5px 0px var(--borderBlue);
     border: 2px var(--darkBlue) solid;
     border-radius: 10px;
