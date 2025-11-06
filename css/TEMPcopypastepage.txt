@@ -1,3 +1,33 @@
+TO FIX:
+images on people page overflow collapsable section on 840 (?) screens
+one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
+Dare I say I might not even need one/two/four-section(s) (i don't).
+themed colors are ugly as hell and need to be changed and updated everywhere.
+threeD should load as a static image, only opening when prompted.
+threeD sizing is incorrect. go back and read/fix it.
+story responsiveness could still use some tweaks tbh. specifically with font sizes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* COLORS */
 /*        */
 /* https://dequeuniversity.com/color-contrast */
