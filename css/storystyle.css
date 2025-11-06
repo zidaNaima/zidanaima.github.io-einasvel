@@ -59,8 +59,8 @@
     text-align: justify;
     padding: 0 1em;
 
-       overflow-x: hidden;
-        overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 /* Sub-Grid for chapter navigation buttons */
