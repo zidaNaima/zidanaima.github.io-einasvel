@@ -12,7 +12,8 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 // NOTE: winDiv only refreshes with each page refresh
 var winDiv;
 if (window.innerWidth <= "840") { // medium sized screens !!
-    winDiv = -0.0006*window.innerWidth + 1.7;
+    winDiv = -0.0006 * window.innerWidth + 1.7;
+    // winDiv = 1;
 } else {
     winDiv = 2;
 }

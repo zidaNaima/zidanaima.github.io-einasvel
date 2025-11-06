@@ -16,7 +16,7 @@
     overflow: hidden;
     height: 50vh;
     width: 67vw;
-    border: 5px rgb(158, 191, 199) solid;
+    border: 5px var(--borderBlue) solid;
     border-radius: 20px;
 }
 
