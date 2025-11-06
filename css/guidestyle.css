@@ -1070,6 +1070,18 @@ footer input {
 
 /* Phone sized */
 @media(max-width: 520px) {
+    #page-header {
+        width: 100%;
+        border-radius: 0.85em 0.85em 0em 0em;
+    }
+
+    .sub-header, .section-header {
+        width: 90%;
+    }
+
+    .downwards-sub-header, .section-sub-header {
+        width: 75%;
+    }
 
     .one-section {
         padding: 0;
