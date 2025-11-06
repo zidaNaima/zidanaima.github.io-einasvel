@@ -4,33 +4,24 @@
     padding: 3px 15px;
 
     border-radius: 20px;
-    /* background-color: rgb(158, 191, 199); */
-    /* background-color: rgba(251, 247, 217, 0.85); */
-    background-color: #b2d2d6;
-    border: 2px rgb(20, 60, 100) solid;
+    background-color: rgb(178, 210, 214);
+    border: 2px var(--darkBlue) solid;
 
-    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
     box-shadow: 0px 0px 8px -2px #7c9daa;
     /* Easier to make all chapter dropdown look nice */
     /* looks like ass though. smh. */
-    /* color: var(--paleYellow); */
-    /* color: var(--darkBlue); */
-    color: rgb(20, 60, 100);
-    /* text-shadow: 0px 0px 7px var(--darkBlue); */
-    /* for more contrast */
-    /* removed for dropdown smh */
+    color: var(--darkBlue);
 
     font-family: quicksand;
     text-align: center;
     font-weight: bold;
     letter-spacing: 0.15em;
     font-size: 14px;
-
 }
 
 .story-chapter-button:hover {
-    background-color: rgba(20, 60, 100, 0.5);
-    color: rgb(244, 242, 227);
+    background-color: rgba(var(--darkBlueT), 0.5);
+    color: var(--paleYellow);
 }
 
 #story-grid-wrapper {
@@ -48,10 +39,8 @@
 #story-list-bar {
     grid-area: sbar;
     padding: 0px 2.75em;
-    /* background-color: rgb(158, 191, 199); */
     background-color: #b2d2d6;
-    border: 2px rgb(158, 191, 199) solid;
-    /* border: 2px var(--darkBlue) solid; */
+    border: 2px var(--borderBlue) solid;
     border-radius: 10px;
     font-size: 0.9em;
 }
@@ -89,8 +78,7 @@
 
 /* Rounded corners */
 #story-image img {
-    border: 2px rgb(158, 191, 199) solid;
-    /* border: 2px var(--darkBlue) solid; */
+    border: 2px var(--borderBlue) solid;
 
     border-radius: 10px;
     width: 100%;
@@ -101,8 +89,6 @@
     grid-area: story;
     text-align: justify;
     padding: 0px 50px;
-    /* overflow: scroll; */
-    /* Do I need this? */
 }
 
 /* Sub-Grid */
@@ -116,7 +102,6 @@
         ". . chapters . ."
         "last title title title next"
     ;
-    /* the dots mean blank! */
     justify-content: center;
 }
 
@@ -161,16 +146,9 @@
     letter-spacing: 0.1em;
     font-size: 14px;
 
-    /* background-color: rgb(158, 191, 199);
-    box-shadow: 0px 0px 5px 0px #7c9daa; */
-    /* Easier to make all chapter dropdown look nice */
-    /* text-shadow: 0px 0px 7px var(--darkBlue); */
-    /* border-radius: 0px 0px 10px 10px; */
-
     background-color: #b2d2d6;
     border: 2px var(--darkBlue) solid;
 
-    /* box-shadow: inset 0px 0px 10px var(--darkBlue); */
     box-shadow: 0px 5px 5px 0px #7c9daa;
 
     border-radius: 10px;
@@ -180,7 +158,6 @@
 }
 
 #chapter-slide li {
-    /* color: var(--paleYellow); */
     color: var(--darkBlue);
     padding: 4px;
     list-style: none;
@@ -231,8 +208,6 @@
     }
 
     #story-header-wrapper {
-        /* text-align: center; */
-        /* Not working. */
         padding: 0px;
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(5, 10vw);
