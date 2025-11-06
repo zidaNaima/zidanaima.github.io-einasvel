@@ -556,6 +556,10 @@
         padding-top: 20px;
     }
 
+    #cladogram img {
+        width: 100%;
+    }
+
     .creature-gallery-thumb {
         img {
             height: 60px;
