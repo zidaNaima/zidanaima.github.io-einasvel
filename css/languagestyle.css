@@ -43,16 +43,17 @@
 }
 
 #red-section {
-    transform: skewY(-5deg);
+    transform: skewY(-3deg);
     background-color: var(--wrapperRed);
-    padding: 10em 30px 5em 30px;
-    margin: 8em -30px 10em -30px;
+    margin: 4em -30px 8em -30px;
     /* Wrapper counteract (+bottom) */
 }
 
 .red-section-content {
-    transform: skewY(5deg);
-    /* tilt canceler */
+    transform: skewY(3deg);
+    /* tilt canceller */
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .red-section-content p {
@@ -138,50 +139,41 @@
 #alphabet {
     margin: 2em 4em;
     font-family: nunito;
-}
 
-#alphabet caption {
-    padding: 0.5em 0.75em;
-    font-weight: bold;
-    color: var(--darkRedBrown);
-}
+    caption {
+        padding: 0.5em 0.75em;
+        font-weight: bold;
+        color: var(--darkRedBrown);
+    }
 
-#alphabet table {
-    width: 100%;
+    table {
+        background-color: var(--paleYellow);
+        /* #feebc9 was a real nice one */
+        color: var(--darkRedBrown);
+        border: 3px solid var(--redBrown);
+        border-collapse: collapse;
+    }
 
-    background-color: var(--paleYellow);
-    /* #feebc9 was a real nice one */
-    color: var(--darkRedBrown);
-    border: 3px solid var(--redBrown);
-    border-collapse: collapse;
-}
+    tr, th, td {
+        border: 2px solid var(--redBrown);
+        padding: 0em 10px;
+        padding-bottom: 2px;
+    }
 
-#alphabet tr, #alphabet th, #alphabet td {
-    border: 2px solid var(--redBrown);
-    border-collapse: collapse;
-    padding: 0em 4px;
-    text-align: center;
-    padding-bottom: 2px;
-    /* to counter the large symbols */
-}
+    /* 'sound' column */
+    tr :nth-of-type(2) {
+        font-weight: bold;
+    }
 
-/* bold letters for 'sound' */
-#alphabet tr :nth-of-type(2) {
-    font-weight: bold;
-}
-
-/* left text align for play buttons */
-#alphabet tr :nth-of-type(5) {
-    text-align: left;
+    .alpha-symbol {
+        padding-top: 4px;
+    }
 }
 
 .alpha-symbol {
     font-size: 1.5em !important;
+    text-align: center;
     padding: 0;
-}
-
-#alphabet tr .alpha-symbol {
-    padding-top: 0.25em;
 }
 
 /* negates bolded alphabet column */
@@ -277,12 +269,11 @@
 /* Screens under 840 get a one column set of images */
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
-    
-.lang-coll {
-    img {
-        width: 50%;
+    .lang-coll {
+        img {
+            width: 50%;
+        }
     }
-}
 
     .lang-coll img {
         /* width: 80%; */
