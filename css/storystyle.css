@@ -58,6 +58,9 @@
     grid-area: story;
     text-align: justify;
     padding: 0 1em;
+
+       overflow-x: hidden;
+        overflow-y: scroll;
 }
 
 /* Sub-Grid for chapter navigation buttons */
@@ -184,36 +187,16 @@
 
 /* Slighly-less-than-Large Sized Screens */
 @media(max-width: 1290px) {
-
-    /* More space for a third row */
-    #story-grid-wrapper {
-        grid-template-rows: 160px 1fr;
-    }
-
     #story-header-wrapper {
-        padding: 0px;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(5, 10vw);
-        grid-template-areas:
-            ". chapters chapters chapters ."
-            /* not centered but who cares */
-            "last last . next next"
-            "title title title title title"
-        ;
+        gap: 5px;
     }
 
-    #story-title {
-        margin: 0em;
+    #story-title .downwards-sub-header {
+        margin-top: 0;
     }
 
     .story-chapter-button {
-        margin: 0px 1em;
-        font-size: 0.8em;
-        padding: 0.25em 1em;
-    }
-
-    #allChapters {
-        margin: 0;
+        font-size: 1vw;
     }
 }
 
@@ -222,39 +205,74 @@
 /* Something weird happens to the alphabet between 840 and 800... not sure why */
 @media(max-width: 840px) {
     #story-grid-wrapper {
-        display: grid;
         grid-template-columns: 20% 80%;
-        grid-template-rows: 25vh 80px 1fr;
+        grid-template-rows: 125px min-content auto;
         grid-template-areas:
             "img img"
             "sbar info"
             "sbar story"
         ;
-        grid-gap: 2em 1em;
-        justify-content: space-between;
-    }
-
-    #story-image img {
-        height: 20vh;
-        object-fit: contain;
-        border: 2px solid rgba(0, 0, 0, 0);
-        justify-content: center;
     }
 
     #story-image {
         display: flex;
-        margin: auto;
-        gap: 0em 1em;
+        justify-content: center;
+    }
+
+    #story-image img {
+        width: auto;
+        height: 100px;
+        margin: 0 5%;
+    }
+
+    #story-title .downwards-sub-header {
+        margin-top: 1em;
     }
 
     #story-header-wrapper {
-        padding: 0px 30px;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1em;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        grid-template-areas:
+            ". chapters chapters ."
+            "last last next next"
+            "title title title title"
+        ;
+    }
+
+    .story-chapter-button, #chapter-list, #story-list-of-stories {
+        font-size: 0.75em;
+    }
+}
+
+/* Phone sized */
+@media(max-width: 520px) {
+    #story-grid-wrapper {
+        grid-template-columns: 100%;
+        grid-template-rows: min-content min-content min-content 1fr;
+        grid-template-areas:
+            "img"
+            "sbar"
+            "info"
+            "story"
+        ;
+
+        /* overflow-x: hidden;
+        overflow-y: scroll; */
+    }
+
+    #story-story {
+        padding: 0;
+    }
+
+    #story-header-wrapper {
+        grid-template-areas:
+            "chapters chapters chapters chapters"
+            "last last next next"
+            "title title title title"
+        ;
     }
 
     #story-list-of-stories {
-        grid-area: sbar;
-        padding: 0px 0em;
+        font-size: 1em;
     }
 }
