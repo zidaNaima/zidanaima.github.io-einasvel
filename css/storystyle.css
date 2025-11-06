@@ -1,69 +1,40 @@
 /* STORY PAGE */
 /*            */
-.story-chapter-button {
-    padding: 3px 15px;
-
-    border-radius: 20px;
-    background-color: rgb(178, 210, 214);
-    border: 2px var(--darkBlue) solid;
-
-    box-shadow: 0px 0px 8px -2px #7c9daa;
-    /* Easier to make all chapter dropdown look nice */
-    /* looks like ass though. smh. */
-    color: var(--darkBlue);
-
-    font-family: quicksand;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-size: 14px;
-}
-
-.story-chapter-button:hover {
-    background-color: rgba(var(--darkBlueT), 0.5);
-    color: var(--paleYellow);
-}
-
 #story-grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 80px 1fr;
+    grid-template-columns: 15% 15% 65%;
+    grid-template-rows: 10% 1fr;
     grid-template-areas:
-        "sbar img info info info"
-        "sbar img story story story"
+        "sbar img info"
+        "sbar img story"
     ;
-    grid-gap: 1em;
-    justify-content: space-between;
+    grid-gap: 2.5%;
 }
 
-#story-list-bar {
+#story-list-of-stories {
     grid-area: sbar;
-    padding: 0px 2.75em;
-    background-color: #b2d2d6;
+    font-family: quicksand;
+    color: var(--darkBlue);
+    background-color: rgba(var(--headerBlueT), 1);
     border: 2px var(--borderBlue) solid;
     border-radius: 10px;
-    font-size: 0.9em;
-}
-
-#story-list-bar ul {
-    padding: 0;
-    list-style-type: none;
-    color: var(--darkBlue);
-    font-family: quicksand;
-    font-size: 1.25em;
     text-align: center;
-}
 
-#story-list-bar ul li {
-    margin: 10px 0px;
-    padding: 0em 0.5em;
-    border-radius: 15px;
-    text-align: center;
-}
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
 
-#story-list-bar ul li:hover {
-    transition: 0.5s;
-    background-color: var(--paleYellow);
+    ul li {
+        margin: 10px 0px;
+        padding: 0em 0.5em;
+        border-radius: 10px;
+    }
+
+    ul li:hover {
+        transition: 0.5s;
+        background-color: var(--paleYellow);
+    }
 }
 
 #bar-title {
@@ -76,10 +47,8 @@
     grid-area: img;
 }
 
-/* Rounded corners */
 #story-image img {
     border: 2px var(--borderBlue) solid;
-
     border-radius: 10px;
     width: 100%;
     margin-bottom: 10%;
@@ -88,29 +57,59 @@
 #story-story {
     grid-area: story;
     text-align: justify;
-    padding: 0px 50px;
+    padding: 0 1em;
 }
 
-/* Sub-Grid */
+/* Sub-Grid for chapter navigation buttons */
 #story-header-wrapper {
     grid-area: info;
     display: grid;
-    padding: 0px 30px;
-    grid-template-columns: repeat(5, 1fr);
+    padding: 0 1em;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        ". . chapters . ."
-        "last title title title next"
+        "last chapters next"
+        "title title title"
     ;
-    justify-content: center;
+    gap: 0 2em;
+}
+
+#story-title {
+    grid-area: title;
+
+    .downwards-sub-header {
+        margin-top: 1em;
+    }
 }
 
 /* ALL CHAPTER BUTTON AND DROPDOWN */
 /* https://codepen.io/remilaudanski/pen/gbBGyN?editors=1100 */
-#story-chapter-dropdown {
-    grid-area: chapters;
+/* input selector */
+.story-chapter-button {
+    padding: 3px 15px;
+    color: var(--darkBlue);
+    background-color: rgb(178, 210, 214);
+    border: 2px var(--darkBlue) solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px -2px var(--borderBlue);
+
+    font-family: quicksand;
     text-align: center;
-    position: relative;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.story-chapter-button:hover {
+    background-color: rgba(var(--darkBlueT), 0.5);
+    color: var(--paleYellow);
+}
+
+#lastChapter {
+    grid-area: last;
+}
+
+#nextChapter {
+    grid-area: next;
 }
 
 #allChapters {
@@ -119,70 +118,53 @@
     height: 0px;
 }
 
-#allChapters:checked+#chapter-slide {
-    /* the dropdown */
-    height: 95px;
-    /* custom to 3 chapters, doesn't work otherwise... */
-    /* might as well set it to fit the story with the most chapters */
-    opacity: 1;
+#story-all-chapters {
+    grid-area: chapters;
+    width: 100%;
+    height: 30px;
 }
 
-#chapter-slide {
-    clear: both;
-    /* ? */
-    width: 100%;
+#chapter-list {
+    position: absolute;
     height: 0px;
-    overflow: hidden;
-    /* hides chapters */
-    text-align: center;
-    transition: height .4s ease;
-    padding: 0;
-    margin: 0;
-    margin-top: -1em;
-    padding-top: 0.5em;
+    padding: 0.5em 0;
 
     font-family: quicksand;
     font-weight: bold;
     letter-spacing: 0.1em;
-    font-size: 14px;
+    /* font-size: 14px; */
 
     background-color: #b2d2d6;
+    box-shadow: 0px 5px 5px 0px var(--borderBlue);
     border: 2px var(--darkBlue) solid;
-
-    box-shadow: 0px 5px 5px 0px #7c9daa;
-
     border-radius: 10px;
 
+    text-align: center;
+    transition: height .4s ease;
     position: absolute;
     opacity: 0;
+
+    li {
+        color: var(--darkBlue);
+        padding: 4px;
+        list-style: none;
+    }
+
+    li:hover {
+        background-color: var(--paleYellow);
+        color: var(--borderBlue);
+    }
 }
 
-#chapter-slide li {
-    color: var(--darkBlue);
-    padding: 4px;
-    list-style: none;
+#allChapters:checked+#chapter-list {
+    height: max-content;
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    margin: -1em auto;
 }
 
-#chapter-slide li:hover {
-    background-color: var(--paleYellow);
-    color: #7c9daa;
-    text-shadow: 0px 0px rgba(0, 0, 0, 0);
-}
 
-#story-title {
-    grid-area: title;
-    margin: 0px -30px -20px -30px;
-}
-
-#story-last-chapter {
-    grid-area: last;
-    text-align: right;
-}
-
-#story-next-chapter {
-    grid-area: next;
-    text-align: left;
-}
 
 /* JUMP TO POSITION FIXES */
 /*                        */
@@ -194,7 +176,8 @@
 
 #jump-to-stories {
     position: absolute;
-    margin-top: -5em;
+    top: 0;
+    /* top of the page */
 }
 
 
@@ -270,7 +253,7 @@
         gap: 1em;
     }
 
-    #story-list-bar {
+    #story-list-of-stories {
         grid-area: sbar;
         padding: 0px 0em;
     }
