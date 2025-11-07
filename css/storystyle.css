@@ -128,7 +128,7 @@
 
 #chapter-list {
     position: absolute;
-    height: 0px;
+    max-height: 0px;
     padding: 0.5em 0;
 
     font-family: quicksand;
@@ -142,7 +142,7 @@
     border-radius: 10px;
 
     text-align: center;
-    transition: height .4s ease;
+    transition: max-height .4s ease;
     position: absolute;
     opacity: 0;
 
@@ -159,7 +159,7 @@
 }
 
 #allChapters:checked+#chapter-list {
-    height: max-content;
+    max-height: 400px;
     opacity: 1;
     width: 100%;
     position: relative;
