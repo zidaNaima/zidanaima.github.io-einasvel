@@ -6,7 +6,7 @@ themed colors are ugly as hell and need to be changed and updated everywhere.
 threeD should load as a static image, only opening when prompted.
 threeD sizing is incorrect. go back and read/fix it.
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
-
+Example translations don't need all that space.
 
 
 
