@@ -169,21 +169,31 @@
 
 /* grid template areas not needed but helpful for understanding */
 #slang {
-    width: 85%;
+    /* width: 85%; */
     margin: auto;
-    /* background-color: rgba(255, 255, 255, 0.659); */
-    /* margin-bottom: 1em; */
-    /* border-radius: 1em; */
-    /* padding: 0 2em; */
-
     display: grid;
     grid-template-columns: 33% 5% 62%;
     grid-template-areas: "s a m";
+
+    border-left: 1px solid var(--darkBlue);
+    border-right: 1px solid var(--darkBlue);
+    padding: 0 2em;
 }
 
 #saying {
     grid-area: s;
-    text-align: right;
+    text-align: left;
+
+    /* fill the rest of the line with dots */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* fill the rest of the line with dots */
+#saying::after {
+    content: "· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
+    flex-grow: 1;
+    margin-left: 1em;
 }
 
 #arrow {
@@ -193,6 +203,7 @@
 
 #meaning {
     grid-area: m;
+    text-align: justify;
 }
 
 #numbers {
