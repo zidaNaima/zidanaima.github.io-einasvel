@@ -186,7 +186,6 @@
 
     /* fill the rest of the line with dots */
     overflow: hidden;
-    white-space: nowrap;
 }
 
 /* fill the rest of the line with dots */
@@ -194,6 +193,7 @@
     content: "· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
     flex-grow: 1;
     margin-left: 1em;
+    white-space: nowrap;
 }
 
 #arrow {
@@ -273,6 +273,25 @@
         margin: 0em;
     }
 
+    #slang {
+        border-left: none;
+        border-right: none;
+        padding: 0;
+        grid-template-columns: 25% 10% 65%;
+    }
+
+    /* align right instead of left. next to arrow. */
+    #saying {
+        text-align: right;
+        overflow: hidden;
+    }
+
+    /* no dots */
+    #saying::after {
+        content: "";
+        margin-left: 0;
+    }
+
     .flex-style #numbers {
         display: block;
     }
@@ -318,7 +337,7 @@
     }
 
     #slang {
-        width: 100%;
+        /* slightly bigger slang than medium screens */
         grid-template-columns: 30% 10% 60%;
     }
 
