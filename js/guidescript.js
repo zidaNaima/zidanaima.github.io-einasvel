@@ -106,6 +106,12 @@ themecolorless.addEventListener("click", () => {
     root.style.setProperty('--borderBlue', 'rgb(107, 107, 107)');
     root.style.setProperty('--darkBlueT', '107, 107, 107');
     root.style.setProperty('--headerBlueT', '170, 170, 170');
+
+    // document.querySelectorAll("img").style.setProperty('filter: grayscale(100%) !important;');
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+        img.classList.add('grayscale-filter');
+    });
 });
 
 // keep theme preferences between page switches
