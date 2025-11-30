@@ -1,21 +1,50 @@
 TO FIX:
-images on people page overflow collapsable section on 840 (?) screens
+images on people page overflow collapsible section on 840 (?) screens
 one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
-Dare I say I might not even need one/two/four-section(s) (i don't).
 themed colors are ugly as hell and need to be changed and updated everywhere.
 threeD should load as a static image, only opening when prompted.
 threeD sizing is incorrect. go back and read/fix it.
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
 Example translations don't need all that space.
+change pre formatted p tags to pre tags!!
+change margin and padding em's to rem's
+have theme select/show the theme you're currently on
+planet page constantly refreshed for some reason
+fix colors on planet page (notebook tabs and table every other row) on themes.
+change theme names of sunset/cream and colorless/bnw
+offWhite probably shouldn't change, meaning take it off home header and carousel
 
 
+LONG TERM:
+            <li>planet specifics (mainly with locations)</li>
+            <li>Language interactive images that change when the translator doesn't work</li>
 
+GENREAL:
+            <li>put oele'in digital drawings from home onto site</li>
+            <li>play with about media query (seems ok for a large majority)</li>
+            <li>take everything out of teal notebook</li>
+            <li>Food Chain on Planet</li>
+            <li>make sure words only glow if accessed from see why/other places like that</li>
 
+            <li>"Fix numbers" it shows a horizontal line to the left of two vertical lines where the ones go. Likely for fives like roman numerals.</li>
+            
+            <li>brown   Pemihnoh, Anger   dauq', "X love(7)(4)"", sex   paud, promise   p'nihnuhp, protect   Uhdoohth, run   au/hl/oh, (THE FOUR TYPES OF LOVE: ) romantic   ohsiuhm, familial   pooh/hl/eih, friendshp   esmeih, natural   ohaumau, hour   soohp, jump   seih, milk   deihmau, sac   pauohn*, egg   spen, pregnant   dohdohp, mate   emenih, day   sohuhn (difference between daytime and a day), year   q'au/hl/duh, minute   ohk*ihs, "A"   dihsith, "B"   baun</li>
 
+            <li>nohohohmih mihsedesihm is slang for "keep going" perhaps</li>
+            <li>? goes at the beginning of a sentence, like "future"</li>
+            <li>change "two" to "de"</li>
+            <li>"play around with "who does" and "similar to" being at the beginning of words (goes against big to small clarification)</li>
 
+AND
 
-
-
+Make evolution map connecting all the creatures. Include generals like "birds" and "bugs", "more bugs"
+Fix anatomy (necks) on old photos and make sure upper uhnuh is the fatless one
+Add all the distribution maps and placeholder images
+remove user ability to change form size
+play around with translator
+See if I can do some / thing different about the gallery on a phone screen?
+Update all alt="TEMPORARY"'s
+Apparently images should weight around 100kb ???? girl... who was gonna tell me...
 
 
 
