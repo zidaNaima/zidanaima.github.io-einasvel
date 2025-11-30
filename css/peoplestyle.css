@@ -38,6 +38,10 @@
         margin: 0;
         padding: 0;
     }
+
+    img {
+        border: 2px solid var(--borderBlue);
+    }
 }
 
 /* For the dropdowns with two fade sections (ex. Head Anantomy) */
@@ -87,6 +91,8 @@
             margin: 0;
             padding: 0;
             width: 100% !important;
+            border: none;
+            /* undo typical border styling */
         }
 
         p {

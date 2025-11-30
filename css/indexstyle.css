@@ -22,7 +22,7 @@
     letter-spacing: .05em;
     line-height: 1.3em;
     background: var(--darkBlue);
-    color: var(--offWhite);
+    color: var(--paleYellow);
     border-radius: 0.15em 0.15em 2.5em 2.5em;
 }
 
@@ -129,7 +129,7 @@
 .home-carousel-arrow, .carousel-goto {
     font-family: quicksand;
     background-color: rgba(var(--darkBlueT), 0.8);
-    color: var(--offWhite);
+    color: var(--paleYellow);
     border: 3px solid var(--darkBlue);
     cursor: pointer;
 }

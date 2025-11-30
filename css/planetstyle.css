@@ -208,6 +208,7 @@
     /* height of creature display */
     margin-top: 2em;
     position: relative;
+
 }
 
 /* checkbox */
@@ -222,6 +223,7 @@
 
     img {
         height: 150px;
+        border: 2px solid var(--borderBlue);
     }
 }
 
@@ -258,6 +260,7 @@
     text-align: justify;
     color: var(--darkBlue);
     background-color: var(--paleYellow);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2), 0px 0px 6px rgba(0, 0, 0, .2);
 
     position: absolute;
     width: 100%;
@@ -306,8 +309,10 @@
     }
 
     tr:nth-of-type(even) {
-        background-color: rgba(243, 219, 92, 0.5);
+        /* background-color: rgba(243, 219, 92, 0.5); */
         /* FIX: doesn't go well with theme changes */
+        /* background-color: hsla(50, 90%, 50%, 0.25); */
+        background-color: rgba(var(--darkBlueT), 0.1);
     }
 
     .float-left, .float-right {
