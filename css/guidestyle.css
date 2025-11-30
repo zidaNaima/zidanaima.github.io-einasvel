@@ -46,6 +46,8 @@ html {
     --wrapperRed: #eabc86;
     --redBrown: #924b14;
     --darkRedBrown: #461d06;
+    --redSecTable: rgb(249, 247, 234);
+    /* default same as off white */
 
     --borderBlue: #7c9daa;
     --darkBlueT: 20, 60, 100;
@@ -61,6 +63,7 @@ html {
     --wrapperRed: rgb(209, 157, 214);
     --redBrown: rgb(41, 23, 88);
     --darkRedBrown: rgb(41, 23, 88);
+    --redSecTable: rgb(249, 247, 234);
 
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(107, 51, 14);
@@ -76,6 +79,7 @@ html {
     --wrapperRed: rgb(210, 210, 200);
     --redBrown: rgb(44, 44, 44);
     --darkRedBrown: rgb(44, 44, 44);
+    --redSecTable: rgb(249, 247, 234);
 
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(44, 44, 44);
@@ -91,6 +95,7 @@ html {
     --wrapperRed: rgb(222, 222, 222);
     --redBrown: rgb(0, 0, 0);
     --darkRedBrown: rgb(0, 0, 0);
+    --redSecTable: rgb(249, 247, 234);
 
     --offWhite: rgb(255, 255, 255);
     --borderBlue: rgb(191, 191, 191);
@@ -110,8 +115,9 @@ html {
     --wrapperRed: rgba(101, 53, 30, 0.75);
     --redBrown: rgb(255, 238, 167);
     --darkRedBrown: rgb(255, 238, 167);
+    --redSecTable: rgb(156, 111, 90);
 
-    --offWhite: rgba(156, 111, 90, 1);
+    --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(32, 39, 76);
     --headerBlueT: 32, 39, 76;
 }
