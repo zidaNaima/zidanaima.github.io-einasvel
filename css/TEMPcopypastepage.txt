@@ -8,10 +8,9 @@ story responsiveness could still use some tweaks tbh. specifically with font siz
 Example translations don't need all that space.
 change pre formatted p tags to pre tags!!
 change margin and padding em's to rem's
-have theme select/show the theme you're currently on
 planet page constantly refreshed for some reason
 fix colors on planet page (notebook tabs and table every other row) on themes.
-change theme names of sunset/cream and colorless/bnw
+change theme names of colorless/bnw
 offWhite probably shouldn't change, meaning take it off home header and carousel
 
 
@@ -27,7 +26,7 @@ GENREAL:
             <li>make sure words only glow if accessed from see why/other places like that</li>
 
             <li>"Fix numbers" it shows a horizontal line to the left of two vertical lines where the ones go. Likely for fives like roman numerals.</li>
-            
+
             <li>brown   Pemihnoh, Anger   dauq', "X love(7)(4)"", sex   paud, promise   p'nihnuhp, protect   Uhdoohth, run   au/hl/oh, (THE FOUR TYPES OF LOVE: ) romantic   ohsiuhm, familial   pooh/hl/eih, friendshp   esmeih, natural   ohaumau, hour   soohp, jump   seih, milk   deihmau, sac   pauohn*, egg   spen, pregnant   dohdohp, mate   emenih, day   sohuhn (difference between daytime and a day), year   q'au/hl/duh, minute   ohk*ihs, "A"   dihsith, "B"   baun</li>
 
             <li>nohohohmih mihsedesihm is slang for "keep going" perhaps</li>
@@ -40,9 +39,7 @@ AND
 Make evolution map connecting all the creatures. Include generals like "birds" and "bugs", "more bugs"
 Fix anatomy (necks) on old photos and make sure upper uhnuh is the fatless one
 Add all the distribution maps and placeholder images
-remove user ability to change form size
 play around with translator
-See if I can do some / thing different about the gallery on a phone screen?
 Update all alt="TEMPORARY"'s
 Apparently images should weight around 100kb ???? girl... who was gonna tell me...
 
@@ -90,108 +87,3 @@ BASIC
     --redBrown: #924b14;
     --darkRedBrown: #461d06;
 }
-
-UGLY 1
-
-:root {
-    --brightYellow: #000000;
-    --paleYellow:   #a58c57;
-    --wrapperBlue: #1b1b1b;
-    --darkBlue: #f5f3e8;
-    --offWhite: #f5f3e8;
-    --wrapperRed: #4b4c9e;
-    --redBrown: #2d2f79;
-    --darkRedBrown: #f0e3e3;
-}
-
-CREAM-ISH
-
-    --brightYellow: rgb(251, 247, 217);
-    --paleYellow: rgb(251, 247, 217);
-    --wrapperBlue: rgb(240, 234, 183);
-    --darkBlue: rgb(100, 52, 20);
-    --offWhite: rgb(249, 247, 234);
-    --wrapperRed: #d19dd6;
-    --redBrown: #291758;
-    --darkRedBrown: #291758;
-
-
-            /* images and image sections */
-        .ppl-section-images {
-            float: left;
-            margin: 1em;
-            margin-left: 0;
-        }
-
-        /* the image on the top of the fake float element */
-        .ppl-section-images {
-            /* position: relative; */
-            top: 0;
-            right: 0;
-            height: 150px;
-        }
-
-        p+.ppl-section-images {
-            float: none;
-
-            margin-right: 0;
-            display: flex;
-            justify-self: right;
-        }
-
-        /* fake float element */
-        p::before {
-            content: "";
-            float: right;
-            background-color: green;
-            height: 150px;
-            /* height of the image */
-            aspect-ratio: 1;
-            /* ratio of the image*/
-        }
-
-        /* no fake float for originally left aligned images */
-        .ppl-section-images~p::before {
-            height: 0px;
-            /* height of the image */
-        }
-
-
-
-    :root {
-    --paleYellow: rgb(251, 247, 217);
-    --wrapperBlue: rgb(191, 223, 223);
-}
-
-
-.wrapper {
-    padding: 5em 1.85em 1.85em 1.85em;
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--wrapperBlue);
-}
-
-body {
-    background-image: linear-gradient(var(--paleYellow), #FFF);
-    background-repeat: no-repeat;
-    margin: 0;
-}
-
-const themecolorless = document.getElementById("theme-colorless");
-themecolorless.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "colorless");
-    root.style.setProperty('--paleYellow', '#fbfbfbff');
-    root.style.setProperty('--wrapperBlue', '#bfbfbfff');
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  // keep theme preferences between page switches
-  if (localStorage.getItem("theme") != null) {
-      switch (localStorage.getItem("theme")) {
-          case "plain": themeplain.dispatchEvent(new Event('click')); break;
-          case "colorless": themecolorless.dispatchEvent(new Event('click')); break;
-      }
-  }
-});
