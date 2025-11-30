@@ -87,7 +87,7 @@ html {
 }
 
 [data-theme="colorless"] {
-    /* --brightYellow: rgb(235, 235, 235);
+    --brightYellow: rgb(235, 235, 235);
     --paleYellow: rgb(235, 235, 235);
     --wrapperBlue: #fff;
     --darkBlue: rgb(30, 30, 30);
@@ -99,7 +99,7 @@ html {
 
     --offWhite: #fff;
     --borderBlue: rgb(210, 210, 210);
-    --headerBlueT: 235, 235, 235; */
+    --headerBlueT: 235, 235, 235;
     /* --brightYellow: #989898;
     --paleYellow: rgb(205, 205, 205);
     --wrapperBlue: rgb(235, 235, 235);
@@ -113,7 +113,7 @@ html {
     --offWhite: rgb(205, 205, 205);
     --borderBlue: rgb(210, 210, 210);
     --headerBlueT: 205, 205, 205; */
-    --brightYellow: rgb(161, 175, 216);
+    /* --brightYellow: rgb(161, 175, 216);
     --paleYellow: #fff;
     --wrapperBlue: #fff;
     --darkBlue: rgb(30, 30, 30);
@@ -125,11 +125,11 @@ html {
 
     --offWhite: #fff;
     --borderBlue: rgb(210, 210, 210);
-    --headerBlueT: 235, 235, 235;
+    --headerBlueT: 235, 235, 235; */
 }
 
 .grayscale-filter {
-    /* filter: grayscale(65%) !important; */
+    filter: grayscale(65%) !important;
     /* filter: sepia(100%) hue-rotate(180deg) saturate(50%); */
 }
 
@@ -655,7 +655,7 @@ footer input {
     text-transform: uppercase;
 }
 
-#instagram {
+.link {
     text-decoration: none;
     color: blue;
     padding: 0em 0.5em 0.25em 0.25em;
@@ -664,7 +664,7 @@ footer input {
     border-radius: 20px;
 }
 
-#instagram:hover {
+.link{
     border: 1px solid var(--darkBlue);
     background-color: var(--paleYellow);
 }
@@ -723,9 +723,9 @@ footer input {
 
 .collapse:hover, .collapse.active:hover {
     cursor: pointer;
-    background-color: #a9cfd8;
+    /* background-color: #a9cfd8; */
     /* old (so pretty) */
-    background-color: rgba(var(--headerBlueT), 0.75);
+    background-color: rgba(var(--headerBlueT), 1);
 }
 
 .collapse-inside.active {
