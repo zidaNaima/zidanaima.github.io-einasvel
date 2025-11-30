@@ -21,114 +21,39 @@ settx.addEventListener("click", () => {
     window.location.reload(true);
 });
 
-// Settings themes
-const themedefault = document.getElementById("theme-default");
-themedefault.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "default");
-    root.style.setProperty('--brightYellow', 'rgb(243, 219, 92)');
-    root.style.setProperty('--paleYellow', 'rgb(251, 247, 217)');
-    root.style.setProperty('--wrapperBlue', 'rgb(191, 223, 223)');
-    root.style.setProperty('--darkBlue', 'rgb(20, 60, 100)');
-    root.style.setProperty('--offWhite', 'rgb(249, 247, 234)');
-    root.style.setProperty('--wrapperRed', 'rgb(234, 188, 134)');
-    root.style.setProperty('--redBrown', 'rgb(146, 75, 20)');
-    root.style.setProperty('--darkRedBrown', 'rgb(70, 29, 6)');
+// Change color theme
+function changeTheme(themeName) {
+    const rootElement = document.documentElement; // Targets the <html> element
+    rootElement.setAttribute('data-theme', themeName);
+    selectedThemeButton(themeName);
 
-    root.style.setProperty('--borderBlue', 'rgb(124, 157, 170)');
-    root.style.setProperty('--darkBlueT', '20, 60, 100');
-    root.style.setProperty('--headerBlueT', '158, 191, 199');
-});
-const themecontrast = document.getElementById("theme-contrast");
-themecontrast.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "contrast");
-    root.style.setProperty('--brightYellow', 'rgb(247, 227, 132)');
-    root.style.setProperty('--paleYellow', 'rgb(249, 247, 234)');
-    root.style.setProperty('--wrapperBlue', 'rgb(214, 244, 252)');
-    root.style.setProperty('--darkBlue', 'rgb(9, 39, 65)');
-    root.style.setProperty('--offWhite', 'rgb(255, 255, 255)');
-    root.style.setProperty('--wrapperRed', 'rgb(234, 188, 134)');
-    root.style.setProperty('--redBrown', 'rgb(146, 75, 20)');
-    root.style.setProperty('--darkRedBrown', 'rgb(70, 29, 6)');
+    // Saves theme preference to localStorage
+    localStorage.setItem('websiteTheme', themeName);
+}
 
-    root.style.setProperty('--borderBlue', 'rgb(124, 157, 170)');
-    root.style.setProperty('--darkBlueT', '9, 39, 65');
-    root.style.setProperty('--headerBlueT', '191, 223, 223');
-});
-const themesunset = document.getElementById("theme-sunset");
-themesunset.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "sunset");
-    root.style.setProperty('--brightYellow', 'rgb(251, 247, 217)');
-    root.style.setProperty('--paleYellow', 'rgb(251, 247, 217)');
-    root.style.setProperty('--wrapperBlue', 'rgb(240, 234, 183)');
-    root.style.setProperty('--darkBlue', 'rgb(107, 59, 14)');
-    root.style.setProperty('--offWhite', 'rgb(249, 247, 234)');
-    root.style.setProperty('--wrapperRed', 'rgb(209, 157, 214)');
-    root.style.setProperty('--redBrown', 'rgb(41, 23, 88)');
-    root.style.setProperty('--darkRedBrown', 'rgb(41, 23, 88)');
-
-    root.style.setProperty('--borderBlue', 'rgb(107, 51, 14)');
-    root.style.setProperty('--darkBlueT', '107, 51, 14');
-    root.style.setProperty('--headerBlueT', '195, 160, 90');
-});
-const themeplain = document.getElementById("theme-plain");
-themeplain.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "plain");
-    root.style.setProperty('--brightYellow', 'rgb(235, 213, 93)');
-    root.style.setProperty('--paleYellow', 'rgb(255, 255, 255)');
-    root.style.setProperty('--wrapperBlue', 'rgb(236, 236, 236)');
-    root.style.setProperty('--darkBlue', 'rgb(44, 44, 44)');
-    root.style.setProperty('--offWhite', 'rgb(241, 240, 226)');
-    root.style.setProperty('--wrapperRed', 'rgb(234, 234, 234)');
-    root.style.setProperty('--redBrown', 'rgb(44, 44, 44)');
-    root.style.setProperty('--darkRedBrown', 'rgb(44, 44, 44)');
-
-    root.style.setProperty('--borderBlue', 'rgb(44, 44, 44)');
-    root.style.setProperty('--darkBlueT', '44, 44, 44');
-    root.style.setProperty('--headerBlueT', '210, 210, 200');
-});
-const themecolorless = document.getElementById("theme-colorless");
-themecolorless.addEventListener("click", () => {
-    const root = document.documentElement;
-    localStorage.setItem("theme", "colorless");
-    root.style.setProperty('--brightYellow', 'rgb(243, 243, 243)');
-    root.style.setProperty('--paleYellow', 'rgb(251, 251, 251)');
-    root.style.setProperty('--wrapperBlue', 'rgb(191, 191, 191)');
-    root.style.setProperty('--darkBlue', 'rgb(36, 36, 36)');
-    root.style.setProperty('--offWhite', 'rgb(249, 249, 249)');
-    root.style.setProperty('--wrapperRed', 'rgb(234, 234, 234)');
-    root.style.setProperty('--redBrown', 'rgb(146, 146, 146)');
-    root.style.setProperty('--darkRedBrown', 'rgb(70, 70, 70)');
-
-    root.style.setProperty('--borderBlue', 'rgb(107, 107, 107)');
-    root.style.setProperty('--darkBlueT', '107, 107, 107');
-    root.style.setProperty('--headerBlueT', '170, 170, 170');
-
-    // document.querySelectorAll("img").style.setProperty('filter: grayscale(100%) !important;');
-    const images = document.querySelectorAll("img");
-    images.forEach(img => {
-        img.classList.add('grayscale-filter');
-    });
+// Applies same theme when new page loads
+document.addEventListener('DOMContentLoaded', (event) => {
+    const savedTheme = localStorage.getItem('websiteTheme') || 'default'; // Default to theme 'default'
+    changeTheme(savedTheme);
 });
 
-// keep theme preferences between page switches
-// only initiates on page load
-window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("theme") != null) {
-        switch (localStorage.getItem("theme")) {
-            case "default": themedefault.dispatchEvent(new Event('click')); break;
-            case "contrast": themecontrast.dispatchEvent(new Event('click')); break;
-            case "sunset": themesunset.dispatchEvent(new Event('click')); break;
-            case "plain": themeplain.dispatchEvent(new Event('click')); break;
-            case "colorless": themecolorless.dispatchEvent(new Event('click')); break;
-        }
-
-        document.body.style.backgroundImage = 'linear-gradient(var(--paleYellow), #FFF)';
+// Updated which theme appears selected in the settings panel
+function selectedThemeButton(currentTheme) {
+    // remove id from previous theme
+    const previousTheme = document.getElementById('selected-theme');
+    if (previousTheme != null) {
+        previousTheme.id = '';
     }
-});
+
+    switch (currentTheme) {
+        case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
+        case 'cream': document.getElementById("theme-cream").firstChild.id = 'selected-theme'; break;
+        case 'plain': document.getElementById("theme-plain").firstChild.id = 'selected-theme'; break;
+        case 'colorless': document.getElementById("theme-colorless").firstChild.id = 'selected-theme'; break;
+        case 'kitty': document.getElementById("theme-kitty").firstChild.id = 'selected-theme'; break;
+        default: break;
+    }
+}
 
 
 
