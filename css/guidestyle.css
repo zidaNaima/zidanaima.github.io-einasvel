@@ -38,11 +38,10 @@ html {
     --brightYellow: #f3db5c;
     --paleYellow: rgb(251, 247, 217);
     --wrapperBlue: rgb(191, 223, 223);
-    /* --darkBlue: rgb(20, 60, 100); */
+    --darkBlue: rgb(20, 60, 100);
     /* original */
-    --darkBlue: rgb(10, 45, 75);
+    /* --darkBlue: rgb(10, 45, 75); */
     /* darker blue originally from people text contrast */
-    /* FIX: JS and settings do not have this update */
     --offWhite: rgb(249, 247, 234);
     --wrapperRed: #eabc86;
     --redBrown: #924b14;
@@ -50,7 +49,6 @@ html {
 
     --borderBlue: #7c9daa;
     --darkBlueT: 20, 60, 100;
-    /* decide one way or the other for dark blue */
     --headerBlueT: 158, 191, 199;
 }
 
@@ -104,40 +102,19 @@ html {
 }
 
 [data-theme="kitty"] {
-    --brightYellow: #;
-    --paleYellow: rgb();
-    --wrapperBlue: rgb();
-    --darkBlue: rgb();
-    --darkBlueT: ;
-    --wrapperRed: #;
-    --redBrown: #;
-    --darkRedBrown: #;
+    --brightYellow: rgb(68, 102, 206);
+    --paleYellow: rgb(68, 102, 206);
+    --wrapperBlue: rgba(32, 39, 76, 0.75);
+    --darkBlue: rgb(255, 238, 167);
+    --darkBlueT: 255, 238, 167;
+    --wrapperRed: rgba(101, 53, 30, 0.75);
+    --redBrown: rgb(255, 238, 167);
+    --darkRedBrown: rgb(255, 238, 167);
 
-    --offWhite: rgb();
-    --borderBlue: #;
-    --headerBlueT: ;
+    --offWhite: rgba(156, 111, 90, 1);
+    --borderBlue: rgb(32, 39, 76);
+    --headerBlueT: 32, 39, 76;
 }
-
-/* themekitty.addEventListener("click", ()=> {
-        const root=document.documentElement;
-        localStorage.setItem("theme", "kitty");
-        root.style.setProperty('--brightYellow', 'rgb(68, 102, 206)');
-        root.style.setProperty('--paleYellow', 'rgb(68, 102, 206)');
-        root.style.setProperty('--wrapperBlue', 'rgba(32, 39, 76, 0.75)');
-        root.style.setProperty('--darkBlue', 'rgb(255, 238, 167)');
-        root.style.setProperty('--offWhite', 'rgba(156, 111, 90, 1)');
-        root.style.setProperty('--wrapperRed', 'rgba(101, 53, 30, 0.75)');
-        root.style.setProperty('--redBrown', 'rgb(255, 238, 167)');
-        root.style.setProperty('--darkRedBrown', 'rgb(255, 238, 167)');
-
-        root.style.setProperty('--borderBlue', 'rgb(32, 39, 76)');
-        root.style.setProperty('--darkBlueT', '103, 141, 255');
-        root.style.setProperty('--headerBlueT', '32, 39, 76');
-
-        document.body.style.backgroundImage='url(images/kitty.jpg)';
-    }
-
-); */
 
 
 
@@ -153,11 +130,12 @@ html {
 }
 
 body {
-    background-image: linear-gradient(var(--paleYellow), rgb(255, 255, 255));
-    background-repeat: no-repeat;
+    background: linear-gradient(var(--paleYellow), rgb(255, 255, 255));
+    /* background has higher importance than background-image */
+    /* background-repeat: no-repeat; */
     margin: 0;
 
-    background-size: contain;
+    /* background-size: contain; */
 }
 
 /* Only used on home page title */
@@ -502,6 +480,8 @@ nav a:hover {
     button {
         display: block;
         height: 100%;
+        width: 100%;
+        text-align: left;
 
         color: #000;
         font-family: quicksand;
@@ -517,8 +497,6 @@ nav a:hover {
     font-size: 1.25rem !important;
     font-style: italic;
     box-shadow: 0 0 2px 2px #000;
-    width: 100%;
-    text-align: left;
 }
 
 #settings-exit {
@@ -545,17 +523,6 @@ nav a:hover {
             rgb(251, 247, 217) 80%, rgb(251, 247, 217) 90%,
             #924b14 90%, #924b14 100%);
 }
-
-/* #theme-contrast {
-    background-image: linear-gradient(to right,
-            rgb(214, 244, 252) 0%, rgb(214, 244, 252) 60%,
-            rgb(9, 39, 65) 60%, rgb(9, 39, 65) 70%,
-            rgb(247, 227, 132) 70%, rgb(247, 227, 132) 80%,
-            rgb(249, 247, 234) 80%, rgb(249, 247, 234) 90%,
-            rgb(146, 75, 20) 90%, rgb(146, 75, 20) 100%);
-} */
-
-/* wrapperBlue, darkBlue, brightYellow, paleYellow, redBrown */
 
 #theme-cream {
     background-image: linear-gradient(to right,
