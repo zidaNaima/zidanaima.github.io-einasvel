@@ -18,7 +18,6 @@ const settx = document.getElementById("settings-exit");
 settx.addEventListener("click", () => {
     const setwindow = document.getElementById("settings-window");
     setwindow.style.display = "none";
-    window.location.reload(true);
 });
 
 // Change color theme
@@ -45,13 +44,20 @@ function selectedThemeButton(currentTheme) {
         previousTheme.id = '';
     }
 
-    switch (currentTheme) {
-        case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
-        case 'cream': document.getElementById("theme-cream").firstChild.id = 'selected-theme'; break;
-        case 'plain': document.getElementById("theme-plain").firstChild.id = 'selected-theme'; break;
-        case 'colorless': document.getElementById("theme-colorless").firstChild.id = 'selected-theme'; break;
-        case 'kitty': document.getElementById("theme-kitty").firstChild.id = 'selected-theme'; break;
-        default: break;
+    // Different styling for themes with non-default-styling on background image
+    if (currentTheme == 'kitty') {
+        document.getElementById("theme-kitty").firstChild.id = 'selected-theme';
+        document.body.style.background = 'url(images/kitty.jpg)';
+
+    } else {
+        switch (currentTheme) {
+            case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
+            case 'cream': document.getElementById("theme-cream").firstChild.id = 'selected-theme'; break;
+            case 'plain': document.getElementById("theme-plain").firstChild.id = 'selected-theme'; break;
+            case 'colorless': document.getElementById("theme-colorless").firstChild.id = 'selected-theme'; break;
+            default: break;
+        }
+        document.body.style.background = 'linear-gradient(var(--paleYellow), rgb(255, 255, 255))';
     }
 }
 
