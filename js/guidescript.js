@@ -47,14 +47,21 @@ function selectedThemeButton(currentTheme) {
     // Different styling for themes with non-default-styling on background image
     if (currentTheme == 'kitty') {
         document.getElementById("theme-kitty").firstChild.id = 'selected-theme';
+        document.body.classList.remove("grayscale-filter");
         document.body.style.background = 'url(images/kitty.jpg)';
 
     } else {
+        // remove grayscale-filter if last theme was colorless
+        document.body.classList.remove("grayscale-filter");
+
         switch (currentTheme) {
             case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
             case 'cream': document.getElementById("theme-cream").firstChild.id = 'selected-theme'; break;
             case 'plain': document.getElementById("theme-plain").firstChild.id = 'selected-theme'; break;
-            case 'colorless': document.getElementById("theme-colorless").firstChild.id = 'selected-theme'; break;
+            case 'colorless':
+                document.getElementById("theme-colorless").firstChild.id = 'selected-theme';
+                document.body.classList.add("grayscale-filter");
+                break;
             default: break;
         }
         document.body.style.background = 'linear-gradient(var(--paleYellow), rgb(255, 255, 255))';
