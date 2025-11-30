@@ -253,7 +253,7 @@
         font-size: 4vw;
     }
 
-    .carousel-goto {
+    .carousel-goto, .carousel-goto:hover {
         width: 60%;
         line-height: 10vw;
         font-size: 4vw;
