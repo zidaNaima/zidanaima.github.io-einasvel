@@ -655,20 +655,6 @@ footer input {
     text-transform: uppercase;
 }
 
-.link {
-    text-decoration: none;
-    color: blue;
-    padding: 0em 0.5em 0.25em 0.25em;
-    margin: 0 0.5em;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 20px;
-}
-
-.link{
-    border: 1px solid var(--darkBlue);
-    background-color: var(--paleYellow);
-}
-
 
 
 
@@ -915,12 +901,18 @@ footer input {
     margin: 4em;
 }
 
-.blue-link {
+.link {
     text-decoration: none;
     color: blue;
+    /* padding: 0em 0.5em 0.25em 0.25em;
+    margin: 0 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 20px; */
 }
 
-.blue-link:hover {
+.link:hover{
+    /* border: 1px solid var(--darkBlue);
+    background-color: var(--paleYellow); */
     font-weight: bold;
 }
 
