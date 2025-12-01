@@ -279,41 +279,27 @@ p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 40px;
 
-    /* text-align: center; */
-    /* why here? */
     img {
         width: 100%;
     }
 }
 
-/* 1/1 split */
+/* 1 part split */
 .one-section {
     flex: 1;
-    flex-direction: column;
-    margin: auto;
-    padding: 0 20px;
 }
 
-/* 1/2 split */
+/* 2 parts split */
 .two-sections {
     flex: 2;
-    padding: 0 20px;
 }
 
-/* 1/4 split */
+/* 4 parts split */
 .four-sections {
     flex: 4;
-    padding: 0 20px;
 }
-
-/* FIX: this shouldn't be in two sections for veg and people sexual stuff */
-/* .two-sections p, .two-sections ul { 
-    margin: 0px auto;
-    margin-top: 30px;
-    max-width: 700px;
-    text-align: justify;
-} */
 
 #jump-to-top-button {
     padding: 0.3em 0.9em;
@@ -670,8 +656,9 @@ footer input {
     border: none;
     text-decoration: underline;
 
-    padding: 1em 50px;
-    /* collapse people-fade-coll + one-section padding L/R */
+    padding: 1em 1.85em;
+    /* redo wrapper padding */
+
     width: 95vw;
     font-weight: 600;
 
@@ -680,6 +667,7 @@ footer input {
     text-align: left;
 }
 
+/* nested collapse, like the archive section */
 .collapse-inside {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
@@ -847,12 +835,18 @@ footer input {
 
 .float-left {
     float: left;
-    padding-right: 1em;
+    margin-right: 1em;
+
+    max-height: 300px;
+    width: auto;
 }
 
 .float-right {
     float: right;
-    padding-left: 1em;
+    margin-left: 1em;
+
+    max-height: 300px;
+    width: auto;
 }
 
 .clear-float {
@@ -904,15 +898,9 @@ footer input {
 .link {
     text-decoration: none;
     color: blue;
-    /* padding: 0em 0.5em 0.25em 0.25em;
-    margin: 0 0.5em;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 20px; */
 }
 
-.link:hover{
-    /* border: 1px solid var(--darkBlue);
-    background-color: var(--paleYellow); */
+.link:hover {
     font-weight: bold;
 }
 
@@ -1180,10 +1168,6 @@ footer input {
 
     .downwards-sub-header, .section-sub-header {
         width: 75%;
-    }
-
-    .one-section {
-        padding: 0;
     }
 
     .text-justify {
