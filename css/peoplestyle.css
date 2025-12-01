@@ -30,9 +30,9 @@
         text-align: left;
     }
 
-    .one-section, .two-sections {
+    /* .one-section, .two-sections {
         padding: 0;
-    }
+    } */
 
     p {
         margin: 0;
@@ -80,11 +80,14 @@
     }
 }
 
-#head-anatomy {
+#anatomy {
     text-align: left;
 
+    .flex-style {
+        gap: 0;
+    }
+
     .one-section {
-        margin-top: 0px;
         border-left: 1px solid var(--darkBlue);
 
         img {
@@ -132,7 +135,7 @@
 @media(max-width: 840px) {
     .people-fade-coll {
         display: block;
-        
+
         /* images and image sections */
         .ppl-section-images {
             width: 40vw !important;
@@ -142,17 +145,17 @@
         }
 
         /* originally right aligned images don't float left */
-        p+.ppl-section-images, p+section{
+        p+.ppl-section-images, p+section {
             float: none;
 
             margin-right: 0;
             display: flex;
             justify-self: right;
-        } 
+        }
     }
 
     /* counters the typical block display of flex style at 840px */
-    #head-anatomy .one-section {
+    #anatomy .one-section {
         display: grid;
         grid-template-columns: 35% 65%;
         border-left: none;

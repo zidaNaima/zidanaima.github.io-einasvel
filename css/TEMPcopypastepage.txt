@@ -1,6 +1,6 @@
 TO FIX:
 images on people page overflow collapsible section on 840 (?) screens
-one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
+DONE one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
 themed colors are ugly as hell and need to be changed and updated everywhere.
 threeD should load as a static image, only opening when prompted.
 threeD sizing is incorrect. go back and read/fix it.
@@ -12,6 +12,7 @@ planet page constantly refreshed for some reason
 fix colors on planet page (notebook tabs and table every other row) on themes.
 change theme names of colorless/bnw
 offWhite probably shouldn't change, meaning take it off home header and carousel
+honestly the default for text should be justified, then only a couple sections can be centered/lefted
 
 
 LONG TERM:
