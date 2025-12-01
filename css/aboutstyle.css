@@ -1,38 +1,22 @@
 /* ABOUT PAGE */
 /*            */
-#about-top-section {
-    display: flex;
-    margin-top: 3em;
+#about-ramble {
+    img {
+        float: left;
+        max-height: 300px;
+        width: auto;
+        margin-right: 3em;
+    }
 }
 
-#about-ramble {
-    flex: 3;
-    float: left;
+p {
     text-align: justify;
 }
 
-#about-ramble p {
-    width: 90%;
-    padding-right: 4em;
-    margin: auto;
-}
-
-#about-og-design {
-    flex: 1;
-    float: right;
-    text-align: center;
-}
-
-#about-og-design img {
+img {
     border: 2px rgb(158, 191, 199) solid;
-    width: 100%;
+    max-width: 400px;
 }
-
-#more-work img {
-    border: 2px rgb(158, 191, 199) solid;
-}
-
-
 
 
 /* JUMP TO POSITION FIXES */
@@ -50,64 +34,25 @@
 
 #jump-to-more-work {
     position: absolute;
-    margin-top: -4em;
+    margin-top: -2em;
 }
 
 #jump-to-commissions {
     position: absolute;
-    margin-top: -4em;
+    margin-top: -2em;
 }
 
 
 
 /* Phone sized */
+@media(max-width: 840px) {
+ img {
+    max-width: 30vw;
+ }
+}
+
 @media(max-width: 520px) {
-    #about-top-section {
-        display: inline-block;
-    }
-
-    #about-top-section .flex-style {
-        display: block;
-    }
-
-    #about-ramble {
-        text-align: left;
-        margin-bottom: 4em;
-    }
-
-    #about-ramble img {
-        max-height: 40vh;
-        object-fit: contain;
-    }
-
-    #about-ramble p {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    #more-work {
-        display: inline-block;
-    }
-
-    #more-work .one-section {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    #more-work img {
-        border: 2px solid rgba(0, 0, 0, 0);
-    }
-
-    #about-og-design {
-        float: none;
-    }
-
-    #about-og-design img {
-        max-height: 60vh;
-        object-fit: contain;
-        border: 2px solid rgba(0, 0, 0, 0);
-
-    }
+ img {
+    max-width: 100%;
+ }
 }
