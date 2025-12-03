@@ -188,7 +188,7 @@
 
 
 
-.home-gallery-header {
+#home-gallery-header {
     font-family: quicksand;
     text-align: center;
 
@@ -277,7 +277,7 @@
         grid-template-rows: 76vw 10vw;
     }
 
-    .home-gallery-header h1 {
+    #home-gallery-header h1 {
         font-size: 2.25em;
         margin: 0.25em;
     }
