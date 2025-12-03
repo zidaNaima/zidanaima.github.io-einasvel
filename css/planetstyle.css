@@ -322,7 +322,7 @@
         margin-top: 30px;
         /* matches p tag */
 
-        bottom: 0;
+        max-height: none;
     }
 }
 
