@@ -39,9 +39,6 @@ html {
     --paleYellow: rgb(251, 247, 217);
     --wrapperBlue: rgb(191, 223, 223);
     --darkBlue: rgb(20, 60, 100);
-    /* original */
-    /* --darkBlue: rgb(10, 45, 75); */
-    /* darker blue originally from people text contrast */
     --offWhite: rgb(249, 247, 234);
     --wrapperRed: #eabc86;
     --redBrown: #924b14;
@@ -49,6 +46,7 @@ html {
     --redSecTable: rgb(249, 247, 234);
     /* default same as off white */
 
+    --linkColor: blue;
     --borderBlue: #7c9daa;
     --darkBlueT: 20, 60, 100;
     --headerBlueT: 158, 191, 199;
@@ -65,6 +63,7 @@ html {
     --darkRedBrown: rgb(41, 23, 88);
     --redSecTable: rgb(249, 247, 234);
 
+    --linkColor: blue;
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(107, 51, 14);
     --headerBlueT: 195, 160, 90;
@@ -81,6 +80,7 @@ html {
     --darkRedBrown: rgb(44, 44, 44);
     --redSecTable: rgb(249, 247, 234);
 
+    --linkColor: rgb(45, 82, 229);
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(44, 44, 44);
     --headerBlueT: 210, 210, 200;
@@ -97,35 +97,10 @@ html {
     --darkRedBrown: rgb(30, 30, 30);
     --redSecTable: #fff;
 
+    --linkColor: rgb(255, 0, 0);
     --offWhite: #fff;
     --borderBlue: rgb(210, 210, 210);
     --headerBlueT: 235, 235, 235;
-    /* --brightYellow: #989898;
-    --paleYellow: rgb(205, 205, 205);
-    --wrapperBlue: rgb(235, 235, 235);
-    --darkBlue: rgb(30, 30, 30);
-    --darkBlueT: 30, 30, 30;
-    --wrapperRed: rgb(205, 205, 205);
-    --redBrown: rgb(30, 30, 30);
-    --darkRedBrown: rgb(30, 30, 30);
-    --redSecTable: rgb(205, 205, 205);
-
-    --offWhite: rgb(205, 205, 205);
-    --borderBlue: rgb(210, 210, 210);
-    --headerBlueT: 205, 205, 205; */
-    /* --brightYellow: rgb(161, 175, 216);
-    --paleYellow: #fff;
-    --wrapperBlue: #fff;
-    --darkBlue: rgb(30, 30, 30);
-    --darkBlueT: 30, 30, 30;
-    --wrapperRed: rgb(235, 235, 235);
-    --redBrown: rgb(68, 102, 206);
-    --darkRedBrown: rgb(30, 30, 30);
-    --redSecTable: #fff;
-
-    --offWhite: #fff;
-    --borderBlue: rgb(210, 210, 210);
-    --headerBlueT: 235, 235, 235; */
 }
 
 .grayscale-filter {
@@ -133,21 +108,56 @@ html {
     /* filter: sepia(100%) hue-rotate(180deg) saturate(50%); */
 }
 
+[data-theme="party"] {
+    --brightYellow: #f672ff;
+    --paleYellow: rgb(181, 226, 87);
+    --wrapperBlue: #05f4fe;
+    --darkBlue: rgb(47, 49, 198);
+    --darkBlueT: 47, 49, 198;
+    --wrapperRed: #f672ff;
+    --redBrown: rgb(47, 49, 198);
+    --darkRedBrown: rgb(47, 49, 198);
+    --redSecTable: #fae17d;
+
+    --linkColor: rgb(239, 255, 222);
+    --offWhite: #fae17d;
+    --borderBlue: #05cdf9;
+    --headerBlueT: 112, 255, 219;
+}
+
 [data-theme="kitty"] {
-    --brightYellow: rgb(68, 102, 206);
-    --paleYellow: rgb(68, 102, 206);
+    --brightYellow: rgb(44, 80, 189);
+    --paleYellow: rgb(44, 80, 189);
     --wrapperBlue: rgba(32, 39, 76, 0.75);
-    --darkBlue: rgb(255, 238, 167);
-    --darkBlueT: 255, 238, 167;
+    --darkBlue: rgb(255, 245, 207);
+    --darkBlueT: 255, 245, 207;
     --wrapperRed: rgba(101, 53, 30, 0.75);
-    --redBrown: rgb(255, 238, 167);
-    --darkRedBrown: rgb(255, 238, 167);
+    --redBrown: rgb(255, 245, 207);
+    --darkRedBrown: rgb(255, 245, 207);
     --redSecTable: rgb(101, 53, 30);
 
-    --offWhite: rgb(249, 247, 234);
+    --linkColor: rgb(166, 207, 255);
+    --offWhite: rgb(61, 56, 22);
     --borderBlue: rgb(32, 39, 76);
     --headerBlueT: 32, 39, 76;
 }
+
+/* EXTRA */
+/*
+    --brightYellow: #facc72;
+    --paleYellow: #fdf983;
+    --wrapperBlue: rgb(212, 233, 135);
+    --darkBlue: rgb(29, 56, 85);
+    --darkBlueT: 29, 56, 85;
+    --wrapperRed: rgb(246, 204, 90);
+    --redBrown: rgb(255, 238, 167);
+    --darkRedBrown: #bd5c49;
+    --redSecTable: #7d5038;
+
+    --offWhite: #fdf983;
+    --borderBlue: rgb(29, 56, 85);
+    --headerBlueT: 29, 56, 85;
+    */
 
 
 
@@ -353,7 +363,7 @@ p {
 }
 
 /* Top Bar/Wrapper */
-.dropdown {
+#dropdown {
     position: fixed;
     width: 100%;
     height: 55px;
@@ -562,12 +572,57 @@ nav a:hover {
 
 #theme-colorless {
     background-image: linear-gradient(to right,
-            rgb(191, 191, 191) 0%, rgb(191, 191, 191) 60%,
-            rgb(36, 36, 36) 60%, rgb(36, 36, 36) 70%,
-            rgb(243, 243, 243) 70%, rgb(243, 243, 243) 80%,
-            rgb(251, 251, 251) 80%, rgb(251, 251, 251) 90%,
+            #fff 0%, #fff 60%,
+            rgb(30, 30, 30) 60%, rgb(30, 30, 30) 70%,
+            rgb(235, 235, 235) 70%, rgb(235, 235, 235) 80%,
+            rgb(210, 210, 210) 80%, rgb(210, 210, 210) 90%,
+            /* borderBlue */
             rgb(146, 146, 146) 90%, rgb(146, 146, 146) 100%);
+            /* not used, but I'm out of colors */
 }
+
+#theme-party {
+    background-image: linear-gradient(to right,
+            #05f4fe 0%, #05f4fe 60%,
+            rgb(47, 49, 198) 60%, rgb(47, 49, 198) 70%,
+            #f672ff 70%, #f672ff 80%,
+            rgb(181, 226, 87) 80%, rgb(181, 226, 87) 90%,
+            #fae17d 90%, #fae17d 100%);
+    /* offWhite */
+}
+
+#theme-kitty {
+    background-image: linear-gradient(to right,
+            rgb(32, 39, 76) 0%, rgb(32, 39, 76) 60%,
+            rgb(255, 245, 207) 60%, rgb(255, 245, 207) 70%,
+            rgb(44, 80, 189) 70%, rgb(44, 80, 189) 80%,
+            rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0) 90%,
+            /* kitty */
+            rgb(101, 53, 30) 90%, rgb(101, 53, 30) 100%),
+            /* wrapperRed */
+            url(../images/kitty.jpg);
+        background-size: contain;
+
+        button {
+            color: #fff;
+        }
+}
+
+/* --brightYellow: rgb(44, 80, 189);
+    --paleYellow: rgb(44, 80, 189);
+    --wrapperBlue: rgba(32, 39, 76, 0.75);
+    --darkBlue: rgb(255, 245, 207);
+    --darkBlueT: 255, 245, 207;
+    --wrapperRed: rgba(101, 53, 30, 0.75);
+    --redBrown: rgb(255, 245, 207);
+    --darkRedBrown: rgb(255, 245, 207);
+    --redSecTable: rgb(101, 53, 30);
+
+    --linkColor: rgb(166, 207, 255);
+    --offWhite: rgb(61, 56, 22);
+    --borderBlue: rgb(32, 39, 76);
+    --headerBlueT: 32, 39, 76; */
+/* wrapperBlue, darkBlue, brightYellow, paleYellow, redBrown */
 
 
 
@@ -774,7 +829,7 @@ footer input {
     top: 20%;
     right: -1em;
     z-index: 3;
-    /* .dropdown z-index is 4 */
+    /* #dropdown z-index is 4 */
 }
 
 #expand-all::before {
@@ -786,7 +841,7 @@ footer input {
 }
 
 #expand-all:hover {
-    background-color: #a9cfd8;
+    background-color: rgba(var(--headerBlueT), 1);
     box-shadow: inset 0px 0px 5px rgb(20, 60, 100, 0.25);
 }
 
@@ -879,6 +934,7 @@ footer input {
 
 .centered {
     text-align: center !important;
+
     /* Override */
     img {
         margin: auto;
@@ -924,7 +980,7 @@ footer input {
 
 .link {
     text-decoration: none;
-    color: blue;
+    color: var(--linkColor);
 }
 
 .link:hover {
