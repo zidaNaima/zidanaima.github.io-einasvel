@@ -1,10 +1,6 @@
 
 
-// Okshlihd Icon
 var page = window.location.pathname;
-var dropdown = document.getElementsByClassName("dropdown");
-var drpdwn = dropdown[0];
-
 
 // Settings pop-up
 const gear = document.getElementById("settings");
@@ -48,13 +44,44 @@ function selectedThemeButton(currentTheme) {
     if (currentTheme == 'kitty') {
         document.getElementById("theme-kitty").firstChild.id = 'selected-theme';
         document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter");
-        // document.getElementsByClassName("dropdown")[0].classList.remove("grayscale-filter");
+
+        // background image
         document.body.style.background = 'url(images/kitty.jpg)';
+
+        // okshlid to kitty change
+        if (window.innerWidth > 840) {
+            document.getElementById("current_okshlid").style.backgroundImage = "url(images/kitty_icon.png)";
+            document.getElementById("current_okshlid").style.height = "150px";
+        }
+
+        // paw styling
+        // no page header on the index page
+        if (page != "/index.html" && page != "/zidanaima.github.io-einasvel/index.html") {
+            document.getElementById("page-header").style.backgroundImage = "url(images/paw_pattern.png)";
+        } else {
+            // gallery header
+            document.getElementById("home-gallery-header").style.backgroundImage = "url(images/paw_pattern.png)";
+        }
+        // dropdown
+        document.getElementById("dropdown").style.backgroundImage = "url(images/paw_pattern.png)";
+        // footer
+        document.querySelector("footer").style.backgroundImage = "url(images/paw_pattern.png)";
+
 
     } else {
         // remove grayscale-filter if last theme was colorless
         document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter");
-        // document.getElementsByClassName("dropdown")[0].classList.remove("grayscale-filter");
+        // remove kitty icon, height modification, and paws if last theme was kitty
+        document.getElementById("current_okshlid").style.backgroundImage = "url(images/okshlid_icon.png)";
+        document.getElementById("current_okshlid").style.height = "109.5px";
+        if (page != "/index.html" && page != "/zidanaima.github.io-einasvel/index.html") {
+            document.getElementById("page-header").style.backgroundImage = "none";
+        } else {
+            document.getElementById("home-gallery-header").style.backgroundImage = "none";
+        }
+        document.getElementById("dropdown").style.backgroundImage = "none";
+        document.querySelector("footer").style.backgroundImage = "none";
+
 
         switch (currentTheme) {
             case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
@@ -63,9 +90,8 @@ function selectedThemeButton(currentTheme) {
             case 'colorless':
                 document.getElementById("theme-colorless").firstChild.id = 'selected-theme';
                 document.getElementsByClassName("wrapper")[0].classList.add("grayscale-filter");
-                // document.getElementsByClassName("dropdown")[0].classList.add("grayscale-filter");
-                // likely will need to have a separate grayscale ok* image
                 break;
+            case 'party': document.getElementById("theme-party").firstChild.id = 'selected-theme'; break;
             default: break;
         }
         document.body.style.background = 'linear-gradient(var(--paleYellow), rgb(255, 255, 255))';
