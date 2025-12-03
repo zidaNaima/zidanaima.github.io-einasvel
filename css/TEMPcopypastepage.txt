@@ -1,18 +1,18 @@
 TO FIX:
 images on people page overflow collapsible section on 840 (?) screens
 DONE one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
-themed colors are ugly as hell and need to be changed and updated everywhere.
 threeD should load as a static image, only opening when prompted.
 threeD sizing is incorrect. go back and read/fix it.
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
 Example translations don't need all that space.
 change pre formatted p tags to pre tags!!
 change margin and padding em's to rem's
-planet page constantly refreshed for some reason
-fix colors on planet page (notebook tabs and table every other row) on themes.
-change theme names of colorless/bnw
-offWhite probably shouldn't change, meaning take it off home header and carousel
+planet page constantly refreshed for some reason (does it still do this? I foxed the themes)
+theme colors on notebook tabs?
 honestly the default for text should be justified, then only a couple sections can be centered/lefted
+the red sections don't have any side padding on medium to small screens. they also overlap the top of the red section.
+reformat to do list
+add color for grey(s)
 
 
 LONG TERM:
