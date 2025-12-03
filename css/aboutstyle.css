@@ -43,13 +43,13 @@ img {
 
 /* Phone sized */
 @media(max-width: 840px) {
- img {
-    max-width: 30vw;
- }
+    img {
+        max-width: 30vw;
+    }
 }
 
 @media(max-width: 520px) {
- img {
-    max-width: 100%;
- }
+    img {
+        max-width: 100%;
+    }
 }

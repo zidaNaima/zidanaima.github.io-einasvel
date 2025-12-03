@@ -790,6 +790,30 @@ footer input {
     box-shadow: inset 0px 0px 5px rgb(20, 60, 100, 0.25);
 }
 
+.anatomy-and-characters {
+    text-align: left;
+
+    .flex-style {
+        gap: 0;
+    }
+
+    .one-section {
+        border-left: 1px solid var(--darkBlue);
+
+        img {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            border: none;
+            /* undo typical border styling */
+        }
+
+        p {
+            margin: 0;
+            padding: 0 1em;
+        }
+    }
+}
 
 
 
@@ -1113,6 +1137,14 @@ footer input {
 
     .collapse {
         width: 100vw;
+    }
+
+    /* counters the typical block display of flex style at 840px */
+    .anatomy-and-characters .one-section {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        border-left: none;
+        padding-bottom: 2em;
     }
 
     .solid-blue-line {

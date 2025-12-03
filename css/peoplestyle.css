@@ -80,31 +80,6 @@
     }
 }
 
-#anatomy {
-    text-align: left;
-
-    .flex-style {
-        gap: 0;
-    }
-
-    .one-section {
-        border-left: 1px solid var(--darkBlue);
-
-        img {
-            margin: 0;
-            padding: 0;
-            width: 100% !important;
-            border: none;
-            /* undo typical border styling */
-        }
-
-        p {
-            margin: 0;
-            padding: 0 1em;
-        }
-    }
-}
-
 /* JUMP TO POSITION FIXES */
 /*                        */
 #jump-to-anatomy {
@@ -152,13 +127,5 @@
             display: flex;
             justify-self: right;
         }
-    }
-
-    /* counters the typical block display of flex style at 840px */
-    #anatomy .one-section {
-        display: grid;
-        grid-template-columns: 35% 65%;
-        border-left: none;
-        padding-bottom: 2em;
     }
 }
