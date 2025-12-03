@@ -880,6 +880,9 @@ footer input {
 .centered {
     text-align: center !important;
     /* Override */
+    img {
+        margin: auto;
+    }
 }
 
 .left-align {
@@ -1122,9 +1125,7 @@ footer input {
     }
 
     .wrapper {
-        width: 100vw;
-        /* padding: 0.5em; */
-        /* This is being so weird, I get a white gap if it's not left alone */
+        width: 100%;
     }
 
     #home-hero {
