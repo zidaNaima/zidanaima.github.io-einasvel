@@ -15,6 +15,34 @@ img {
     max-width: 400px;
 }
 
+#commissions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas:
+        "text ex info"
+    ;
+    gap: 40px;
+    /* matches flex style gap */
+
+    img {
+        width: 100%;
+    }
+
+    /* matches flex style img width */
+}
+
+#comm-text {
+    grid-area: text;
+}
+
+#comm-ex-pg {
+    grid-area: ex;
+}
+
+#comm-info-pg {
+    grid-area: info;
+}
+
 
 /* JUMP TO POSITION FIXES */
 /*                        */
@@ -41,13 +69,45 @@ img {
 
 
 
-/* Phone sized */
+
 @media(max-width: 840px) {
     img {
-        max-width: 30vw;
+        width: 30vw;
+    }
+
+    .phone-half {
+        display: flex;
+        gap: 1em;
+        /* matches p margin in anatomy-and-characters sections */
+
+        section, div {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+
+    #commissions {
+        grid-template-columns: auto 30vw;
+        grid-template-areas:
+            "text info"
+            "ex ex"
+        ;
+        gap: 1em;
+    }
+
+    #comm-ex-pg {
+        display: flex;
+        justify-content: center;
+        background-image: url(../images/commision_1.png);
+        background-color: var(--wrapperBlue);
+        background-blend-mode: luminosity;
+        background-size: contain;
     }
 }
 
+
+
+/* Phone sized */
 @media(max-width: 520px) {
     img {
         max-width: 100%;
