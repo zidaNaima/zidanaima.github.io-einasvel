@@ -66,19 +66,19 @@
     margin-top: 2em;
 }
 
-/* Note: big screens are based off vh, smaller on vw */
 .home-carousel {
     position: relative;
     height: inherit;
     /* matches height of the full section */
 
     display: grid;
-    grid-template-columns: auto 6vh 60vh 6vh auto;
-    grid-template-rows: 60vh 6vh;
+    grid-template-columns: auto 60px 500px 60px auto;
+    grid-template-rows: 500px 60px;
     /* holds space for goto button later */
     grid-template-areas:
         ". left image right ."
     ;
+    margin: auto;
 }
 
 .home-carousel ul {
@@ -89,7 +89,7 @@
 /* individual slides */
 .home-slide {
     display: grid;
-    grid-template-rows: 60vh 6vh;
+    grid-template-rows: 500px 60px;
     grid-template-areas:
         "image"
         "goto";
@@ -137,7 +137,7 @@
 /* next and previous arrows */
 .home-carousel-arrow {
     /* position: absolute; */
-    font-size: 3vh;
+    font-size: 20px;
     align-self: center;
     height: 50%;
 }
@@ -173,10 +173,10 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 0.1em;
-    line-height: 6vh;
+    line-height: 60px;
     /* vertical center */
 
     border-top: none;
@@ -239,7 +239,6 @@
         border-radius: 0 0 0 0;
     }
 
-    /* Note: big screens are based off vh, smaller on vw */
     .home-carousel {
         grid-template-columns: auto 10vw 60vw 10vw auto;
         grid-template-rows: 60vw 10vw;
@@ -250,13 +249,13 @@
     }
 
     .home-carousel-arrow {
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .carousel-goto, .carousel-goto:hover {
         width: 60%;
         line-height: 10vw;
-        font-size: 4vw;
+        font-size: 3vw;
     }
 }
 
@@ -267,10 +266,19 @@
         font-size: 0.9em;
     }
 
-    /* Note: big screens are based off vh, smaller on vw */
     .home-carousel {
         grid-template-columns: 2vw 10vw 76vw 10vw 2vw;
         grid-template-rows: 76vw 10vw;
+    }
+
+    .carousel-last, .carousel-last:hover {
+        border-radius: 20px 0 0 20px;
+    }
+    .carousel-next, .carousel-next:hover {
+        border-radius: 0 20px 20px 0;
+    }
+    .carousel-goto, .carousel-goto:hover {
+        border-radius: 0 0 20px 20px;
     }
 
     .home-slide {
