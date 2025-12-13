@@ -1,49 +1,39 @@
+
 TO FIX:
 images on people page overflow collapsible section on 840 (?) screens
 DONE one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
-threeD should load as a static image, only opening when prompted.
-threeD sizing is incorrect. go back and read/fix it.
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
-Example translations don't need all that space.
+example translations don't need all that space.
+honestly the default for text should be justified, then only a couple sections can be centered/lefted
+
+EVENTUALLY:
 change pre formatted p tags to pre tags!!
 change margin and padding em's to rem's
-planet page constantly refreshed for some reason (does it still do this? I foxed the themes)
-theme colors on notebook tabs?
-honestly the default for text should be justified, then only a couple sections can be centered/lefted
-the red sections don't have any side padding on medium to small screens. they also overlap the top of the red section.
-reformat to do list
-add color for grey(s)
+make sure words only glow if accessed from see why/other places like that
+"fix numbers". it shows a horizontal line to the left of two vertical lines where the ones go. Likely for fives like roman numerals.
+make evolution map connecting all the creatures. Include generals like "birds" and "bugs", "more bugs"
+add all the distribution maps and placeholder images
+update all alt="TEMPORARY"'s, "FIX"'s, and "TEMP"'s
+apparently images should weight around 100kb ???? girl... who was gonna tell me...
+
+FAR OUT LONG TERM:
+add planet specifics (mainly with locations)
+add realistic translator
+add language interactive images that change when the translator doesn't work
+put oele'in digital drawings from home onto site
+take everything out of teal notebook
+food chain on planet
+fix anatomy (necks) on old photos and make sure upper uhnuh is the fatless one
 
 
-LONG TERM:
-            <li>planet specifics (mainly with locations)</li>
-            <li>Language interactive images that change when the translator doesn't work</li>
 
-GENREAL:
-            <li>put oele'in digital drawings from home onto site</li>
-            <li>play with about media query (seems ok for a large majority)</li>
-            <li>take everything out of teal notebook</li>
-            <li>Food Chain on Planet</li>
-            <li>make sure words only glow if accessed from see why/other places like that</li>
+LINGUISTICS:
+    <li>brown   Pemihnoh, Anger   dauq', "X love(7)(4)"", sex   paud, promise   p'nihnuhp, protect   Uhdoohth, run   au/hl/oh, (THE FOUR TYPES OF LOVE: ) romantic   ohsiuhm, familial   pooh/hl/eih, friendshp   esmeih, natural   ohaumau, hour   soohp, jump   seih, milk   deihmau, sac   pauohn*, egg   spen, pregnant   dohdohp, mate   emenih, day   sohuhn (difference between daytime and a day), year   q'au/hl/duh, minute   ohk*ihs, "A"   dihsith, "B"   baun</li>
 
-            <li>"Fix numbers" it shows a horizontal line to the left of two vertical lines where the ones go. Likely for fives like roman numerals.</li>
-
-            <li>brown   Pemihnoh, Anger   dauq', "X love(7)(4)"", sex   paud, promise   p'nihnuhp, protect   Uhdoohth, run   au/hl/oh, (THE FOUR TYPES OF LOVE: ) romantic   ohsiuhm, familial   pooh/hl/eih, friendshp   esmeih, natural   ohaumau, hour   soohp, jump   seih, milk   deihmau, sac   pauohn*, egg   spen, pregnant   dohdohp, mate   emenih, day   sohuhn (difference between daytime and a day), year   q'au/hl/duh, minute   ohk*ihs, "A"   dihsith, "B"   baun</li>
-
-            <li>nohohohmih mihsedesihm is slang for "keep going" perhaps</li>
-            <li>? goes at the beginning of a sentence, like "future"</li>
-            <li>change "two" to "de"</li>
-            <li>"play around with "who does" and "similar to" being at the beginning of words (goes against big to small clarification)</li>
-
-AND
-
-Make evolution map connecting all the creatures. Include generals like "birds" and "bugs", "more bugs"
-Fix anatomy (necks) on old photos and make sure upper uhnuh is the fatless one
-Add all the distribution maps and placeholder images
-play around with translator
-Update all alt="TEMPORARY"'s
-Apparently images should weight around 100kb ???? girl... who was gonna tell me...
-
+    <li>nohohohmih mihsedesihm is slang for "keep going" perhaps</li>
+    <li>? goes at the beginning of a sentence, like "future"</li>
+    <li>change "two" to "de"</li>
+    <li>"play around with "who does" and "similar to" being at the beginning of words (goes against big to small clarification)</li>
 
 
 
