@@ -361,7 +361,8 @@
     }
 
     #grammar {
-        width: auto;
+        /* width: auto; */
+        margin: auto;
     }
 
     .slang {
