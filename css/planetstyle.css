@@ -1,19 +1,23 @@
 /* PLANET PAGE */
 /*             */
+#threeD-thumbnail {
+    z-index: 3;
+    height: 80vh;
+    max-height: 800px;
+}
 
 #threeD-map {
-    /* margin: 2em 1em 5em; */
-    /* top sides bottom */
-
-    background-image: url(https://images.unsplash.com/photo-1553375388-5917bf50a7ab?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3RhcnJ5fGVufDB8fDB8fHww);
+    background-image: url(../images/3D-background.jpg);
     background-size: cover;
-    backdrop-filter: saturate(0);
-    /* not working? */
     border: 3px solid black;
 
     flex: 1;
     flex-direction: column;
     margin: auto;
+
+    /* height and max-height added with JS */
+    width: auto;
+    border: 2px solid var(--borderBlue);
 }
 
 #threeD-map::after {
@@ -39,6 +43,10 @@
     border: 2px solid black;
     background-image: url(../images/map_named.png);
     background-size: cover;
+    max-height: 800px;
+    aspect-ratio: 3/2;
+    /* aspect of the actual image */
+    margin: auto;
 }
 
 /* font contrast for large map caption */
