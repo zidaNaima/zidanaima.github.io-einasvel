@@ -6,6 +6,11 @@
     }
 }
 
+#first-design {
+    margin: auto;
+    max-width: 50%;
+}
+
 p {
     text-align: justify;
 }
@@ -111,5 +116,14 @@ img {
 @media(max-width: 520px) {
     img {
         max-width: 100%;
+    }
+
+    #commissions {
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "text text"
+            "ex info"
+        ;
+        gap: 1em;
     }
 }
