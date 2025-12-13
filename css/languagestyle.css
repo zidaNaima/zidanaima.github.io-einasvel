@@ -209,14 +209,18 @@
 
 #numbers {
     display: grid;
-    grid-template-columns: 40% 15% 40%;
+    grid-template-columns: 35% 25% 35%;
     margin-top: 3em;
     gap: 2.5%;
 }
 
 #numbers img {
     width: 175px;
+    max-width: 100%;
     border: 2px solid var(--borderBlue);
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 #idauhl-img {
@@ -298,6 +302,10 @@
     .flex-style #numbers {
         display: block;
     }
+
+    #numbers {
+    grid-template-columns: 30% 35% 30%;
+}
 
     #numbers img {
         max-height: 80vh;
