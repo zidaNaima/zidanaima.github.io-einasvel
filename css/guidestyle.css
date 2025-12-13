@@ -136,7 +136,7 @@ html {
 
 [data-theme="party"] {
     --brightYellow: #f672ff;
-    --paleYellow: rgb(181, 226, 87);
+    --paleYellow: rgb(200, 255, 80);
     --wrapperBlue: #05f4fe;
     --darkBlue: rgb(47, 49, 198);
     --darkBlueT: 47, 49, 198;
@@ -163,9 +163,27 @@ html {
     --redSecTable: rgb(101, 53, 30);
 
     --linkColor: rgb(166, 207, 255);
-    --offWhite: rgb(61, 56, 22);
+    --offWhite: rgb(61, 49, 22);
     --borderBlue: rgb(32, 39, 76);
     --headerBlueT: 32, 39, 76;
+}
+
+/* Notebook tab colors - Light */
+[data-theme="default"], [data-theme="cream"], [data-theme="plain"], [data-theme="colorless"], [data-theme="party"] {
+    --tab1: rgb(243, 210, 91);
+    --tab2: rgb(221, 147, 221);
+    --tab3: rgb(103, 208, 127);
+    --tab4: rgb(99, 189, 246);
+    --tab5: rgb(234, 142, 158);
+}
+
+/* Notebook tab colors - Dark */
+[data-theme="dark-mode"], [data-theme="kitty"] {
+    --tab1: rgb(56, 139, 234);
+    --tab2: rgb(3, 115, 14);
+    --tab3: rgb(51, 45, 135);
+    --tab4: rgb(190, 95, 139);
+    --tab5: rgb(139, 50, 50);
 }
 
 /* EXTRA */
@@ -630,7 +648,7 @@ nav a:hover {
             #05f4fe 0%, #05f4fe 60%,
             rgb(47, 49, 198) 60%, rgb(47, 49, 198) 70%,
             #f672ff 70%, #f672ff 80%,
-            rgb(181, 226, 87) 80%, rgb(181, 226, 87) 90%,
+            rgb(200, 255, 80) 80%, rgb(200, 255, 80) 90%,
             #fae17d 90%, #fae17d 100%);
     /* offWhite */
 }
@@ -1120,7 +1138,7 @@ footer input {
     #current_okshlid {
         background-image: none;
         height: auto;
-        /* margin-bottom: 1em; */
+        margin-bottom: 2em;
     }
 
     nav {

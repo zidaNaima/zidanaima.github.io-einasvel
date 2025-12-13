@@ -161,27 +161,27 @@
 }
 
 #star-tab {
-    background-color: rgb(243, 210, 91);
+    background-color: var(--tab1);
     top: 100px;
 }
 
 #moon-tab {
-    background-color: rgb(221, 147, 221);
+    background-color: var(--tab2);
     top: 160px;
 }
 
 #cale-tab {
-    background-color: rgb(103, 208, 127);
+    background-color: var(--tab3);
     top: 220px;
 }
 
 #plan-tab {
-    background-color: rgb(99, 189, 246);
+    background-color: var(--tab4);
     top: 280px;
 }
 
 #clim-tab {
-    background-color: rgb(234, 142, 158);
+    background-color: var(--tab5);
     top: 340px;
 }
 
@@ -279,7 +279,7 @@
     /* so we don't click on the invisible overlapped ones */
 
     img {
-        padding: 1em 1em 0 1em;
+        /* padding: 1em 1em 0 1em; */
     }
 
     p {
