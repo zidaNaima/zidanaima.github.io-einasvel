@@ -5,6 +5,7 @@ DONE one/two/four-section(s) CAN have the margin and padding removed, and should
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
 example translations don't need all that space.
 honestly the default for text should be justified, then only a couple sections can be centered/lefted
+index page carousel and I believe other things don't work until the page is reloaded. no bueno.
 
 EVENTUALLY:
 change pre formatted p tags to pre tags!!
@@ -34,47 +35,3 @@ LINGUISTICS:
     <li>? goes at the beginning of a sentence, like "future"</li>
     <li>change "two" to "de"</li>
     <li>"play around with "who does" and "similar to" being at the beginning of words (goes against big to small clarification)</li>
-
-
-
-
-
-
-
-
-
-
-
-/* COLORS */
-/*        */
-/* https://dequeuniversity.com/color-contrast */
-:root {
-    --brightYellow: #f3db5c;
-    --paleYellow: rgb(251, 247, 217);
-    --wrapperBlue: rgb(191, 223, 223);
-    --darkBlue: rgb(20, 60, 100);
-    /* original blue */
-    /* --darkBlue: rgb(10, 45, 75); */
-    /* darker option 1 */
-    /* --darkBlue: rgb(15, 50, 80); */
-    /* darker option 2 */
-    /* --darkBlue: rgb(53, 50, 80); */
-    /* haha cute */
-    --offWhite: rgb(249, 247, 234);
-    --wrapperRed: #eabc86;
-    --redBrown: #924b14;
-    --darkRedBrown: #461d06;
-}
-
-BASIC
-
-:root {
-    --brightYellow: #f3db5c;
-    --paleYellow: rgb(251, 247, 217);
-    --wrapperBlue: rgb(191, 223, 223);
-    --darkBlue: rgb(20, 60, 100);
-    --offWhite: rgb(249, 247, 234);
-    --wrapperRed: #eabc86;
-    --redBrown: #924b14;
-    --darkRedBrown: #461d06;
-}
