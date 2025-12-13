@@ -43,7 +43,7 @@ function selectedThemeButton(currentTheme) {
     // Different styling for themes with non-default-styling on background image
     if (currentTheme == 'kitty') {
         document.getElementById("theme-kitty").firstChild.id = 'selected-theme';
-        document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter");
+        document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter", "dark-mode-filter");
 
         // background image
         document.body.style.background = 'url(images/kitty.jpg)';
@@ -52,6 +52,9 @@ function selectedThemeButton(currentTheme) {
         if (window.innerWidth > 840) {
             document.getElementById("current_okshlid").style.backgroundImage = "url(images/kitty_icon.png)";
             document.getElementById("current_okshlid").style.height = "150px";
+        } else {
+            document.getElementById("current_okshlid").style.backgroundImage = "none";
+            document.getElementById("current_okshlid").style.height = "auto";
         }
 
         // paw styling
@@ -69,11 +72,18 @@ function selectedThemeButton(currentTheme) {
 
 
     } else {
-        // remove grayscale-filter if last theme was colorless
-        document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter");
+        // remove grayscale-filter if last theme was colorless or dark-mode
+        document.getElementsByClassName("wrapper")[0].classList.remove("grayscale-filter", "dark-mode-filter");
+
         // remove kitty icon, height modification, and paws if last theme was kitty
-        document.getElementById("current_okshlid").style.backgroundImage = "url(images/okshlid_icon.png)";
-        document.getElementById("current_okshlid").style.height = "109.5px";
+        if (window.innerWidth > 840) {
+            document.getElementById("current_okshlid").style.backgroundImage = "url(images/okshlid_icon.png)";
+            document.getElementById("current_okshlid").style.height = "109.5px";
+        } else {
+            document.getElementById("current_okshlid").style.backgroundImage = "none";
+            document.getElementById("current_okshlid").style.height = "auto";
+        }
+
         if (page != "/index.html" && page != "/zidanaima.github.io-einasvel/index.html") {
             document.getElementById("page-header").style.backgroundImage = "none";
         } else {
@@ -85,6 +95,11 @@ function selectedThemeButton(currentTheme) {
 
         switch (currentTheme) {
             case 'default': document.getElementById("theme-default").firstChild.id = 'selected-theme'; break;
+            case 'dark-mode':
+                document.getElementById("theme-dark-mode").firstChild.id = 'selected-theme';
+                // document.body.classList.add("dark-mode-filter");
+                document.getElementsByClassName("wrapper")[0].classList.add("dark-mode-filter");
+                break;
             case 'cream': document.getElementById("theme-cream").firstChild.id = 'selected-theme'; break;
             case 'plain': document.getElementById("theme-plain").firstChild.id = 'selected-theme'; break;
             case 'colorless':
@@ -96,6 +111,19 @@ function selectedThemeButton(currentTheme) {
         }
         document.body.style.background = 'linear-gradient(var(--paleYellow), rgb(255, 255, 255))';
     }
+}
+
+// Kitty on window resize when started on a half screen
+if (localStorage.getItem('websiteTheme') == 'kitty') {
+    window.addEventListener('resize', (event) => {
+        if (window.innerWidth > 840) {
+            document.getElementById("current_okshlid").style.backgroundImage = "url(images/kitty_icon.png)";
+            document.getElementById("current_okshlid").style.height = "150px";
+        } else {
+            document.getElementById("current_okshlid").style.backgroundImage = "none";
+            document.getElementById("current_okshlid").style.height = "auto";
+        }
+    })
 }
 
 

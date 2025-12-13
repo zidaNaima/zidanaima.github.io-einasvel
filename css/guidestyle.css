@@ -52,6 +52,32 @@ html {
     --headerBlueT: 158, 191, 199;
 }
 
+[data-theme="dark-mode"] {
+    --brightYellow: rgb(35, 35, 119);
+    --paleYellow: rgb(37, 37, 37);
+    --wrapperBlue: rgb(0, 0, 0);
+    --darkBlue: #ffffff;
+    --darkBlueT: 180, 180, 180;
+    --wrapperRed: rgb(35, 35, 119);
+    --redBrown: #ffffff;
+    --darkRedBrown: #ffffff;
+    --redSecTable: rgb(37, 37, 37);
+
+    --linkColor: rgb(255, 152, 61);
+    --offWhite: rgb(35, 33, 64);
+    --borderBlue: #ffffff;
+    --headerBlueT: 37, 37, 37;
+}
+
+.dark-mode-filter {
+
+    /* effects image border as well </3 */
+    img {
+        filter: sepia(50%) brightness(80%);
+        border: 2px solid #fff !important;
+    }
+}
+
 [data-theme="cream"] {
     --brightYellow: rgb(251, 247, 217);
     --paleYellow: rgb(251, 247, 217);
@@ -550,6 +576,24 @@ nav a:hover {
             #924b14 90%, #924b14 100%);
 }
 
+
+/* all colors hard coded */
+/* wrapperBlue, darkBlue, brightYellow, paleYellow, redBrown */
+/* 0-60, 60-70, 70-80, 80-90, 90-100 */
+#theme-dark-mode {
+    background-image: linear-gradient(to right,
+            rgb(0, 0, 0) 0%, rgb(0, 0, 0) 60%,
+            #fff 60%, #fff 70%,
+            rgb(35, 35, 119) 70%, rgb(35, 35, 119) 80%,
+            rgb(37, 37, 37) 80%, rgb(37, 37, 37) 90%,
+            rgb(255, 152, 61) 90%, rgb(255, 152, 61) 100%);
+    /* linkColor */
+
+    button {
+        color: #fff;
+    }
+}
+
 #theme-cream {
     background-image: linear-gradient(to right,
             rgb(240, 234, 183) 0%, rgb(240, 234, 183) 60%,
@@ -578,7 +622,7 @@ nav a:hover {
             rgb(210, 210, 210) 80%, rgb(210, 210, 210) 90%,
             /* borderBlue */
             rgb(146, 146, 146) 90%, rgb(146, 146, 146) 100%);
-            /* not used, but I'm out of colors */
+    /* not used, but I'm out of colors */
 }
 
 #theme-party {
@@ -599,13 +643,13 @@ nav a:hover {
             rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0) 90%,
             /* kitty */
             rgb(101, 53, 30) 90%, rgb(101, 53, 30) 100%),
-            /* wrapperRed */
-            url(../images/kitty.jpg);
-        background-size: contain;
+        /* wrapperRed */
+        url(../images/kitty.jpg);
+    background-size: contain;
 
-        button {
-            color: #fff;
-        }
+    button {
+        color: #fff;
+    }
 }
 
 
@@ -1076,7 +1120,7 @@ footer input {
     #current_okshlid {
         background-image: none;
         height: auto;
-        margin-bottom: 1em;
+        /* margin-bottom: 1em; */
     }
 
     nav {
