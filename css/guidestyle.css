@@ -47,6 +47,7 @@ html {
     /* default same as off white */
 
     --linkColor: blue;
+    --grey: #ccc;
     --borderBlue: #7c9daa;
     --darkBlueT: 20, 60, 100;
     --headerBlueT: 158, 191, 199;
@@ -64,13 +65,13 @@ html {
     --redSecTable: rgb(37, 37, 37);
 
     --linkColor: rgb(255, 152, 61);
+    --grey: #767676;
     --offWhite: rgb(35, 33, 64);
     --borderBlue: #ffffff;
     --headerBlueT: 37, 37, 37;
 }
 
 .dark-mode-filter {
-
     /* effects image border as well </3 */
     img {
         filter: sepia(50%) brightness(80%);
@@ -90,6 +91,7 @@ html {
     --redSecTable: rgb(249, 247, 234);
 
     --linkColor: blue;
+    --grey: #ccc;
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(107, 51, 14);
     --headerBlueT: 195, 160, 90;
@@ -107,6 +109,7 @@ html {
     --redSecTable: rgb(249, 247, 234);
 
     --linkColor: rgb(45, 82, 229);
+    --grey: #ccc;
     --offWhite: rgb(249, 247, 234);
     --borderBlue: rgb(44, 44, 44);
     --headerBlueT: 210, 210, 200;
@@ -124,6 +127,7 @@ html {
     --redSecTable: #fff;
 
     --linkColor: rgb(255, 0, 0);
+    --grey: #ccc;
     --offWhite: #fff;
     --borderBlue: rgb(210, 210, 210);
     --headerBlueT: 235, 235, 235;
@@ -146,6 +150,7 @@ html {
     --redSecTable: #fae17d;
 
     --linkColor: rgb(239, 255, 222);
+    --grey: rgb(255, 255, 255);
     --offWhite: #fae17d;
     --borderBlue: #05cdf9;
     --headerBlueT: 112, 255, 219;
@@ -163,6 +168,7 @@ html {
     --redSecTable: rgb(101, 53, 30);
 
     --linkColor: rgb(166, 207, 255);
+    --grey: rgb(32, 39, 76);
     --offWhite: rgb(61, 49, 22);
     --borderBlue: rgb(32, 39, 76);
     --headerBlueT: 32, 39, 76;
@@ -242,14 +248,16 @@ p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: var(--grey);
     border-left: 1px solid rgba(0, 0, 0, .2);
 
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #aeaeae;
+/* Handle on hover, footer send button as well */
+::-webkit-scrollbar-thumb:hover, #send:hover {
+    /* darkens color (lightness) by 15% */
+    background-color: hsl(from var(--grey) h s calc(l - 15));
+
 }
 
 #page-header {
@@ -740,7 +748,7 @@ footer input {
 #send {
     grid-area: send;
     width: 40%;
-    background-color: #ccc;
+    background-color: var(--grey);
     text-transform: uppercase;
 }
 

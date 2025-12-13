@@ -41,6 +41,11 @@
     background-size: cover;
 }
 
+/* font contrast for large map caption */
+[data-theme="dark-mode"] #large-map+.centered, [data-theme="kitty"] #large-map+.centered {
+    color: var(--darkBlue);
+}
+
 #large-map img {
     opacity: 0;
     /* I just want the proportions for large-map */
@@ -50,6 +55,11 @@
     display: flex;
     margin-left: auto;
     margin-top: 0.5em;
+    background-color: var(--grey);
+}
+
+[data-theme="kitty"] #map-data-button {
+    color: white;
 }
 
 .planet-notebook {
