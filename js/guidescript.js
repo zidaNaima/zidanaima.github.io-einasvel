@@ -1,6 +1,9 @@
 
 
-var page = window.location.pathname || '/index.html';
+var page = window.location.pathname;
+//  || '/index.html';
+alert(page);
+if (page == null) pag = '/index.html';
 alert(page);
 
 // Settings pop-up
@@ -29,7 +32,9 @@ function changeTheme(themeName) {
 
 // Applies same theme when new page loads
 document.addEventListener('DOMContentLoaded', (event) => {
-    const savedTheme = localStorage.getItem('websiteTheme') || 'default'; // Default to theme 'default'
+    const savedTheme = localStorage.getItem('websiteTheme');
+    //  || 'default'; // Default to theme 'default'
+    if (savedTheme == null) savedTheme = 'default';
     changeTheme(savedTheme);
 });
 
