@@ -1,6 +1,7 @@
 
 
-var page = window.location.pathname;
+var page = window.location.pathname || '/index.html';
+alert(page);
 
 // Settings pop-up
 const gear = document.getElementById("settings");
