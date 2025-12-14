@@ -1,7 +1,7 @@
 /* PEOPLE PAGE */
 /*             */
 .people-fade-coll {
-    display: flex;
+    display: block;
 
     font-family: nunito;
     color: var(--darkBlue);
@@ -10,17 +10,10 @@
     padding: 30px 30px 60px 30px;
     border-bottom: 1px solid var(--darkBlue);
 
-    gap: 0 2em;
     width: 100%;
-
-    /* images and image sections */
-    .ppl-section-images {
-        width: 20vw !important;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        /* align-self: start; */
-    }
+    height: 100%;
+    min-height: 390px;
+    /* 300px max flex image size + 30px top padding + 60px bottom padding */
 
     ul {
         padding-left: 20px;
@@ -29,10 +22,6 @@
     li {
         text-align: left;
     }
-
-    /* .one-section, .two-sections {
-        padding: 0;
-    } */
 
     p {
         margin: 0;
@@ -68,18 +57,6 @@
     margin: 1em 50px;
 }
 
-/* Societal punishments image column */
-.flex-style section {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 20px;
-
-    img {
-        width: 100%;
-    }
-}
-
 /* JUMP TO POSITION FIXES */
 /*                        */
 #jump-to-anatomy {
@@ -100,32 +77,4 @@
 #jump-to-law {
     position: absolute;
     margin-top: -5em;
-}
-
-
-
-/* Medium sized */
-/* Screens under 840 get a one column set of images */
-/* Something weird happens to the alphabet between 840 and 800... not sure why */
-@media(max-width: 840px) {
-    .people-fade-coll {
-        display: block;
-
-        /* images and image sections */
-        .ppl-section-images {
-            width: 40vw !important;
-            float: left;
-            margin: 1em;
-            margin-left: 0;
-        }
-
-        /* originally right aligned images don't float left */
-        p+.ppl-section-images, p+section {
-            float: none;
-
-            margin-right: 0;
-            display: flex;
-            justify-self: right;
-        }
-    }
 }
