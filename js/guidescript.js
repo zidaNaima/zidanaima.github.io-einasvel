@@ -1,10 +1,8 @@
 
 
 var page = window.location.pathname;
-//  || '/index.html';
-alert(page);
-if (page == null) pag = '/index.html';
-alert(page);
+if (page == '/zidanaima.github.io-einasvel/') page = '/index.html';
+// page is /zidanaima.github.io-einasvel/ on the initial load off GitHub!
 
 // Settings pop-up
 const gear = document.getElementById("settings");
