@@ -5,7 +5,7 @@ DONE one/two/four-section(s) CAN have the margin and padding removed, and should
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
 example translations don't need all that space.
 honestly the default for text should be justified, then only a couple sections can be centered/lefted
-index page carousel and I believe other things don't work until the page is reloaded. no bueno.
+make gaps between sections consistent
 
 EVENTUALLY:
 change pre formatted p tags to pre tags!!
