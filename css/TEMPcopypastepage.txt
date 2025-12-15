@@ -1,21 +1,26 @@
 
 TO FIX:
-images on people page overflow collapsible section on 840 (?) screens
-DONE one/two/four-section(s) CAN have the margin and padding removed, and should. make sure to go back and remove unnecessary counters to this once you're done.
 story responsiveness could still use some tweaks tbh. specifically with font sizes.
 example translations don't need all that space.
 honestly the default for text should be justified, then only a couple sections can be centered/lefted
 make gaps between sections consistent
+add a transition efefct to the collapsable sections (?)
+notebook tabs transition oddly on phone screens and are unnatractively spaced
+edit all comments/wording to be professional (practice!) start using things like FIX: in commit messages!
+planet creature sections with images on the left nave incorrect padding when next to a ul.
+people sexual dimorphism archive section needs to be re-styled
+make sure words only glow if accessed from see why/other places like that
 
 EVENTUALLY:
 change pre formatted p tags to pre tags!!
 change margin and padding em's to rem's
-make sure words only glow if accessed from see why/other places like that
 "fix numbers". it shows a horizontal line to the left of two vertical lines where the ones go. Likely for fives like roman numerals.
 make evolution map connecting all the creatures. Include generals like "birds" and "bugs", "more bugs"
 add all the distribution maps and placeholder images
 update all alt="TEMPORARY"'s, "FIX"'s, and "TEMP"'s
 apparently images should weight around 100kb ???? girl... who was gonna tell me...
+can the language play button turn into a || when the sound is actively playing?
+can the 3d model have a loading icon after the thumbnail is clicked before it loads?
 
 FAR OUT LONG TERM:
 add planet specifics (mainly with locations)
